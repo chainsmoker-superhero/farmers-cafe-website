@@ -1,174 +1,1350 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Farmers Cafe AI | India's AI-Powered Farming Companion</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Farmers Cafe | Building Intelligence for Agriculture</title>
+  <meta name="description" content="Farmers Cafe is building the AI-native platform for agriculture, empowering farmers with weather intelligence, crop diagnostics and market insights.">
+  <meta name="keywords" content="Farmers Cafe, agriculture AI, farmer AI assistant, crop advisory, weather intelligence, market intelligence, precision agriculture, India">
+  <meta name="author" content="Farmers Cafe">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta property="og:title" content="Farmers Cafe | The Future of Farming is Intelligent.">
+  <meta property="og:description" content="An AI-native platform for agriculture empowering farmers with intelligent decision making.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.farmerscafe.co.in/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Farmers Cafe | The Future of Farming is Intelligent.">
+  <meta name="twitter:description" content="AI-native agriculture platform for smarter farming decisions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1A7F5A;
+      --secondary: #4CAF50;
+      --accent: #D4AF37;
+      --background: #FFFFFF;
+      --surface: #FBFDFB;
+      --surface-strong: #F3F8F4;
+      --border: rgba(15, 23, 42, 0.08);
+      --text: #0F172A;
+      --muted: #4B5563;
+      --soft: #6B7280;
+      --shadow: 0 30px 80px rgba(19, 45, 35, 0.08);
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.06);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --container: 1180px;
+      --nav-height: 76px;
+    }
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-body{
-line-height:1.6;
-color:#333;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.hero{
-background:linear-gradient(rgba(0,80,0,.75),rgba(0,80,0,.75)),
-url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1600');
-background-size:cover;
-background-position:center;
-color:white;
-text-align:center;
-padding:120px 20px;
-}
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
 
-.hero h1{
-font-size:4rem;
-margin-bottom:15px;
-}
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 10% 15%, rgba(26, 127, 90, 0.08), transparent 28%),
+        radial-gradient(circle at 88% 12%, rgba(212, 175, 55, 0.09), transparent 22%),
+        linear-gradient(180deg, rgba(250, 252, 250, 0.9), rgba(255, 255, 255, 0));
+      z-index: -2;
+    }
 
-.hero h2{
-font-size:1.8rem;
-font-weight:400;
-margin-bottom:20px;
-}
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(15, 23, 42, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 23, 42, 0.02) 1px, transparent 1px);
+      background-size: 120px 120px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.22), transparent 80%);
+      z-index: -1;
+    }
 
-.hero p{
-max-width:800px;
-margin:auto;
-font-size:1.2rem;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-.btn{
-display:inline-block;
-margin-top:30px;
-padding:12px 30px;
-background:#ff9800;
-color:white;
-text-decoration:none;
-border-radius:8px;
-font-weight:bold;
-}
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
 
-.section{
-padding:70px 20px;
-max-width:1200px;
-margin:auto;
-}
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
 
-.section h2{
-color:#2e7d32;
-text-align:center;
-margin-bottom:25px;
-font-size:2rem;
-}
+    :focus-visible {
+      outline: 3px solid rgba(26, 127, 90, 0.25);
+      outline-offset: 4px;
+      border-radius: 12px;
+    }
 
-.section p{
-text-align:center;
-max-width:900px;
-margin:auto;
-}
+    .skip-link {
+      position: absolute;
+      left: 16px;
+      top: -48px;
+      background: var(--text);
+      color: #fff;
+      padding: 12px 16px;
+      border-radius: 12px;
+      z-index: 1000;
+    }
 
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-margin-top:40px;
-}
+    .skip-link:focus {
+      top: 16px;
+    }
 
-.card{
-background:#f8f8f8;
-padding:30px;
-border-radius:15px;
-box-shadow:0 3px 10px rgba(0,0,0,0.1);
-}
+    .site-shell {
+      position: relative;
+    }
 
-.card h3{
-margin-bottom:10px;
-color:#2e7d32;
-}
+    .container {
+      width: min(calc(100% - 40px), var(--container));
+      margin: 0 auto;
+    }
 
-.vision{
-background:#eef8ee;
-}
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.88);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+    }
 
-.roadmap{
-background:#fafafa;
-}
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: var(--nav-height);
+      gap: 16px;
+    }
 
-.timeline{
-max-width:800px;
-margin:auto;
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
 
-.timeline div{
-padding:15px;
-border-left:4px solid #2e7d32;
-margin-bottom:15px;
-background:white;
-}
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      background: linear-gradient(145deg, rgba(26, 127, 90, 0.14), rgba(26, 127, 90, 0.04));
+      border: 1px solid rgba(26, 127, 90, 0.16);
+      display: grid;
+      place-items: center;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
 
-.contact{
-background:#2e7d32;
-color:white;
-text-align:center;
-padding:60px 20px;
-}
+    .brand-label {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
 
-footer{
-background:#1b5e20;
-color:white;
-text-align:center;
-padding:20px;
-}
-</style>
+    .brand-label strong {
+      font-size: 15px;
+    }
 
+    .brand-label span {
+      font-size: 12px;
+      color: var(--soft);
+      font-weight: 500;
+    }
+
+    .nav-links {
+      position: fixed;
+      inset: var(--nav-height) 16px auto 16px;
+      background: rgba(255, 255, 255, 0.98);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow-soft);
+      padding: 12px;
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .nav-links a {
+      padding: 14px 16px;
+      border-radius: 16px;
+      color: var(--muted);
+      font-weight: 600;
+      transition: background-color 180ms ease, color 180ms ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      background: rgba(26, 127, 90, 0.08);
+      color: var(--primary);
+      outline: none;
+    }
+
+    .nav-links.is-open {
+      display: flex;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-cta {
+      display: none;
+    }
+
+    .nav-toggle {
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.9);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .nav-toggle span,
+    .nav-toggle span::before,
+    .nav-toggle span::after {
+      display: block;
+      width: 18px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--text);
+      transition: transform 180ms ease, opacity 180ms ease;
+      content: "";
+    }
+
+    .nav-toggle span {
+      position: relative;
+    }
+
+    .nav-toggle span::before {
+      position: absolute;
+      transform: translateY(-6px);
+    }
+
+    .nav-toggle span::after {
+      position: absolute;
+      transform: translateY(6px);
+    }
+
+    .nav-toggle[aria-expanded="true"] span {
+      background: transparent;
+    }
+
+    .nav-toggle[aria-expanded="true"] span::before {
+      transform: rotate(45deg);
+    }
+
+    .nav-toggle[aria-expanded="true"] span::after {
+      transform: rotate(-45deg);
+    }
+
+    main section {
+      padding: 88px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(26, 127, 90, 0.07);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 5px rgba(212, 175, 55, 0.14);
+    }
+
+    .hero {
+      padding-top: 52px;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .hero-copy h1,
+    .section-heading h2,
+    .quote-card blockquote,
+    .founder-copy h2,
+    .contact-card h2 {
+      margin: 0;
+      letter-spacing: -0.05em;
+      line-height: 0.95;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(3.15rem, 10vw, 6.4rem);
+      max-width: 11ch;
+    }
+
+    .headline-accent {
+      display: block;
+      color: var(--primary);
+    }
+
+    .hero-copy p {
+      margin: 24px 0 0;
+      max-width: 62ch;
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      margin-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 56px;
+      padding: 0 24px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      font-size: 0.98rem;
+      transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, border-color 180ms ease;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .button::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.38), transparent);
+      transform: translateX(-120%);
+      transition: transform 420ms ease;
+      z-index: -1;
+    }
+
+    .button:hover::after,
+    .button:focus-visible::after {
+      transform: translateX(120%);
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .button-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .button-secondary {
+      background: #fff;
+      color: var(--text);
+      border-color: rgba(15, 23, 42, 0.12);
+    }
+
+    .hero-meta {
+      margin-top: 44px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .metric {
+      padding: 18px 16px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: clamp(1.7rem, 5vw, 2.5rem);
+      letter-spacing: -0.05em;
+      color: var(--primary);
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .hero-visual,
+    .vision-visual,
+    .story-visual {
+      position: relative;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(243, 248, 244, 0.92));
+      border: 1px solid rgba(26, 127, 90, 0.12);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-visual {
+      min-height: 480px;
+      padding: 28px;
+    }
+
+    .hero-visual::before,
+    .vision-visual::before,
+    .story-visual::before {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border: 1px solid rgba(15, 23, 42, 0.05);
+      border-radius: calc(var(--radius-xl) - 8px);
+      pointer-events: none;
+    }
+
+    .hero-surface {
+      position: absolute;
+      inset: auto 28px 28px 28px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .glass-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      width: fit-content;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 600;
+      box-shadow: 0 16px 24px rgba(15, 23, 42, 0.06);
+      backdrop-filter: blur(12px);
+    }
+
+    .glass-chip::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--secondary);
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 32px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2.3rem, 6vw, 4.2rem);
+      margin-top: 18px;
+      max-width: 12ch;
+    }
+
+    .section-heading p {
+      margin: 18px 0 0;
+      max-width: 62ch;
+      font-size: 1.08rem;
+      line-height: 1.85;
+      color: var(--muted);
+    }
+
+    .vision-grid,
+    .story-grid,
+    .founder-grid,
+    .contact-grid {
+      display: grid;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .vision-copy,
+    .founder-copy,
+    .contact-card,
+    .quote-card,
+    .story-visual {
+      padding: 32px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .vision-copy p,
+    .founder-copy p,
+    .contact-card p {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.9;
+    }
+
+    .vision-visual,
+    .story-visual {
+      min-height: 360px;
+      padding: 24px;
+    }
+
+    .capabilities-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .capability-card {
+      position: relative;
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow-soft);
+      transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+      min-height: 220px;
+    }
+
+    .capability-card:hover,
+    .capability-card:focus-within {
+      transform: translateY(-4px);
+      border-color: rgba(26, 127, 90, 0.22);
+      box-shadow: 0 28px 48px rgba(15, 23, 42, 0.08);
+    }
+
+    .capability-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(180deg, rgba(26, 127, 90, 0.03), transparent 40%);
+      pointer-events: none;
+    }
+
+    .icon-wrap {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: rgba(26, 127, 90, 0.08);
+      color: var(--primary);
+      margin-bottom: 22px;
+    }
+
+    .capability-card h3 {
+      margin: 0;
+      font-size: 1.28rem;
+      letter-spacing: -0.03em;
+    }
+
+    .capability-card p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 0.98rem;
+    }
+
+    .quote-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(251, 253, 251, 0.92));
+    }
+
+    .quote-card blockquote {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      max-width: 14ch;
+    }
+
+    .quote-card p {
+      margin: 24px 0 0;
+      max-width: 56ch;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .story-visual {
+      display: grid;
+      place-items: center;
+    }
+
+    .roadmap {
+      position: relative;
+      display: grid;
+      gap: 18px;
+      padding-left: 18px;
+    }
+
+    .roadmap::before {
+      content: "";
+      position: absolute;
+      left: 11px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: linear-gradient(180deg, rgba(26, 127, 90, 0.2), rgba(26, 127, 90, 0.75), rgba(212, 175, 55, 0.4));
+    }
+
+    .roadmap-item {
+      position: relative;
+      padding: 22px 22px 22px 28px;
+      margin-left: 18px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .roadmap-item::before {
+      content: "";
+      position: absolute;
+      left: -37px;
+      top: 28px;
+      width: 14px;
+      height: 14px;
+      border-radius: 999px;
+      background: var(--background);
+      border: 3px solid var(--primary);
+      box-shadow: 0 0 0 6px rgba(26, 127, 90, 0.08);
+    }
+
+    .roadmap-item .phase {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(26, 127, 90, 0.07);
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .roadmap-item h3 {
+      margin: 14px 0 6px;
+      font-size: 1.2rem;
+      letter-spacing: -0.03em;
+    }
+
+    .roadmap-item p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .founder-copy h2,
+    .contact-card h2 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      margin-top: 16px;
+      max-width: 10ch;
+    }
+
+    .founder-signature {
+      margin-top: 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      background: linear-gradient(145deg, rgba(26, 127, 90, 0.14), rgba(212, 175, 55, 0.12));
+      border: 1px solid rgba(26, 127, 90, 0.16);
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .signature-text strong {
+      display: block;
+      font-size: 1rem;
+    }
+
+    .signature-text span {
+      color: var(--soft);
+      font-size: 0.92rem;
+    }
+
+    .contact-card {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(243, 248, 244, 0.9));
+    }
+
+    .contact-card::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      bottom: -80px;
+      width: 240px;
+      height: 240px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(26, 127, 90, 0.14), transparent 65%);
+    }
+
+    .contact-list {
+      margin-top: 28px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+    }
+
+    .contact-item strong {
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--soft);
+    }
+
+    .contact-item span,
+    .contact-item a {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .footer {
+      padding: 32px 0 48px;
+      border-top: 1px solid rgba(15, 23, 42, 0.06);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      color: var(--muted);
+    }
+
+    .footer-inner strong {
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 680ms ease, transform 680ms ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (min-width: 720px) {
+      .hero {
+        padding-top: 72px;
+      }
+
+      .vision-copy,
+      .founder-copy,
+      .contact-card,
+      .quote-card,
+      .story-visual {
+        padding: 42px;
+      }
+
+      .capabilities-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .vision-grid,
+      .story-grid,
+      .founder-grid,
+      .contact-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 980px) {
+      .nav-links {
+        position: static;
+        inset: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2px;
+        padding: 0;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+      }
+
+      .nav-links a {
+        padding: 10px 14px;
+      }
+
+      .nav-cta {
+        display: inline-flex;
+      }
+
+      .nav-toggle {
+        display: none;
+      }
+
+      .hero-grid {
+        grid-template-columns: minmax(0, 1.05fr) minmax(480px, 0.95fr);
+      }
+
+      .capabilities-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .capability-card:last-child {
+        grid-column: 2 / span 1;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="site-shell">
+    <header class="nav" aria-label="Main navigation">
+      <div class="container nav-inner">
+        <a class="brand" href="#top" aria-label="Farmers Cafe home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 15C8.2 10.2 13.1 6.9 19 6C18.2 11.8 14.7 16.6 10 18C8.5 18.4 7 17.3 6.6 15.8C6.5 15.5 6.4 15.3 6 15Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 16C10.4 13.4 13.1 11.4 16 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="brand-label">
+            <strong>Farmers Cafe</strong>
+            <span>Building Intelligence for Agriculture</span>
+          </span>
+        </a>
 
-<section class="hero">
-<h1>🌾 Farmers Cafe AI</h1>
+        <nav class="nav-links" id="site-menu">
+          <a href="#vision">Vision</a>
+          <a href="#capabilities">Capabilities</a>
+          <a href="#why">Why We Exist</a>
+          <a href="#roadmap">Roadmap</a>
+          <a href="#founder">Founder</a>
+          <a href="#contact">Contact</a>
+        </nav>
 
-<h2>India's AI-Powered Farming Companion</h2>
+        <div class="nav-actions">
+          <a class="button button-secondary nav-cta" href="#contact">Coming Soon</a>
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation menu">
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
 
-<p>
-Empowering farmers with Artificial Intelligence, weather intelligence,
-crop advisory, market insights, and smart farming solutions.
-</p>
+    <main id="main-content">
+      <section class="hero" id="top">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <span class="eyebrow">AI-Native Agriculture Platform</span>
+            <h1>The Future of Farming <span class="headline-accent">is Intelligent.</span></h1>
+            <p>Farmers Cafe is building an AI-native platform that helps farmers make smarter decisions through artificial intelligence, weather intelligence, crop diagnostics and market insights.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#vision">Explore Vision</a>
+              <a class="button button-secondary" href="#contact">Coming Soon</a>
+            </div>
+            <div class="hero-meta" aria-label="Platform highlights">
+              <div class="metric">
+                <strong data-counter="1">0</strong>
+                <span>AI-native platform built for agriculture from day one.</span>
+              </div>
+              <div class="metric">
+                <strong data-counter="7">0</strong>
+                <span>Core capabilities designed to improve farm decision making.</span>
+              </div>
+              <div class="metric">
+                <strong data-counter="6">0</strong>
+                <span>Stakeholder groups aligned around one intelligence layer.</span>
+              </div>
+            </div>
+          </div>
 
-<a href="#contact" class="btn">/a>
-</section>
+          <div class="hero-visual reveal" aria-hidden="true">
+            <svg viewBox="0 0 620 520" xmlns="http://www.w3.org/2000/svg" role="img">
+              <defs>
+                <linearGradient id="fieldLine" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#1A7F5A" stop-opacity="0.75"/>
+                  <stop offset="100%" stop-color="#D4AF37" stop-opacity="0.4"/>
+                </linearGradient>
+                <filter id="blurGlow">
+                  <feGaussianBlur stdDeviation="18"/>
+                </filter>
+              </defs>
+              <circle cx="470" cy="102" r="54" fill="#D4AF37" opacity="0.14" filter="url(#blurGlow)"/>
+              <circle cx="182" cy="142" r="82" fill="#1A7F5A" opacity="0.12" filter="url(#blurGlow)"/>
+              <path d="M76 340C140 292 214 268 294 268C385 268 467 301 539 364" stroke="url(#fieldLine)" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M84 384C163 332 236 308 308 308C393 308 463 333 530 385" stroke="url(#fieldLine)" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+              <path d="M104 426C168 389 237 370 310 370C390 370 454 388 515 425" stroke="url(#fieldLine)" stroke-width="2.5" stroke-linecap="round" opacity="0.66"/>
+              <path d="M234 106C261 86 293 76 330 76C386 76 436 103 479 156C516 202 536 258 540 326" stroke="#0F172A" stroke-opacity="0.08" stroke-width="1.6" fill="none"/>
+              <path d="M186 132C224 166 244 210 247 263C249 307 234 349 202 390" stroke="#1A7F5A" stroke-opacity="0.4" stroke-width="2.2" fill="none" stroke-dasharray="6 8"/>
+              <g transform="translate(120 120)">
+                <rect x="0" y="0" width="378" height="240" rx="28" fill="#FFFFFF" fill-opacity="0.84" stroke="#1A7F5A" stroke-opacity="0.12"/>
+                <path d="M46 164C92 128 128 112 178 112C232 112 264 128 316 164" stroke="#1A7F5A" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <path d="M62 186C108 150 141 134 185 134C230 134 266 147 302 178" stroke="#D4AF37" stroke-width="2.6" fill="none" stroke-linecap="round" opacity="0.8"/>
+                <circle cx="184" cy="94" r="36" fill="#F3F8F4" stroke="#1A7F5A" stroke-opacity="0.14"/>
+                <path d="M184 64V45" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round"/>
+                <path d="M207 72L219 58" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round"/>
+                <path d="M216 95H236" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round"/>
+                <path d="M207 118L219 132" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round"/>
+                <path d="M184 124V143" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round"/>
+                <path d="M161 118L149 132" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round"/>
+                <path d="M152 95H132" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round"/>
+                <path d="M161 72L149 58" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round"/>
+                <path d="M176 82C183 72 196 68 208 74C220 80 225 94 221 106C217 118 206 127 194 127C180 127 168 118 164 106" stroke="#1A7F5A" stroke-width="2.3" fill="none"/>
+                <path d="M188 90C193 97 197 107 199 119" stroke="#D4AF37" stroke-width="2.3" stroke-linecap="round"/>
+                <g>
+                  <circle cx="74" cy="70" r="8" fill="#1A7F5A"/>
+                  <circle cx="118" cy="56" r="6" fill="#D4AF37"/>
+                  <circle cx="300" cy="58" r="7" fill="#1A7F5A"/>
+                  <circle cx="326" cy="98" r="5" fill="#D4AF37"/>
+                  <circle cx="314" cy="174" r="7" fill="#1A7F5A"/>
+                  <circle cx="82" cy="188" r="6" fill="#D4AF37"/>
+                  <path d="M74 70L118 56L184 94L300 58L326 98L314 174L202 190L82 188Z" stroke="#0F172A" stroke-opacity="0.08" stroke-width="1.4" fill="none"/>
+                </g>
+              </g>
+            </svg>
+            <div class="hero-surface">
+              <span class="glass-chip">Weather Intelligence</span>
+              <span class="glass-chip">Crop Diagnostics</span>
+              <span class="glass-chip">Market Signals</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<section class="section">
-<h2>About Us</h2>
+      <section id="vision">
+        <div class="container vision-grid">
+          <div class="vision-copy reveal">
+            <span class="eyebrow">Vision</span>
+            <h2>An AI Assistant for Every Farm</h2>
+            <p>Radhe Radhe || Every farmer should have access to world-class intelligence and expertise, regardless of location. Farmers Cafe is building a platform where decisions can be shaped by real-time signals, trusted guidance and practical recommendations designed for the realities of agriculture.</p>
+            <p>The ambition is simple: make intelligence more accessible, more actionable and more equitable across the agricultural ecosystem.</p>
+          </div>
+          <div class="vision-visual reveal" aria-hidden="true">
+            <svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg">
+              <rect x="30" y="36" width="500" height="308" rx="30" fill="#FFFFFF" fill-opacity="0.86" stroke="#1A7F5A" stroke-opacity="0.1"/>
+              <path d="M94 265C145 221 189 198 243 198C297 198 345 219 410 266" stroke="#1A7F5A" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <path d="M120 289C169 252 205 236 246 236C292 236 336 252 387 289" stroke="#D4AF37" stroke-width="2.3" fill="none" stroke-linecap="round" opacity="0.8"/>
+              <circle cx="140" cy="112" r="26" fill="#1A7F5A" fill-opacity="0.08" stroke="#1A7F5A" stroke-opacity="0.14"/>
+              <circle cx="418" cy="124" r="24" fill="#D4AF37" fill-opacity="0.1" stroke="#D4AF37" stroke-opacity="0.22"/>
+              <circle cx="279" cy="96" r="48" fill="#F3F8F4" stroke="#1A7F5A" stroke-opacity="0.12"/>
+              <path d="M259 96C259 80 272 67 288 67C304 67 317 80 317 96C317 112 304 125 288 125C272 125 259 112 259 96Z" stroke="#1A7F5A" stroke-width="2.2" fill="none"/>
+              <path d="M289 63V39" stroke="#1A7F5A" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M336 96H360" stroke="#1A7F5A" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M289 149V173" stroke="#1A7F5A" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M241 96H217" stroke="#1A7F5A" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M309 75L326 58" stroke="#D4AF37" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M267 117L251 135" stroke="#D4AF37" stroke-width="2.2" stroke-linecap="round"/>
+              <g opacity="0.9">
+                <rect x="88" y="132" width="106" height="72" rx="18" fill="#F9FCF9" stroke="#1A7F5A" stroke-opacity="0.14"/>
+                <path d="M110 176C124 160 140 152 160 152C172 152 184 156 192 163" stroke="#1A7F5A" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <circle cx="140" cy="156" r="7" fill="#1A7F5A"/>
+              </g>
+              <g opacity="0.9">
+                <rect x="362" y="178" width="108" height="76" rx="18" fill="#F9FCF9" stroke="#1A7F5A" stroke-opacity="0.14"/>
+                <path d="M384 220L399 204L415 220L437 193" stroke="#D4AF37" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="437" cy="193" r="5" fill="#1A7F5A"/>
+              </g>
+              <path d="M194 168H229L259 118" stroke="#0F172A" stroke-opacity="0.08" stroke-width="1.6" fill="none"/>
+              <path d="M317 118L362 178" stroke="#0F172A" stroke-opacity="0.08" stroke-width="1.6" fill="none"/>
+            </svg>
+          </div>
+        </div>
+      </section>
 
-<p>||Radha madhav|| 
-Farmers Cafe AI is an AgriTech startup focused on transforming agriculture
-through Artificial Intelligence, digital innovation, and data-driven insights.
-Our mission is to help farmers increase yields, reduce risks, and improve profitability through smart technology.
-</p>
-</section>
+      <section id="capabilities">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="eyebrow">Capabilities</span>
+            <h2>Designed for better agricultural decisions.</h2>
+            <p>Each capability is conceived as part of one coherent intelligence platform, not a collection of disconnected tools.</p>
+          </div>
+          <div class="capabilities-grid">
+            <article class="capability-card reveal">
+              <div class="icon-wrap" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="4" y="5" width="16" height="14" rx="4" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M8 10H16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M8 14H13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <circle cx="17" cy="14" r="1.5" fill="currentColor"/>
+                </svg>
+              </div>
+              <h3>FarmerGPT</h3>
+              <p>A conversational intelligence layer built to make agricultural expertise more accessible, contextual and immediate.</p>
+            </article>
+            <article class="capability-card reveal">
+              <div class="icon-wrap" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 5C8.7 5 6 7.7 6 11V18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M12 5C15.3 5 18 7.7 18 11V18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M8 18H16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M12 9V14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>AI Crop Advisory</h3>
+              <p>Guidance designed to support everyday crop decisions with greater confidence and faster interpretation.</p>
+            </article>
+            <article class="capability-card reveal">
+              <div class="icon-wrap" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 15C7 10.6 10.6 7 15 7H18V10C18 14.4 14.4 18 10 18H7V15Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                  <path d="M8.5 16.5L16 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>Disease Detection</h3>
+              <p>Early pattern recognition intended to help identify potential crop issues before they become larger risks.</p>
+            </article>
+            <article class="capability-card reveal">
+              <div class="icon-wrap" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 17C4.8 17 3 15.2 3 13C3 11 4.4 9.3 6.3 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M8 9C8.8 6.7 10.9 5 13.5 5C16.8 5 19.5 7.7 19.5 11C20.9 11.2 22 12.4 22 14C22 15.8 20.5 17.3 18.7 17.3H7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M10 19L12 16L14 19L16 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3>Weather Intelligence</h3>
+              <p>Localized forecasting context that helps decision makers adapt with greater resilience and timing.</p>
+            </article>
+            <article class="capability-card reveal">
+              <div class="icon-wrap" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 17L10 12L13 15L19 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M15 9H19V13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M5 19H19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>Market Intelligence</h3>
+              <p>Sharper visibility into market dynamics to help improve timing, planning and commercial confidence.</p>
+            </article>
+            <article class="capability-card reveal">
+              <div class="icon-wrap" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="5" y="6" width="14" height="12" rx="3" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M9 10H15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M9 14H12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <circle cx="16" cy="14" r="1.5" fill="currentColor"/>
+                </svg>
+              </div>
+              <h3>Satellite Insights</h3>
+              <p>Remote intelligence that extends visibility and helps bring a broader operating picture to the farm.</p>
+            </article>
+            <article class="capability-card reveal">
+              <div class="icon-wrap" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 18L9 12L12 15L19 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M5 8H9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M15 18H19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>Precision Agriculture</h3>
+              <p>An intelligent operating foundation for more precise planning, intervention and resource allocation.</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-<section class="section">
-<h2>Our Solutions</h2>
+      <section id="why">
+        <div class="container story-grid">
+          <div class="quote-card reveal">
+            <span class="eyebrow">Why We Exist</span>
+            <blockquote>Technology should not be a privilege available only to large agricultural enterprises. Every farmer deserves access to intelligence.</blockquote>
+            <p>Farmers Cafe exists to make advanced decision support feel trusted, human and practical at the point where it matters most: on the ground, in the field and in real operating conditions.</p>
+          </div>
+          <div class="story-visual reveal" aria-hidden="true">
+            <svg viewBox="0 0 520 360" xmlns="http://www.w3.org/2000/svg">
+              <rect x="42" y="46" width="436" height="268" rx="30" fill="#FFFFFF" fill-opacity="0.9" stroke="#1A7F5A" stroke-opacity="0.12"/>
+              <rect x="90" y="96" width="74" height="166" rx="18" fill="#F3F8F4" stroke="#1A7F5A" stroke-opacity="0.1"/>
+              <rect x="184" y="128" width="74" height="134" rx="18" fill="#F9FCF9" stroke="#1A7F5A" stroke-opacity="0.1"/>
+              <rect x="278" y="82" width="74" height="180" rx="18" fill="#F3F8F4" stroke="#1A7F5A" stroke-opacity="0.1"/>
+              <rect x="372" y="150" width="58" height="112" rx="18" fill="#F9FCF9" stroke="#1A7F5A" stroke-opacity="0.1"/>
+              <path d="M116 210C118 179 131 155 155 136" stroke="#1A7F5A" stroke-width="2.4" stroke-linecap="round"/>
+              <path d="M208 210C211 188 223 170 241 158" stroke="#D4AF37" stroke-width="2.4" stroke-linecap="round"/>
+              <path d="M302 210C308 172 327 143 352 126" stroke="#1A7F5A" stroke-width="2.4" stroke-linecap="round"/>
+              <path d="M402 222C405 207 413 193 425 185" stroke="#D4AF37" stroke-width="2.4" stroke-linecap="round"/>
+              <circle cx="154" cy="136" r="8" fill="#1A7F5A"/>
+              <circle cx="240" cy="158" r="8" fill="#D4AF37"/>
+              <circle cx="352" cy="126" r="8" fill="#1A7F5A"/>
+              <circle cx="425" cy="185" r="8" fill="#D4AF37"/>
+            </svg>
+          </div>
+        </div>
+      </section>
 
-<div class="cards">
+      <section id="roadmap">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="eyebrow">Roadmap</span>
+            <h2>A focused path from launch to platform.</h2>
+            <p>The roadmap is structured to introduce intelligence in layers, building trust and capability with each phase.</p>
+          </div>
+          <div class="roadmap">
+            <article class="roadmap-item reveal">
+              <span class="phase">2026</span>
+              <h3>Farmers Cafe Launch</h3>
+              <p>The foundation for an AI-native agriculture platform goes live.</p>
+            </article>
+            <article class="roadmap-item reveal">
+              <span class="phase">Phase 1</span>
+              <h3>FarmerGPT</h3>
+              <p>Conversational intelligence for everyday agricultural guidance.</p>
+            </article>
+            <article class="roadmap-item reveal">
+              <span class="phase">Phase 2</span>
+              <h3>Disease Detection</h3>
+              <p>Early detection support to improve intervention speed and confidence.</p>
+            </article>
+            <article class="roadmap-item reveal">
+              <span class="phase">Phase 3</span>
+              <h3>Weather Intelligence</h3>
+              <p>More adaptive decision support through localized weather context.</p>
+            </article>
+            <article class="roadmap-item reveal">
+              <span class="phase">Phase 4</span>
+              <h3>Market Intelligence</h3>
+              <p>Commercial visibility to strengthen planning and market participation.</p>
+            </article>
+            <article class="roadmap-item reveal">
+              <span class="phase">Phase 5</span>
+              <h3>Precision Agriculture Platform</h3>
+              <p>A broader system for intelligent farm operations and long-term scale.</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-<div class="card">
-<h3>🤖 FarmerGPT</h3>
-<p>AI-powered farming assistant answering agricultural questions in local languages.</p>
-</div>
+      <section id="founder">
+        <div class="container founder-grid">
+          <div class="founder-copy reveal">
+            <span class="eyebrow">Founder</span>
+            <h2>Atul Choudhary</h2>
+            <p>Growing access to intelligence has transformed every industry. Agriculture should be no exception. Farmers Cafe was founded with the belief that every farmer deserves access to powerful technology and trusted guidance.</p>
+            <div class="founder-signature">
+              <div class="avatar" aria-hidden="true">AC</div>
+              <div class="signature-text">
+                <strong>Atul Choudhary</strong>
+                <span>Founder, Farmers Cafe</span>
+              </div>
+            </div>
+          </div>
+          <div class="story-visual reveal" aria-hidden="true">
+            <svg viewBox="0 0 520 360" xmlns="http://www.w3.org/2000/svg">
+              <rect x="44" y="46" width="432" height="268" rx="30" fill="#FFFFFF" fill-opacity="0.9" stroke="#1A7F5A" stroke-opacity="0.12"/>
+              <circle cx="178" cy="176" r="72" fill="#F3F8F4" stroke="#1A7F5A" stroke-opacity="0.12"/>
+              <path d="M146 188C154 162 175 144 201 140C225 137 248 149 262 170" stroke="#1A7F5A" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+              <path d="M154 214C173 197 192 188 213 188C235 188 255 197 270 210" stroke="#D4AF37" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+              <rect x="300" y="108" width="108" height="34" rx="17" fill="#F9FCF9" stroke="#1A7F5A" stroke-opacity="0.12"/>
+              <rect x="300" y="160" width="132" height="34" rx="17" fill="#F9FCF9" stroke="#1A7F5A" stroke-opacity="0.12"/>
+              <rect x="300" y="212" width="116" height="34" rx="17" fill="#F9FCF9" stroke="#1A7F5A" stroke-opacity="0.12"/>
+              <path d="M272 178H300" stroke="#0F172A" stroke-opacity="0.08" stroke-width="1.6"/>
+              <path d="M250 140H300" stroke="#0F172A" stroke-opacity="0.08" stroke-width="1.6"/>
+              <path d="M266 214H300" stroke="#0F172A" stroke-opacity="0.08" stroke-width="1.6"/>
+            </svg>
+          </div>
+        </div>
+      </section>
 
-<div class="card">
-<h3>🌾 Smart Crop Advisory</h3>
-<p>Actionable recommendations based on crops, season, and local conditions.</p>
-</div>
+      <section id="contact">
+        <div class="container contact-grid">
+          <div class="contact-card reveal">
+            <span class="eyebrow">Contact</span>
+            <h2>Start the conversation.</h2>
+            <p>For partnerships, strategic conversations and early interest, Farmers Cafe is preparing for launch with a clear focus on the future of agricultural intelligence.</p>
+            <div class="contact-list">
+              <div class="contact-item">
+                <strong>Email</strong>
+                <a href="mailto:contact@farmerscafe.co.in">contact@farmerscafe.co.in</a>
+              </div>
+              <div class="contact-item">
+                <strong>Location</strong>
+                <span>India</span>
+              </div>
+              <div class="contact-item">
+                <strong>Domain</strong>
+                <a href="https://www.farmerscafe.co.in" target="_blank" rel="noreferrer">www.farmerscafe.co.in</a>
+              </div>
+            </div>
+          </div>
+          <div class="vision-visual reveal" aria-hidden="true">
+            <svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg">
+              <rect x="34" y="42" width="492" height="296" rx="30" fill="#FFFFFF" fill-opacity="0.88" stroke="#1A7F5A" stroke-opacity="0.1"/>
+              <path d="M102 252C147 219 190 204 240 204C292 204 336 219 388 252" stroke="#1A7F5A" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <path d="M121 278C167 244 205 231 246 231C287 231 325 244 370 278" stroke="#D4AF37" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.75"/>
+              <circle cx="282" cy="130" r="62" fill="#F3F8F4" stroke="#1A7F5A" stroke-opacity="0.12"/>
+              <path d="M255 134L276 154L314 112" stroke="#1A7F5A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="154" cy="134" r="12" fill="#D4AF37" fill-opacity="0.22"/>
+              <circle cx="406" cy="118" r="14" fill="#1A7F5A" fill-opacity="0.14"/>
+              <circle cx="436" cy="236" r="10" fill="#D4AF37" fill-opacity="0.22"/>
+              <circle cx="144" cy="234" r="14" fill="#1A7F5A" fill-opacity="0.14"/>
+            </svg>
+          </div>
+        </div>
+      </section>
+    </main>
 
-<div class="card">
-<h3>📷 AI Disease Detection</h3>
+    <footer class="footer">
+      <div class="container footer-inner">
+        <strong>Farmers Cafe</strong>
+        <span>Building Intelligence for Agriculture</span>
+        <span>© 2026 Farmers Cafe</span>
+      </div>
+    </footer>
+  </div>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Farmers Cafe",
+      "url": "https://www.farmerscafe.co.in",
+      "email": "contact@farmerscafe.co.in",
+      "founder": {
+        "@type": "Person",
+        "name": "Atul Choudhary"
+      },
+      "description": "Farmers Cafe is building the AI-native platform for agriculture and empowering farmers with intelligent decision making.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "India"
+      }
+    }
+  </script>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!isOpen));
+        navMenu.classList.toggle('is-open', !isOpen);
+      });
+
+      navLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          navToggle.setAttribute('aria-expanded', 'false');
+          navMenu.classList.remove('is-open');
+        });
+      });
+    }
+
+    const revealItems = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealItems.forEach((item) => revealObserver.observe(item));
+
+    const counters = document.querySelectorAll('[data-counter]');
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        const element = entry.target;
+        const target = Number(element.getAttribute('data-counter'));
+        const duration = 1200;
+        const start = performance.now();
+
+        const step = (now) => {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          element.textContent = String(Math.round(target * eased));
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          }
+        };
+
+        requestAnimationFrame(step);
+        counterObserver.unobserve(element);
+      });
+    }, { threshold: 0.7 });
+
+    counters.forEach((counter) => counterObserver.observe(counter));
+  </script>
+</body>
+</html>
