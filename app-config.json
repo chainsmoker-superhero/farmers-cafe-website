@@ -1,8 +1,8 @@
 {
-  "appEnabled": false,
+  "appEnabled": true,
   "minSupportedVersion": 1,
-  "latestVersion": 1,
-  "updateMessage": "FarmerGPT is temporarily unavailable",
+  "latestVersion": 5,
+  "updateMessage": "An Update is available, Please update FarmerGPT App",
   "updateUrl": "https://www.farmerscafe.co.in/download",
 
   "weatherEnabled": true,
