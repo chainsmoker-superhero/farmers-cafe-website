@@ -1,0 +1,7 @@
+{
+  "appEnabled": true,
+  "minSupportedVersion": 5,
+  "latestVersion": 1,
+  "updateMessage": "A new version of FarmerGPT is available. Please update to get the latest weather and scheme features.",
+  "updateUrl": "https://play.google.com/store/apps/details?id=com.farmerscafe.farmergpt"
+}
