@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - FarmerGPT</title>
+    <style>
+        :root {
+            --primary: #1B5E20;
+            --primary-light: #2E7D32;
+            --bg: #F9FBF7;
+            --surface: #FFFFFF;
+            --text: #1C1D1A;
+            --text-secondary: #49454F;
+            --border: #E0E4DB;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface);
+            padding: 40px 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+        }
+        header {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .badge {
+            display: inline-block;
+            background: #E8F5E9;
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+        h1 {
+            color: var(--primary);
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+        .date {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+        h2 {
+            color: var(--primary);
+            font-size: 20px;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 6px;
+        }
+        p, ul {
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+        }
+        ul {
+            padding-left: 24px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        strong {
+            color: var(--text);
+        }
+        .contact-box {
+            background: #E8F5E9;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 32px;
+            border: 1px solid #C8E6C9;
+        }
+        .contact-box p {
+            margin-bottom: 6px;
+            color: var(--text);
+        }
+        a {
+            color: var(--primary-light);
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <span class="badge">Official Legal Policy</span>
+        <h1>FarmerGPT Privacy Policy</h1>
+        <p class="date">Last Updated: October 3, 2026 | Effective Date: October 3, 2026</p>
+    </header>
+
+    <p>
+        Welcome to <strong>FarmerGPT</strong> (referred to as "the App", "we", "us", or "our"), developed and operated by <strong>FarmersCafe</strong>. We are committed to protecting the privacy, security, and digital sovereignty of the farmers, agriculturalists, and users who place their trust in our service.
+    </p>
+    <p>
+        This Privacy Policy explains how FarmerGPT collects, uses, handles, and protects your information when you use our Android mobile application and associated services.
+    </p>
+
+    <h2>1. Information We Collect and How We Use It</h2>
+    <p>FarmerGPT is designed with a <em>privacy-first, on-device priority</em> architecture. We collect and process only the minimum information necessary to deliver hyper-local, accurate farming advisories.</p>
+
+    <ul>
+        <li>
+            <strong>Farmer Profile & Farm Data:</strong> During onboarding and profile setup, you may provide your name, state, district, village, land size (acres), soil type, irrigation source, and primary/secondary crops.
+            <br><em>Storage & Use:</em> This data is stored <strong>locally on your device</strong> in a private SQLite/Room database. It is used to personalize weather alerts, pest recommendations, and government scheme eligibility. It is never sold or shared with commercial data brokers.
+        </li>
+        <li>
+            <strong>Location Data (Foreground Only):</strong>
+            <br><em>Permissions:</em> <code>ACCESS_COARSE_LOCATION</code> and <code>ACCESS_FINE_LOCATION</code>.
+            <br><em>Use:</em> We access your location <strong>only while the app is actively in use</strong> (foreground) to automatically detect your local district for hyper-local weather forecasts and to retrieve prevailing commodity prices from your nearest APMC Mandi.
+            <br><em>Background Tracking:</em> <strong>We do NOT track or access your location in the background</strong>.
+        </li>
+        <li>
+            <strong>Voice and Audio Data:</strong>
+            <br><em>Permission:</em> <code>RECORD_AUDIO</code>.
+            <br><em>Use:</em> When you tap the microphone button to ask a farming question or use Voice Assistant mode, audio is captured in real-time to transcribe your speech into text. Audio streams are processed in transient device memory and are not stored permanently or used for advertising profiles.
+        </li>
+        <li>
+            <strong>Camera and Crop Photos:</strong>
+            <br><em>Use:</em> When you use the <strong>Crop Doctor</strong> feature, you may take a picture or choose a photo from your gallery showing diseased leaves, stems, or pests.
+            <br><em>Processing:</em> The image is processed locally and transmitted securely over encrypted HTTPS to our AI model (Google Gemini Vision) strictly to identify the plant pathology and suggest remedies. Photos are saved in your local on-device scan history and are never repurposed for facial recognition or commercial databases.
+        </li>
+        <li>
+            <strong>Chat Conversations & Farm Memory:</strong> Your conversations with the AI agricultural advisor and extracted farming facts (e.g. sowing dates, fertilizer applications) are stored locally on your device in your private database.
+        </li>
+    </ul>
+
+    <h2>2. Third-Party Services and Data Sharing</h2>
+    <p>To provide accurate real-time information, FarmerGPT connects to the following trusted third-party service providers:</p>
+    <ul>
+        <li>
+            <strong>Google Generative AI (Gemini):</strong> Powers the conversational reasoning and crop disease image diagnosis. Queries and crop pictures are transmitted securely via TLS 1.3 encryption. For details on Google's data handling practices, visit the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.
+        </li>
+        <li>
+            <strong>Open-Meteo:</strong> Provides hourly, daily, and 7-day meteorological forecasts using non-personally identifiable geographical coordinates (latitude and longitude).
+        </li>
+        <li>
+            <strong>National APMC & Government Data Portals:</strong> Public agricultural market prices and government welfare scheme information are retrieved from official open government data sources.
+        </li>
+        <li>
+            <strong>Firebase Crashlytics & Analytics (Google LLC):</strong> We use Crashlytics to monitor application crashes and stability metrics. These logs contain technical diagnostic information (device model, Android OS version, stack trace) and contain no personal or financial information.
+        </li>
+    </ul>
+
+    <h2>3. Data Storage, Security, and Backup</h2>
+    <p>
+        All sensitive user profile information, conversation history, and crop diagnosis logs are kept inside the application's private sandboxed internal storage on your device.
+    </p>
+    <p>
+        In compliance with Android security best practices, our application configuration explicitly excludes local database files containing farmer profile and chat information from automated cloud backups and device-to-device transfers (via custom <code>backup_rules.xml</code> and <code>data_extraction_rules.xml</code>).
+    </p>
+
+    <h2>4. Your Data Rights & Deletion Controls</h2>
+    <p>You have complete control over your data at all times:</p>
+    <ul>
+        <li><strong>In-App Chat Deletion:</strong> You can clear your entire conversation history at any time from the Chat screen menu.</li>
+        <li><strong>Farm Memory & Diagnosis History Deletion:</strong> You can view and delete individual crop diagnoses or saved farm memories directly within the app.</li>
+        <li><strong>Profile Reset / App Data Erasure:</strong> Clearing the app storage or uninstalling the app permanently purges all local data from your device.</li>
+        <li><strong>Data Deletion Requests:</strong> If you have any questions or wish to confirm the removal of any diagnostic information, contact our support team at <a href="mailto:support@farmerscafe.co.in">support@farmerscafe.co.in</a>.</li>
+    </ul>
+
+    <h2>5. Children's Privacy</h2>
+    <p>
+        FarmerGPT is designed for adult farmers, agronomists, and agricultural stakeholders. We do not knowingly collect personal information from children under the age of 13. If you believe a child has provided us with personal information, please contact us immediately so we can remove it.
+    </p>
+
+    <h2>6. Changes to This Privacy Policy</h2>
+    <p>
+        We may update this Privacy Policy from time to time to reflect improvements in our app features or regulatory requirements. Any updates will be published at this URL, and the "Last Updated" date will be updated accordingly.
+    </p>
+
+    <div class="contact-box">
+        <h3>Contact Us</h3>
+        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your data privacy, please reach out to us:</p>
+        <p><strong>Entity:</strong> FarmersCafe</p>
+        <p><strong>Email:</strong> <a href="mailto:support@farmerscafe.co.in">support@farmerscafe.co.in</a></p>
+        <p><strong>Website:</strong> <a href="https://www.farmerscafe.co.in" target="_blank" rel="noopener">https://www.farmerscafe.co.in</a></p>
+        <p><strong>Location:</strong> Bhopal, Madhya Pradesh, India</p>
+    </div>
+
+    <footer>
+        &copy; 2026 FarmersCafe & FarmerGPT. All rights reserved.
+    </footer>
+</div>
+
+</body>
+</html>
