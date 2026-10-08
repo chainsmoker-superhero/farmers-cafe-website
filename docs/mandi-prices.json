@@ -169,7 +169,7 @@
     {"mandiId": "mandi_raisen", "commodityId": "crop_soybean", "modalPrice": 4820.0, "minPrice": 4700.0, "maxPrice": 4870.0, "daysAgo": 0},
     {"mandiId": "mandi_indore", "commodityId": "crop_soybean", "modalPrice": 4960.0, "minPrice": 4840.0, "maxPrice": 5010.0, "daysAgo": 0},
     {"mandiId": "mandi_dewas", "commodityId": "crop_soybean", "modalPrice": 4880.0, "minPrice": 4750.0, "maxPrice": 4920.0, "daysAgo": 0},
-    {"mandiId": "mandi_pipariya", "commodityId": "crop_soybean", "modalPrice": 4870.0, "minPrice": 4740.0, "maxPrice": 4930.0, "daysAgo": 0},
+    {"mandiId": "mandi_pipariya", "commodityId": "crop_soybean", "modalPrice": 5500.0, "minPrice": 5011.0, "maxPrice": 6011.0, "daysAgo": 0},
     {"mandiId": "mandi_narmadapuram", "commodityId": "crop_soybean", "modalPrice": 4840.0, "minPrice": 4710.0, "maxPrice": 4890.0, "daysAgo": 0},
 
     {"mandiId": "mandi_bhopal", "commodityId": "crop_wheat", "modalPrice": 2580.0, "minPrice": 2490.0, "maxPrice": 2640.0, "daysAgo": 0},
@@ -184,7 +184,7 @@
     {"mandiId": "mandi_raisen", "commodityId": "crop_wheat", "modalPrice": 2570.0, "minPrice": 2480.0, "maxPrice": 2620.0, "daysAgo": 0},
     {"mandiId": "mandi_indore", "commodityId": "crop_wheat", "modalPrice": 2650.0, "minPrice": 2560.0, "maxPrice": 2700.0, "daysAgo": 0},
     {"mandiId": "mandi_dewas", "commodityId": "crop_wheat", "modalPrice": 2590.0, "minPrice": 2500.0, "maxPrice": 2640.0, "daysAgo": 0},
-    {"mandiId": "mandi_pipariya", "commodityId": "crop_wheat", "modalPrice": 2630.0, "minPrice": 2540.0, "maxPrice": 2690.0, "daysAgo": 0},
+    {"mandiId": "mandi_pipariya", "commodityId": "crop_wheat", "modalPrice": 2450.0, "minPrice": 2200.0, "maxPrice": 2709.0, "daysAgo": 0},
     {"mandiId": "mandi_narmadapuram", "commodityId": "crop_wheat", "modalPrice": 2610.0, "minPrice": 2520.0, "maxPrice": 2660.0, "daysAgo": 0},
 
     {"mandiId": "mandi_bhopal", "commodityId": "crop_mustard", "modalPrice": 6100.0, "minPrice": 5980.0, "maxPrice": 6220.0, "daysAgo": 0},
