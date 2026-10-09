@@ -18,18 +18,18 @@
   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Farmers Cafe | Building Intelligence for Agriculture</title>
-  <meta name="description" content="Farmers Cafe is building the AI-native platform for agriculture, empowering farmers with weather intelligence, crop diagnostics and market insights.">
-  <meta name="keywords" content="Farmers Cafe, agriculture AI, farmer AI assistant, crop advisory, weather intelligence, market intelligence, precision agriculture, India">
+  <title>Farmers Cafe | Building AI for Agriculture</title>
+  <meta name="description" content="Farmers Cafe is an AI company building products for agriculture. FarmerGPT — our first product — is an AI farming companion that helps farmers ask, understand, decide and act.">
+  <meta name="keywords" content="Farmers Cafe, FarmerGPT, agriculture AI, AI farming app, farmer AI assistant, crop advisory, weather intelligence, market intelligence, farm operations, India">
   <meta name="author" content="Farmers Cafe">
   <meta name="theme-color" content="#FFFFFF">
-  <meta property="og:title" content="Farmers Cafe | The Future of Farming is Intelligent.">
-  <meta property="og:description" content="An AI-native platform for agriculture empowering farmers with intelligent decision making.">
+  <meta property="og:title" content="Farmers Cafe | Introducing FarmerGPT">
+  <meta property="og:description" content="Farmers Cafe is building AI products for agriculture. FarmerGPT is the AI farming companion that helps every farmer ask smarter questions and make better decisions.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.farmerscafe.co.in/">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Farmers Cafe | The Future of Farming is Intelligent.">
-  <meta name="twitter:description" content="AI-native agriculture platform for smarter farming decisions.">
+  <meta name="twitter:title" content="Farmers Cafe | Introducing FarmerGPT">
+  <meta name="twitter:description" content="FarmerGPT is the AI farming companion by Farmers Cafe — ask, understand, decide, act.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -410,33 +410,36 @@
     }
 
     .hero-meta {
-      margin-top: 44px;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
+      margin-top: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 0;
     }
 
-    .metric {
-      padding: 18px 16px;
-      border-radius: 24px;
-      background: rgba(255, 255, 255, 0.88);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .metric strong {
-      display: block;
-      font-size: clamp(1.7rem, 5vw, 2.5rem);
-      letter-spacing: -0.05em;
-      color: var(--primary);
-    }
-
-    .metric span {
-      display: block;
-      margin-top: 8px;
+    .hero-stat {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 20px 0 0;
       color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.5;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .hero-stat:not(:last-child)::after {
+      content: "";
+      display: inline-block;
+      width: 1px;
+      height: 16px;
+      background: var(--border);
+      margin-left: 20px;
+    }
+
+    .hero-stat strong {
+      color: var(--primary);
+      font-size: 1.05rem;
+      font-weight: 700;
     }
 
     .hero-visual,
@@ -612,9 +615,15 @@
       background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(251, 253, 251, 0.92));
     }
 
+    /* Capabilities tinted section */
+    #capabilities {
+      background: var(--surface-strong);
+    }
+
     .quote-card blockquote {
-      font-size: clamp(2rem, 5vw, 3.4rem);
-      max-width: 14ch;
+      font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+      max-width: 16ch;
+      line-height: 1.15;
     }
 
     .quote-card p {
@@ -693,40 +702,60 @@
       line-height: 1.7;
     }
 
-    .founder-copy h2,
     .contact-card h2 {
       font-size: clamp(2.2rem, 5vw, 3.8rem);
       margin-top: 16px;
       max-width: 10ch;
     }
 
-    .founder-signature {
+    /* ── Founder Section ── */
+    .founder-copy h2 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      margin-top: 16px;
+      max-width: 10ch;
+    }
+
+    .founder-pull-quote {
+      margin: 20px 0 0;
+      font-family: "Fraunces", serif;
+      font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+      font-weight: 500;
+      line-height: 1.25;
+      letter-spacing: -0.04em;
+      color: var(--text);
+      max-width: 20ch;
+    }
+
+    .founder-sub {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.9;
+    }
+
+    .founder-sig {
       margin-top: 28px;
       display: flex;
-      align-items: center;
-      gap: 14px;
+      flex-direction: column;
+      gap: 4px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
     }
 
-    .avatar {
-      width: 56px;
-      height: 56px;
-      border-radius: 18px;
-      background: linear-gradient(145deg, rgba(26, 127, 90, 0.14), rgba(212, 175, 55, 0.12));
-      border: 1px solid rgba(26, 127, 90, 0.16);
-      display: grid;
-      place-items: center;
-      color: var(--primary);
-      font-weight: 800;
-    }
-
-    .signature-text strong {
-      display: block;
+    .founder-sig-name {
+      font-family: "Fraunces", serif;
       font-size: 1rem;
+      font-weight: 500;
+      font-style: italic;
+      color: var(--muted);
+      letter-spacing: 0.01em;
     }
 
-    .signature-text span {
+    .founder-sig-role {
+      font-size: 0.82rem;
+      font-weight: 600;
       color: var(--soft);
-      font-size: 0.92rem;
+      letter-spacing: 0.06em;
     }
 
     .contact-card {
@@ -778,20 +807,68 @@
     }
 
     .footer {
-      padding: 32px 0 48px;
+      padding: 40px 0 48px;
       border-top: 1px solid rgba(15, 23, 42, 0.06);
     }
 
     .footer-inner {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      color: var(--muted);
+      gap: 24px;
     }
 
-    .footer-inner strong {
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-brand strong {
+      display: block;
       color: var(--text);
       font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .footer-brand span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 2px;
+    }
+
+    .footer-nav a {
+      padding: 6px 12px;
+      border-radius: 10px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: color 160ms ease, background-color 160ms ease;
+    }
+
+    .footer-nav a:hover {
+      color: var(--text);
+      background: rgba(15, 23, 42, 0.04);
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(15, 23, 42, 0.05);
+      color: var(--soft);
+      font-size: 0.82rem;
     }
 
     .reveal {
@@ -902,21 +979,21 @@
           </span>
           <span class="brand-label">
             <strong>Farmers Cafe</strong>
-            <span>Building Intelligence for Agriculture</span>
+            <span>Building AI for Agriculture</span>
           </span>
         </a>
 
         <nav class="nav-links" id="site-menu">
-          <a href="#vision">Vision</a>
+          <a href="#farmergpt">FarmerGPT</a>
           <a href="#capabilities">Capabilities</a>
           <a href="#why">Why We Exist</a>
           <a href="#roadmap">Roadmap</a>
-          <a href="#founder">Founder</a>
+          <a href="#roots">Roots</a>
           <a href="#contact">Contact</a>
         </nav>
 
         <div class="nav-actions">
-          <a class="button button-secondary nav-cta" href="#contact">Coming Soon</a>
+          <a class="button button-primary nav-cta" href="#farmergpt">Try FarmerGPT</a>
           <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation menu">
             <span></span>
           </button>
@@ -928,25 +1005,25 @@
       <section class="hero" id="top">
         <div class="container hero-grid">
           <div class="hero-copy reveal">
-            <span class="eyebrow">AI-Native Agriculture Platform</span>
-            <h1>The Future of Farming <span class="headline-accent">is Intelligent.</span></h1>
-            <p>Farmers Cafe is building an AI-native platform that helps farmers make smarter decisions through artificial intelligence, weather intelligence, crop diagnostics and market insights.</p>
+            <span class="eyebrow">Farmers Cafe &mdash; Building AI for Agriculture</span>
+            <h1>Meet FarmerGPT. <span class="headline-accent">Your AI Farming Companion.</span></h1>
+            <p>The AI farming companion that helps every farmer ask smarter questions, make better decisions and act with confidence &mdash; across crops, weather, markets and operations.</p>
             <div class="hero-actions">
-              <a class="button button-primary" href="#vision">Explore Vision</a>
-              <a class="button button-secondary" href="#contact">Coming Soon</a>
+              <a class="button button-primary" href="#farmergpt">Explore FarmerGPT</a>
+              <a class="button button-secondary" href="#contact">Get Early Access</a>
             </div>
             <div class="hero-meta" aria-label="Platform highlights">
-              <div class="metric">
-                <strong data-counter="1">0</strong>
-                <span>AI-native platform built for agriculture from day one.</span>
+              <div class="hero-stat">
+                <strong>Beta</strong>
+                <span>Live in early access</span>
               </div>
-              <div class="metric">
-                <strong data-counter="7">0</strong>
-                <span>Core capabilities designed to improve farm decision making.</span>
+              <div class="hero-stat">
+                <strong>4</strong>
+                <span>Intelligence areas</span>
               </div>
-              <div class="metric">
-                <strong data-counter="6">0</strong>
-                <span>Stakeholder groups aligned around one intelligence layer.</span>
+              <div class="hero-stat">
+                <strong>#1</strong>
+                <span>First Farmers Cafe product</span>
               </div>
             </div>
           </div>
@@ -996,21 +1073,22 @@
               </g>
             </svg>
             <div class="hero-surface">
-              <span class="glass-chip">Weather Intelligence</span>
-              <span class="glass-chip">Crop Diagnostics</span>
-              <span class="glass-chip">Market Signals</span>
+              <span class="glass-chip">Ask. Understand. Decide. Act.</span>
+              <span class="glass-chip">Farm Memory &amp; Context</span>
+              <span class="glass-chip">Now in Beta</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="vision">
+      <section id="farmergpt">
         <div class="container vision-grid">
           <div class="vision-copy reveal">
-            <span class="eyebrow">Vision</span>
-            <h2>An AI Assistant for Every Farm</h2>
-            <p>Radhe Radhe || Every farmer should have access to world-class intelligence and expertise, regardless of location. Farmers Cafe is building a platform where decisions can be shaped by real-time signals, trusted guidance and practical recommendations designed for the realities of agriculture.</p>
-            <p>The ambition is simple: make intelligence more accessible, more actionable and more equitable across the agricultural ecosystem.</p>
+            <span class="eyebrow">Farmers Cafe &mdash; First Product</span>
+            <h2>Introducing FarmerGPT</h2>
+            <p>FarmerGPT is an AI-powered farming companion built to help farmers make smarter decisions across every aspect of their farm &mdash; from crop health and weather to machinery and market timing.</p>
+            <p>Unlike generic AI tools, FarmerGPT is built with farm memory and agricultural context. It understands your crop cycle, remembers your farm conditions and gives you personalised, practical recommendations &mdash; not generic answers.</p>
+            <p>From answering everyday farming questions to providing guided recommendations, FarmerGPT combines agricultural intelligence, conversational AI and contextual understanding to support farmers throughout the entire farming cycle.</p>
           </div>
           <div class="vision-visual reveal" aria-hidden="true">
             <svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg">
@@ -1047,9 +1125,9 @@
       <section id="capabilities">
         <div class="container">
           <div class="section-heading reveal">
-            <span class="eyebrow">Capabilities</span>
-            <h2>Designed for better agricultural decisions.</h2>
-            <p>Each capability is conceived as part of one coherent intelligence platform, not a collection of disconnected tools.</p>
+            <span class="eyebrow">FarmerGPT Capabilities</span>
+            <h2>Everything a farmer needs to decide with confidence.</h2>
+            <p>FarmerGPT brings together multiple intelligence layers into a single conversational AI app &mdash; with more Farmers Cafe products planned to follow.</p>
           </div>
           <div class="capabilities-grid">
             <article class="capability-card reveal">
@@ -1061,8 +1139,8 @@
                   <circle cx="17" cy="14" r="1.5" fill="currentColor"/>
                 </svg>
               </div>
-              <h3>FarmerGPT</h3>
-              <p>A conversational intelligence layer built to make agricultural expertise more accessible, contextual and immediate.</p>
+              <h3>Conversational AI</h3>
+              <p>Ask FarmerGPT anything about your farm &mdash; in plain language. Get clear, contextual answers powered by agricultural intelligence and your own farm history.</p>
             </article>
             <article class="capability-card reveal">
               <div class="icon-wrap" aria-hidden="true">
@@ -1074,7 +1152,7 @@
                 </svg>
               </div>
               <h3>AI Crop Advisory</h3>
-              <p>Guidance designed to support everyday crop decisions with greater confidence and faster interpretation.</p>
+              <p>Get personalised crop guidance based on your specific conditions &mdash; from sowing to harvest, with confidence at every stage.</p>
             </article>
             <article class="capability-card reveal">
               <div class="icon-wrap" aria-hidden="true">
@@ -1083,8 +1161,8 @@
                   <path d="M8.5 16.5L16 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
                 </svg>
               </div>
-              <h3>Disease Detection</h3>
-              <p>Early pattern recognition intended to help identify potential crop issues before they become larger risks.</p>
+              <h3>Crop Health &amp; Disease Detection</h3>
+              <p>Identify potential crop issues early. FarmerGPT helps you spot disease patterns and get recommended actions before problems escalate.</p>
             </article>
             <article class="capability-card reveal">
               <div class="icon-wrap" aria-hidden="true">
@@ -1095,7 +1173,7 @@
                 </svg>
               </div>
               <h3>Weather Intelligence</h3>
-              <p>Localized forecasting context that helps decision makers adapt with greater resilience and timing.</p>
+              <p>Localised weather context built into every conversation &mdash; so your decisions about spraying, irrigation and harvesting are always weather-aware.</p>
             </article>
             <article class="capability-card reveal">
               <div class="icon-wrap" aria-hidden="true">
@@ -1106,7 +1184,7 @@
                 </svg>
               </div>
               <h3>Market Intelligence</h3>
-              <p>Sharper visibility into market dynamics to help improve timing, planning and commercial confidence.</p>
+              <p>Understand price trends, mandi signals and market timing to sell smarter and improve your farm's commercial outcomes.</p>
             </article>
             <article class="capability-card reveal">
               <div class="icon-wrap" aria-hidden="true">
@@ -1117,8 +1195,8 @@
                   <circle cx="16" cy="14" r="1.5" fill="currentColor"/>
                 </svg>
               </div>
-              <h3>Satellite Insights</h3>
-              <p>Remote intelligence that extends visibility and helps bring a broader operating picture to the farm.</p>
+              <h3>Farm Memory &amp; Context</h3>
+              <p>FarmerGPT remembers your farm &mdash; your crops, soil, history and preferences &mdash; so every recommendation gets more accurate over time.</p>
             </article>
             <article class="capability-card reveal">
               <div class="icon-wrap" aria-hidden="true">
@@ -1128,8 +1206,8 @@
                   <path d="M15 18H19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
                 </svg>
               </div>
-              <h3>Precision Agriculture</h3>
-              <p>An intelligent operating foundation for more precise planning, intervention and resource allocation.</p>
+              <h3>Machinery &amp; Operations</h3>
+              <p>Get guidance on machinery use, input planning, irrigation scheduling and day-to-day farm operations &mdash; all from one AI companion.</p>
             </article>
           </div>
         </div>
@@ -1139,8 +1217,8 @@
         <div class="container story-grid">
           <div class="quote-card reveal">
             <span class="eyebrow">Why We Exist</span>
-            <blockquote>Technology should not be a privilege available only to large agricultural enterprises. Every farmer deserves access to intelligence.</blockquote>
-            <p>Farmers Cafe exists to make advanced decision support feel trusted, human and practical at the point where it matters most: on the ground, in the field and in real operating conditions.</p>
+            <blockquote>Every farmer deserves an intelligent companion &mdash; not just the large ones.</blockquote>
+            <p>Farmers Cafe was built on a simple belief: access to great intelligence should not depend on the size of your farm. FarmerGPT puts a world-class AI companion in the hands of every farmer &mdash; practical, personal and built for real field conditions.</p>
           </div>
           <div class="story-visual reveal" aria-hidden="true">
             <svg viewBox="0 0 520 360" xmlns="http://www.w3.org/2000/svg">
@@ -1166,70 +1244,68 @@
         <div class="container">
           <div class="section-heading reveal">
             <span class="eyebrow">Roadmap</span>
-            <h2>A focused path from launch to platform.</h2>
-            <p>The roadmap is structured to introduce intelligence in layers, building trust and capability with each phase.</p>
+            <h2>FarmerGPT first. A platform to follow.</h2>
+            <p>We are starting with FarmerGPT and building Farmers Cafe as a portfolio of AI products for agriculture &mdash; each one focused, purposeful and deeply useful.</p>
           </div>
           <div class="roadmap">
             <article class="roadmap-item reveal">
-              <span class="phase">2026</span>
-              <h3>Farmers Cafe Launch</h3>
-              <p>The foundation for an AI-native agriculture platform goes live.</p>
+              <span class="phase">Now &mdash; Beta</span>
+              <h3>FarmerGPT Early Access</h3>
+              <p>FarmerGPT is live in beta. Farmers can sign up, ask questions and get personalised guidance across crops, weather, machinery and market decisions.</p>
             </article>
             <article class="roadmap-item reveal">
               <span class="phase">Phase 1</span>
-              <h3>FarmerGPT</h3>
-              <p>Conversational intelligence for everyday agricultural guidance.</p>
+              <h3>FarmerGPT Full Launch</h3>
+              <p>Public launch of FarmerGPT with farm memory, crop cycle tracking and deeper personalisation for every farmer.</p>
             </article>
             <article class="roadmap-item reveal">
               <span class="phase">Phase 2</span>
-              <h3>Disease Detection</h3>
-              <p>Early detection support to improve intervention speed and confidence.</p>
+              <h3>Crop Health &amp; Disease Detection</h3>
+              <p>Image-based crop diagnostics integrated into FarmerGPT &mdash; identify disease, pests and nutrient deficiencies instantly.</p>
             </article>
             <article class="roadmap-item reveal">
               <span class="phase">Phase 3</span>
-              <h3>Weather Intelligence</h3>
-              <p>More adaptive decision support through localized weather context.</p>
+              <h3>Localised Weather Intelligence</h3>
+              <p>Deep weather integration that makes every FarmerGPT recommendation weather-aware and timing-sensitive.</p>
             </article>
             <article class="roadmap-item reveal">
               <span class="phase">Phase 4</span>
-              <h3>Market Intelligence</h3>
-              <p>Commercial visibility to strengthen planning and market participation.</p>
+              <h3>Market &amp; Mandi Intelligence</h3>
+              <p>Real-time price signals and market context to help farmers sell at the right time and through the right channels.</p>
             </article>
             <article class="roadmap-item reveal">
-              <span class="phase">Phase 5</span>
-              <h3>Precision Agriculture Platform</h3>
-              <p>A broader system for intelligent farm operations and long-term scale.</p>
+              <span class="phase">Beyond</span>
+              <h3>Farmers Cafe Platform</h3>
+              <p>Farmers Cafe expands beyond FarmerGPT &mdash; building a portfolio of focused AI products across the entire agricultural ecosystem.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="founder">
+      <section id="roots">
         <div class="container founder-grid">
-          <div class="founder-copy reveal">
-            <span class="eyebrow">Founder</span>
-            <h2>Atul Choudhary</h2>
-            <p>Growing access to intelligence has transformed every industry. Agriculture should be no exception. Farmers Cafe was founded with the belief that every farmer deserves access to powerful technology and trusted guidance.</p>
-            <div class="founder-signature">
-              <div class="avatar" aria-hidden="true">AC</div>
-              <div class="signature-text">
-                <strong>Atul Choudhary</strong>
-                <span>Founder, Farmers Cafe</span>
-              </div>
+          <div class="vision-copy reveal">
+            <span class="eyebrow">Roots</span>
+            <p class="founder-pull-quote">Born into the soil. Building for those who feed the world.</p>
+            <p class="founder-sub">Atul grew up in a traditional Indian farming family &mdash; farming is not a career choice, it is his inheritance. Farmers Cafe exists because he lived the problem firsthand.</p>
+            <div class="founder-sig">
+              <span class="founder-sig-name">atul choudhary</span>
+              <span class="founder-sig-role">Founder &mdash; Farmers Cafe</span>
             </div>
           </div>
-          <div class="story-visual reveal" aria-hidden="true">
-            <svg viewBox="0 0 520 360" xmlns="http://www.w3.org/2000/svg">
-              <rect x="44" y="46" width="432" height="268" rx="30" fill="#FFFFFF" fill-opacity="0.9" stroke="#1A7F5A" stroke-opacity="0.12"/>
-              <circle cx="178" cy="176" r="72" fill="#F3F8F4" stroke="#1A7F5A" stroke-opacity="0.12"/>
-              <path d="M146 188C154 162 175 144 201 140C225 137 248 149 262 170" stroke="#1A7F5A" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-              <path d="M154 214C173 197 192 188 213 188C235 188 255 197 270 210" stroke="#D4AF37" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-              <rect x="300" y="108" width="108" height="34" rx="17" fill="#F9FCF9" stroke="#1A7F5A" stroke-opacity="0.12"/>
-              <rect x="300" y="160" width="132" height="34" rx="17" fill="#F9FCF9" stroke="#1A7F5A" stroke-opacity="0.12"/>
-              <rect x="300" y="212" width="116" height="34" rx="17" fill="#F9FCF9" stroke="#1A7F5A" stroke-opacity="0.12"/>
-              <path d="M272 178H300" stroke="#0F172A" stroke-opacity="0.08" stroke-width="1.6"/>
-              <path d="M250 140H300" stroke="#0F172A" stroke-opacity="0.08" stroke-width="1.6"/>
-              <path d="M266 214H300" stroke="#0F172A" stroke-opacity="0.08" stroke-width="1.6"/>
+          <div class="vision-visual reveal" aria-hidden="true">
+            <svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg">
+              <rect x="30" y="36" width="500" height="308" rx="30" fill="#FFFFFF" fill-opacity="0.86" stroke="#1A7F5A" stroke-opacity="0.1"/>
+              <circle cx="280" cy="160" r="80" fill="#F3F8F4" stroke="#1A7F5A" stroke-opacity="0.1"/>
+              <path d="M200 240C230 200 255 182 280 182C305 182 330 200 360 240" stroke="#1A7F5A" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+              <path d="M215 268C243 242 261 232 280 232C299 232 317 242 345 268" stroke="#D4AF37" stroke-width="2.2" fill="none" stroke-linecap="round" opacity="0.8"/>
+              <path d="M262 148C268 132 280 124 295 128C310 132 318 148 312 162C306 175 293 182 279 180C264 178 256 165 262 148Z" stroke="#1A7F5A" stroke-width="2.2" fill="none"/>
+              <path d="M280 120V96" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round"/>
+              <path d="M320 160H344" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round"/>
+              <path d="M280 200V224" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round"/>
+              <path d="M240 160H216" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="148" cy="120" r="10" fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-opacity="0.5"/>
+              <circle cx="412" cy="108" r="8" fill="#1A7F5A" fill-opacity="0.2" stroke="#1A7F5A" stroke-opacity="0.4"/>
             </svg>
           </div>
         </div>
@@ -1239,8 +1315,8 @@
         <div class="container contact-grid">
           <div class="contact-card reveal">
             <span class="eyebrow">Contact</span>
-            <h2>Start the conversation.</h2>
-            <p>For partnerships, strategic conversations and early interest, Farmers Cafe is preparing for launch with a clear focus on the future of agricultural intelligence.</p>
+            <h2>Get early access to FarmerGPT.</h2>
+            <p>Farmers Cafe is onboarding early users to FarmerGPT. If you are a farmer, agri-business, investor or partner &mdash; we would love to hear from you.</p>
             <div class="contact-list">
               <div class="contact-item">
                 <strong>Email</strong>
@@ -1275,9 +1351,24 @@
 
     <footer class="footer">
       <div class="container footer-inner">
-        <strong>Farmers Cafe</strong>
-        <span>Building Intelligence for Agriculture</span>
-        <span>© 2026 Farmers Cafe</span>
+        <div class="footer-top">
+          <div class="footer-brand">
+            <strong>Farmers Cafe</strong>
+            <span>Building AI for Agriculture</span>
+          </div>
+          <nav class="footer-nav" aria-label="Footer navigation">
+            <a href="#farmergpt">FarmerGPT</a>
+            <a href="#capabilities">Capabilities</a>
+            <a href="#why">Why We Exist</a>
+            <a href="#roadmap">Roadmap</a>
+            <a href="#roots">Roots</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <span>&copy; 2026 Farmers Cafe. All rights reserved.</span>
+          <a href="mailto:contact@farmerscafe.co.in" style="color: var(--muted); font-weight: 500;">contact@farmerscafe.co.in</a>
+        </div>
       </div>
     </footer>
   </div>
@@ -1293,7 +1384,7 @@
         "@type": "Person",
         "name": "Atul Choudhary"
       },
-      "description": "Farmers Cafe is building the AI-native platform for agriculture and empowering farmers with intelligent decision making.",
+      "description": "Farmers Cafe is an AI company building products for agriculture. FarmerGPT, our first product, is an AI-powered farming companion that helps farmers ask, understand, decide and act.",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "India"
