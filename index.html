@@ -353,6 +353,25 @@
       color: var(--muted);
     }
 
+    .hero-subhead {
+      margin: 22px 0 0 !important;
+      font-size: clamp(1.12rem, 2.2vw, 1.35rem) !important;
+      font-weight: 600;
+      color: var(--text) !important;
+      letter-spacing: -0.02em;
+      line-height: 1.4 !important;
+    }
+
+    .hero-subhead strong {
+      color: var(--primary);
+    }
+
+    .hero-copy p.hero-desc {
+      margin: 12px 0 0;
+      font-size: clamp(0.98rem, 1.8vw, 1.12rem);
+      line-height: 1.7;
+    }
+
     .hero-actions {
       margin-top: 32px;
       display: flex;
@@ -1175,9 +1194,10 @@
       <section class="hero" id="top">
         <div class="container hero-grid">
           <div class="hero-copy reveal">
-            <span class="eyebrow">Farmers Cafe &mdash; Agricultural Intelligence</span>
-            <h1>Meet FarmerGPT. <span class="headline-accent">The intelligence platform built for your farm.</span></h1>
-            <p>FarmerGPT is an AI-powered agricultural intelligence platform that understands your farm, remembers what matters, and helps you make better decisions across crops, weather, machinery, markets, and farm operations.</p>
+            <span class="eyebrow">Farmers Cafe</span>
+            <h1>The Future of Farming <span class="headline-accent">is Intelligent.</span></h1>
+            <p class="hero-subhead"><strong>Meet FarmerGPT.</strong> The intelligence platform built for your farm.</p>
+            <p class="hero-desc">An AI-powered agricultural intelligence platform that understands your farm, remembers what matters, and helps you make better decisions across crops, weather, machinery, markets, and farm operations.</p>
             <div class="hero-actions">
               <a class="button button-primary" href="#contact">Get Early Access</a>
               <a class="button button-secondary" href="#questions">What It Helps With</a>
