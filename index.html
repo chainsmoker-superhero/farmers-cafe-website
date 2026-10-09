@@ -18,18 +18,18 @@
   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Farmers Cafe | Building AI for Agriculture</title>
-  <meta name="description" content="Farmers Cafe is an AI company building products for agriculture. FarmerGPT — our first product — is an AI farming companion that helps farmers ask, understand, decide and act.">
-  <meta name="keywords" content="Farmers Cafe, FarmerGPT, agriculture AI, AI farming app, farmer AI assistant, crop advisory, weather intelligence, market intelligence, farm operations, India">
+  <title>FarmerGPT by Farmers Cafe | AI Agricultural Intelligence Platform</title>
+  <meta name="description" content="FarmerGPT is an AI-powered agricultural intelligence platform that understands your farm, remembers what matters, and helps you make better decisions across crops, weather, machinery, and markets.">
+  <meta name="keywords" content="FarmerGPT, Farmers Cafe, agricultural intelligence platform, AI farming app, farm memory AI, tractor equipment recommendations, crop disease detection, mandi price intelligence, weather farming advice India">
   <meta name="author" content="Farmers Cafe">
   <meta name="theme-color" content="#FFFFFF">
-  <meta property="og:title" content="Farmers Cafe | Introducing FarmerGPT">
-  <meta property="og:description" content="Farmers Cafe is building AI products for agriculture. FarmerGPT is the AI farming companion that helps every farmer ask smarter questions and make better decisions.">
+  <meta property="og:title" content="FarmerGPT — Agricultural Intelligence Platform">
+  <meta property="og:description" content="Stateful AI built for the field. Retains farm memory and guides high-stakes decisions across crops, weather, equipment, and market timing.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.farmerscafe.co.in/">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Farmers Cafe | Introducing FarmerGPT">
-  <meta name="twitter:description" content="FarmerGPT is the AI farming companion by Farmers Cafe — ask, understand, decide, act.">
+  <meta name="twitter:title" content="FarmerGPT | AI Agricultural Intelligence Platform">
+  <meta name="twitter:description" content="Built by Farmers Cafe. Understands your farm, remembers what matters, and delivers practical operational guidance.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -357,7 +357,15 @@
       margin-top: 32px;
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero-actions .button-secondary {
+      min-height: 48px;
+      padding: 0 18px;
+      font-size: 0.92rem;
+      font-weight: 600;
     }
 
     .button {
@@ -611,13 +619,167 @@
       font-size: 0.98rem;
     }
 
-    .quote-card {
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(251, 253, 251, 0.92));
+    /* Questions section */
+    .questions-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .question-card {
+      position: relative;
+      padding: 24px 22px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+    }
+
+    .question-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(26, 127, 90, 0.25);
+      box-shadow: 0 20px 36px rgba(15, 23, 42, 0.08);
+    }
+
+    .question-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      width: fit-content;
+      border-radius: 999px;
+      background: rgba(26, 127, 90, 0.07);
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .question-text {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.45;
+      letter-spacing: -0.01em;
+    }
+
+    .connecting-banner {
+      margin-top: 28px;
+      padding: 28px 32px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, rgba(26, 127, 90, 0.07), rgba(212, 175, 55, 0.07));
+      border: 1px solid rgba(26, 127, 90, 0.16);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .connecting-banner strong {
+      display: block;
+      color: var(--text);
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .connecting-banner p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.75;
+    }
+
+    /* Memory Foundation styles */
+    .memory-list {
+      margin-top: 24px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .memory-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 18px;
+      border-radius: 16px;
+      background: rgba(26, 127, 90, 0.04);
+      border: 1px solid rgba(26, 127, 90, 0.08);
+    }
+
+    .memory-item-icon {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: rgba(26, 127, 90, 0.12);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      margin-top: 2px;
+    }
+
+    .memory-item-text strong {
+      display: block;
+      font-size: 0.96rem;
+      color: var(--text);
+    }
+
+    .memory-item-text span {
+      display: block;
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* Equipment section */
+    #equipment {
+      background: var(--surface-strong);
+    }
+
+    .equipment-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .equipment-card {
+      position: relative;
+      padding: 32px 28px;
+      border-radius: var(--radius-lg);
+      background: #ffffff;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+    }
+
+    .equipment-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(26, 127, 90, 0.22);
+      box-shadow: 0 24px 44px rgba(15, 23, 42, 0.08);
+    }
+
+    .equipment-card h3 {
+      margin: 0;
+      font-size: 1.3rem;
+      letter-spacing: -0.03em;
+    }
+
+    .equipment-card p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 0.98rem;
     }
 
     /* Capabilities tinted section */
     #capabilities {
-      background: var(--surface-strong);
+      background: #ffffff;
+    }
+
+    .quote-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(251, 253, 251, 0.92));
     }
 
     .quote-card blockquote {
@@ -899,6 +1061,14 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
+      .questions-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .equipment-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
       .vision-grid,
       .story-grid,
       .founder-grid,
@@ -937,12 +1107,12 @@
         grid-template-columns: minmax(0, 1.05fr) minmax(480px, 0.95fr);
       }
 
-      .capabilities-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+      .questions-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
       }
 
-      .capability-card:last-child {
-        grid-column: 2 / span 1;
+      .capabilities-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
     }
 
@@ -993,7 +1163,7 @@
         </nav>
 
         <div class="nav-actions">
-          <a class="button button-primary nav-cta" href="#farmergpt">Try FarmerGPT</a>
+          <a class="button button-primary nav-cta" href="#contact">Get Early Access</a>
           <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation menu">
             <span></span>
           </button>
@@ -1005,25 +1175,27 @@
       <section class="hero" id="top">
         <div class="container hero-grid">
           <div class="hero-copy reveal">
-            <span class="eyebrow">Farmers Cafe &mdash; Building AI for Agriculture</span>
-            <h1>Meet FarmerGPT. <span class="headline-accent">Your AI Farming Companion.</span></h1>
-            <p>The AI farming companion that helps every farmer ask smarter questions, make better decisions and act with confidence &mdash; across crops, weather, markets and operations.</p>
+            <span class="eyebrow">Farmers Cafe &mdash; Agricultural Intelligence</span>
+            <h1>Meet FarmerGPT. <span class="headline-accent">The intelligence platform built for your farm.</span></h1>
+            <p>FarmerGPT is an AI-powered agricultural intelligence platform that understands your farm, remembers what matters, and helps you make better decisions across crops, weather, machinery, markets, and farm operations.</p>
             <div class="hero-actions">
-              <a class="button button-primary" href="#farmergpt">Explore FarmerGPT</a>
-              <a class="button button-secondary" href="#contact">Get Early Access</a>
+              <a class="button button-primary" href="#contact">Get Early Access</a>
+              <a class="button button-secondary" href="#questions">What It Helps With</a>
+              <a class="button button-secondary" href="#farmergpt">Farm Memory</a>
+              <a class="button button-secondary" href="#equipment">Equipment</a>
             </div>
             <div class="hero-meta" aria-label="Platform highlights">
               <div class="hero-stat">
-                <strong>Beta</strong>
-                <span>Live in early access</span>
+                <strong>Farm Memory</strong>
+                <span>Remembers your land &amp; crops</span>
               </div>
               <div class="hero-stat">
-                <strong>4</strong>
-                <span>Intelligence areas</span>
+                <strong>Equipment</strong>
+                <span>Machinery advice for your acres</span>
               </div>
               <div class="hero-stat">
-                <strong>#1</strong>
-                <span>First Farmers Cafe product</span>
+                <strong>Multilingual</strong>
+                <span>Speak naturally in your language</span>
               </div>
             </div>
           </div>
@@ -1073,10 +1245,58 @@
               </g>
             </svg>
             <div class="hero-surface">
-              <span class="glass-chip">Ask. Understand. Decide. Act.</span>
+              <span class="glass-chip">Understands Your Land</span>
               <span class="glass-chip">Farm Memory &amp; Context</span>
-              <span class="glass-chip">Now in Beta</span>
+              <span class="glass-chip">Live in Early Access</span>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="questions">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="eyebrow">Practical Field Guidance</span>
+            <h2>What can FarmerGPT help me with?</h2>
+            <p>Farming changes with every sunrise. Ask FarmerGPT in plain words&mdash;by typing or speaking&mdash;and get clear answers grounded in your farm's reality.</p>
+          </div>
+          <div class="questions-grid">
+            <article class="question-card reveal">
+              <span class="question-tag">Crop Planning</span>
+              <p class="question-text">&ldquo;What should I grow this season for better returns on my soil?&rdquo;</p>
+            </article>
+            <article class="question-card reveal">
+              <span class="question-tag">Crop Health</span>
+              <p class="question-text">&ldquo;Why are my leaves turning yellow with brown spots?&rdquo;</p>
+            </article>
+            <article class="question-card reveal">
+              <span class="question-tag">Weather Timing</span>
+              <p class="question-text">&ldquo;Can I spray pesticide tomorrow, or will it wash away?&rdquo;</p>
+            </article>
+            <article class="question-card reveal">
+              <span class="question-tag">Irrigation &amp; Spraying</span>
+              <p class="question-text">&ldquo;Will rain this week affect my irrigation schedule?&rdquo;</p>
+            </article>
+            <article class="question-card reveal">
+              <span class="question-tag">Machinery Sizing</span>
+              <p class="question-text">&ldquo;Should I buy or rent a 45 HP tractor for my 12 acres?&rdquo;</p>
+            </article>
+            <article class="question-card reveal">
+              <span class="question-tag">Equipment Decisions</span>
+              <p class="question-text">&ldquo;Which rotavator and implement fits best with my tractor?&rdquo;</p>
+            </article>
+            <article class="question-card reveal">
+              <span class="question-tag">Market &amp; Mandi</span>
+              <p class="question-text">&ldquo;Is this a good mandi price, or should I hold for next week?&rdquo;</p>
+            </article>
+            <article class="question-card reveal">
+              <span class="question-tag">Daily Operations</span>
+              <p class="question-text">&ldquo;What should I focus on doing across my fields today?&rdquo;</p>
+            </article>
+          </div>
+          <div class="connecting-banner reveal">
+            <strong>How does FarmerGPT know the right answer?</strong>
+            <p>Unlike generic chatbots that give textbook advice, FarmerGPT answers these questions using <strong>farm memory, weather intelligence, crop intelligence, equipment intelligence, and market intelligence</strong>.</p>
           </div>
         </div>
       </section>
@@ -1084,11 +1304,41 @@
       <section id="farmergpt">
         <div class="container vision-grid">
           <div class="vision-copy reveal">
-            <span class="eyebrow">Farmers Cafe &mdash; First Product</span>
-            <h2>Introducing FarmerGPT</h2>
-            <p>FarmerGPT is an AI-powered farming companion built to help farmers make smarter decisions across every aspect of their farm &mdash; from crop health and weather to machinery and market timing.</p>
-            <p>Unlike generic AI tools, FarmerGPT is built with farm memory and agricultural context. It understands your crop cycle, remembers your farm conditions and gives you personalised, practical recommendations &mdash; not generic answers.</p>
-            <p>From answering everyday farming questions to providing guided recommendations, FarmerGPT combines agricultural intelligence, conversational AI and contextual understanding to support farmers throughout the entire farming cycle.</p>
+            <span class="eyebrow">The Platform Foundation</span>
+            <h2>An AI that actually remembers your farm.</h2>
+            <p>FarmerGPT is an AI-powered agricultural intelligence platform that understands your farm, remembers what matters, and helps you make better decisions across crops, weather, machinery, markets, and farm operations.</p>
+            <p>Most AI tools treat every conversation like you are a stranger. They don't know your soil, your crops, or what tractor is parked in your shed. FarmerGPT builds a persistent understanding of your land and remembers:</p>
+            <div class="memory-list">
+              <div class="memory-item">
+                <div class="memory-item-icon">🌱</div>
+                <div class="memory-item-text">
+                  <strong>Your Crops &amp; Land</strong>
+                  <span>Acreage, soil condition, crop varieties, and planting dates</span>
+                </div>
+              </div>
+              <div class="memory-item">
+                <div class="memory-item-icon">🚜</div>
+                <div class="memory-item-text">
+                  <strong>Your Equipment Fleet</strong>
+                  <span>Owned machinery, tractor models, attachments, and capacity</span>
+                </div>
+              </div>
+              <div class="memory-item">
+                <div class="memory-item-icon">📊</div>
+                <div class="memory-item-text">
+                  <strong>Farm Conditions &amp; History</strong>
+                  <span>Past season yields, fertilizer applications, and pest patterns</span>
+                </div>
+              </div>
+              <div class="memory-item">
+                <div class="memory-item-icon">💬</div>
+                <div class="memory-item-text">
+                  <strong>Past Conversations &amp; Preferences</strong>
+                  <span>Every problem discussed and operational decision made</span>
+                </div>
+              </div>
+            </div>
+            <p style="margin-top: 20px;">Every time you speak with FarmerGPT, recommendations become more accurate and personalized&mdash;because it actually knows your farm.</p>
           </div>
           <div class="vision-visual reveal" aria-hidden="true">
             <svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg">
@@ -1122,26 +1372,68 @@
         </div>
       </section>
 
+      <section id="equipment">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="eyebrow">Dedicated Platform Capability</span>
+            <h2>Smart equipment decisions. Before you spend a single rupee.</h2>
+            <p>Buying or renting farm machinery is one of your biggest financial commitments. FarmerGPT helps you choose the right equipment, calculate real costs, and avoid expensive mistakes.</p>
+          </div>
+          <div class="equipment-grid">
+            <article class="equipment-card reveal">
+              <div class="icon-wrap" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="7" cy="17" r="3" stroke="currentColor" stroke-width="1.8"/>
+                  <circle cx="17" cy="15" r="5" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M7 14V9H13L15 12H17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3>Machinery Recommendations for Your Land</h3>
+              <p>Tell FarmerGPT your acreage, soil conditions, and crops. It recommends the right tractor horsepower, implements, and machinery sizes so you never underpower your work or overpay for capacity you don't need.</p>
+            </article>
+
+            <article class="equipment-card reveal">
+              <div class="icon-wrap" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2V22M17 5H9.5C8.11929 5 7 6.11929 7 7.5C7 8.88071 8.11929 10 9.5 10H14.5C15.8807 10 17 11.1193 17 12.5C17 13.8807 15.8807 15 14.5 15H7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>Honest Buy vs. Rent &amp; Affordability</h3>
+              <p>Unsure whether to purchase a machine or hire custom services? FarmerGPT evaluates your seasonal usage hours, fuel burn, maintenance costs, and capital payback to show you what actually makes financial sense.</p>
+            </article>
+
+            <article class="equipment-card reveal">
+              <div class="icon-wrap" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3>Implement Compatibility &amp; Fleet Audit</h3>
+              <p>Prevent mismatched attachments. FarmerGPT knows your tractor model and checks PTO power, hydraulic capacity, and hitch requirements before you invest in a rotavator, seed drill, or harvester.</p>
+            </article>
+
+            <article class="equipment-card reveal">
+              <div class="icon-wrap" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M12 8V12L15 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>Transparent Explanations for Every Choice</h3>
+              <p>No black-box recommendations. FarmerGPT clearly explains <em>why</em> a particular machine fits your farm, showing you the exact practical and financial logic behind every suggestion.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section id="capabilities">
         <div class="container">
           <div class="section-heading reveal">
-            <span class="eyebrow">FarmerGPT Capabilities</span>
-            <h2>Everything a farmer needs to decide with confidence.</h2>
-            <p>FarmerGPT brings together multiple intelligence layers into a single conversational AI app &mdash; with more Farmers Cafe products planned to follow.</p>
+            <span class="eyebrow">Platform Capabilities</span>
+            <h2>Intelligence for every decision on your farm.</h2>
+            <p>FarmerGPT brings together multiple intelligence layers into a single platform&mdash;designed to help you act with confidence from sowing to harvest.</p>
           </div>
           <div class="capabilities-grid">
-            <article class="capability-card reveal">
-              <div class="icon-wrap" aria-hidden="true">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="4" y="5" width="16" height="14" rx="4" stroke="currentColor" stroke-width="1.8"/>
-                  <path d="M8 10H16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                  <path d="M8 14H13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                  <circle cx="17" cy="14" r="1.5" fill="currentColor"/>
-                </svg>
-              </div>
-              <h3>Conversational AI</h3>
-              <p>Ask FarmerGPT anything about your farm &mdash; in plain language. Get clear, contextual answers powered by agricultural intelligence and your own farm history.</p>
-            </article>
             <article class="capability-card reveal">
               <div class="icon-wrap" aria-hidden="true">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1151,9 +1443,10 @@
                   <path d="M12 9V14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
                 </svg>
               </div>
-              <h3>AI Crop Advisory</h3>
-              <p>Get personalised crop guidance based on your specific conditions &mdash; from sowing to harvest, with confidence at every stage.</p>
+              <h3>Crop Intelligence &amp; Field Advisory</h3>
+              <p>Personalized guidance across the entire season&mdash;from seed selection and sowing depth to fertilizer scheduling and harvest readiness.</p>
             </article>
+
             <article class="capability-card reveal">
               <div class="icon-wrap" aria-hidden="true">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1162,8 +1455,9 @@
                 </svg>
               </div>
               <h3>Crop Health &amp; Disease Detection</h3>
-              <p>Identify potential crop issues early. FarmerGPT helps you spot disease patterns and get recommended actions before problems escalate.</p>
+              <p>Catch leaf diseases, fungal infections, and pest damage early. Simply describe plant symptoms or share photos to get rapid identification and safe, actionable remedy steps.</p>
             </article>
+
             <article class="capability-card reveal">
               <div class="icon-wrap" aria-hidden="true">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1172,9 +1466,10 @@
                   <path d="M10 19L12 16L14 19L16 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
-              <h3>Weather Intelligence</h3>
-              <p>Localised weather context built into every conversation &mdash; so your decisions about spraying, irrigation and harvesting are always weather-aware.</p>
+              <h3>Weather Intelligence Built into Every Plan</h3>
+              <p>Weather forecasts that directly inform farm work. Know the exact hours when wind is low enough for spraying, when rain makes irrigation unnecessary, and when to rush harvest before bad weather arrives.</p>
             </article>
+
             <article class="capability-card reveal">
               <div class="icon-wrap" aria-hidden="true">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1183,9 +1478,22 @@
                   <path d="M5 19H19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
                 </svg>
               </div>
-              <h3>Market Intelligence</h3>
-              <p>Understand price trends, mandi signals and market timing to sell smarter and improve your farm's commercial outcomes.</p>
+              <h3>Market &amp; Mandi Intelligence</h3>
+              <p>Real-time price signals from nearby mandis. Understand price movements, seasonal patterns, and demand trends so you can sell your produce with confidence instead of taking distress rates.</p>
             </article>
+
+            <article class="capability-card reveal">
+              <div class="icon-wrap" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 18L9 12L12 15L19 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M5 8H9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M15 18H19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>Farm Operations Guidance</h3>
+              <p>Step-by-step daily task guidance tailored to current weather and crop stages. From labor planning to diesel budgeting, manage farm operations with calm clarity.</p>
+            </article>
+
             <article class="capability-card reveal">
               <div class="icon-wrap" aria-hidden="true">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1195,19 +1503,8 @@
                   <circle cx="16" cy="14" r="1.5" fill="currentColor"/>
                 </svg>
               </div>
-              <h3>Farm Memory &amp; Context</h3>
-              <p>FarmerGPT remembers your farm &mdash; your crops, soil, history and preferences &mdash; so every recommendation gets more accurate over time.</p>
-            </article>
-            <article class="capability-card reveal">
-              <div class="icon-wrap" aria-hidden="true">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 18L9 12L12 15L19 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M5 8H9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                  <path d="M15 18H19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                </svg>
-              </div>
-              <h3>Machinery &amp; Operations</h3>
-              <p>Get guidance on machinery use, input planning, irrigation scheduling and day-to-day farm operations &mdash; all from one AI companion.</p>
+              <h3>Voice &amp; Multilingual Experience</h3>
+              <p>Built for the field where your hands are dirty and you are on the move. Speak naturally in your native language and dialect&mdash;FarmerGPT listens, understands, and replies clearly.</p>
             </article>
           </div>
         </div>
@@ -1217,8 +1514,9 @@
         <div class="container story-grid">
           <div class="quote-card reveal">
             <span class="eyebrow">Why We Exist</span>
-            <blockquote>Every farmer deserves an intelligent companion &mdash; not just the large ones.</blockquote>
-            <p>Farmers Cafe was built on a simple belief: access to great intelligence should not depend on the size of your farm. FarmerGPT puts a world-class AI companion in the hands of every farmer &mdash; practical, personal and built for real field conditions.</p>
+            <blockquote>Every farmer deserves world-class intelligence&mdash;not just industrial corporations.</blockquote>
+            <p>Modern agriculture is full of uncertainty. Weather is unpredictable, input costs fluctuate, and trustworthy advice is hard to find. Large industrial farms have access to expensive software, agronomists, and data teams. Independent farmers are often left to guess on their own.</p>
+            <p>We founded Farmers Cafe to change that. We believe great agricultural intelligence should be accessible to everyone who works the land. FarmerGPT puts an experienced, trusted advisor right in your pocket&mdash;simple to use, respectful of your knowledge, and always ready to help.</p>
           </div>
           <div class="story-visual reveal" aria-hidden="true">
             <svg viewBox="0 0 520 360" xmlns="http://www.w3.org/2000/svg">
@@ -1244,39 +1542,34 @@
         <div class="container">
           <div class="section-heading reveal">
             <span class="eyebrow">Roadmap</span>
-            <h2>FarmerGPT first. A platform to follow.</h2>
-            <p>We are starting with FarmerGPT and building Farmers Cafe as a portfolio of AI products for agriculture &mdash; each one focused, purposeful and deeply useful.</p>
+            <h2>FarmerGPT first. An entire agricultural ecosystem to follow.</h2>
+            <p>We are starting with FarmerGPT and building Farmers Cafe as a portfolio of focused AI products across agriculture&mdash;purposeful, practical, and deeply useful.</p>
           </div>
           <div class="roadmap">
             <article class="roadmap-item reveal">
-              <span class="phase">Now &mdash; Beta</span>
+              <span class="phase">Phase 1 &mdash; Live in Beta</span>
               <h3>FarmerGPT Early Access</h3>
-              <p>FarmerGPT is live in beta. Farmers can sign up, ask questions and get personalised guidance across crops, weather, machinery and market decisions.</p>
-            </article>
-            <article class="roadmap-item reveal">
-              <span class="phase">Phase 1</span>
-              <h3>FarmerGPT Full Launch</h3>
-              <p>Public launch of FarmerGPT with farm memory, crop cycle tracking and deeper personalisation for every farmer.</p>
+              <p>Core conversational intelligence with Farm Memory, personalized farmer profiles, and crop advisory across initial test regions.</p>
             </article>
             <article class="roadmap-item reveal">
               <span class="phase">Phase 2</span>
-              <h3>Crop Health &amp; Disease Detection</h3>
-              <p>Image-based crop diagnostics integrated into FarmerGPT &mdash; identify disease, pests and nutrient deficiencies instantly.</p>
+              <h3>Equipment Intelligence &amp; Visual Diagnostics</h3>
+              <p>Full launch of the machinery advisory suite (buy vs. rent, implement matching) and photo-based leaf disease detection.</p>
             </article>
             <article class="roadmap-item reveal">
               <span class="phase">Phase 3</span>
-              <h3>Localised Weather Intelligence</h3>
-              <p>Deep weather integration that makes every FarmerGPT recommendation weather-aware and timing-sensitive.</p>
+              <h3>Hyper-Local Weather &amp; Spray Planning</h3>
+              <p>Localized weather integration that automatically adjusts irrigation, chemical applications, and harvest alerts.</p>
             </article>
             <article class="roadmap-item reveal">
               <span class="phase">Phase 4</span>
-              <h3>Market &amp; Mandi Intelligence</h3>
-              <p>Real-time price signals and market context to help farmers sell at the right time and through the right channels.</p>
+              <h3>Mandi &amp; Market Intelligence</h3>
+              <p>Live price alerts, transport distance comparisons, and optimal selling windows across agricultural markets.</p>
             </article>
             <article class="roadmap-item reveal">
-              <span class="phase">Beyond</span>
+              <span class="phase">The Future</span>
               <h3>Farmers Cafe Platform</h3>
-              <p>Farmers Cafe expands beyond FarmerGPT &mdash; building a portfolio of focused AI products across the entire agricultural ecosystem.</p>
+              <p>Expanding into specialized intelligence tools for farmer collectives, input partners, and rural financial services.</p>
             </article>
           </div>
         </div>
@@ -1287,10 +1580,11 @@
           <div class="vision-copy reveal">
             <span class="eyebrow">Roots</span>
             <p class="founder-pull-quote">Born into the soil. Building for those who feed the world.</p>
-            <p class="founder-sub">Atul grew up in a traditional Indian farming family &mdash; farming is not a career choice, it is his inheritance. Farmers Cafe exists because he lived the problem firsthand.</p>
+            <p class="founder-sub">Atul Choudhary grew up in a traditional Indian farming family. For him, agriculture isn't a market opportunity&mdash;it is his heritage. He saw firsthand the stress of sudden hail storms, the burden of machinery repair costs, and the frustration of selling crops below fair value.</p>
+            <p class="founder-sub">Farmers Cafe was born from that lived experience: to build technology that genuinely respects the farmer, speaks their language, and solves real problems in the field.</p>
             <div class="founder-sig">
               <span class="founder-sig-name">atul choudhary</span>
-              <span class="founder-sig-role">Founder &mdash; Farmers Cafe</span>
+              <span class="founder-sig-role">Founder, Farmers Cafe &mdash; Born in a farmer family, India</span>
             </div>
           </div>
           <div class="vision-visual reveal" aria-hidden="true">
@@ -1314,9 +1608,9 @@
       <section id="contact">
         <div class="container contact-grid">
           <div class="contact-card reveal">
-            <span class="eyebrow">Contact</span>
-            <h2>Get early access to FarmerGPT.</h2>
-            <p>Farmers Cafe is onboarding early users to FarmerGPT. If you are a farmer, agri-business, investor or partner &mdash; we would love to hear from you.</p>
+            <span class="eyebrow">Get Early Access</span>
+            <h2>Experience FarmerGPT on your farm.</h2>
+            <p>Farmers Cafe is onboarding our first cohort of farmers, agribusinesses, and partners. If you want early access to FarmerGPT, we would love to connect.</p>
             <div class="contact-list">
               <div class="contact-item">
                 <strong>Email</strong>
@@ -1327,7 +1621,7 @@
                 <span>India</span>
               </div>
               <div class="contact-item">
-                <strong>Domain</strong>
+                <strong>Official Portal</strong>
                 <a href="https://www.farmerscafe.co.in" target="_blank" rel="noreferrer">www.farmerscafe.co.in</a>
               </div>
             </div>
@@ -1357,7 +1651,9 @@
             <span>Building AI for Agriculture</span>
           </div>
           <nav class="footer-nav" aria-label="Footer navigation">
-            <a href="#farmergpt">FarmerGPT</a>
+            <a href="#questions">What It Helps With</a>
+            <a href="#farmergpt">Farm Memory</a>
+            <a href="#equipment">Equipment</a>
             <a href="#capabilities">Capabilities</a>
             <a href="#why">Why We Exist</a>
             <a href="#roadmap">Roadmap</a>
@@ -1384,7 +1680,7 @@
         "@type": "Person",
         "name": "Atul Choudhary"
       },
-      "description": "Farmers Cafe is an AI company building products for agriculture. FarmerGPT, our first product, is an AI-powered farming companion that helps farmers ask, understand, decide and act.",
+      "description": "Farmers Cafe is an AI company building agricultural intelligence platforms. FarmerGPT, our first product, understands your farm, remembers what matters, and helps farmers make better decisions across crops, weather, machinery, and markets.",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "India"
