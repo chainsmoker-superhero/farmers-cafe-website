@@ -169,7 +169,7 @@
     {"mandiId": "mandi_raisen", "commodityId": "crop_soybean", "modalPrice": 4820.0, "minPrice": 4700.0, "maxPrice": 4870.0, "daysAgo": 0},
     {"mandiId": "mandi_indore", "commodityId": "crop_soybean", "modalPrice": 4960.0, "minPrice": 4840.0, "maxPrice": 5010.0, "daysAgo": 0},
     {"mandiId": "mandi_dewas", "commodityId": "crop_soybean", "modalPrice": 4880.0, "minPrice": 4750.0, "maxPrice": 4920.0, "daysAgo": 0},
-    {"mandiId": "mandi_pipariya", "commodityId": "crop_soybean", "modalPrice": 5500.0, "minPrice": 5011.0, "maxPrice": 6011.0, "daysAgo": 0},
+    {"mandiId": "mandi_pipariya", "commodityId": "crop_soybean", "modalPrice": 0.0, "minPrice": 0.0, "maxPrice": 0.0, "daysAgo": 0},
     {"mandiId": "mandi_narmadapuram", "commodityId": "crop_soybean", "modalPrice": 4840.0, "minPrice": 4710.0, "maxPrice": 4890.0, "daysAgo": 0},
 
     {"mandiId": "mandi_bhopal", "commodityId": "crop_wheat", "modalPrice": 2580.0, "minPrice": 2490.0, "maxPrice": 2640.0, "daysAgo": 0},
