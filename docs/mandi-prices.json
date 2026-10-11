@@ -2,6 +2,24 @@
   "version": 1,
   "mandis": [
     {
+      "mandiId": "mandi_pipariya",
+      "nameEn": "Pipariya Mandi",
+      "nameLocal": "पिपरिया मंडी",
+      "district": "Narmadapuram",
+      "state": "Madhya Pradesh",
+      "latitude": 22.7569,
+      "longitude": 78.3542
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "nameEn": "Narmadapuram Mandi",
+      "nameLocal": "नर्मदापुरम मंडी",
+      "district": "Narmadapuram",
+      "state": "Madhya Pradesh",
+      "latitude": 22.7519,
+      "longitude": 77.7289
+    },
+    {
       "mandiId": "mandi_bhopal",
       "nameEn": "Bhopal Mandi (Karond)",
       "nameLocal": "भोपाल मंडी (करोंद)",
@@ -54,39 +72,28 @@
       "state": "Madhya Pradesh",
       "latitude": 22.9676,
       "longitude": 76.0534
-    },
-    {
-      "mandiId": "mandi_pipariya",
-      "nameEn": "Pipariya Mandi",
-      "nameLocal": "पिपरिया मंडी",
-      "district": "Narmadapuram",
-      "state": "Madhya Pradesh",
-      "latitude": 22.7569,
-      "longitude": 78.3542
-    },
-    {
-      "mandiId": "mandi_narmadapuram",
-      "nameEn": "Narmadapuram Mandi",
-      "nameLocal": "नर्मदापुरम मंडी",
-      "district": "Narmadapuram",
-      "state": "Madhya Pradesh",
-      "latitude": 22.7519,
-      "longitude": 77.7289
     }
   ],
   "commodities": [
-    {
-      "commodityId": "crop_soybean",
-      "nameEn": "Soybean",
-      "nameLocal": "सोयाबीन",
-      "season": "KHARIF",
-      "isPrimaryDefault": true
-    },
     {
       "commodityId": "crop_wheat",
       "nameEn": "Wheat",
       "nameLocal": "गेहूं",
       "season": "RABI",
+      "isPrimaryDefault": true
+    },
+    {
+      "commodityId": "crop_gram",
+      "nameEn": "Gram (Chana)",
+      "nameLocal": "चना",
+      "season": "RABI",
+      "isPrimaryDefault": false
+    },
+    {
+      "commodityId": "crop_soybean",
+      "nameEn": "Soybean",
+      "nameLocal": "सोयाबीन",
+      "season": "KHARIF",
       "isPrimaryDefault": true
     },
     {
@@ -97,17 +104,10 @@
       "isPrimaryDefault": false
     },
     {
-      "commodityId": "crop_gram",
-      "nameEn": "Gram (Chana)",
-      "nameLocal": "चना",
+      "commodityId": "crop_moong",
+      "nameEn": "Moong",
+      "nameLocal": "मूँग",
       "season": "RABI",
-      "isPrimaryDefault": false
-    },
-    {
-      "commodityId": "crop_cotton",
-      "nameEn": "Cotton",
-      "nameLocal": "कपास",
-      "season": "KHARIF",
       "isPrimaryDefault": false
     },
     {
@@ -122,220 +122,2842 @@
     {
       "commodityId": "crop_soybean",
       "cropYear": "2025-26",
-      "mspPerQuintal": 4600.0,
+      "mspPerQuintal": 4600,
       "effectiveDateEpochMillis": 1751328000000
     },
     {
       "commodityId": "crop_wheat",
       "cropYear": "2025-26",
-      "mspPerQuintal": 2425.0,
+      "mspPerQuintal": 2425,
       "effectiveDateEpochMillis": 1751328000000
     },
     {
       "commodityId": "crop_mustard",
       "cropYear": "2025-26",
-      "mspPerQuintal": 5950.0,
+      "mspPerQuintal": 5950,
       "effectiveDateEpochMillis": 1751328000000
     },
     {
       "commodityId": "crop_gram",
       "cropYear": "2025-26",
-      "mspPerQuintal": 5650.0,
+      "mspPerQuintal": 5650,
       "effectiveDateEpochMillis": 1751328000000
     },
     {
-      "commodityId": "crop_cotton",
+      "commodityId": "crop_moong",
       "cropYear": "2025-26",
-      "mspPerQuintal": 7121.0,
+      "mspPerQuintal": 8780,
       "effectiveDateEpochMillis": 1751328000000
     },
     {
       "commodityId": "crop_paddy",
       "cropYear": "2025-26",
-      "mspPerQuintal": 2300.0,
+      "mspPerQuintal": 2300,
       "effectiveDateEpochMillis": 1751328000000
     }
   ],
   "prices": [
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_soybean", "modalPrice": 4850.0, "minPrice": 4720.0, "maxPrice": 4910.0, "daysAgo": 0},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_soybean", "modalPrice": 4830.0, "minPrice": 4700.0, "maxPrice": 4890.0, "daysAgo": 1},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_soybean", "modalPrice": 4800.0, "minPrice": 4680.0, "maxPrice": 4860.0, "daysAgo": 2},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_soybean", "modalPrice": 4780.0, "minPrice": 4650.0, "maxPrice": 4840.0, "daysAgo": 3},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_soybean", "modalPrice": 4760.0, "minPrice": 4640.0, "maxPrice": 4820.0, "daysAgo": 4},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_soybean", "modalPrice": 4790.0, "minPrice": 4670.0, "maxPrice": 4850.0, "daysAgo": 5},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_soybean", "modalPrice": 4750.0, "minPrice": 4620.0, "maxPrice": 4810.0, "daysAgo": 6},
-    {"mandiId": "mandi_sehore", "commodityId": "crop_soybean", "modalPrice": 4930.0, "minPrice": 4800.0, "maxPrice": 4980.0, "daysAgo": 0},
-    {"mandiId": "mandi_vidisha", "commodityId": "crop_soybean", "modalPrice": 4790.0, "minPrice": 4680.0, "maxPrice": 4850.0, "daysAgo": 0},
-    {"mandiId": "mandi_raisen", "commodityId": "crop_soybean", "modalPrice": 4820.0, "minPrice": 4700.0, "maxPrice": 4870.0, "daysAgo": 0},
-    {"mandiId": "mandi_indore", "commodityId": "crop_soybean", "modalPrice": 4960.0, "minPrice": 4840.0, "maxPrice": 5010.0, "daysAgo": 0},
-    {"mandiId": "mandi_dewas", "commodityId": "crop_soybean", "modalPrice": 4880.0, "minPrice": 4750.0, "maxPrice": 4920.0, "daysAgo": 0},
-    {"mandiId": "mandi_pipariya", "commodityId": "crop_soybean", "modalPrice": 0.0, "minPrice": 0.0, "maxPrice": 0.0, "daysAgo": 0},
-    {"mandiId": "mandi_narmadapuram", "commodityId": "crop_soybean", "modalPrice": 4840.0, "minPrice": 4710.0, "maxPrice": 4890.0, "daysAgo": 0},
-
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_wheat", "modalPrice": 2580.0, "minPrice": 2490.0, "maxPrice": 2640.0, "daysAgo": 0},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_wheat", "modalPrice": 2560.0, "minPrice": 2480.0, "maxPrice": 2620.0, "daysAgo": 1},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_wheat", "modalPrice": 2550.0, "minPrice": 2460.0, "maxPrice": 2600.0, "daysAgo": 2},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_wheat", "modalPrice": 2540.0, "minPrice": 2450.0, "maxPrice": 2590.0, "daysAgo": 3},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_wheat", "modalPrice": 2520.0, "minPrice": 2440.0, "maxPrice": 2580.0, "daysAgo": 4},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_wheat", "modalPrice": 2530.0, "minPrice": 2450.0, "maxPrice": 2590.0, "daysAgo": 5},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_wheat", "modalPrice": 2510.0, "minPrice": 2430.0, "maxPrice": 2570.0, "daysAgo": 6},
-    {"mandiId": "mandi_sehore", "commodityId": "crop_wheat", "modalPrice": 2600.0, "minPrice": 2510.0, "maxPrice": 2650.0, "daysAgo": 0},
-    {"mandiId": "mandi_vidisha", "commodityId": "crop_wheat", "modalPrice": 2620.0, "minPrice": 2530.0, "maxPrice": 2680.0, "daysAgo": 0},
-    {"mandiId": "mandi_raisen", "commodityId": "crop_wheat", "modalPrice": 2570.0, "minPrice": 2480.0, "maxPrice": 2620.0, "daysAgo": 0},
-    {"mandiId": "mandi_indore", "commodityId": "crop_wheat", "modalPrice": 2650.0, "minPrice": 2560.0, "maxPrice": 2700.0, "daysAgo": 0},
-    {"mandiId": "mandi_dewas", "commodityId": "crop_wheat", "modalPrice": 2590.0, "minPrice": 2500.0, "maxPrice": 2640.0, "daysAgo": 0},
-    {"mandiId": "mandi_pipariya", "commodityId": "crop_wheat", "modalPrice": 2450.0, "minPrice": 2200.0, "maxPrice": 2709.0, "daysAgo": 0},
-    {"mandiId": "mandi_narmadapuram", "commodityId": "crop_wheat", "modalPrice": 2610.0, "minPrice": 2520.0, "maxPrice": 2660.0, "daysAgo": 0},
-
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_mustard", "modalPrice": 6100.0, "minPrice": 5980.0, "maxPrice": 6220.0, "daysAgo": 0},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_mustard", "modalPrice": 6080.0, "minPrice": 5960.0, "maxPrice": 6200.0, "daysAgo": 1},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_mustard", "modalPrice": 6050.0, "minPrice": 5940.0, "maxPrice": 6180.0, "daysAgo": 2},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_mustard", "modalPrice": 6020.0, "minPrice": 5900.0, "maxPrice": 6150.0, "daysAgo": 3},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_mustard", "modalPrice": 5990.0, "minPrice": 5880.0, "maxPrice": 6120.0, "daysAgo": 4},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_mustard", "modalPrice": 6010.0, "minPrice": 5890.0, "maxPrice": 6140.0, "daysAgo": 5},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_mustard", "modalPrice": 5970.0, "minPrice": 5850.0, "maxPrice": 6100.0, "daysAgo": 6},
-    {"mandiId": "mandi_sehore", "commodityId": "crop_mustard", "modalPrice": 6140.0, "minPrice": 6020.0, "maxPrice": 6260.0, "daysAgo": 0},
-    {"mandiId": "mandi_vidisha", "commodityId": "crop_mustard", "modalPrice": 6180.0, "minPrice": 6060.0, "maxPrice": 6300.0, "daysAgo": 0},
-    {"mandiId": "mandi_raisen", "commodityId": "crop_mustard", "modalPrice": 6060.0, "minPrice": 5950.0, "maxPrice": 6180.0, "daysAgo": 0},
-    {"mandiId": "mandi_indore", "commodityId": "crop_mustard", "modalPrice": 6220.0, "minPrice": 6100.0, "maxPrice": 6350.0, "daysAgo": 0},
-    {"mandiId": "mandi_dewas", "commodityId": "crop_mustard", "modalPrice": 6110.0, "minPrice": 5990.0, "maxPrice": 6230.0, "daysAgo": 0},
-    {"mandiId": "mandi_pipariya", "commodityId": "crop_mustard", "modalPrice": 6090.0, "minPrice": 5970.0, "maxPrice": 6210.0, "daysAgo": 0},
-    {"mandiId": "mandi_narmadapuram", "commodityId": "crop_mustard", "modalPrice": 6070.0, "minPrice": 5950.0, "maxPrice": 6190.0, "daysAgo": 0},
-
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_gram", "modalPrice": 5820.0, "minPrice": 5710.0, "maxPrice": 5940.0, "daysAgo": 0},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_gram", "modalPrice": 5800.0, "minPrice": 5690.0, "maxPrice": 5920.0, "daysAgo": 1},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_gram", "modalPrice": 5770.0, "minPrice": 5660.0, "maxPrice": 5890.0, "daysAgo": 2},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_gram", "modalPrice": 5750.0, "minPrice": 5640.0, "maxPrice": 5870.0, "daysAgo": 3},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_gram", "modalPrice": 5720.0, "minPrice": 5610.0, "maxPrice": 5840.0, "daysAgo": 4},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_gram", "modalPrice": 5740.0, "minPrice": 5630.0, "maxPrice": 5860.0, "daysAgo": 5},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_gram", "modalPrice": 5700.0, "minPrice": 5590.0, "maxPrice": 5820.0, "daysAgo": 6},
-    {"mandiId": "mandi_sehore", "commodityId": "crop_gram", "modalPrice": 5860.0, "minPrice": 5750.0, "maxPrice": 5980.0, "daysAgo": 0},
-    {"mandiId": "mandi_vidisha", "commodityId": "crop_gram", "modalPrice": 5910.0, "minPrice": 5800.0, "maxPrice": 6030.0, "daysAgo": 0},
-    {"mandiId": "mandi_raisen", "commodityId": "crop_gram", "modalPrice": 5790.0, "minPrice": 5680.0, "maxPrice": 5900.0, "daysAgo": 0},
-    {"mandiId": "mandi_indore", "commodityId": "crop_gram", "modalPrice": 5940.0, "minPrice": 5820.0, "maxPrice": 6060.0, "daysAgo": 0},
-    {"mandiId": "mandi_dewas", "commodityId": "crop_gram", "modalPrice": 5840.0, "minPrice": 5730.0, "maxPrice": 5960.0, "daysAgo": 0},
-    {"mandiId": "mandi_pipariya", "commodityId": "crop_gram", "modalPrice": 5890.0, "minPrice": 5780.0, "maxPrice": 6010.0, "daysAgo": 0},
-    {"mandiId": "mandi_narmadapuram", "commodityId": "crop_gram", "modalPrice": 5850.0, "minPrice": 5740.0, "maxPrice": 5970.0, "daysAgo": 0},
-
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_cotton", "modalPrice": 7350.0, "minPrice": 7200.0, "maxPrice": 7510.0, "daysAgo": 0},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_cotton", "modalPrice": 7320.0, "minPrice": 7170.0, "maxPrice": 7480.0, "daysAgo": 1},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_cotton", "modalPrice": 7290.0, "minPrice": 7140.0, "maxPrice": 7450.0, "daysAgo": 2},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_cotton", "modalPrice": 7260.0, "minPrice": 7110.0, "maxPrice": 7420.0, "daysAgo": 3},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_cotton", "modalPrice": 7230.0, "minPrice": 7080.0, "maxPrice": 7390.0, "daysAgo": 4},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_cotton", "modalPrice": 7250.0, "minPrice": 7100.0, "maxPrice": 7410.0, "daysAgo": 5},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_cotton", "modalPrice": 7200.0, "minPrice": 7050.0, "maxPrice": 7360.0, "daysAgo": 6},
-    {"mandiId": "mandi_sehore", "commodityId": "crop_cotton", "modalPrice": 7380.0, "minPrice": 7220.0, "maxPrice": 7540.0, "daysAgo": 0},
-    {"mandiId": "mandi_vidisha", "commodityId": "crop_cotton", "modalPrice": 7280.0, "minPrice": 7130.0, "maxPrice": 7440.0, "daysAgo": 0},
-    {"mandiId": "mandi_raisen", "commodityId": "crop_cotton", "modalPrice": 7300.0, "minPrice": 7150.0, "maxPrice": 7460.0, "daysAgo": 0},
-    {"mandiId": "mandi_indore", "commodityId": "crop_cotton", "modalPrice": 7480.0, "minPrice": 7320.0, "maxPrice": 7640.0, "daysAgo": 0},
-    {"mandiId": "mandi_dewas", "commodityId": "crop_cotton", "modalPrice": 7410.0, "minPrice": 7250.0, "maxPrice": 7570.0, "daysAgo": 0},
-    {"mandiId": "mandi_pipariya", "commodityId": "crop_cotton", "modalPrice": 7360.0, "minPrice": 7210.0, "maxPrice": 7520.0, "daysAgo": 0},
-    {"mandiId": "mandi_narmadapuram", "commodityId": "crop_cotton", "modalPrice": 7340.0, "minPrice": 7190.0, "maxPrice": 7500.0, "daysAgo": 0},
-
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_paddy", "modalPrice": 2420.0, "minPrice": 2350.0, "maxPrice": 2490.0, "daysAgo": 0},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_paddy", "modalPrice": 2400.0, "minPrice": 2330.0, "maxPrice": 2470.0, "daysAgo": 1},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_paddy", "modalPrice": 2390.0, "minPrice": 2320.0, "maxPrice": 2460.0, "daysAgo": 2},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_paddy", "modalPrice": 2370.0, "minPrice": 2300.0, "maxPrice": 2440.0, "daysAgo": 3},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_paddy", "modalPrice": 2350.0, "minPrice": 2280.0, "maxPrice": 2420.0, "daysAgo": 4},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_paddy", "modalPrice": 2360.0, "minPrice": 2290.0, "maxPrice": 2430.0, "daysAgo": 5},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_paddy", "modalPrice": 2340.0, "minPrice": 2270.0, "maxPrice": 2410.0, "daysAgo": 6},
-    {"mandiId": "mandi_sehore", "commodityId": "crop_paddy", "modalPrice": 2440.0, "minPrice": 2370.0, "maxPrice": 2510.0, "daysAgo": 0},
-    {"mandiId": "mandi_vidisha", "commodityId": "crop_paddy", "modalPrice": 2460.0, "minPrice": 2390.0, "maxPrice": 2530.0, "daysAgo": 0},
-    {"mandiId": "mandi_raisen", "commodityId": "crop_paddy", "modalPrice": 2480.0, "minPrice": 2410.0, "maxPrice": 2550.0, "daysAgo": 0},
-    {"mandiId": "mandi_indore", "commodityId": "crop_paddy", "modalPrice": 2490.0, "minPrice": 2420.0, "maxPrice": 2560.0, "daysAgo": 0},
-    {"mandiId": "mandi_dewas", "commodityId": "crop_paddy", "modalPrice": 2430.0, "minPrice": 2360.0, "maxPrice": 2500.0, "daysAgo": 0},
-    {"mandiId": "mandi_pipariya", "commodityId": "crop_paddy", "modalPrice": 2520.0, "minPrice": 2440.0, "maxPrice": 2610.0, "daysAgo": 0},
-    {"mandiId": "mandi_narmadapuram", "commodityId": "crop_paddy", "modalPrice": 2490.0, "minPrice": 2420.0, "maxPrice": 2560.0, "daysAgo": 0}
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4930,
+      "minPrice": 4800,
+      "maxPrice": 4980,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4910,
+      "minPrice": 4780,
+      "maxPrice": 4960,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4880,
+      "minPrice": 4760,
+      "maxPrice": 4940,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4860,
+      "minPrice": 4730,
+      "maxPrice": 4920,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4840,
+      "minPrice": 4720,
+      "maxPrice": 4900,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4870,
+      "minPrice": 4750,
+      "maxPrice": 4930,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4830,
+      "minPrice": 4700,
+      "maxPrice": 4890,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2600,
+      "minPrice": 2510,
+      "maxPrice": 2650,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2580,
+      "minPrice": 2500,
+      "maxPrice": 2630,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2570,
+      "minPrice": 2480,
+      "maxPrice": 2610,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2560,
+      "minPrice": 2470,
+      "maxPrice": 2600,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2540,
+      "minPrice": 2460,
+      "maxPrice": 2590,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2550,
+      "minPrice": 2470,
+      "maxPrice": 2600,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2530,
+      "minPrice": 2450,
+      "maxPrice": 2580,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6140,
+      "minPrice": 6020,
+      "maxPrice": 6260,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6120,
+      "minPrice": 6000,
+      "maxPrice": 6240,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6090,
+      "minPrice": 5980,
+      "maxPrice": 6220,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6060,
+      "minPrice": 5940,
+      "maxPrice": 6190,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6030,
+      "minPrice": 5920,
+      "maxPrice": 6160,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6050,
+      "minPrice": 5930,
+      "maxPrice": 6180,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6010,
+      "minPrice": 5890,
+      "maxPrice": 6140,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_gram",
+      "modalPrice": 5860,
+      "minPrice": 5750,
+      "maxPrice": 5980,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_gram",
+      "modalPrice": 5840,
+      "minPrice": 5730,
+      "maxPrice": 5960,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_gram",
+      "modalPrice": 5810,
+      "minPrice": 5700,
+      "maxPrice": 5930,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_gram",
+      "modalPrice": 5790,
+      "minPrice": 5680,
+      "maxPrice": 5910,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_gram",
+      "modalPrice": 5760,
+      "minPrice": 5650,
+      "maxPrice": 5880,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_gram",
+      "modalPrice": 5780,
+      "minPrice": 5670,
+      "maxPrice": 5900,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_gram",
+      "modalPrice": 5740,
+      "minPrice": 5630,
+      "maxPrice": 5860,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_moong",
+      "modalPrice": 7380,
+      "minPrice": 7220,
+      "maxPrice": 7540,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_moong",
+      "modalPrice": 7350,
+      "minPrice": 7190,
+      "maxPrice": 7510,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_moong",
+      "modalPrice": 7320,
+      "minPrice": 7160,
+      "maxPrice": 7480,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_moong",
+      "modalPrice": 7290,
+      "minPrice": 7130,
+      "maxPrice": 7450,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_moong",
+      "modalPrice": 7260,
+      "minPrice": 7100,
+      "maxPrice": 7420,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_moong",
+      "modalPrice": 7280,
+      "minPrice": 7120,
+      "maxPrice": 7440,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_moong",
+      "modalPrice": 7230,
+      "minPrice": 7070,
+      "maxPrice": 7390,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2440,
+      "minPrice": 2370,
+      "maxPrice": 2510,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2420,
+      "minPrice": 2350,
+      "maxPrice": 2490,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2410,
+      "minPrice": 2340,
+      "maxPrice": 2480,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2390,
+      "minPrice": 2320,
+      "maxPrice": 2460,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2370,
+      "minPrice": 2300,
+      "maxPrice": 2440,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2380,
+      "minPrice": 2310,
+      "maxPrice": 2450,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2360,
+      "minPrice": 2290,
+      "maxPrice": 2430,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4790,
+      "minPrice": 4680,
+      "maxPrice": 4850,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4770,
+      "minPrice": 4660,
+      "maxPrice": 4830,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4740,
+      "minPrice": 4640,
+      "maxPrice": 4810,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4720,
+      "minPrice": 4610,
+      "maxPrice": 4790,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4700,
+      "minPrice": 4600,
+      "maxPrice": 4770,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4730,
+      "minPrice": 4630,
+      "maxPrice": 4800,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4690,
+      "minPrice": 4580,
+      "maxPrice": 4750,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2620,
+      "minPrice": 2530,
+      "maxPrice": 2680,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2600,
+      "minPrice": 2520,
+      "maxPrice": 2660,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2590,
+      "minPrice": 2500,
+      "maxPrice": 2650,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2580,
+      "minPrice": 2490,
+      "maxPrice": 2640,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2560,
+      "minPrice": 2480,
+      "maxPrice": 2620,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2570,
+      "minPrice": 2490,
+      "maxPrice": 2630,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2550,
+      "minPrice": 2470,
+      "maxPrice": 2610,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6180,
+      "minPrice": 6060,
+      "maxPrice": 6300,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6160,
+      "minPrice": 6040,
+      "maxPrice": 6280,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6130,
+      "minPrice": 6020,
+      "maxPrice": 6260,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6100,
+      "minPrice": 5980,
+      "maxPrice": 6230,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6070,
+      "minPrice": 5960,
+      "maxPrice": 6200,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6090,
+      "minPrice": 5970,
+      "maxPrice": 6220,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6050,
+      "minPrice": 5930,
+      "maxPrice": 6180,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_gram",
+      "modalPrice": 5910,
+      "minPrice": 5800,
+      "maxPrice": 6030,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_gram",
+      "modalPrice": 5890,
+      "minPrice": 5780,
+      "maxPrice": 6010,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_gram",
+      "modalPrice": 5860,
+      "minPrice": 5750,
+      "maxPrice": 5980,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_gram",
+      "modalPrice": 5840,
+      "minPrice": 5730,
+      "maxPrice": 5960,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_gram",
+      "modalPrice": 5810,
+      "minPrice": 5700,
+      "maxPrice": 5930,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_gram",
+      "modalPrice": 5830,
+      "minPrice": 5720,
+      "maxPrice": 5950,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_gram",
+      "modalPrice": 5790,
+      "minPrice": 5680,
+      "maxPrice": 5910,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_moong",
+      "modalPrice": 7280,
+      "minPrice": 7130,
+      "maxPrice": 7440,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_moong",
+      "modalPrice": 7250,
+      "minPrice": 7100,
+      "maxPrice": 7410,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_moong",
+      "modalPrice": 7220,
+      "minPrice": 7070,
+      "maxPrice": 7380,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_moong",
+      "modalPrice": 7190,
+      "minPrice": 7040,
+      "maxPrice": 7350,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_moong",
+      "modalPrice": 7160,
+      "minPrice": 7010,
+      "maxPrice": 7320,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_moong",
+      "modalPrice": 7180,
+      "minPrice": 7030,
+      "maxPrice": 7340,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_moong",
+      "modalPrice": 7130,
+      "minPrice": 6980,
+      "maxPrice": 7290,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2460,
+      "minPrice": 2390,
+      "maxPrice": 2530,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2440,
+      "minPrice": 2370,
+      "maxPrice": 2510,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2430,
+      "minPrice": 2360,
+      "maxPrice": 2500,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2410,
+      "minPrice": 2340,
+      "maxPrice": 2480,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2390,
+      "minPrice": 2320,
+      "maxPrice": 2460,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2400,
+      "minPrice": 2330,
+      "maxPrice": 2470,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2380,
+      "minPrice": 2310,
+      "maxPrice": 2450,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4820,
+      "minPrice": 4700,
+      "maxPrice": 4870,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4800,
+      "minPrice": 4680,
+      "maxPrice": 4850,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4770,
+      "minPrice": 4660,
+      "maxPrice": 4830,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4750,
+      "minPrice": 4630,
+      "maxPrice": 4810,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4730,
+      "minPrice": 4620,
+      "maxPrice": 4790,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4760,
+      "minPrice": 4650,
+      "maxPrice": 4820,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4720,
+      "minPrice": 4600,
+      "maxPrice": 4770,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2570,
+      "minPrice": 2480,
+      "maxPrice": 2620,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2550,
+      "minPrice": 2470,
+      "maxPrice": 2600,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2540,
+      "minPrice": 2450,
+      "maxPrice": 2590,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2530,
+      "minPrice": 2440,
+      "maxPrice": 2580,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2510,
+      "minPrice": 2430,
+      "maxPrice": 2570,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2520,
+      "minPrice": 2440,
+      "maxPrice": 2580,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2500,
+      "minPrice": 2420,
+      "maxPrice": 2560,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6060,
+      "minPrice": 5950,
+      "maxPrice": 6180,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6040,
+      "minPrice": 5930,
+      "maxPrice": 6160,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6010,
+      "minPrice": 5910,
+      "maxPrice": 6140,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_mustard",
+      "modalPrice": 5980,
+      "minPrice": 5870,
+      "maxPrice": 6110,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_mustard",
+      "modalPrice": 5950,
+      "minPrice": 5850,
+      "maxPrice": 6080,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_mustard",
+      "modalPrice": 5970,
+      "minPrice": 5860,
+      "maxPrice": 6100,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_mustard",
+      "modalPrice": 5930,
+      "minPrice": 5820,
+      "maxPrice": 6060,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_gram",
+      "modalPrice": 5790,
+      "minPrice": 5680,
+      "maxPrice": 5900,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_gram",
+      "modalPrice": 5770,
+      "minPrice": 5660,
+      "maxPrice": 5880,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_gram",
+      "modalPrice": 5740,
+      "minPrice": 5630,
+      "maxPrice": 5850,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_gram",
+      "modalPrice": 5720,
+      "minPrice": 5610,
+      "maxPrice": 5830,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_gram",
+      "modalPrice": 5690,
+      "minPrice": 5580,
+      "maxPrice": 5800,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_gram",
+      "modalPrice": 5710,
+      "minPrice": 5600,
+      "maxPrice": 5820,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_gram",
+      "modalPrice": 5670,
+      "minPrice": 5560,
+      "maxPrice": 5780,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_moong",
+      "modalPrice": 7300,
+      "minPrice": 7150,
+      "maxPrice": 7460,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_moong",
+      "modalPrice": 7270,
+      "minPrice": 7120,
+      "maxPrice": 7430,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_moong",
+      "modalPrice": 7240,
+      "minPrice": 7090,
+      "maxPrice": 7400,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_moong",
+      "modalPrice": 7210,
+      "minPrice": 7060,
+      "maxPrice": 7370,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_moong",
+      "modalPrice": 7180,
+      "minPrice": 7030,
+      "maxPrice": 7340,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_moong",
+      "modalPrice": 7200,
+      "minPrice": 7050,
+      "maxPrice": 7360,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_moong",
+      "modalPrice": 7150,
+      "minPrice": 7000,
+      "maxPrice": 7310,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2480,
+      "minPrice": 2410,
+      "maxPrice": 2550,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2460,
+      "minPrice": 2390,
+      "maxPrice": 2530,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2450,
+      "minPrice": 2380,
+      "maxPrice": 2520,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2430,
+      "minPrice": 2360,
+      "maxPrice": 2500,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2410,
+      "minPrice": 2340,
+      "maxPrice": 2480,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2420,
+      "minPrice": 2350,
+      "maxPrice": 2490,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2400,
+      "minPrice": 2330,
+      "maxPrice": 2470,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4960,
+      "minPrice": 4840,
+      "maxPrice": 5010,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4940,
+      "minPrice": 4820,
+      "maxPrice": 4990,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4910,
+      "minPrice": 4800,
+      "maxPrice": 4970,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4890,
+      "minPrice": 4770,
+      "maxPrice": 4950,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4870,
+      "minPrice": 4760,
+      "maxPrice": 4930,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4900,
+      "minPrice": 4790,
+      "maxPrice": 4960,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4860,
+      "minPrice": 4740,
+      "maxPrice": 4910,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2650,
+      "minPrice": 2560,
+      "maxPrice": 2700,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2630,
+      "minPrice": 2550,
+      "maxPrice": 2680,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2620,
+      "minPrice": 2530,
+      "maxPrice": 2670,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2610,
+      "minPrice": 2520,
+      "maxPrice": 2660,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2590,
+      "minPrice": 2510,
+      "maxPrice": 2640,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2600,
+      "minPrice": 2520,
+      "maxPrice": 2650,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2580,
+      "minPrice": 2500,
+      "maxPrice": 2630,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6220,
+      "minPrice": 6100,
+      "maxPrice": 6350,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6200,
+      "minPrice": 6080,
+      "maxPrice": 6330,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6170,
+      "minPrice": 6060,
+      "maxPrice": 6310,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6140,
+      "minPrice": 6020,
+      "maxPrice": 6280,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6110,
+      "minPrice": 6000,
+      "maxPrice": 6250,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6130,
+      "minPrice": 6010,
+      "maxPrice": 6270,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6090,
+      "minPrice": 5970,
+      "maxPrice": 6230,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_gram",
+      "modalPrice": 5940,
+      "minPrice": 5820,
+      "maxPrice": 6060,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_gram",
+      "modalPrice": 5920,
+      "minPrice": 5800,
+      "maxPrice": 6040,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_gram",
+      "modalPrice": 5890,
+      "minPrice": 5770,
+      "maxPrice": 6010,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_gram",
+      "modalPrice": 5870,
+      "minPrice": 5750,
+      "maxPrice": 5990,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_gram",
+      "modalPrice": 5840,
+      "minPrice": 5720,
+      "maxPrice": 5960,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_gram",
+      "modalPrice": 5860,
+      "minPrice": 5740,
+      "maxPrice": 5980,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_gram",
+      "modalPrice": 5820,
+      "minPrice": 5700,
+      "maxPrice": 5940,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_moong",
+      "modalPrice": 7480,
+      "minPrice": 7320,
+      "maxPrice": 7640,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_moong",
+      "modalPrice": 7450,
+      "minPrice": 7290,
+      "maxPrice": 7610,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_moong",
+      "modalPrice": 7420,
+      "minPrice": 7260,
+      "maxPrice": 7580,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_moong",
+      "modalPrice": 7390,
+      "minPrice": 7230,
+      "maxPrice": 7550,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_moong",
+      "modalPrice": 7360,
+      "minPrice": 7200,
+      "maxPrice": 7520,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_moong",
+      "modalPrice": 7380,
+      "minPrice": 7220,
+      "maxPrice": 7540,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_moong",
+      "modalPrice": 7330,
+      "minPrice": 7170,
+      "maxPrice": 7490,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2490,
+      "minPrice": 2420,
+      "maxPrice": 2560,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2470,
+      "minPrice": 2400,
+      "maxPrice": 2540,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2460,
+      "minPrice": 2390,
+      "maxPrice": 2530,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2440,
+      "minPrice": 2370,
+      "maxPrice": 2510,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2420,
+      "minPrice": 2350,
+      "maxPrice": 2490,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2430,
+      "minPrice": 2360,
+      "maxPrice": 2500,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2410,
+      "minPrice": 2340,
+      "maxPrice": 2480,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4880,
+      "minPrice": 4750,
+      "maxPrice": 4920,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4860,
+      "minPrice": 4730,
+      "maxPrice": 4900,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4830,
+      "minPrice": 4710,
+      "maxPrice": 4880,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4810,
+      "minPrice": 4680,
+      "maxPrice": 4860,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4790,
+      "minPrice": 4670,
+      "maxPrice": 4840,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4820,
+      "minPrice": 4700,
+      "maxPrice": 4870,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4780,
+      "minPrice": 4650,
+      "maxPrice": 4820,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2590,
+      "minPrice": 2500,
+      "maxPrice": 2640,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2570,
+      "minPrice": 2490,
+      "maxPrice": 2620,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2560,
+      "minPrice": 2470,
+      "maxPrice": 2610,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2550,
+      "minPrice": 2460,
+      "maxPrice": 2600,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2530,
+      "minPrice": 2450,
+      "maxPrice": 2580,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2540,
+      "minPrice": 2460,
+      "maxPrice": 2590,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2520,
+      "minPrice": 2440,
+      "maxPrice": 2570,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6110,
+      "minPrice": 5990,
+      "maxPrice": 6230,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6090,
+      "minPrice": 5970,
+      "maxPrice": 6210,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6060,
+      "minPrice": 5950,
+      "maxPrice": 6190,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6030,
+      "minPrice": 5910,
+      "maxPrice": 6160,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6000,
+      "minPrice": 5890,
+      "maxPrice": 6130,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6020,
+      "minPrice": 5900,
+      "maxPrice": 6150,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_mustard",
+      "modalPrice": 5980,
+      "minPrice": 5860,
+      "maxPrice": 6110,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_gram",
+      "modalPrice": 5840,
+      "minPrice": 5730,
+      "maxPrice": 5960,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_gram",
+      "modalPrice": 5820,
+      "minPrice": 5710,
+      "maxPrice": 5940,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_gram",
+      "modalPrice": 5790,
+      "minPrice": 5680,
+      "maxPrice": 5910,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_gram",
+      "modalPrice": 5770,
+      "minPrice": 5660,
+      "maxPrice": 5890,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_gram",
+      "modalPrice": 5740,
+      "minPrice": 5630,
+      "maxPrice": 5860,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_gram",
+      "modalPrice": 5760,
+      "minPrice": 5650,
+      "maxPrice": 5880,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_gram",
+      "modalPrice": 5720,
+      "minPrice": 5610,
+      "maxPrice": 5840,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_moong",
+      "modalPrice": 7410,
+      "minPrice": 7250,
+      "maxPrice": 7570,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_moong",
+      "modalPrice": 7380,
+      "minPrice": 7220,
+      "maxPrice": 7540,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_moong",
+      "modalPrice": 7350,
+      "minPrice": 7190,
+      "maxPrice": 7510,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_moong",
+      "modalPrice": 7320,
+      "minPrice": 7160,
+      "maxPrice": 7480,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_moong",
+      "modalPrice": 7290,
+      "minPrice": 7130,
+      "maxPrice": 7450,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_moong",
+      "modalPrice": 7310,
+      "minPrice": 7150,
+      "maxPrice": 7470,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_moong",
+      "modalPrice": 7260,
+      "minPrice": 7100,
+      "maxPrice": 7420,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2430,
+      "minPrice": 2360,
+      "maxPrice": 2500,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2410,
+      "minPrice": 2340,
+      "maxPrice": 2480,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2400,
+      "minPrice": 2330,
+      "maxPrice": 2470,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2380,
+      "minPrice": 2310,
+      "maxPrice": 2450,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2360,
+      "minPrice": 2290,
+      "maxPrice": 2430,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2370,
+      "minPrice": 2300,
+      "maxPrice": 2440,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2350,
+      "minPrice": 2280,
+      "maxPrice": 2420,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_soybean",
+      "modalPrice": 0,
+      "minPrice": 0,
+      "maxPrice": 0,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_soybean",
+      "modalPrice": 0,
+      "minPrice": 0,
+      "maxPrice": 0,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_soybean",
+      "modalPrice": 0,
+      "minPrice": 0,
+      "maxPrice": 0,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_soybean",
+      "modalPrice": 0,
+      "minPrice": 0,
+      "maxPrice": 0,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_soybean",
+      "modalPrice": 0,
+      "minPrice": 0,
+      "maxPrice": 0,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_soybean",
+      "modalPrice": 0,
+      "minPrice": 0,
+      "maxPrice": 0,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_soybean",
+      "modalPrice": 0,
+      "minPrice": 0,
+      "maxPrice": 0,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2450,
+      "minPrice": 2200,
+      "maxPrice": 2709,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2430,
+      "minPrice": 2190,
+      "maxPrice": 2689,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2420,
+      "minPrice": 2170,
+      "maxPrice": 2679,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2410,
+      "minPrice": 2160,
+      "maxPrice": 2669,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2390,
+      "minPrice": 2150,
+      "maxPrice": 2649,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2400,
+      "minPrice": 2160,
+      "maxPrice": 2659,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2380,
+      "minPrice": 2140,
+      "maxPrice": 2639,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_gram",
+      "modalPrice": 5890,
+      "minPrice": 5780,
+      "maxPrice": 6010,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_gram",
+      "modalPrice": 5870,
+      "minPrice": 5760,
+      "maxPrice": 5990,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_gram",
+      "modalPrice": 5840,
+      "minPrice": 5730,
+      "maxPrice": 5960,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_gram",
+      "modalPrice": 5820,
+      "minPrice": 5710,
+      "maxPrice": 5940,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_gram",
+      "modalPrice": 5790,
+      "minPrice": 5680,
+      "maxPrice": 5910,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_gram",
+      "modalPrice": 5810,
+      "minPrice": 5700,
+      "maxPrice": 5930,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_gram",
+      "modalPrice": 5770,
+      "minPrice": 5660,
+      "maxPrice": 5890,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_moong",
+      "modalPrice": 7360,
+      "minPrice": 7210,
+      "maxPrice": 7520,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_moong",
+      "modalPrice": 7330,
+      "minPrice": 7180,
+      "maxPrice": 7490,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_moong",
+      "modalPrice": 7300,
+      "minPrice": 7150,
+      "maxPrice": 7460,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_moong",
+      "modalPrice": 7270,
+      "minPrice": 7120,
+      "maxPrice": 7430,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_moong",
+      "modalPrice": 7240,
+      "minPrice": 7090,
+      "maxPrice": 7400,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_moong",
+      "modalPrice": 7260,
+      "minPrice": 7110,
+      "maxPrice": 7420,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_moong",
+      "modalPrice": 7210,
+      "minPrice": 7060,
+      "maxPrice": 7370,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2520,
+      "minPrice": 2440,
+      "maxPrice": 2610,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2500,
+      "minPrice": 2420,
+      "maxPrice": 2590,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2490,
+      "minPrice": 2410,
+      "maxPrice": 2580,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2470,
+      "minPrice": 2390,
+      "maxPrice": 2560,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2450,
+      "minPrice": 2370,
+      "maxPrice": 2540,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2460,
+      "minPrice": 2380,
+      "maxPrice": 2550,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2440,
+      "minPrice": 2360,
+      "maxPrice": 2530,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4840,
+      "minPrice": 4710,
+      "maxPrice": 4890,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4820,
+      "minPrice": 4690,
+      "maxPrice": 4870,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4790,
+      "minPrice": 4670,
+      "maxPrice": 4850,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4770,
+      "minPrice": 4640,
+      "maxPrice": 4830,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4750,
+      "minPrice": 4630,
+      "maxPrice": 4810,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4780,
+      "minPrice": 4660,
+      "maxPrice": 4840,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_soybean",
+      "modalPrice": 4740,
+      "minPrice": 4610,
+      "maxPrice": 4800,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2610,
+      "minPrice": 2520,
+      "maxPrice": 2660,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2590,
+      "minPrice": 2510,
+      "maxPrice": 2640,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2580,
+      "minPrice": 2490,
+      "maxPrice": 2630,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2570,
+      "minPrice": 2480,
+      "maxPrice": 2620,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2550,
+      "minPrice": 2470,
+      "maxPrice": 2600,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2560,
+      "minPrice": 2480,
+      "maxPrice": 2610,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_wheat",
+      "modalPrice": 2540,
+      "minPrice": 2460,
+      "maxPrice": 2590,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6070,
+      "minPrice": 5950,
+      "maxPrice": 6190,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6050,
+      "minPrice": 5930,
+      "maxPrice": 6170,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_mustard",
+      "modalPrice": 6020,
+      "minPrice": 5910,
+      "maxPrice": 6150,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_mustard",
+      "modalPrice": 5990,
+      "minPrice": 5870,
+      "maxPrice": 6120,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_mustard",
+      "modalPrice": 5960,
+      "minPrice": 5850,
+      "maxPrice": 6090,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_mustard",
+      "modalPrice": 5980,
+      "minPrice": 5860,
+      "maxPrice": 6110,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_mustard",
+      "modalPrice": 5940,
+      "minPrice": 5820,
+      "maxPrice": 6070,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_gram",
+      "modalPrice": 5850,
+      "minPrice": 5740,
+      "maxPrice": 5970,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_gram",
+      "modalPrice": 5830,
+      "minPrice": 5720,
+      "maxPrice": 5950,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_gram",
+      "modalPrice": 5800,
+      "minPrice": 5690,
+      "maxPrice": 5920,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_gram",
+      "modalPrice": 5780,
+      "minPrice": 5670,
+      "maxPrice": 5900,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_gram",
+      "modalPrice": 5750,
+      "minPrice": 5640,
+      "maxPrice": 5870,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_gram",
+      "modalPrice": 5770,
+      "minPrice": 5660,
+      "maxPrice": 5890,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_gram",
+      "modalPrice": 5730,
+      "minPrice": 5620,
+      "maxPrice": 5850,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_moong",
+      "modalPrice": 7340,
+      "minPrice": 7190,
+      "maxPrice": 7500,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_moong",
+      "modalPrice": 7310,
+      "minPrice": 7160,
+      "maxPrice": 7470,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_moong",
+      "modalPrice": 7280,
+      "minPrice": 7130,
+      "maxPrice": 7440,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_moong",
+      "modalPrice": 7250,
+      "minPrice": 7100,
+      "maxPrice": 7410,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_moong",
+      "modalPrice": 7220,
+      "minPrice": 7070,
+      "maxPrice": 7380,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_moong",
+      "modalPrice": 7240,
+      "minPrice": 7090,
+      "maxPrice": 7400,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_moong",
+      "modalPrice": 7190,
+      "minPrice": 7040,
+      "maxPrice": 7350,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2490,
+      "minPrice": 2420,
+      "maxPrice": 2560,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2470,
+      "minPrice": 2400,
+      "maxPrice": 2540,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2460,
+      "minPrice": 2390,
+      "maxPrice": 2530,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2440,
+      "minPrice": 2370,
+      "maxPrice": 2510,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2420,
+      "minPrice": 2350,
+      "maxPrice": 2490,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2430,
+      "minPrice": 2360,
+      "maxPrice": 2500,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_paddy",
+      "modalPrice": 2410,
+      "minPrice": 2340,
+      "maxPrice": 2480,
+      "daysAgo": 6
+    }
   ],
   "arrivals": [
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_soybean", "arrivalQuintals": 4500.0, "daysAgo": 0},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_soybean", "arrivalQuintals": 4200.0, "daysAgo": 1},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_soybean", "arrivalQuintals": 3800.0, "daysAgo": 2},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_soybean", "arrivalQuintals": 3400.0, "daysAgo": 3},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_soybean", "arrivalQuintals": 3100.0, "daysAgo": 4},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_soybean", "arrivalQuintals": 2900.0, "daysAgo": 5},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_soybean", "arrivalQuintals": 3200.0, "daysAgo": 6},
-    {"mandiId": "mandi_sehore", "commodityId": "crop_soybean", "arrivalQuintals": 5200.0, "daysAgo": 0},
-    {"mandiId": "mandi_vidisha", "commodityId": "crop_soybean", "arrivalQuintals": 2800.0, "daysAgo": 0},
-    {"mandiId": "mandi_raisen", "commodityId": "crop_soybean", "arrivalQuintals": 3100.0, "daysAgo": 0},
-    {"mandiId": "mandi_indore", "commodityId": "crop_soybean", "arrivalQuintals": 5600.0, "daysAgo": 0},
-    {"mandiId": "mandi_dewas", "commodityId": "crop_soybean", "arrivalQuintals": 4100.0, "daysAgo": 0},
-    {"mandiId": "mandi_pipariya", "commodityId": "crop_soybean", "arrivalQuintals": 3800.0, "daysAgo": 0},
-    {"mandiId": "mandi_narmadapuram", "commodityId": "crop_soybean", "arrivalQuintals": 3400.0, "daysAgo": 0},
-
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_wheat", "arrivalQuintals": 6200.0, "daysAgo": 0},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_wheat", "arrivalQuintals": 5800.0, "daysAgo": 1},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_wheat", "arrivalQuintals": 5400.0, "daysAgo": 2},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_wheat", "arrivalQuintals": 5100.0, "daysAgo": 3},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_wheat", "arrivalQuintals": 4900.0, "daysAgo": 4},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_wheat", "arrivalQuintals": 4800.0, "daysAgo": 5},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_wheat", "arrivalQuintals": 5000.0, "daysAgo": 6},
-    {"mandiId": "mandi_sehore", "commodityId": "crop_wheat", "arrivalQuintals": 6800.0, "daysAgo": 0},
-    {"mandiId": "mandi_vidisha", "commodityId": "crop_wheat", "arrivalQuintals": 7100.0, "daysAgo": 0},
-    {"mandiId": "mandi_raisen", "commodityId": "crop_wheat", "arrivalQuintals": 5900.0, "daysAgo": 0},
-    {"mandiId": "mandi_indore", "commodityId": "crop_wheat", "arrivalQuintals": 7400.0, "daysAgo": 0},
-    {"mandiId": "mandi_dewas", "commodityId": "crop_wheat", "arrivalQuintals": 6100.0, "daysAgo": 0},
-    {"mandiId": "mandi_pipariya", "commodityId": "crop_wheat", "arrivalQuintals": 7600.0, "daysAgo": 0},
-    {"mandiId": "mandi_narmadapuram", "commodityId": "crop_wheat", "arrivalQuintals": 6900.0, "daysAgo": 0},
-
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_mustard", "arrivalQuintals": 3400.0, "daysAgo": 0},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_mustard", "arrivalQuintals": 3200.0, "daysAgo": 1},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_mustard", "arrivalQuintals": 3100.0, "daysAgo": 2},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_mustard", "arrivalQuintals": 2900.0, "daysAgo": 3},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_mustard", "arrivalQuintals": 2800.0, "daysAgo": 4},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_mustard", "arrivalQuintals": 2700.0, "daysAgo": 5},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_mustard", "arrivalQuintals": 2900.0, "daysAgo": 6},
-    {"mandiId": "mandi_sehore", "commodityId": "crop_mustard", "arrivalQuintals": 3600.0, "daysAgo": 0},
-    {"mandiId": "mandi_vidisha", "commodityId": "crop_mustard", "arrivalQuintals": 3900.0, "daysAgo": 0},
-    {"mandiId": "mandi_raisen", "commodityId": "crop_mustard", "arrivalQuintals": 3100.0, "daysAgo": 0},
-    {"mandiId": "mandi_indore", "commodityId": "crop_mustard", "arrivalQuintals": 4200.0, "daysAgo": 0},
-    {"mandiId": "mandi_dewas", "commodityId": "crop_mustard", "arrivalQuintals": 3300.0, "daysAgo": 0},
-    {"mandiId": "mandi_pipariya", "commodityId": "crop_mustard", "arrivalQuintals": 3100.0, "daysAgo": 0},
-    {"mandiId": "mandi_narmadapuram", "commodityId": "crop_mustard", "arrivalQuintals": 2900.0, "daysAgo": 0},
-
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_gram", "arrivalQuintals": 3100.0, "daysAgo": 0},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_gram", "arrivalQuintals": 2950.0, "daysAgo": 1},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_gram", "arrivalQuintals": 2800.0, "daysAgo": 2},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_gram", "arrivalQuintals": 2600.0, "daysAgo": 3},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_gram", "arrivalQuintals": 2500.0, "daysAgo": 4},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_gram", "arrivalQuintals": 2400.0, "daysAgo": 5},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_gram", "arrivalQuintals": 2600.0, "daysAgo": 6},
-    {"mandiId": "mandi_sehore", "commodityId": "crop_gram", "arrivalQuintals": 3400.0, "daysAgo": 0},
-    {"mandiId": "mandi_vidisha", "commodityId": "crop_gram", "arrivalQuintals": 3800.0, "daysAgo": 0},
-    {"mandiId": "mandi_raisen", "commodityId": "crop_gram", "arrivalQuintals": 2900.0, "daysAgo": 0},
-    {"mandiId": "mandi_indore", "commodityId": "crop_gram", "arrivalQuintals": 4100.0, "daysAgo": 0},
-    {"mandiId": "mandi_dewas", "commodityId": "crop_gram", "arrivalQuintals": 3200.0, "daysAgo": 0},
-    {"mandiId": "mandi_pipariya", "commodityId": "crop_gram", "arrivalQuintals": 4400.0, "daysAgo": 0},
-    {"mandiId": "mandi_narmadapuram", "commodityId": "crop_gram", "arrivalQuintals": 3900.0, "daysAgo": 0},
-
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_cotton", "arrivalQuintals": 2600.0, "daysAgo": 0},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_cotton", "arrivalQuintals": 2450.0, "daysAgo": 1},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_cotton", "arrivalQuintals": 2300.0, "daysAgo": 2},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_cotton", "arrivalQuintals": 2150.0, "daysAgo": 3},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_cotton", "arrivalQuintals": 2050.0, "daysAgo": 4},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_cotton", "arrivalQuintals": 1950.0, "daysAgo": 5},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_cotton", "arrivalQuintals": 2100.0, "daysAgo": 6},
-    {"mandiId": "mandi_sehore", "commodityId": "crop_cotton", "arrivalQuintals": 2800.0, "daysAgo": 0},
-    {"mandiId": "mandi_vidisha", "commodityId": "crop_cotton", "arrivalQuintals": 2200.0, "daysAgo": 0},
-    {"mandiId": "mandi_raisen", "commodityId": "crop_cotton", "arrivalQuintals": 2400.0, "daysAgo": 0},
-    {"mandiId": "mandi_indore", "commodityId": "crop_cotton", "arrivalQuintals": 3600.0, "daysAgo": 0},
-    {"mandiId": "mandi_dewas", "commodityId": "crop_cotton", "arrivalQuintals": 3100.0, "daysAgo": 0},
-    {"mandiId": "mandi_pipariya", "commodityId": "crop_cotton", "arrivalQuintals": 2500.0, "daysAgo": 0},
-    {"mandiId": "mandi_narmadapuram", "commodityId": "crop_cotton", "arrivalQuintals": 2200.0, "daysAgo": 0},
-
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_paddy", "arrivalQuintals": 4200.0, "daysAgo": 0},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_paddy", "arrivalQuintals": 3950.0, "daysAgo": 1},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_paddy", "arrivalQuintals": 3700.0, "daysAgo": 2},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_paddy", "arrivalQuintals": 3500.0, "daysAgo": 3},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_paddy", "arrivalQuintals": 3350.0, "daysAgo": 4},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_paddy", "arrivalQuintals": 3200.0, "daysAgo": 5},
-    {"mandiId": "mandi_bhopal", "commodityId": "crop_paddy", "arrivalQuintals": 3400.0, "daysAgo": 6},
-    {"mandiId": "mandi_sehore", "commodityId": "crop_paddy", "arrivalQuintals": 4400.0, "daysAgo": 0},
-    {"mandiId": "mandi_vidisha", "commodityId": "crop_paddy", "arrivalQuintals": 4600.0, "daysAgo": 0},
-    {"mandiId": "mandi_raisen", "commodityId": "crop_paddy", "arrivalQuintals": 5100.0, "daysAgo": 0},
-    {"mandiId": "mandi_indore", "commodityId": "crop_paddy", "arrivalQuintals": 4800.0, "daysAgo": 0},
-    {"mandiId": "mandi_dewas", "commodityId": "crop_paddy", "arrivalQuintals": 4100.0, "daysAgo": 0},
-    {"mandiId": "mandi_pipariya", "commodityId": "crop_paddy", "arrivalQuintals": 6200.0, "daysAgo": 0},
-    {"mandiId": "mandi_narmadapuram", "commodityId": "crop_paddy", "arrivalQuintals": 5400.0, "daysAgo": 0}
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_soybean",
+      "arrivalQuintals": 4500,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_soybean",
+      "arrivalQuintals": 4200,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_soybean",
+      "arrivalQuintals": 3800,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_soybean",
+      "arrivalQuintals": 3400,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_soybean",
+      "arrivalQuintals": 3100,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_soybean",
+      "arrivalQuintals": 2900,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_soybean",
+      "arrivalQuintals": 3200,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_soybean",
+      "arrivalQuintals": 5200,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_soybean",
+      "arrivalQuintals": 2800,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_soybean",
+      "arrivalQuintals": 3100,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_soybean",
+      "arrivalQuintals": 5600,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_soybean",
+      "arrivalQuintals": 4100,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_soybean",
+      "arrivalQuintals": 3800,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_soybean",
+      "arrivalQuintals": 3400,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_wheat",
+      "arrivalQuintals": 6200,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_wheat",
+      "arrivalQuintals": 5800,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_wheat",
+      "arrivalQuintals": 5400,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_wheat",
+      "arrivalQuintals": 5100,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_wheat",
+      "arrivalQuintals": 4900,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_wheat",
+      "arrivalQuintals": 4800,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_wheat",
+      "arrivalQuintals": 5000,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_wheat",
+      "arrivalQuintals": 6800,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_wheat",
+      "arrivalQuintals": 7100,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_wheat",
+      "arrivalQuintals": 5900,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_wheat",
+      "arrivalQuintals": 7400,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_wheat",
+      "arrivalQuintals": 6100,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_wheat",
+      "arrivalQuintals": 7600,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_wheat",
+      "arrivalQuintals": 6900,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_mustard",
+      "arrivalQuintals": 3400,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_mustard",
+      "arrivalQuintals": 3200,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_mustard",
+      "arrivalQuintals": 3100,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_mustard",
+      "arrivalQuintals": 2900,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_mustard",
+      "arrivalQuintals": 2800,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_mustard",
+      "arrivalQuintals": 2700,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_mustard",
+      "arrivalQuintals": 2900,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_mustard",
+      "arrivalQuintals": 3600,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_mustard",
+      "arrivalQuintals": 3900,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_mustard",
+      "arrivalQuintals": 3100,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_mustard",
+      "arrivalQuintals": 4200,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_mustard",
+      "arrivalQuintals": 3300,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_mustard",
+      "arrivalQuintals": 3100,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_mustard",
+      "arrivalQuintals": 2900,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_gram",
+      "arrivalQuintals": 3100,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_gram",
+      "arrivalQuintals": 2950,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_gram",
+      "arrivalQuintals": 2800,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_gram",
+      "arrivalQuintals": 2600,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_gram",
+      "arrivalQuintals": 2500,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_gram",
+      "arrivalQuintals": 2400,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_gram",
+      "arrivalQuintals": 2600,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_gram",
+      "arrivalQuintals": 3400,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_gram",
+      "arrivalQuintals": 3800,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_gram",
+      "arrivalQuintals": 2900,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_gram",
+      "arrivalQuintals": 4100,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_gram",
+      "arrivalQuintals": 3200,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_gram",
+      "arrivalQuintals": 4400,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_gram",
+      "arrivalQuintals": 3900,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_cotton",
+      "arrivalQuintals": 2600,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_cotton",
+      "arrivalQuintals": 2450,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_cotton",
+      "arrivalQuintals": 2300,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_cotton",
+      "arrivalQuintals": 2150,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_cotton",
+      "arrivalQuintals": 2050,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_cotton",
+      "arrivalQuintals": 1950,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_cotton",
+      "arrivalQuintals": 2100,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_cotton",
+      "arrivalQuintals": 2800,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_cotton",
+      "arrivalQuintals": 2200,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_cotton",
+      "arrivalQuintals": 2400,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_cotton",
+      "arrivalQuintals": 3600,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_cotton",
+      "arrivalQuintals": 3100,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_cotton",
+      "arrivalQuintals": 2500,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_cotton",
+      "arrivalQuintals": 2200,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_paddy",
+      "arrivalQuintals": 4200,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_paddy",
+      "arrivalQuintals": 3950,
+      "daysAgo": 1
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_paddy",
+      "arrivalQuintals": 3700,
+      "daysAgo": 2
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_paddy",
+      "arrivalQuintals": 3500,
+      "daysAgo": 3
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_paddy",
+      "arrivalQuintals": 3350,
+      "daysAgo": 4
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_paddy",
+      "arrivalQuintals": 3200,
+      "daysAgo": 5
+    },
+    {
+      "mandiId": "mandi_bhopal",
+      "commodityId": "crop_paddy",
+      "arrivalQuintals": 3400,
+      "daysAgo": 6
+    },
+    {
+      "mandiId": "mandi_sehore",
+      "commodityId": "crop_paddy",
+      "arrivalQuintals": 4400,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_vidisha",
+      "commodityId": "crop_paddy",
+      "arrivalQuintals": 4600,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_raisen",
+      "commodityId": "crop_paddy",
+      "arrivalQuintals": 5100,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_indore",
+      "commodityId": "crop_paddy",
+      "arrivalQuintals": 4800,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_dewas",
+      "commodityId": "crop_paddy",
+      "arrivalQuintals": 4100,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_pipariya",
+      "commodityId": "crop_paddy",
+      "arrivalQuintals": 6200,
+      "daysAgo": 0
+    },
+    {
+      "mandiId": "mandi_narmadapuram",
+      "commodityId": "crop_paddy",
+      "arrivalQuintals": 5400,
+      "daysAgo": 0
+    }
   ]
 }
