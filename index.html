@@ -331,6 +331,8 @@
     .hero {
       position: relative;
       padding-top: 52px;
+      overflow: hidden;
+      background: radial-gradient(130% 90% at 50% -10%, rgba(26, 127, 90, 0.07) 0%, rgba(212, 175, 55, 0.05) 40%, rgba(251, 253, 251, 0.95) 75%, #ffffff 100%);
     }
 
     .hero::before {
@@ -338,15 +340,52 @@
       position: absolute;
       top: -30px;
       right: 5%;
-      width: 520px;
-      height: 520px;
-      background: radial-gradient(circle, rgba(26, 127, 90, 0.12) 0%, rgba(212, 175, 55, 0.08) 45%, transparent 70%);
-      filter: blur(60px);
+      width: 580px;
+      height: 580px;
+      background: radial-gradient(circle, rgba(26, 127, 90, 0.14) 0%, rgba(212, 175, 55, 0.09) 45%, transparent 70%);
+      filter: blur(70px);
       pointer-events: none;
-      z-index: -1;
+      z-index: 0;
+    }
+
+    /* Ambient Hero Canvas & Dynamic Particle Layer (Spacetime-inspired) */
+    .hero-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Interactive Cursor Glow Halo */
+    .cursor-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 440px;
+      height: 440px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(26, 127, 90, 0.15) 0%, rgba(212, 175, 55, 0.10) 36%, rgba(255, 255, 255, 0) 70%);
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.35s ease, transform 0.06s ease-out;
+      will-change: transform, opacity;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-canvas,
+      .cursor-glow {
+        display: none !important;
+      }
     }
 
     .hero-grid {
+      position: relative;
+      z-index: 2;
       display: grid;
       gap: 36px;
       align-items: center;
@@ -1956,6 +1995,8 @@
 
     <main id="main-content">
       <section class="hero" id="top">
+        <canvas id="farm-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+        <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
         <div class="container hero-grid">
           <div class="hero-copy reveal">
             <span class="eyebrow">Farmers Cafe</span>
@@ -2149,6 +2190,8 @@
                 </form>
               </div>
             </div>
+          </div>
+        </div>
       </section>
 
       <section id="questions">
@@ -3215,7 +3258,302 @@
       updateCalculator();
     }
 
+    // ----------------------------------------------------
+    // Spacetime-inspired Agricultural Hero Canvas & Particles
+    // ----------------------------------------------------
+    function initHeroCanvas() {
+      const canvas = document.getElementById('farm-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      const cursorGlow = document.getElementById('cursor-glow');
+
+      // Check user preference for reduced motion
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+      }
+
+      let width = 0;
+      let height = 0;
+      let dpr = 1;
+
+      function resize() {
+        const hero = canvas.parentElement;
+        if (!hero) return;
+        const rect = hero.getBoundingClientRect();
+        width = rect.width;
+        height = rect.height;
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = Math.floor(width * dpr);
+        canvas.height = Math.floor(height * dpr);
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.scale(dpr, dpr);
+      }
+
+      resize();
+      window.addEventListener('resize', resize, { passive: true });
+
+      // Interactive Pointer Tracking
+      const mouse = {
+        x: -9999,
+        y: -9999,
+        targetX: -9999,
+        targetY: -9999,
+        active: false
+      };
+
+      window.addEventListener('pointermove', (e) => {
+        const heroRect = canvas.getBoundingClientRect();
+        mouse.targetX = e.clientX - heroRect.left;
+        mouse.targetY = e.clientY - heroRect.top;
+        mouse.active = (
+          e.clientY >= heroRect.top - 120 &&
+          e.clientY <= heroRect.bottom + 120
+        );
+
+        if (cursorGlow) {
+          cursorGlow.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+          cursorGlow.style.opacity = '1';
+        }
+      }, { passive: true });
+
+      document.addEventListener('pointerleave', () => {
+        mouse.active = false;
+        mouse.targetX = -9999;
+        mouse.targetY = -9999;
+        if (cursorGlow) {
+          cursorGlow.style.opacity = '0';
+        }
+      });
+
+      // Particle System
+      const isMobile = window.innerWidth < 768;
+      const particleCount = isMobile ? 65 : 130;
+      const particles = [];
+
+      // Organic Palette: Emerald bioluminescence and Golden sun amber
+      const colorPalette = [
+        { r: 26, g: 127, b: 90 },    // Primary Emerald #1A7F5A
+        { r: 46, g: 204, b: 113 },   // Bright Leaf Green #2ECC71
+        { r: 212, g: 175, b: 55 },   // Golden Sun Dust #D4AF37
+        { r: 245, g: 158, b: 11 },   // Warm Amber #F59E0B
+        { r: 16, g: 185, b: 129 }    // Mint Glow #10B981
+      ];
+
+      class FarmParticle {
+        constructor(initRandomY = true) {
+          this.reset(initRandomY);
+        }
+
+        reset(initRandomY = false) {
+          this.x = Math.random() * width;
+          this.y = initRandomY ? Math.random() * height : height + 10 + Math.random() * 20;
+          this.depth = 0.4 + Math.random() * 0.9;
+          this.radius = (0.9 + Math.random() * 1.8) * this.depth;
+          this.color = colorPalette[Math.floor(Math.random() * colorPalette.length)];
+          this.baseAlpha = (0.25 + Math.random() * 0.55);
+          this.alpha = this.baseAlpha;
+          this.alphaBoost = 0;
+          this.pulseSpeed = 0.015 + Math.random() * 0.035;
+          this.pulsePhase = Math.random() * Math.PI * 2;
+          this.vx = (Math.random() - 0.5) * 0.35 * this.depth;
+          this.vy = -(0.25 + Math.random() * 0.55) * this.depth;
+          this.swaySpeed = 0.008 + Math.random() * 0.015;
+          this.swayOffset = Math.random() * Math.PI * 2;
+        }
+
+        update(time, scrollDelta) {
+          this.pulsePhase += this.pulseSpeed;
+          const sway = Math.sin(time * this.swaySpeed + this.swayOffset) * 0.35;
+          this.x += this.vx + sway;
+          this.y += this.vy + scrollDelta * this.depth * 0.15;
+
+          // Proximity interaction with cursor
+          if (mouse.active) {
+            const dx = this.x - mouse.x;
+            const dy = this.y - mouse.y;
+            const dist = Math.hypot(dx, dy);
+            const maxDist = 130;
+            if (dist < maxDist && dist > 0) {
+              const force = (1 - dist / maxDist);
+              this.x += (dx / dist) * force * 1.8;
+              this.y += (dy / dist) * force * 1.8;
+              this.alphaBoost = Math.min(this.alphaBoost + force * 0.32, 0.5);
+            }
+          }
+
+          this.alphaBoost *= 0.92;
+          this.alpha = Math.min(
+            1,
+            this.baseAlpha * (0.65 + 0.35 * Math.sin(this.pulsePhase)) + this.alphaBoost
+          );
+
+          if (this.y < -20) {
+            this.reset(false);
+          } else if (this.x < -20) {
+            this.x = width + 20;
+          } else if (this.x > width + 20) {
+            this.x = -20;
+          }
+        }
+
+        draw(ctx) {
+          if (this.radius <= 0) return;
+          const { r, g, b } = this.color;
+
+          // Outer ambient glow
+          const glowGrad = ctx.createRadialGradient(
+            this.x, this.y, 0,
+            this.x, this.y, this.radius * 3.2
+          );
+          glowGrad.addColorStop(0, `rgba(${r}, ${g}, ${b}, ${this.alpha * 0.8})`);
+          glowGrad.addColorStop(0.5, `rgba(${r}, ${g}, ${b}, ${this.alpha * 0.25})`);
+          glowGrad.addColorStop(1, `rgba(${r}, ${g}, ${b}, 0)`);
+
+          ctx.fillStyle = glowGrad;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius * 3.2, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Luminous core
+          ctx.fillStyle = `rgba(255, 255, 255, ${this.alpha * 0.9})`;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, Math.max(0.6, this.radius * 0.5), 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      for (let i = 0; i < particleCount; i++) {
+        particles.push(new FarmParticle(true));
+      }
+
+      // Golden Sunbeam / Energy Stream system
+      const streaks = [];
+      function maybeSpawnStreak() {
+        if (streaks.length >= 2) return;
+        if (Math.random() < 0.012) {
+          streaks.push({
+            x: Math.random() * width * 0.7,
+            y: Math.random() * height * 0.4,
+            length: 70 + Math.random() * 110,
+            speed: 2.2 + Math.random() * 2.8,
+            angle: (32 + Math.random() * 8) * (Math.PI / 180),
+            alpha: 0,
+            maxAlpha: 0.28 + Math.random() * 0.22,
+            life: 0,
+            maxLife: 60 + Math.random() * 40
+          });
+        }
+      }
+
+      let lastScrollY = window.scrollY;
+      let lastTime = performance.now();
+      let animationId = null;
+
+      function render(now) {
+        lastTime = now;
+        const time = now * 0.001;
+
+        // Smooth mouse interpolation
+        mouse.x += (mouse.targetX - mouse.x) * 0.15;
+        mouse.y += (mouse.targetY - mouse.y) * 0.15;
+
+        // Scroll parallax
+        const currentScrollY = window.scrollY;
+        const scrollDelta = currentScrollY - lastScrollY;
+        lastScrollY = currentScrollY;
+
+        ctx.clearRect(0, 0, width, height);
+
+        // 1. Draw subtle connective neural/farm network lines
+        const maxLineDist = isMobile ? 55 : 82;
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const p1 = particles[i];
+            const p2 = particles[j];
+            const dx = p1.x - p2.x;
+            const dy = p1.y - p2.y;
+            const dist = Math.hypot(dx, dy);
+
+            if (dist < maxLineDist) {
+              const lineAlpha = (1 - dist / maxLineDist) * 0.14 * Math.min(p1.alpha, p2.alpha);
+              ctx.strokeStyle = `rgba(26, 127, 90, ${lineAlpha})`;
+              ctx.lineWidth = 0.8;
+              ctx.beginPath();
+              ctx.moveTo(p1.x, p1.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.stroke();
+            }
+          }
+        }
+
+        // 2. Update and draw particles
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          p.update(time, scrollDelta);
+          p.draw(ctx);
+        }
+
+        // 3. Update and draw sunbeam streaks
+        maybeSpawnStreak();
+        for (let i = streaks.length - 1; i >= 0; i--) {
+          const s = streaks[i];
+          s.life++;
+          s.x += Math.cos(s.angle) * s.speed;
+          s.y += Math.sin(s.angle) * s.speed;
+
+          const halfLife = s.maxLife / 2;
+          if (s.life < halfLife) {
+            s.alpha = (s.life / halfLife) * s.maxAlpha;
+          } else {
+            s.alpha = (1 - (s.life - halfLife) / halfLife) * s.maxAlpha;
+          }
+
+          if (s.alpha > 0) {
+            const tailX = s.x - Math.cos(s.angle) * s.length;
+            const tailY = s.y - Math.sin(s.angle) * s.length;
+
+            const grad = ctx.createLinearGradient(tailX, tailY, s.x, s.y);
+            grad.addColorStop(0, 'rgba(212, 175, 55, 0)');
+            grad.addColorStop(0.7, `rgba(212, 175, 55, ${s.alpha * 0.5})`);
+            grad.addColorStop(1, `rgba(255, 248, 220, ${s.alpha})`);
+
+            ctx.strokeStyle = grad;
+            ctx.lineWidth = 1.8;
+            ctx.lineCap = 'round';
+            ctx.beginPath();
+            ctx.moveTo(tailX, tailY);
+            ctx.lineTo(s.x, s.y);
+            ctx.stroke();
+          }
+
+          if (s.life >= s.maxLife || s.x > width + 100 || s.y > height + 100) {
+            streaks.splice(i, 1);
+          }
+        }
+
+        animationId = requestAnimationFrame(render);
+      }
+
+      // Pause when tab is hidden to save battery
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          if (animationId) cancelAnimationFrame(animationId);
+          animationId = null;
+        } else {
+          if (!animationId) {
+            lastTime = performance.now();
+            animationId = requestAnimationFrame(render);
+          }
+        }
+      });
+
+      animationId = requestAnimationFrame(render);
+    }
+
     // Initialize interactive modules
+    initHeroCanvas();
     initHeroSimulator();
     initEquipmentCalculator();
   </script>
