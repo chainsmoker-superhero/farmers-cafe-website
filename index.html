@@ -1,39 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 
 
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6EVPMGMQDH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6EVPMGMQDH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-6EVPMGMQDH');
-</script>
+    gtag('config', 'G-6EVPMGMQDH');
+  </script>
 
-  
-  
+
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FarmerGPT — #1 Farmer AI &amp; Kisan AI Agricultural Intelligence Platform</title>
-  <meta name="description" content="FarmerGPT is India's premier Farmer AI and Kisan AI agricultural intelligence platform by Farmers Cafe. Stateful farm memory, crop diagnostics, weather intelligence, and machinery advice.">
+  <meta name="description"
+    content="FarmerGPT is India's premier Farmer AI and Kisan AI agricultural intelligence platform by Farmers Cafe. Stateful farm memory, crop diagnostics, weather intelligence, and machinery advice.">
   <link rel="canonical" href="https://www.farmerscafe.co.in/">
-  <meta name="keywords" content="farmer ai, kissan ai, kisan ai, farmer ai apps, agriculture ai, farmergpt, farmers cafe, ai farming app india, crop advisory ai, kisan call center ai, agricultural intelligence platform">
+  <meta name="keywords"
+    content="farmer ai, kissan ai, kisan ai, farmer ai apps, agriculture ai, farmergpt, farmers cafe, ai farming app india, crop advisory ai, kisan call center ai, agricultural intelligence platform">
   <meta name="author" content="Farmers Cafe">
   <meta name="theme-color" content="#FFFFFF">
   <meta property="og:title" content="FarmerGPT — #1 Farmer AI &amp; Kisan AI Agricultural Intelligence Platform">
-  <meta property="og:description" content="Stateful AI built for the field. Retains farm memory and guides high-stakes decisions across crops, weather, equipment, and market timing.">
+  <meta property="og:description"
+    content="Stateful AI built for the field. Retains farm memory and guides high-stakes decisions across crops, weather, equipment, and market timing.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.farmerscafe.co.in/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="FarmerGPT | Leading Farmer AI &amp; Kisan AI Platform">
-  <meta name="twitter:description" content="Built by Farmers Cafe. Understands your farm, remembers what matters, and delivers practical operational guidance across crops and machinery.">
+  <meta name="twitter:description"
+    content="Built by Farmers Cafe. Understands your farm, remembers what matters, and delivers practical operational guidance across crops and machinery.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600;1,9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --primary: #1A7F5A;
@@ -48,6 +58,8 @@
       --soft: #6B7280;
       --shadow: 0 30px 80px rgba(19, 45, 35, 0.08);
       --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.06);
+      --glow-primary: rgba(26, 127, 90, 0.16);
+      --glow-accent: rgba(212, 175, 55, 0.18);
       --radius-xl: 32px;
       --radius-lg: 24px;
       --radius-md: 18px;
@@ -317,7 +329,21 @@
     }
 
     .hero {
+      position: relative;
       padding-top: 52px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -30px;
+      right: 5%;
+      width: 520px;
+      height: 520px;
+      background: radial-gradient(circle, rgba(26, 127, 90, 0.12) 0%, rgba(212, 175, 55, 0.08) 45%, transparent 70%);
+      filter: blur(60px);
+      pointer-events: none;
+      z-index: -1;
     }
 
     .hero-grid {
@@ -344,6 +370,10 @@
     .headline-accent {
       display: block;
       color: var(--primary);
+      font-family: "Fraunces", Georgia, serif;
+      font-style: italic;
+      font-weight: 500;
+      letter-spacing: -0.02em;
     }
 
     .hero-copy p {
@@ -528,6 +558,406 @@
       background: var(--secondary);
     }
 
+    /* Hero Simulator Container & Component Styles */
+    .hero-simulator-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(175deg, rgba(255, 255, 255, 0.96) 0%, rgba(246, 251, 247, 0.94) 100%);
+      border: 1px solid rgba(26, 127, 90, 0.18);
+      box-shadow: 0 24px 60px -12px rgba(19, 45, 35, 0.14), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+      backdrop-filter: blur(20px);
+      overflow: hidden;
+      min-height: 520px;
+    }
+
+    .hero-simulator-container::before {
+      display: none !important;
+    }
+
+    .sim-ambient-glow {
+      position: absolute;
+      top: -20%;
+      right: -20%;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.16) 0%, rgba(26, 127, 90, 0.12) 50%, transparent 75%);
+      filter: blur(40px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .sim-header {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.07);
+    }
+
+    .sim-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sim-live-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #10B981;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+      animation: simPulse 2s infinite ease-in-out;
+    }
+
+    @keyframes simPulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.3);
+        opacity: 0.7;
+      }
+    }
+
+    .sim-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .sim-version-badge {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: rgba(26, 127, 90, 0.08);
+      color: var(--primary);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .sim-lang-picker {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      background: rgba(15, 23, 42, 0.05);
+      padding: 3px;
+      border-radius: 999px;
+    }
+
+    .sim-lang-btn {
+      border: none;
+      background: transparent;
+      padding: 4px 9px;
+      border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      font-family: inherit;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 160ms ease;
+    }
+
+    .sim-lang-btn:hover {
+      color: var(--text);
+    }
+
+    .sim-lang-btn.active {
+      background: #ffffff;
+      color: var(--primary);
+      font-weight: 700;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .sim-prompt-chips {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding: 12px 2px 8px;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .sim-prompt-chips::-webkit-scrollbar {
+      display: none;
+    }
+
+    .sim-chip {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 13px;
+      border-radius: 999px;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      background: rgba(255, 255, 255, 0.92);
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 180ms ease;
+    }
+
+    .sim-chip:hover {
+      border-color: rgba(26, 127, 90, 0.35);
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .sim-chip.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(26, 127, 90, 0.28);
+    }
+
+    .sim-screen {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 14px;
+      margin: 4px 0 12px;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(15, 23, 42, 0.06);
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.03) inset;
+      flex: 1;
+      justify-content: flex-start;
+    }
+
+    .sim-memory-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 12px;
+      background: linear-gradient(90deg, rgba(26, 127, 90, 0.09), rgba(212, 175, 55, 0.09));
+      border: 1px solid rgba(26, 127, 90, 0.16);
+      transition: border-color 300ms ease;
+    }
+
+    .sim-memory-icon {
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .sim-memory-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      min-width: 0;
+    }
+
+    .sim-memory-label {
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--primary);
+    }
+
+    .sim-memory-val {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .sim-msg {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .sim-user-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #F1F5F9;
+      display: grid;
+      place-items: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .sim-bubble-user {
+      padding: 10px 14px;
+      border-radius: 16px 16px 16px 4px;
+      background: #0F172A;
+      color: #FFFFFF;
+      font-size: 0.86rem;
+      font-weight: 500;
+      line-height: 1.45;
+      max-width: 92%;
+    }
+
+    .sim-ai-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--primary), #0D4A32);
+      color: #FFFFFF;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(26, 127, 90, 0.3);
+    }
+
+    .sim-bubble-ai {
+      flex: 1;
+      padding: 12px 14px;
+      border-radius: 16px 16px 16px 4px;
+      background: #FFFFFF;
+      border: 1px solid rgba(26, 127, 90, 0.16);
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sim-ai-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+    }
+
+    .sim-ai-name {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .sim-confidence-tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #059669;
+      background: rgba(16, 185, 129, 0.1);
+      padding: 2px 7px;
+      border-radius: 6px;
+    }
+
+    .sim-ai-body {
+      font-size: 0.86rem;
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .sim-ai-body strong {
+      color: var(--text);
+    }
+
+    .sim-ai-body p {
+      margin: 0 0 6px 0;
+    }
+
+    .sim-ai-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .sim-ai-footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding-top: 6px;
+      border-top: 1px solid rgba(15, 23, 42, 0.04);
+    }
+
+    .sim-ai-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.04);
+      color: var(--muted);
+    }
+
+    .sim-ai-tag.tag-accent {
+      background: rgba(212, 175, 55, 0.14);
+      color: #8A6D05;
+    }
+
+    .sim-input-bar {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #FFFFFF;
+      border: 1px solid rgba(26, 127, 90, 0.22);
+      border-radius: 999px;
+      padding: 4px 6px 4px 14px;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+    }
+
+    .sim-mic-btn {
+      font-size: 16px;
+      cursor: pointer;
+      user-select: none;
+      display: grid;
+      place-items: center;
+      transition: transform 160ms ease;
+    }
+
+    .sim-mic-btn:hover {
+      transform: scale(1.15);
+    }
+
+    .sim-input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      font-size: 0.86rem;
+      font-family: inherit;
+      color: var(--text);
+      outline: none;
+    }
+
+    .sim-input::placeholder {
+      color: var(--soft);
+    }
+
+    .sim-send-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: none;
+      background: var(--primary);
+      color: #FFFFFF;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: background-color 160ms ease, transform 160ms ease;
+    }
+
+    .sim-send-btn:hover {
+      background: #146346;
+      transform: scale(1.05);
+    }
+
     .section-heading {
       max-width: 760px;
       margin-bottom: 32px;
@@ -656,12 +1086,17 @@
       flex-direction: column;
       gap: 12px;
       transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+      cursor: pointer;
+      transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
     }
 
     .question-card:hover {
       transform: translateY(-3px);
       border-color: rgba(26, 127, 90, 0.25);
       box-shadow: 0 20px 36px rgba(15, 23, 42, 0.08);
+      transform: translateY(-4px);
+      border-color: rgba(26, 127, 90, 0.32);
+      box-shadow: 0 20px 40px -8px rgba(26, 127, 90, 0.12), 0 0 0 1px rgba(26, 127, 90, 0.08);
     }
 
     .question-tag {
@@ -757,6 +1192,327 @@
     /* Equipment section */
     #equipment {
       background: var(--surface-strong);
+      position: relative;
+    }
+
+    #equipment::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 10%;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(26, 127, 90, 0.08) 0%, rgba(212, 175, 55, 0.05) 50%, transparent 70%);
+      filter: blur(50px);
+      pointer-events: none;
+    }
+
+    /* Equipment Calculator Workbench */
+    .equipment-calculator {
+      margin-bottom: 40px;
+      padding: 36px 32px;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(175deg, #FFFFFF 0%, #F5FAF6 100%);
+      border: 1px solid rgba(26, 127, 90, 0.16);
+      box-shadow: 0 24px 60px -10px rgba(19, 45, 35, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .equipment-calculator::before {
+      content: "";
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.12), transparent 70%);
+      pointer-events: none;
+    }
+
+    .calc-header {
+      max-width: 680px;
+      margin-bottom: 28px;
+    }
+
+    .calc-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(26, 127, 90, 0.1);
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .calc-header h3 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      margin: 0;
+      letter-spacing: -0.03em;
+      color: var(--text);
+    }
+
+    .calc-header p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    .calc-workbench {
+      display: grid;
+      gap: 28px;
+    }
+
+    @media (min-width: 900px) {
+      .calc-workbench {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+        align-items: stretch;
+      }
+    }
+
+    .calc-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      background: #FFFFFF;
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(15, 23, 42, 0.06);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .calc-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .calc-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .calc-group label,
+    .calc-label-row label {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .calc-val-pill {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: rgba(26, 127, 90, 0.08);
+      color: var(--primary);
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .calc-val-pill strong {
+      font-size: 1.05rem;
+    }
+
+    .calc-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 8px;
+      border-radius: 999px;
+      background: #E2E8F0;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .calc-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 0 4px rgba(26, 127, 90, 0.18);
+      cursor: pointer;
+      transition: transform 140ms ease, box-shadow 140ms ease;
+    }
+
+    .calc-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 0 6px rgba(26, 127, 90, 0.25);
+    }
+
+    .calc-range-marks {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      color: var(--soft);
+      font-weight: 600;
+    }
+
+    .calc-chip-group {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 8px;
+    }
+
+    .calc-choice-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      background: #F8FAFC;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: left;
+      transition: all 180ms ease;
+    }
+
+    .calc-choice-btn small {
+      font-size: 0.7rem;
+      color: var(--soft);
+      font-weight: 500;
+    }
+
+    .calc-choice-btn:hover {
+      border-color: rgba(26, 127, 90, 0.3);
+      background: #FFFFFF;
+    }
+
+    .calc-choice-btn.active {
+      border-color: var(--primary);
+      background: rgba(26, 127, 90, 0.07);
+      color: var(--primary);
+      box-shadow: 0 0 0 1px var(--primary);
+    }
+
+    .calc-choice-btn.active small {
+      color: #146346;
+    }
+
+    .calc-results-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      background: #FFFFFF;
+      padding: 26px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(26, 127, 90, 0.2);
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.06);
+    }
+
+    .calc-res-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+    }
+
+    .calc-res-status {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: #059669;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .calc-res-id {
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: var(--soft);
+    }
+
+    .calc-verdict-box {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .calc-verdict-eyebrow {
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--primary);
+    }
+
+    .calc-verdict-title {
+      margin: 0;
+      font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+      letter-spacing: -0.03em;
+      color: var(--text);
+    }
+
+    .calc-verdict-desc {
+      margin: 4px 0 0;
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .calc-metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .calc-metric {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding: 12px;
+      border-radius: 12px;
+      background: #F8FAFC;
+      border: 1px solid rgba(15, 23, 42, 0.05);
+    }
+
+    .calc-metric-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--soft);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .calc-metric-val {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .calc-metric-val.calc-highlight {
+      color: var(--primary);
+    }
+
+    .calc-rationale {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.5;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: rgba(212, 175, 55, 0.08);
+      border-left: 3px solid var(--accent);
+    }
+
+    .calc-rationale strong {
+      color: #715504;
     }
 
     .equipment-grid {
@@ -778,6 +1534,8 @@
       transform: translateY(-4px);
       border-color: rgba(26, 127, 90, 0.22);
       box-shadow: 0 24px 44px rgba(15, 23, 42, 0.08);
+      border-color: rgba(26, 127, 90, 0.28);
+      box-shadow: 0 24px 44px -8px rgba(26, 127, 90, 0.12);
     }
 
     .equipment-card h3 {
@@ -1155,6 +1913,7 @@
     }
   </style>
 </head>
+
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="site-shell">
@@ -1163,8 +1922,11 @@
         <a class="brand" href="#top" aria-label="Farmers Cafe home">
           <span class="brand-mark" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 15C8.2 10.2 13.1 6.9 19 6C18.2 11.8 14.7 16.6 10 18C8.5 18.4 7 17.3 6.6 15.8C6.5 15.5 6.4 15.3 6 15Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M8 16C10.4 13.4 13.1 11.4 16 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path
+                d="M6 15C8.2 10.2 13.1 6.9 19 6C18.2 11.8 14.7 16.6 10 18C8.5 18.4 7 17.3 6.6 15.8C6.5 15.5 6.4 15.3 6 15Z"
+                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M8 16C10.4 13.4 13.1 11.4 16 10" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" />
             </svg>
           </span>
           <span class="brand-label">
@@ -1184,7 +1946,8 @@
 
         <div class="nav-actions">
           <a class="button button-primary nav-cta" href="#contact">Get Early Access</a>
-          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation menu">
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu"
+            aria-label="Open navigation menu">
             <span></span>
           </button>
         </div>
@@ -1198,7 +1961,9 @@
             <span class="eyebrow">Farmers Cafe</span>
             <h1>The Future of Farming <span class="headline-accent">is Intelligent.</span></h1>
             <p class="hero-subhead"><strong>Meet FarmerGPT.</strong> The intelligence platform built for your farm.</p>
-            <p class="hero-desc">An AI-powered agricultural intelligence platform that understands your farm, remembers what matters, and helps you make better decisions across crops, weather, machinery, markets, and farm operations.</p>
+            <p class="hero-desc">An AI-powered agricultural intelligence platform that understands your farm, remembers
+              what matters, and helps you make better decisions across crops, weather, machinery, markets, and farm
+              operations.</p>
             <div class="hero-actions">
               <a class="button button-primary" href="#contact">Get Early Access</a>
               <a class="button button-secondary" href="#questions">What It Helps With</a>
@@ -1225,43 +1990,54 @@
             <svg viewBox="0 0 620 520" xmlns="http://www.w3.org/2000/svg" role="img">
               <defs>
                 <linearGradient id="fieldLine" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#1A7F5A" stop-opacity="0.75"/>
-                  <stop offset="100%" stop-color="#D4AF37" stop-opacity="0.4"/>
+                  <stop offset="0%" stop-color="#1A7F5A" stop-opacity="0.75" />
+                  <stop offset="100%" stop-color="#D4AF37" stop-opacity="0.4" />
                 </linearGradient>
                 <filter id="blurGlow">
-                  <feGaussianBlur stdDeviation="18"/>
+                  <feGaussianBlur stdDeviation="18" />
                 </filter>
               </defs>
-              <circle cx="470" cy="102" r="54" fill="#D4AF37" opacity="0.14" filter="url(#blurGlow)"/>
-              <circle cx="182" cy="142" r="82" fill="#1A7F5A" opacity="0.12" filter="url(#blurGlow)"/>
-              <path d="M76 340C140 292 214 268 294 268C385 268 467 301 539 364" stroke="url(#fieldLine)" stroke-width="2.5" stroke-linecap="round"/>
-              <path d="M84 384C163 332 236 308 308 308C393 308 463 333 530 385" stroke="url(#fieldLine)" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
-              <path d="M104 426C168 389 237 370 310 370C390 370 454 388 515 425" stroke="url(#fieldLine)" stroke-width="2.5" stroke-linecap="round" opacity="0.66"/>
-              <path d="M234 106C261 86 293 76 330 76C386 76 436 103 479 156C516 202 536 258 540 326" stroke="#0F172A" stroke-opacity="0.08" stroke-width="1.6" fill="none"/>
-              <path d="M186 132C224 166 244 210 247 263C249 307 234 349 202 390" stroke="#1A7F5A" stroke-opacity="0.4" stroke-width="2.2" fill="none" stroke-dasharray="6 8"/>
+              <circle cx="470" cy="102" r="54" fill="#D4AF37" opacity="0.14" filter="url(#blurGlow)" />
+              <circle cx="182" cy="142" r="82" fill="#1A7F5A" opacity="0.12" filter="url(#blurGlow)" />
+              <path d="M76 340C140 292 214 268 294 268C385 268 467 301 539 364" stroke="url(#fieldLine)"
+                stroke-width="2.5" stroke-linecap="round" />
+              <path d="M84 384C163 332 236 308 308 308C393 308 463 333 530 385" stroke="url(#fieldLine)"
+                stroke-width="2.5" stroke-linecap="round" opacity="0.8" />
+              <path d="M104 426C168 389 237 370 310 370C390 370 454 388 515 425" stroke="url(#fieldLine)"
+                stroke-width="2.5" stroke-linecap="round" opacity="0.66" />
+              <path d="M234 106C261 86 293 76 330 76C386 76 436 103 479 156C516 202 536 258 540 326" stroke="#0F172A"
+                stroke-opacity="0.08" stroke-width="1.6" fill="none" />
+              <path d="M186 132C224 166 244 210 247 263C249 307 234 349 202 390" stroke="#1A7F5A" stroke-opacity="0.4"
+                stroke-width="2.2" fill="none" stroke-dasharray="6 8" />
               <g transform="translate(120 120)">
-                <rect x="0" y="0" width="378" height="240" rx="28" fill="#FFFFFF" fill-opacity="0.84" stroke="#1A7F5A" stroke-opacity="0.12"/>
-                <path d="M46 164C92 128 128 112 178 112C232 112 264 128 316 164" stroke="#1A7F5A" stroke-width="3" fill="none" stroke-linecap="round"/>
-                <path d="M62 186C108 150 141 134 185 134C230 134 266 147 302 178" stroke="#D4AF37" stroke-width="2.6" fill="none" stroke-linecap="round" opacity="0.8"/>
-                <circle cx="184" cy="94" r="36" fill="#F3F8F4" stroke="#1A7F5A" stroke-opacity="0.14"/>
-                <path d="M184 64V45" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round"/>
-                <path d="M207 72L219 58" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round"/>
-                <path d="M216 95H236" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round"/>
-                <path d="M207 118L219 132" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round"/>
-                <path d="M184 124V143" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round"/>
-                <path d="M161 118L149 132" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round"/>
-                <path d="M152 95H132" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round"/>
-                <path d="M161 72L149 58" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round"/>
-                <path d="M176 82C183 72 196 68 208 74C220 80 225 94 221 106C217 118 206 127 194 127C180 127 168 118 164 106" stroke="#1A7F5A" stroke-width="2.3" fill="none"/>
-                <path d="M188 90C193 97 197 107 199 119" stroke="#D4AF37" stroke-width="2.3" stroke-linecap="round"/>
+                <rect x="0" y="0" width="378" height="240" rx="28" fill="#FFFFFF" fill-opacity="0.84" stroke="#1A7F5A"
+                  stroke-opacity="0.12" />
+                <path d="M46 164C92 128 128 112 178 112C232 112 264 128 316 164" stroke="#1A7F5A" stroke-width="3"
+                  fill="none" stroke-linecap="round" />
+                <path d="M62 186C108 150 141 134 185 134C230 134 266 147 302 178" stroke="#D4AF37" stroke-width="2.6"
+                  fill="none" stroke-linecap="round" opacity="0.8" />
+                <circle cx="184" cy="94" r="36" fill="#F3F8F4" stroke="#1A7F5A" stroke-opacity="0.14" />
+                <path d="M184 64V45" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round" />
+                <path d="M207 72L219 58" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round" />
+                <path d="M216 95H236" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round" />
+                <path d="M207 118L219 132" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round" />
+                <path d="M184 124V143" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round" />
+                <path d="M161 118L149 132" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round" />
+                <path d="M152 95H132" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round" />
+                <path d="M161 72L149 58" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round" />
+                <path
+                  d="M176 82C183 72 196 68 208 74C220 80 225 94 221 106C217 118 206 127 194 127C180 127 168 118 164 106"
+                  stroke="#1A7F5A" stroke-width="2.3" fill="none" />
+                <path d="M188 90C193 97 197 107 199 119" stroke="#D4AF37" stroke-width="2.3" stroke-linecap="round" />
                 <g>
-                  <circle cx="74" cy="70" r="8" fill="#1A7F5A"/>
-                  <circle cx="118" cy="56" r="6" fill="#D4AF37"/>
-                  <circle cx="300" cy="58" r="7" fill="#1A7F5A"/>
-                  <circle cx="326" cy="98" r="5" fill="#D4AF37"/>
-                  <circle cx="314" cy="174" r="7" fill="#1A7F5A"/>
-                  <circle cx="82" cy="188" r="6" fill="#D4AF37"/>
-                  <path d="M74 70L118 56L184 94L300 58L326 98L314 174L202 190L82 188Z" stroke="#0F172A" stroke-opacity="0.08" stroke-width="1.4" fill="none"/>
+                  <circle cx="74" cy="70" r="8" fill="#1A7F5A" />
+                  <circle cx="118" cy="56" r="6" fill="#D4AF37" />
+                  <circle cx="300" cy="58" r="7" fill="#1A7F5A" />
+                  <circle cx="326" cy="98" r="5" fill="#D4AF37" />
+                  <circle cx="314" cy="174" r="7" fill="#1A7F5A" />
+                  <circle cx="82" cy="188" r="6" fill="#D4AF37" />
+                  <path d="M74 70L118 56L184 94L300 58L326 98L314 174L202 190L82 188Z" stroke="#0F172A"
+                    stroke-opacity="0.08" stroke-width="1.4" fill="none" />
                 </g>
               </g>
             </svg>
@@ -1269,9 +2045,110 @@
               <span class="glass-chip">Understands Your Land</span>
               <span class="glass-chip">Farm Memory &amp; Context</span>
               <span class="glass-chip">Live in Early Access</span>
+              <div class="hero-visual reveal hero-simulator-container" id="hero-simulator">
+                <div class="sim-ambient-glow" aria-hidden="true"></div>
+                <div class="sim-header">
+                  <div class="sim-status">
+                    <span class="sim-live-dot" aria-hidden="true"></span>
+                    <span class="sim-title">FarmerGPT Live Session</span>
+                    <span class="sim-version-badge">v2.4 • Stateful</span>
+                  </div>
+                  <div class="sim-lang-picker" aria-label="Select regional language for simulation">
+                    <button class="sim-lang-btn active" data-lang="en" type="button">English</button>
+                    <button class="sim-lang-btn" data-lang="hi" type="button">हिंदी</button>
+                    <button class="sim-lang-btn" data-lang="mr" type="button">मराठी</button>
+                    <button class="sim-lang-btn" data-lang="pa" type="button">ਪੰਜਾਬੀ</button>
+                  </div>
+                </div>
+
+                <div class="sim-prompt-chips" role="tablist" aria-label="Sample farmer questions">
+                  <button class="sim-chip active" data-scenario="crop" role="tab" aria-selected="true" type="button">
+                    <span class="sim-chip-icon">🌿</span>
+                    <span>Leaf Curling</span>
+                  </button>
+                  <button class="sim-chip" data-scenario="equipment" role="tab" aria-selected="false" type="button">
+                    <span class="sim-chip-icon">🚜</span>
+                    <span>45 HP &amp; Rotavator</span>
+                  </button>
+                  <button class="sim-chip" data-scenario="weather" role="tab" aria-selected="false" type="button">
+                    <span class="sim-chip-icon">🌧️</span>
+                    <span>Spray vs Rain</span>
+                  </button>
+                  <button class="sim-chip" data-scenario="mandi" role="tab" aria-selected="false" type="button">
+                    <span class="sim-chip-icon">📊</span>
+                    <span>Wheat Mandi</span>
+                  </button>
+                </div>
+
+                <div class="sim-screen" aria-live="polite">
+                  <div class="sim-memory-pill">
+                    <div class="sim-memory-icon" aria-hidden="true">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.2">
+                        <path
+                          d="M12 2a9 9 0 0 1 9 9c0 4.14-2.8 7.64-6.66 8.66l-.34.09V22h-4v-2.25l-.34-.09A9.004 9.004 0 0 1 3 11a9 9 0 0 1 9-9z" />
+                        <path d="M9 10h.01M15 10h.01M9.5 14a3.5 3.5 0 0 0 5 0" />
+                      </svg>
+                    </div>
+                    <div class="sim-memory-content">
+                      <span class="sim-memory-label">Recalled Farm Memory</span>
+                      <span class="sim-memory-val" id="sim-memory-text">18 Acres • Heavy Black Soil • Nashik • Mahindra
+                        575 DI (45 HP)</span>
+                    </div>
+                  </div>
+
+                  <div class="sim-msg sim-msg-user">
+                    <div class="sim-user-avatar">👨‍🌾</div>
+                    <div class="sim-bubble sim-bubble-user" id="sim-user-query">
+                      "Why are my cotton leaves curling upward with faint yellow spots?"
+                    </div>
+                  </div>
+
+                  <div class="sim-msg sim-msg-ai">
+                    <div class="sim-ai-avatar">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <path
+                          d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                      </svg>
+                    </div>
+                    <div class="sim-bubble sim-bubble-ai">
+                      <div class="sim-ai-header">
+                        <span class="sim-ai-name">FarmerGPT Guidance</span>
+                        <span class="sim-confidence-tag">98% Diagnosis Match</span>
+                      </div>
+                      <div class="sim-ai-body" id="sim-ai-response">
+                        <p><strong>Primary Diagnosis:</strong> Classic early-stage <strong>Cotton Leaf Curl Virus
+                            (CLCuV)</strong> combined with sucking pest infestation (Whitefly nymphs under leaf
+                          margins).</p>
+                        <p><strong>Actionable Steps:</strong> Check undersides of leaves in Field Plot B. Spray
+                          <em>Diafenthiuron 50% WP @ 240g/acre</em> or <em>Flonicamid 50 WG @ 60g/acre</em>. Apply
+                          during evening hours when wind is below 8 km/h.</p>
+                      </div>
+                      <div class="sim-ai-footer" id="sim-ai-tags">
+                        <span class="sim-ai-tag tag-accent">Plot B • Sown 24 Days Ago</span>
+                        <span class="sim-ai-tag">Evening Window Recommended</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <form class="sim-input-bar" id="sim-custom-form" onsubmit="return false;">
+                  <span class="sim-mic-btn" id="sim-mic-btn" title="Simulate regional voice query"
+                    aria-label="Simulate voice input">🎙️</span>
+                  <input type="text" class="sim-input" id="sim-input-field"
+                    placeholder="Ask FarmerGPT in English, हिंदी, मराठी, ਪੰਜਾਬੀ..."
+                    aria-label="Simulate custom farm query">
+                  <button type="submit" class="sim-send-btn" id="sim-send-btn" aria-label="Submit query">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <line x1="22" y1="2" x2="11" y2="13"></line>
+                      <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                  </button>
+                </form>
+              </div>
             </div>
-          </div>
-        </div>
       </section>
 
       <section id="questions">
@@ -1279,7 +2156,8 @@
           <div class="section-heading reveal">
             <span class="eyebrow">Practical Field Guidance</span>
             <h2>What can FarmerGPT help me with?</h2>
-            <p>Farming changes with every sunrise. Ask FarmerGPT in plain words&mdash;by typing or speaking&mdash;and get clear answers grounded in your farm's reality.</p>
+            <p>Farming changes with every sunrise. Ask FarmerGPT in plain words&mdash;by typing or speaking&mdash;and
+              get clear answers grounded in your farm's reality.</p>
           </div>
           <div class="questions-grid">
             <article class="question-card reveal">
@@ -1317,7 +2195,9 @@
           </div>
           <div class="connecting-banner reveal">
             <strong>How does FarmerGPT know the right answer?</strong>
-            <p>Unlike generic chatbots that give textbook advice, FarmerGPT answers these questions using <strong>farm memory, weather intelligence, crop intelligence, equipment intelligence, and market intelligence</strong>.</p>
+            <p>Unlike generic chatbots that give textbook advice, FarmerGPT answers these questions using <strong>farm
+                memory, weather intelligence, crop intelligence, equipment intelligence, and market
+                intelligence</strong>.</p>
           </div>
         </div>
       </section>
@@ -1327,8 +2207,12 @@
           <div class="vision-copy reveal">
             <span class="eyebrow">The Platform Foundation</span>
             <h2>An AI that actually remembers your farm.</h2>
-            <p>FarmerGPT is an AI-powered agricultural intelligence platform that understands your farm, remembers what matters, and helps you make better decisions across crops, weather, machinery, markets, and farm operations.</p>
-            <p>Most AI tools treat every conversation like you are a stranger. They don't know your soil, your crops, or what tractor is parked in your shed. FarmerGPT builds a persistent understanding of your land and remembers:</p>
+            <p>FarmerGPT is an AI-powered agricultural intelligence platform that understands your farm, remembers what
+              matters, and helps you make better decisions across crops, weather, machinery, markets, and farm
+              operations.</p>
+            <p>Most AI tools treat every conversation like you are a stranger. They don't know your soil, your crops, or
+              what tractor is parked in your shed. FarmerGPT builds a persistent understanding of your land and
+              remembers:</p>
             <div class="memory-list">
               <div class="memory-item">
                 <div class="memory-item-icon">🌱</div>
@@ -1359,35 +2243,47 @@
                 </div>
               </div>
             </div>
-            <p style="margin-top: 20px;">Every time you speak with FarmerGPT, recommendations become more accurate and personalized&mdash;because it actually knows your farm.</p>
+            <p style="margin-top: 20px;">Every time you speak with FarmerGPT, recommendations become more accurate and
+              personalized&mdash;because it actually knows your farm.</p>
           </div>
           <div class="vision-visual reveal" aria-hidden="true">
             <svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg">
-              <rect x="30" y="36" width="500" height="308" rx="30" fill="#FFFFFF" fill-opacity="0.86" stroke="#1A7F5A" stroke-opacity="0.1"/>
-              <path d="M94 265C145 221 189 198 243 198C297 198 345 219 410 266" stroke="#1A7F5A" stroke-width="3" fill="none" stroke-linecap="round"/>
-              <path d="M120 289C169 252 205 236 246 236C292 236 336 252 387 289" stroke="#D4AF37" stroke-width="2.3" fill="none" stroke-linecap="round" opacity="0.8"/>
-              <circle cx="140" cy="112" r="26" fill="#1A7F5A" fill-opacity="0.08" stroke="#1A7F5A" stroke-opacity="0.14"/>
-              <circle cx="418" cy="124" r="24" fill="#D4AF37" fill-opacity="0.1" stroke="#D4AF37" stroke-opacity="0.22"/>
-              <circle cx="279" cy="96" r="48" fill="#F3F8F4" stroke="#1A7F5A" stroke-opacity="0.12"/>
-              <path d="M259 96C259 80 272 67 288 67C304 67 317 80 317 96C317 112 304 125 288 125C272 125 259 112 259 96Z" stroke="#1A7F5A" stroke-width="2.2" fill="none"/>
-              <path d="M289 63V39" stroke="#1A7F5A" stroke-width="2.2" stroke-linecap="round"/>
-              <path d="M336 96H360" stroke="#1A7F5A" stroke-width="2.2" stroke-linecap="round"/>
-              <path d="M289 149V173" stroke="#1A7F5A" stroke-width="2.2" stroke-linecap="round"/>
-              <path d="M241 96H217" stroke="#1A7F5A" stroke-width="2.2" stroke-linecap="round"/>
-              <path d="M309 75L326 58" stroke="#D4AF37" stroke-width="2.2" stroke-linecap="round"/>
-              <path d="M267 117L251 135" stroke="#D4AF37" stroke-width="2.2" stroke-linecap="round"/>
+              <rect x="30" y="36" width="500" height="308" rx="30" fill="#FFFFFF" fill-opacity="0.86" stroke="#1A7F5A"
+                stroke-opacity="0.1" />
+              <path d="M94 265C145 221 189 198 243 198C297 198 345 219 410 266" stroke="#1A7F5A" stroke-width="3"
+                fill="none" stroke-linecap="round" />
+              <path d="M120 289C169 252 205 236 246 236C292 236 336 252 387 289" stroke="#D4AF37" stroke-width="2.3"
+                fill="none" stroke-linecap="round" opacity="0.8" />
+              <circle cx="140" cy="112" r="26" fill="#1A7F5A" fill-opacity="0.08" stroke="#1A7F5A"
+                stroke-opacity="0.14" />
+              <circle cx="418" cy="124" r="24" fill="#D4AF37" fill-opacity="0.1" stroke="#D4AF37"
+                stroke-opacity="0.22" />
+              <circle cx="279" cy="96" r="48" fill="#F3F8F4" stroke="#1A7F5A" stroke-opacity="0.12" />
+              <path
+                d="M259 96C259 80 272 67 288 67C304 67 317 80 317 96C317 112 304 125 288 125C272 125 259 112 259 96Z"
+                stroke="#1A7F5A" stroke-width="2.2" fill="none" />
+              <path d="M289 63V39" stroke="#1A7F5A" stroke-width="2.2" stroke-linecap="round" />
+              <path d="M336 96H360" stroke="#1A7F5A" stroke-width="2.2" stroke-linecap="round" />
+              <path d="M289 149V173" stroke="#1A7F5A" stroke-width="2.2" stroke-linecap="round" />
+              <path d="M241 96H217" stroke="#1A7F5A" stroke-width="2.2" stroke-linecap="round" />
+              <path d="M309 75L326 58" stroke="#D4AF37" stroke-width="2.2" stroke-linecap="round" />
+              <path d="M267 117L251 135" stroke="#D4AF37" stroke-width="2.2" stroke-linecap="round" />
               <g opacity="0.9">
-                <rect x="88" y="132" width="106" height="72" rx="18" fill="#F9FCF9" stroke="#1A7F5A" stroke-opacity="0.14"/>
-                <path d="M110 176C124 160 140 152 160 152C172 152 184 156 192 163" stroke="#1A7F5A" stroke-width="2" fill="none" stroke-linecap="round"/>
-                <circle cx="140" cy="156" r="7" fill="#1A7F5A"/>
+                <rect x="88" y="132" width="106" height="72" rx="18" fill="#F9FCF9" stroke="#1A7F5A"
+                  stroke-opacity="0.14" />
+                <path d="M110 176C124 160 140 152 160 152C172 152 184 156 192 163" stroke="#1A7F5A" stroke-width="2"
+                  fill="none" stroke-linecap="round" />
+                <circle cx="140" cy="156" r="7" fill="#1A7F5A" />
               </g>
               <g opacity="0.9">
-                <rect x="362" y="178" width="108" height="76" rx="18" fill="#F9FCF9" stroke="#1A7F5A" stroke-opacity="0.14"/>
-                <path d="M384 220L399 204L415 220L437 193" stroke="#D4AF37" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="437" cy="193" r="5" fill="#1A7F5A"/>
+                <rect x="362" y="178" width="108" height="76" rx="18" fill="#F9FCF9" stroke="#1A7F5A"
+                  stroke-opacity="0.14" />
+                <path d="M384 220L399 204L415 220L437 193" stroke="#D4AF37" stroke-width="2.4" fill="none"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <circle cx="437" cy="193" r="5" fill="#1A7F5A" />
               </g>
-              <path d="M194 168H229L259 118" stroke="#0F172A" stroke-opacity="0.08" stroke-width="1.6" fill="none"/>
-              <path d="M317 118L362 178" stroke="#0F172A" stroke-opacity="0.08" stroke-width="1.6" fill="none"/>
+              <path d="M194 168H229L259 118" stroke="#0F172A" stroke-opacity="0.08" stroke-width="1.6" fill="none" />
+              <path d="M317 118L362 178" stroke="#0F172A" stroke-opacity="0.08" stroke-width="1.6" fill="none" />
             </svg>
           </div>
         </div>
@@ -1398,50 +2294,156 @@
           <div class="section-heading reveal">
             <span class="eyebrow">Dedicated Platform Capability</span>
             <h2>Smart equipment decisions. Before you spend a single rupee.</h2>
-            <p>Buying or renting farm machinery is one of your biggest financial commitments. FarmerGPT helps you choose the right equipment, calculate real costs, and avoid expensive mistakes.</p>
+            <p>Buying or renting farm machinery is one of your biggest financial commitments. FarmerGPT helps you choose
+              the right equipment, calculate real costs, and avoid expensive mistakes.</p>
           </div>
+
+          <div class="equipment-calculator reveal" id="equipment-calculator">
+            <div class="calc-header">
+              <div class="calc-badge">Interactive Advisor • Live Engine</div>
+              <h3>Try Your Farm's Numbers: Equipment &amp; Implement Sizing</h3>
+              <p>Adjust land acreage, soil type, and operational priorities below. FarmerGPT's engine computes the ideal
+                horsepower, matching implements, and honest buy vs. rent economics in real time.</p>
+            </div>
+
+            <div class="calc-workbench">
+              <div class="calc-controls">
+                <div class="calc-group">
+                  <div class="calc-label-row">
+                    <label for="calc-acreage">Operational Land Size</label>
+                    <span class="calc-val-pill"><strong id="calc-acreage-display">18</strong> Acres</span>
+                  </div>
+                  <input type="range" min="3" max="60" value="18" step="1" id="calc-acreage" class="calc-slider"
+                    aria-label="Land size in acres">
+                  <div class="calc-range-marks">
+                    <span>3 Acres (Small)</span>
+                    <span>20 Acres</span>
+                    <span>60+ Acres (Commercial)</span>
+                  </div>
+                </div>
+
+                <div class="calc-group">
+                  <label>Primary Soil Type &amp; Resistance</label>
+                  <div class="calc-chip-group" id="calc-soil-group">
+                    <button type="button" class="calc-choice-btn active" data-soil="black">
+                      <span>Black Cotton / Clay</span>
+                      <small>High Draft Resistance</small>
+                    </button>
+                    <button type="button" class="calc-choice-btn" data-soil="loam">
+                      <span>Alluvial / Loam</span>
+                      <small>Medium Resistance</small>
+                    </button>
+                    <button type="button" class="calc-choice-btn" data-soil="sandy">
+                      <span>Red Sandy / Silt</span>
+                      <small>Low Draft Resistance</small>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="calc-group">
+                  <label>Primary Field Operation</label>
+                  <div class="calc-chip-group" id="calc-op-group">
+                    <button type="button" class="calc-choice-btn active" data-op="rotavator">Rotavator /
+                      Seedbed</button>
+                    <button type="button" class="calc-choice-btn" data-op="plow">Deep Plowing (MB Plow)</button>
+                    <button type="button" class="calc-choice-btn" data-op="general">Multi-Crop / Sowing</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="calc-results-card">
+                <div class="calc-res-header">
+                  <span class="calc-res-status">● Live Engine Computation</span>
+                  <span class="calc-res-id">FarmerGPT Sizing Protocol</span>
+                </div>
+
+                <div class="calc-verdict-box">
+                  <span class="calc-verdict-eyebrow">Optimal Machine Class</span>
+                  <h4 class="calc-verdict-title" id="calc-hp-verdict">45 HP &ndash; 50 HP (Dual Clutch)</h4>
+                  <p class="calc-verdict-desc" id="calc-verdict-notes">Black cotton soil demands high PTO reserve
+                    torque. Paired with a 6-foot (42-blade) multi-speed rotavator to prevent engine lugging.</p>
+                </div>
+
+                <div class="calc-metric-grid">
+                  <div class="calc-metric">
+                    <span class="calc-metric-label">Recommended Implement</span>
+                    <strong class="calc-metric-val" id="calc-implement-val">6-Foot Heavy-Duty Rotavator</strong>
+                  </div>
+                  <div class="calc-metric">
+                    <span class="calc-metric-label">Est. Annual Field Work</span>
+                    <strong class="calc-metric-val" id="calc-hours-val">~115 Hours / Year</strong>
+                  </div>
+                  <div class="calc-metric">
+                    <span class="calc-metric-label">Buy vs. Rent Verdict</span>
+                    <strong class="calc-metric-val calc-highlight" id="calc-finance-val">Purchase Justified</strong>
+                  </div>
+                  <div class="calc-metric">
+                    <span class="calc-metric-label">Est. Fuel Consumption</span>
+                    <strong class="calc-metric-val" id="calc-fuel-val">3.6 &ndash; 4.0 L/hr @ 1700 RPM</strong>
+                  </div>
+                </div>
+
+                <div class="calc-rationale" id="calc-rationale-box">
+                  <strong>FarmerGPT Logic:</strong> At 18 acres with heavy clay, rental delays cost ~₹35,000 in missed
+                  soil moisture windows. Owning this horsepower class pays for itself over 2.6 seasons.
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div class="equipment-grid">
             <article class="equipment-card reveal">
               <div class="icon-wrap" aria-hidden="true">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="7" cy="17" r="3" stroke="currentColor" stroke-width="1.8"/>
-                  <circle cx="17" cy="15" r="5" stroke="currentColor" stroke-width="1.8"/>
-                  <path d="M7 14V9H13L15 12H17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="7" cy="17" r="3" stroke="currentColor" stroke-width="1.8" />
+                  <circle cx="17" cy="15" r="5" stroke="currentColor" stroke-width="1.8" />
+                  <path d="M7 14V9H13L15 12H17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round" />
                 </svg>
               </div>
               <h3>Machinery Recommendations for Your Land</h3>
-              <p>Tell FarmerGPT your acreage, soil conditions, and crops. It recommends the right tractor horsepower, implements, and machinery sizes so you never underpower your work or overpay for capacity you don't need.</p>
+              <p>Tell FarmerGPT your acreage, soil conditions, and crops. It recommends the right tractor horsepower,
+                implements, and machinery sizes so you never underpower your work or overpay for capacity you don't
+                need.</p>
             </article>
 
             <article class="equipment-card reveal">
               <div class="icon-wrap" aria-hidden="true">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2V22M17 5H9.5C8.11929 5 7 6.11929 7 7.5C7 8.88071 8.11929 10 9.5 10H14.5C15.8807 10 17 11.1193 17 12.5C17 13.8807 15.8807 15 14.5 15H7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <path
+                    d="M12 2V22M17 5H9.5C8.11929 5 7 6.11929 7 7.5C7 8.88071 8.11929 10 9.5 10H14.5C15.8807 10 17 11.1193 17 12.5C17 13.8807 15.8807 15 14.5 15H7"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
                 </svg>
               </div>
               <h3>Honest Buy vs. Rent &amp; Affordability</h3>
-              <p>Unsure whether to purchase a machine or hire custom services? FarmerGPT evaluates your seasonal usage hours, fuel burn, maintenance costs, and capital payback to show you what actually makes financial sense.</p>
+              <p>Unsure whether to purchase a machine or hire custom services? FarmerGPT evaluates your seasonal usage
+                hours, fuel burn, maintenance costs, and capital payback to show you what actually makes financial
+                sense.</p>
             </article>
 
             <article class="equipment-card reveal">
               <div class="icon-wrap" aria-hidden="true">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path
+                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </div>
               <h3>Implement Compatibility &amp; Fleet Audit</h3>
-              <p>Prevent mismatched attachments. FarmerGPT knows your tractor model and checks PTO power, hydraulic capacity, and hitch requirements before you invest in a rotavator, seed drill, or harvester.</p>
+              <p>Prevent mismatched attachments. FarmerGPT knows your tractor model and checks PTO power, hydraulic
+                capacity, and hitch requirements before you invest in a rotavator, seed drill, or harvester.</p>
             </article>
 
             <article class="equipment-card reveal">
               <div class="icon-wrap" aria-hidden="true">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/>
-                  <path d="M12 8V12L15 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8" />
+                  <path d="M12 8V12L15 15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
                 </svg>
               </div>
               <h3>Transparent Explanations for Every Choice</h3>
-              <p>No black-box recommendations. FarmerGPT clearly explains <em>why</em> a particular machine fits your farm, showing you the exact practical and financial logic behind every suggestion.</p>
+              <p>No black-box recommendations. FarmerGPT clearly explains <em>why</em> a particular machine fits your
+                farm, showing you the exact practical and financial logic behind every suggestion.</p>
             </article>
           </div>
         </div>
@@ -1452,80 +2454,98 @@
           <div class="section-heading reveal">
             <span class="eyebrow">Platform Capabilities</span>
             <h2>Intelligence for every decision on your farm.</h2>
-            <p>FarmerGPT brings together multiple intelligence layers into a single Farmer AI platform&mdash;designed to help every kisan decide and act with confidence from sowing to harvest.</p>
+            <p>FarmerGPT brings together multiple intelligence layers into a single Farmer AI platform&mdash;designed to
+              help every kisan decide and act with confidence from sowing to harvest.</p>
           </div>
           <div class="capabilities-grid">
             <article class="capability-card reveal">
               <div class="icon-wrap" aria-hidden="true">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 5C8.7 5 6 7.7 6 11V18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                  <path d="M12 5C15.3 5 18 7.7 18 11V18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                  <path d="M8 18H16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                  <path d="M12 9V14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M12 5C8.7 5 6 7.7 6 11V18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                  <path d="M12 5C15.3 5 18 7.7 18 11V18" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" />
+                  <path d="M8 18H16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                  <path d="M12 9V14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
                 </svg>
               </div>
               <h3>Crop Intelligence &amp; Field Advisory</h3>
-              <p>Personalized guidance across the entire season&mdash;from seed selection and sowing depth to fertilizer scheduling and harvest readiness.</p>
+              <p>Personalized guidance across the entire season&mdash;from seed selection and sowing depth to fertilizer
+                scheduling and harvest readiness.</p>
             </article>
 
             <article class="capability-card reveal">
               <div class="icon-wrap" aria-hidden="true">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7 15C7 10.6 10.6 7 15 7H18V10C18 14.4 14.4 18 10 18H7V15Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                  <path d="M8.5 16.5L16 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M7 15C7 10.6 10.6 7 15 7H18V10C18 14.4 14.4 18 10 18H7V15Z" stroke="currentColor"
+                    stroke-width="1.8" stroke-linejoin="round" />
+                  <path d="M8.5 16.5L16 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
                 </svg>
               </div>
               <h3>Crop Health &amp; Disease Detection</h3>
-              <p>Catch leaf diseases, fungal infections, and pest damage early. Simply describe plant symptoms or share photos to get rapid identification and safe, actionable remedy steps.</p>
+              <p>Catch leaf diseases, fungal infections, and pest damage early. Simply describe plant symptoms or share
+                photos to get rapid identification and safe, actionable remedy steps.</p>
             </article>
 
             <article class="capability-card reveal">
               <div class="icon-wrap" aria-hidden="true">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7 17C4.8 17 3 15.2 3 13C3 11 4.4 9.3 6.3 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                  <path d="M8 9C8.8 6.7 10.9 5 13.5 5C16.8 5 19.5 7.7 19.5 11C20.9 11.2 22 12.4 22 14C22 15.8 20.5 17.3 18.7 17.3H7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                  <path d="M10 19L12 16L14 19L16 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M7 17C4.8 17 3 15.2 3 13C3 11 4.4 9.3 6.3 9" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" />
+                  <path
+                    d="M8 9C8.8 6.7 10.9 5 13.5 5C16.8 5 19.5 7.7 19.5 11C20.9 11.2 22 12.4 22 14C22 15.8 20.5 17.3 18.7 17.3H7.5"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                  <path d="M10 19L12 16L14 19L16 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round" />
                 </svg>
               </div>
               <h3>Weather Intelligence Built into Every Plan</h3>
-              <p>Weather forecasts that directly inform farm work. Know the exact hours when wind is low enough for spraying, when rain makes irrigation unnecessary, and when to rush harvest before bad weather arrives.</p>
+              <p>Weather forecasts that directly inform farm work. Know the exact hours when wind is low enough for
+                spraying, when rain makes irrigation unnecessary, and when to rush harvest before bad weather arrives.
+              </p>
             </article>
 
             <article class="capability-card reveal">
               <div class="icon-wrap" aria-hidden="true">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 17L10 12L13 15L19 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M15 9H19V13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M5 19H19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M5 17L10 12L13 15L19 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M15 9H19V13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M5 19H19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
                 </svg>
               </div>
               <h3>Market &amp; Mandi Intelligence</h3>
-              <p>Real-time price signals from nearby mandis. Understand price movements, seasonal patterns, and demand trends so you can sell your produce with confidence instead of taking distress rates.</p>
+              <p>Real-time price signals from nearby mandis. Understand price movements, seasonal patterns, and demand
+                trends so you can sell your produce with confidence instead of taking distress rates.</p>
             </article>
 
             <article class="capability-card reveal">
               <div class="icon-wrap" aria-hidden="true">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 18L9 12L12 15L19 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M5 8H9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                  <path d="M15 18H19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M5 18L9 12L12 15L19 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M5 8H9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                  <path d="M15 18H19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
                 </svg>
               </div>
               <h3>Farm Operations Guidance</h3>
-              <p>Step-by-step daily task guidance tailored to current weather and crop stages. From labor planning to diesel budgeting, manage farm operations with calm clarity.</p>
+              <p>Step-by-step daily task guidance tailored to current weather and crop stages. From labor planning to
+                diesel budgeting, manage farm operations with calm clarity.</p>
             </article>
 
             <article class="capability-card reveal">
               <div class="icon-wrap" aria-hidden="true">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="5" y="6" width="14" height="12" rx="3" stroke="currentColor" stroke-width="1.8"/>
-                  <path d="M9 10H15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                  <path d="M9 14H12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                  <circle cx="16" cy="14" r="1.5" fill="currentColor"/>
+                  <rect x="5" y="6" width="14" height="12" rx="3" stroke="currentColor" stroke-width="1.8" />
+                  <path d="M9 10H15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                  <path d="M9 14H12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                  <circle cx="16" cy="14" r="1.5" fill="currentColor" />
                 </svg>
               </div>
               <h3>Voice &amp; Multilingual Kisan AI</h3>
-              <p>Built for the field where your hands are dirty and you are on the move. Speak naturally in your native language and dialect&mdash;FarmerGPT functions as your personal Kisan AI companion that listens, understands, and replies clearly.</p>
+              <p>Built for the field where your hands are dirty and you are on the move. Speak naturally in your native
+                language and dialect&mdash;FarmerGPT functions as your personal Kisan AI companion that listens,
+                understands, and replies clearly.</p>
             </article>
           </div>
         </div>
@@ -1535,25 +2555,35 @@
         <div class="container story-grid">
           <div class="quote-card reveal">
             <span class="eyebrow">Why We Exist</span>
-            <blockquote>Every farmer deserves world-class intelligence&mdash;not just industrial corporations.</blockquote>
-            <p>Modern agriculture is full of uncertainty. Weather is unpredictable, input costs fluctuate, and trustworthy advice is hard to find. Large industrial farms have access to expensive software, agronomists, and data teams. Independent farmers are often left to guess on their own.</p>
-            <p>We founded Farmers Cafe to change that. We believe great agricultural intelligence should be accessible to everyone who works the land. FarmerGPT puts an experienced, trusted advisor right in your pocket&mdash;simple to use, respectful of your knowledge, and always ready to help.</p>
+            <blockquote>Every farmer deserves world-class intelligence&mdash;not just industrial corporations.
+            </blockquote>
+            <p>Modern agriculture is full of uncertainty. Weather is unpredictable, input costs fluctuate, and
+              trustworthy advice is hard to find. Large industrial farms have access to expensive software, agronomists,
+              and data teams. Independent farmers are often left to guess on their own.</p>
+            <p>We founded Farmers Cafe to change that. We believe great agricultural intelligence should be accessible
+              to everyone who works the land. FarmerGPT puts an experienced, trusted advisor right in your
+              pocket&mdash;simple to use, respectful of your knowledge, and always ready to help.</p>
           </div>
           <div class="story-visual reveal" aria-hidden="true">
             <svg viewBox="0 0 520 360" xmlns="http://www.w3.org/2000/svg">
-              <rect x="42" y="46" width="436" height="268" rx="30" fill="#FFFFFF" fill-opacity="0.9" stroke="#1A7F5A" stroke-opacity="0.12"/>
-              <rect x="90" y="96" width="74" height="166" rx="18" fill="#F3F8F4" stroke="#1A7F5A" stroke-opacity="0.1"/>
-              <rect x="184" y="128" width="74" height="134" rx="18" fill="#F9FCF9" stroke="#1A7F5A" stroke-opacity="0.1"/>
-              <rect x="278" y="82" width="74" height="180" rx="18" fill="#F3F8F4" stroke="#1A7F5A" stroke-opacity="0.1"/>
-              <rect x="372" y="150" width="58" height="112" rx="18" fill="#F9FCF9" stroke="#1A7F5A" stroke-opacity="0.1"/>
-              <path d="M116 210C118 179 131 155 155 136" stroke="#1A7F5A" stroke-width="2.4" stroke-linecap="round"/>
-              <path d="M208 210C211 188 223 170 241 158" stroke="#D4AF37" stroke-width="2.4" stroke-linecap="round"/>
-              <path d="M302 210C308 172 327 143 352 126" stroke="#1A7F5A" stroke-width="2.4" stroke-linecap="round"/>
-              <path d="M402 222C405 207 413 193 425 185" stroke="#D4AF37" stroke-width="2.4" stroke-linecap="round"/>
-              <circle cx="154" cy="136" r="8" fill="#1A7F5A"/>
-              <circle cx="240" cy="158" r="8" fill="#D4AF37"/>
-              <circle cx="352" cy="126" r="8" fill="#1A7F5A"/>
-              <circle cx="425" cy="185" r="8" fill="#D4AF37"/>
+              <rect x="42" y="46" width="436" height="268" rx="30" fill="#FFFFFF" fill-opacity="0.9" stroke="#1A7F5A"
+                stroke-opacity="0.12" />
+              <rect x="90" y="96" width="74" height="166" rx="18" fill="#F3F8F4" stroke="#1A7F5A"
+                stroke-opacity="0.1" />
+              <rect x="184" y="128" width="74" height="134" rx="18" fill="#F9FCF9" stroke="#1A7F5A"
+                stroke-opacity="0.1" />
+              <rect x="278" y="82" width="74" height="180" rx="18" fill="#F3F8F4" stroke="#1A7F5A"
+                stroke-opacity="0.1" />
+              <rect x="372" y="150" width="58" height="112" rx="18" fill="#F9FCF9" stroke="#1A7F5A"
+                stroke-opacity="0.1" />
+              <path d="M116 210C118 179 131 155 155 136" stroke="#1A7F5A" stroke-width="2.4" stroke-linecap="round" />
+              <path d="M208 210C211 188 223 170 241 158" stroke="#D4AF37" stroke-width="2.4" stroke-linecap="round" />
+              <path d="M302 210C308 172 327 143 352 126" stroke="#1A7F5A" stroke-width="2.4" stroke-linecap="round" />
+              <path d="M402 222C405 207 413 193 425 185" stroke="#D4AF37" stroke-width="2.4" stroke-linecap="round" />
+              <circle cx="154" cy="136" r="8" fill="#1A7F5A" />
+              <circle cx="240" cy="158" r="8" fill="#D4AF37" />
+              <circle cx="352" cy="126" r="8" fill="#1A7F5A" />
+              <circle cx="425" cy="185" r="8" fill="#D4AF37" />
             </svg>
           </div>
         </div>
@@ -1564,33 +2594,39 @@
           <div class="section-heading reveal">
             <span class="eyebrow">Roadmap</span>
             <h2>FarmerGPT first. An entire agricultural ecosystem to follow.</h2>
-            <p>We are starting with FarmerGPT and building Farmers Cafe as a portfolio of focused AI products across agriculture&mdash;purposeful, practical, and deeply useful.</p>
+            <p>We are starting with FarmerGPT and building Farmers Cafe as a portfolio of focused AI products across
+              agriculture&mdash;purposeful, practical, and deeply useful.</p>
           </div>
           <div class="roadmap">
             <article class="roadmap-item reveal">
               <span class="phase">Phase 1 &mdash; Live in Beta</span>
               <h3>FarmerGPT Early Access</h3>
-              <p>Core conversational intelligence with Farm Memory, personalized farmer profiles, and crop advisory across initial test regions.</p>
+              <p>Core conversational intelligence with Farm Memory, personalized farmer profiles, and crop advisory
+                across initial test regions.</p>
             </article>
             <article class="roadmap-item reveal">
               <span class="phase">Phase 2</span>
               <h3>Equipment Intelligence &amp; Visual Diagnostics</h3>
-              <p>Full launch of the machinery advisory suite (buy vs. rent, implement matching) and photo-based leaf disease detection.</p>
+              <p>Full launch of the machinery advisory suite (buy vs. rent, implement matching) and photo-based leaf
+                disease detection.</p>
             </article>
             <article class="roadmap-item reveal">
               <span class="phase">Phase 3</span>
               <h3>Hyper-Local Weather &amp; Spray Planning</h3>
-              <p>Localized weather integration that automatically adjusts irrigation, chemical applications, and harvest alerts.</p>
+              <p>Localized weather integration that automatically adjusts irrigation, chemical applications, and harvest
+                alerts.</p>
             </article>
             <article class="roadmap-item reveal">
               <span class="phase">Phase 4</span>
               <h3>Mandi &amp; Market Intelligence</h3>
-              <p>Live price alerts, transport distance comparisons, and optimal selling windows across agricultural markets.</p>
+              <p>Live price alerts, transport distance comparisons, and optimal selling windows across agricultural
+                markets.</p>
             </article>
             <article class="roadmap-item reveal">
               <span class="phase">The Future</span>
               <h3>Farmers Cafe Platform</h3>
-              <p>Expanding into specialized intelligence tools for farmer collectives, input partners, and rural financial services.</p>
+              <p>Expanding into specialized intelligence tools for farmer collectives, input partners, and rural
+                financial services.</p>
             </article>
           </div>
         </div>
@@ -1601,8 +2637,11 @@
           <div class="vision-copy reveal">
             <span class="eyebrow">Roots</span>
             <p class="founder-pull-quote">Born into the soil. Building for those who feed the world.</p>
-            <p class="founder-sub">Atul Choudhary grew up in a traditional Indian farming family. For him, agriculture isn't a market opportunity&mdash;it is his heritage. He saw firsthand the stress of sudden hail storms, the burden of machinery repair costs, and the frustration of selling crops below fair value.</p>
-            <p class="founder-sub">Farmers Cafe was born from that lived experience: to build technology that genuinely respects the farmer, speaks their language, and solves real problems in the field.</p>
+            <p class="founder-sub">Atul Choudhary grew up in a traditional Indian farming family. For him, agriculture
+              isn't a market opportunity&mdash;it is his heritage. He saw firsthand the stress of sudden hail storms,
+              the burden of machinery repair costs, and the frustration of selling crops below fair value.</p>
+            <p class="founder-sub">Farmers Cafe was born from that lived experience: to build technology that genuinely
+              respects the farmer, speaks their language, and solves real problems in the field.</p>
             <div class="founder-sig">
               <span class="founder-sig-name">atul choudhary</span>
               <span class="founder-sig-role">Founder, Farmers Cafe &mdash; Born in a farmer family, India</span>
@@ -1610,17 +2649,23 @@
           </div>
           <div class="vision-visual reveal" aria-hidden="true">
             <svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg">
-              <rect x="30" y="36" width="500" height="308" rx="30" fill="#FFFFFF" fill-opacity="0.86" stroke="#1A7F5A" stroke-opacity="0.1"/>
-              <circle cx="280" cy="160" r="80" fill="#F3F8F4" stroke="#1A7F5A" stroke-opacity="0.1"/>
-              <path d="M200 240C230 200 255 182 280 182C305 182 330 200 360 240" stroke="#1A7F5A" stroke-width="2.8" fill="none" stroke-linecap="round"/>
-              <path d="M215 268C243 242 261 232 280 232C299 232 317 242 345 268" stroke="#D4AF37" stroke-width="2.2" fill="none" stroke-linecap="round" opacity="0.8"/>
-              <path d="M262 148C268 132 280 124 295 128C310 132 318 148 312 162C306 175 293 182 279 180C264 178 256 165 262 148Z" stroke="#1A7F5A" stroke-width="2.2" fill="none"/>
-              <path d="M280 120V96" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round"/>
-              <path d="M320 160H344" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round"/>
-              <path d="M280 200V224" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round"/>
-              <path d="M240 160H216" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round"/>
-              <circle cx="148" cy="120" r="10" fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-opacity="0.5"/>
-              <circle cx="412" cy="108" r="8" fill="#1A7F5A" fill-opacity="0.2" stroke="#1A7F5A" stroke-opacity="0.4"/>
+              <rect x="30" y="36" width="500" height="308" rx="30" fill="#FFFFFF" fill-opacity="0.86" stroke="#1A7F5A"
+                stroke-opacity="0.1" />
+              <circle cx="280" cy="160" r="80" fill="#F3F8F4" stroke="#1A7F5A" stroke-opacity="0.1" />
+              <path d="M200 240C230 200 255 182 280 182C305 182 330 200 360 240" stroke="#1A7F5A" stroke-width="2.8"
+                fill="none" stroke-linecap="round" />
+              <path d="M215 268C243 242 261 232 280 232C299 232 317 242 345 268" stroke="#D4AF37" stroke-width="2.2"
+                fill="none" stroke-linecap="round" opacity="0.8" />
+              <path
+                d="M262 148C268 132 280 124 295 128C310 132 318 148 312 162C306 175 293 182 279 180C264 178 256 165 262 148Z"
+                stroke="#1A7F5A" stroke-width="2.2" fill="none" />
+              <path d="M280 120V96" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round" />
+              <path d="M320 160H344" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round" />
+              <path d="M280 200V224" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round" />
+              <path d="M240 160H216" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round" />
+              <circle cx="148" cy="120" r="10" fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37"
+                stroke-opacity="0.5" />
+              <circle cx="412" cy="108" r="8" fill="#1A7F5A" fill-opacity="0.2" stroke="#1A7F5A" stroke-opacity="0.4" />
             </svg>
           </div>
         </div>
@@ -1631,7 +2676,8 @@
           <div class="contact-card reveal">
             <span class="eyebrow">Get Early Access</span>
             <h2>Experience FarmerGPT on your farm.</h2>
-            <p>Farmers Cafe is onboarding our first cohort of farmers, agribusinesses, and partners. If you want early access to FarmerGPT, we would love to connect.</p>
+            <p>Farmers Cafe is onboarding our first cohort of farmers, agribusinesses, and partners. If you want early
+              access to FarmerGPT, we would love to connect.</p>
             <div class="contact-list">
               <div class="contact-item">
                 <strong>Email</strong>
@@ -1649,15 +2695,19 @@
           </div>
           <div class="vision-visual reveal" aria-hidden="true">
             <svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg">
-              <rect x="34" y="42" width="492" height="296" rx="30" fill="#FFFFFF" fill-opacity="0.88" stroke="#1A7F5A" stroke-opacity="0.1"/>
-              <path d="M102 252C147 219 190 204 240 204C292 204 336 219 388 252" stroke="#1A7F5A" stroke-width="3" fill="none" stroke-linecap="round"/>
-              <path d="M121 278C167 244 205 231 246 231C287 231 325 244 370 278" stroke="#D4AF37" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.75"/>
-              <circle cx="282" cy="130" r="62" fill="#F3F8F4" stroke="#1A7F5A" stroke-opacity="0.12"/>
-              <path d="M255 134L276 154L314 112" stroke="#1A7F5A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="154" cy="134" r="12" fill="#D4AF37" fill-opacity="0.22"/>
-              <circle cx="406" cy="118" r="14" fill="#1A7F5A" fill-opacity="0.14"/>
-              <circle cx="436" cy="236" r="10" fill="#D4AF37" fill-opacity="0.22"/>
-              <circle cx="144" cy="234" r="14" fill="#1A7F5A" fill-opacity="0.14"/>
+              <rect x="34" y="42" width="492" height="296" rx="30" fill="#FFFFFF" fill-opacity="0.88" stroke="#1A7F5A"
+                stroke-opacity="0.1" />
+              <path d="M102 252C147 219 190 204 240 204C292 204 336 219 388 252" stroke="#1A7F5A" stroke-width="3"
+                fill="none" stroke-linecap="round" />
+              <path d="M121 278C167 244 205 231 246 231C287 231 325 244 370 278" stroke="#D4AF37" stroke-width="2.4"
+                fill="none" stroke-linecap="round" opacity="0.75" />
+              <circle cx="282" cy="130" r="62" fill="#F3F8F4" stroke="#1A7F5A" stroke-opacity="0.12" />
+              <path d="M255 134L276 154L314 112" stroke="#1A7F5A" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <circle cx="154" cy="134" r="12" fill="#D4AF37" fill-opacity="0.22" />
+              <circle cx="406" cy="118" r="14" fill="#1A7F5A" fill-opacity="0.14" />
+              <circle cx="436" cy="236" r="10" fill="#D4AF37" fill-opacity="0.22" />
+              <circle cx="144" cy="234" r="14" fill="#1A7F5A" fill-opacity="0.14" />
             </svg>
           </div>
         </div>
@@ -1684,7 +2734,8 @@
         </div>
         <div class="footer-bottom">
           <span>&copy; 2026 Farmers Cafe. All rights reserved.</span>
-          <a href="mailto:contact@farmerscafe.co.in" style="color: var(--muted); font-weight: 500;">contact@farmerscafe.co.in</a>
+          <a href="mailto:contact@farmerscafe.co.in"
+            style="color: var(--muted); font-weight: 500;">contact@farmerscafe.co.in</a>
         </div>
       </div>
     </footer>
@@ -1818,6 +2869,356 @@
     }, { threshold: 0.7 });
 
     counters.forEach((counter) => counterObserver.observe(counter));
+
+    // ==========================================
+    // 1. HERO SIMULATOR INTERACTIVE LOGIC
+    // ==========================================
+    const simulatorData = {
+      crop: {
+        memory: {
+          en: "18 Acres • Heavy Black Soil • Nashik • Mahindra 575 DI (45 HP)",
+          hi: "18 एकड़ • काली भारी मिट्टी • नासिक • महिंद्रा 575 DI (45 HP)",
+          mr: "18 एकर • काळी कसदार जमीन • नाशिक • महिंद्रा 575 DI (45 HP)",
+          pa: "18 ਏਕੜ • ਕਾਲੀ ਭਾਰੀ ਮਿੱਟੀ • ਨਾਸਿਕ • ਮਹਿੰਦਰਾ 575 DI (45 HP)"
+        },
+        query: {
+          en: '"Why are my cotton leaves curling upward with faint yellow spots?"',
+          hi: '"मेरी कपास की पत्तियां ऊपर की ओर मुड़ रही हैं और पीले धब्बे हैं, क्या करूं?"',
+          mr: '"माझ्या कापसाची पाने वरच्या दिशेने का मुरडत आहेत आणि पिवळे डाग पडलेत?"',
+          pa: '"ਮੇਰੀ ਨਰਮੇ ਦੀਆਂ ਪੱਤੀਆਂ ਉੱਪਰ ਵੱਲ ਕਿਉਂ ਮੁੜ ਰਹੀਆਂ ਹਨ ਅਤੇ ਪੀਲੇ ਧੱਬੇ ਪੈ ਰਹੇ ਹਨ?"'
+        },
+        response: {
+          en: '<p><strong>Primary Diagnosis:</strong> Early-stage <strong>Cotton Leaf Curl Virus (CLCuV)</strong> combined with sucking pest pressure (Whitefly nymphs under leaf margins).</p><p><strong>Actionable Steps:</strong> Check undersides of leaves in Field Plot B. Spray <em>Diafenthiuron 50% WP @ 240g/acre</em> or <em>Flonicamid 50 WG @ 60g/acre</em>. Apply during evening hours when wind is below 8 km/h.</p>',
+          hi: '<p><strong>जांच परिणाम:</strong> शुरुआती <strong>कपास का पत्ता मरोड़ रोग (CLCuV)</strong> और रस चूसक कीट (सफेद मक्खी) का असर।</p><p><strong>सलाह:</strong> प्लॉट बी में पत्तियों के नीचे जांचें। <em>डायफेंथियूरॉन 50% WP (240 ग्राम/एकड़)</em> या <em>फ्लोनिकैमिड 50 WG (60 ग्राम/एकड़)</em> का छिड़काव करें। शाम को हवा शांत होने पर स्प्रे करें।</p>',
+          mr: '<p><strong>तपासणी:</strong> प्राथमिक टप्प्यातील <strong>कापूस चुरडा-मुरडा (CLCuV)</strong> आणि पांढऱ्या माशीचा प्रादुर्भाव.</p><p><strong>उपाययोजना:</strong> प्लॉट बी मधील पानांखाली तपासा. <em>डायफेन्थियुरॉन 50% WP (240 ग्रॅम/एकर)</em> फवारणी करा. संध्याकाळी वाऱ्याचा वेग कमी असताना फवारणी करावी.</p>',
+          pa: '<p><strong>ਨਿਰੀਖਣ:</strong> ਸ਼ੁਰੂਆਤੀ <strong>ਨਰਮੇ ਦਾ ਪੱਤਾ ਮਰੋੜ ਰੋਗ (CLCuV)</strong> ਅਤੇ ਚਿੱਟੀ ਮੱਖੀ ਦਾ ਹਮਲਾ।</p><p><strong>ਕਾਰਵਾਈ:</strong> ਪਲਾਟ ਬੀ ਵਿੱਚ ਪੱਤਿਆਂ ਦੇ ਹੇਠਾਂ ਜਾਂਚ ਕਰੋ। <em>ਡਾਈਫੈਂਥਿਊਰੋਨ 50% WP @ 240 ਗ੍ਰਾਮ/ਏਕੜ</em> ਦਾ ਛਿੜਕਾਅ ਕਰੋ। ਸ਼ਾਮ ਵੇਲੇ ਜਦੋਂ ਹਵਾ ਸ਼ਾਂਤ ਹੋਵੇ ਤਾਂ ਸਪਰੇਅ ਕਰੋ।</p>'
+        },
+        tags: {
+          en: ['Plot B • Sown 24 Days Ago', 'Evening Window Recommended', 'Whitefly Vector'],
+          hi: ['प्लॉट बी • 24 दिन पहले बुवाई', 'शाम को छिड़काव सही', 'सफेद मक्खी नियंत्रण'],
+          mr: ['प्लॉट बी • २४ दिवसांपूर्वी पेरणी', 'संध्याकाळची फवारणी', 'पांढरी माशी'],
+          pa: ['ਪਲਾਟ ਬੀ • 24 ਦਿਨ ਪਹਿਲਾਂ ਬਿਜਾਈ', 'ਸ਼ਾਮ ਦੀ ਸਪਰੇਅ ਉੱਤਮ', 'ਚਿੱਟੀ ਮੱਖੀ ਕੰਟਰੋਲ']
+        }
+      },
+      equipment: {
+        memory: {
+          en: "18 Acres • Heavy Black Soil • Nashik • Mahindra 575 DI (45 HP)",
+          hi: "18 एकड़ • काली भारी मिट्टी • नासिक • महिंद्रा 575 DI (45 HP)",
+          mr: "18 एकर • काळी कसदार जमीन • नाशिक • महिंद्रा 575 DI (45 HP)",
+          pa: "18 ਏਕੜ • ਕਾਲੀ ਭਾਰੀ ਮਿੱਟੀ • ਨਾਸਿਕ • ਮਹਿੰਦਰਾ 575 DI (45 HP)"
+        },
+        query: {
+          en: '"Which rotavator and implement size fits best with my 45 HP tractor in black soil?"',
+          hi: '"काली मिट्टी में मेरे 45 HP ट्रैक्टर के लिए कौन सा रोटावेटर सबसे सही रहेगा?"',
+          mr: '"काळी मातीमध्ये माझ्या 45 HP ट्रॅक्टरसाठी कोणता रोटाव्हेटर योग्य ठरेल?"',
+          pa: '"ਕਾਲੀ ਮਿੱਟੀ ਵਿੱਚ ਮੇਰੇ 45 HP ਟਰੈਕਟਰ ਲਈ ਕਿਹੜਾ ਰੋਟਾਵੇਟਰ ਸਭ ਤੋਂ ਵਧੀਆ ਰਹੇਗਾ?"'
+        },
+        response: {
+          en: '<p><strong>Machinery Verdict:</strong> A <strong>6-foot (42-blade) Heavy Duty Rotavator</strong> is the ideal match for your 45 HP engine in heavy black soil.</p><p><strong>Operational Guidance:</strong> Do not go for a 7-foot unit—heavy black soil causes 32% wheel slippage and PTO lugging on 45 HP. Run your Mahindra 575 DI in <em>L-1 or L-2 gear at 1650-1750 engine RPM (540 PTO RPM)</em> for lowest fuel consumption (~3.8 L/hr).</p>',
+          hi: '<p><strong>मशीनरी फैसला:</strong> आपकी काली मिट्टी और 45 HP इंजन के लिए <strong>6 फीट (42 ब्लेड) हैवी ड्यूटी रोटावेटर</strong> सबसे सही है।</p><p><strong>तकनीकी सलाह:</strong> 7 फीट का रोटावेटर न लें, भारी मिट्टी में 45 HP पर इंजन दबेगा और डीजल ज्यादा जलेगा। महिंद्रा 575 DI को <em>L-1 या L-2 गियर में 1650-1750 RPM</em> पर चलाएं (~3.8 लीटर/घंटा डीजल)।</p>',
+          mr: '<p><strong>यंत्रसामग्री निर्णय:</strong> काळ्या मातीसाठी आणि 45 HP साठी <strong>6 फूट (42 ब्लेड) हेवी ड्युटी रोटाव्हेटर</strong> सर्वोत्तम आहे.</p><p><strong>मार्गदर्शन:</strong> 7 फुटांचा रोटाव्हेटर घेऊ नका, माती जड असल्याने इंजिनवर ताण येईल. महिंद्रा 575 DI ला <em>L-1 किंवा L-2 गिअर मध्ये 1700 RPM</em> वर चालवा (इंधन बचत ~3.8 ली/तास).</p>',
+          pa: '<p><strong>ਮਸ਼ੀਨਰੀ ਫੈਸਲਾ:</strong> ਕਾਲੀ ਮਿੱਟੀ ਅਤੇ 45 HP ਲਈ <strong>6 ਫੁੱਟ (42 ਬਲੇਡ) ਹੈਵੀ ਡਿਊਟੀ ਰੋਟਾਵੇਟਰ</strong> ਬਿਲਕੁਲ ਸਹੀ ਹੈ।</p><p><strong>ਸਲਾਹ:</strong> 7 ਫੁੱਟ ਵਾਲਾ ਨਾ ਖਰੀਦੋ, ਕਾਲੀ ਮਿੱਟੀ ਵਿੱਚ ਟਰੈਕਟਰ ਦਬੇਗਾ। ਮਹਿੰਦਰਾ 575 DI ਨੂੰ <em>L-1 ਜਾਂ L-2 ਗੇਅਰ ਵਿੱਚ 1700 RPM</em> ਤੇ ਚਲਾਓ (ਡੀਜ਼ਲ ਖਪਤ ~3.8 ਲੀਟਰ/ਘੰਟਾ)।</p>'
+        },
+        tags: {
+          en: ['6-Ft (42 Blades)', 'Fuel: ~3.8 L/hr', 'PTO: 540 RPM (L-2 Gear)'],
+          hi: ['6 फीट (42 ब्लेड)', 'डीजल: ~3.8 ली/घंटा', 'PTO: 540 RPM'],
+          mr: ['6 फूट (42 ब्लेड)', 'इंधन: ~3.8 ली/तास', 'PTO: 540 RPM'],
+          pa: ['6 ਫੁੱਟ (42 ਬਲੇਡ)', 'ਡੀਜ਼ਲ: ~3.8 ਲੀ/ਘੰਟਾ', 'PTO: 540 RPM']
+        }
+      },
+      weather: {
+        memory: {
+          en: "18 Acres • Heavy Black Soil • Nashik • Mahindra 575 DI (45 HP)",
+          hi: "18 एकड़ • काली भारी मिट्टी • नासिक • महिंद्रा 575 DI (45 HP)",
+          mr: "18 एकर • काळी कसदार जमीन • नाशिक • महिंद्रा 575 DI (45 HP)",
+          pa: "18 ਏਕੜ • ਕਾਲੀ ਭਾਰੀ ਮਿੱਟੀ • ਨਾਸਿਕ • ਮਹਿੰਦਰਾ 575 DI (45 HP)"
+        },
+        query: {
+          en: '"Can I spray pesticide tomorrow, or will expected rain wash it away?"',
+          hi: '"क्या मैं कल कीटनाशक स्प्रे कर सकता हूँ या बारिश में धुल जाएगा?"',
+          mr: '"उद्या कीटकनाशक फवारणी करावी की पावसाने वाहून जाईल?"',
+          pa: '"ਕੀ ਮੈਂ ਕੱਲ੍ਹ ਕੀਟਨਾਸ਼ਕ ਸਪਰੇਅ ਕਰ ਸਕਦਾ ਹਾਂ ਜਾਂ ਮੀਂਹ ਵਿੱਚ ਧੁਲ ਜਾਵੇਗਾ?"'
+        },
+        response: {
+          en: '<p><strong>Rainfast Warning:</strong> <strong>Postpone spraying until Thursday morning.</strong> Radar telemetry shows 18mm rainfall arriving tomorrow between 2:00 PM and 7:00 PM in Nashik rural.</p><p><strong>Recommended Window:</strong> Most systemic fungicides require a minimum 4-6 hour rainfast window. Spraying tomorrow morning risks 70% chemical runoff into black soil. Resume spraying Thursday at 6:30 AM.</p>',
+          hi: '<p><strong>मौसम चेतावनी:</strong> <strong>छिड़काव गुरुवार सुबह तक टाल दें।</strong> नासिक ग्रामीण में कल दोपहर 2:00 से शाम 7:00 बजे के बीच 18mm बारिश की 82% संभावना है।</p><p><strong>सलाह:</strong> दवा असर करने के लिए 4-6 घंटे सूखा मौसम चाहिए। कल छिड़कने पर 70% दवा बारिश में धुल जाएगी। गुरुवार सुबह 6:30 बजे छिड़काव करें।</p>',
+          mr: '<p><strong>हवामान इशारा:</strong> <strong>फवारणी गुरुवार सकाळपर्यंत पुढे ढकला.</strong> नाशिक भागात उद्या दुपारी २ ते संध्याकाळी ७ वाजेदरम्यान १८ मिमी पावसाची शक्यता आहे.</p><p><strong>योग्य वेळ:</strong> फवारणीनंतर किमान ४-६ तास पाऊस नसणे आवश्यक आहे. उद्या फवारल्यास औषध वाहून जाईल. गुरुवार सकाळी ६:३० वाजता फवारणी करा.</p>',
+          pa: '<p><strong>ਮੌਸਮ ਚਿਤਾਵਨੀ:</strong> <strong>ਸਪਰੇਅ ਵੀਰਵਾਰ ਸਵੇਰ ਤੱਕ ਮੁਲਤਵੀ ਕਰੋ।</strong> ਨਾਸਿਕ ਇਲਾਕੇ ਵਿੱਚ ਕੱਲ੍ਹ ਦੁਪਹਿਰ ਤੋਂ ਸ਼ਾਮ ਦਰਮਿਆਨ 18mm ਮੀਂਹ ਪੈਣ ਦੀ ਪੂਰੀ ਸੰਭਾਵਨਾ ਹੈ।</p><p><strong>ਸਲਾਹ:</strong> ਦਵਾਈ ਲਈ 4-6 ਘੰਟੇ ਖੁਸ਼ਕ ਮੌਸਮ ਚਾਹੀਦਾ ਹੈ। ਕੱਲ੍ਹ ਸਪਰੇਅ ਕਰਨ ਨਾਲ ਦਵਾਈ ਧੁਲ ਜਾਵੇਗੀ। ਵੀਰਵਾਰ ਸਵੇਰੇ 6:30 ਵਜੇ ਸਪਰੇਅ ਕਰੋ।</p>'
+        },
+        tags: {
+          en: ['Rain Risk: 82%', 'Rainfast Window: 0 hrs', 'Reschedule: Thu Morning'],
+          hi: ['बारिश का खतरा: 82%', 'दवा धुलने का डर', 'सही समय: गुरुवार सुबह'],
+          mr: ['पावसाचा अंदाज: 82%', 'फवारणी पुढे ढकला', 'योग्य वेळ: गुरुवार सकाळ'],
+          pa: ['ਮੀਂਹ ਦਾ ਖਤਰਾ: 82%', 'ਸਪਰੇਅ ਰੱਦ ਕਰੋ', 'ਸਹੀ ਸਮਾਂ: ਵੀਰਵਾਰ ਸਵੇਰੇ']
+        }
+      },
+      mandi: {
+        memory: {
+          en: "18 Acres • Heavy Black Soil • Nashik • Mahindra 575 DI (45 HP)",
+          hi: "18 एकड़ • काली भारी मिट्टी • नासिक • महिंद्रा 575 DI (45 HP)",
+          mr: "18 एकर • काळी कसदार जमीन • नाशिक • महिंद्रा 575 DI (45 HP)",
+          pa: "18 ਏਕੜ • ਕਾਲੀ ਭਾਰੀ ਮਿੱਟੀ • ਨਾਸਿਕ • ਮਹਿੰਦਰਾ 575 DI (45 HP)"
+        },
+        query: {
+          en: '"Current wheat mandi price is ₹2,320/qtl. Should I sell now or hold for 3 weeks?"',
+          hi: '"मंडी में गेहूं का भाव ₹2,320/क्विंटल है। अभी बेचूं या 3 हफ्ते रोकूं?"',
+          mr: '"गव्हाचा बाजारभाव ₹२,३२०/क्विंटल आहे. आत्ता विकावा की ३ आठवडे थांबावे?"',
+          pa: '"ਕਣਕ ਦਾ ਮੰਡੀ ਭਾਵ ₹2,320/ਕੁਇੰਟਲ ਹੈ। ਹੁਣ ਵੇਚਾਂ ਜਾਂ 3 ਹਫ਼ਤੇ ਰੋਕਾਂ?"'
+        },
+        response: {
+          en: '<p><strong>Mandi Forecast:</strong> <strong>Hold your stock for 18-22 days.</strong> Influx in district mandis has peaked and mill procurement demand is projected to rise 14% by month-end.</p><p><strong>Projected Target:</strong> Anticipated price band: <em>₹2,440 &ndash; ₹2,485/qtl</em> (+₹140/qtl gain). On your estimated 140 quintals, holding yields an incremental net gain of ~₹19,600 after accounting for warehouse storage costs.</p>',
+          hi: '<p><strong>मंडी पूर्वानुमान:</strong> <strong>माल को 18-22 दिन रोक कर रखें।</strong> नजदीकी मंडियों में आवक कम हो रही है और मिलों की खरीद मांग महीने के अंत तक 14% बढ़ेगी।</p><p><strong>संभावित भाव:</strong> <em>₹2,440 से ₹2,485/क्विंटल</em> का अनुमान है (+₹140/क्विंटल फायदा)। आपकी 140 क्विंटल फसल पर गोदाम खर्च काटकर करीब ₹19,600 का अतिरिक्त शुद्ध मुनाफा होगा।</p>',
+          mr: '<p><strong>बाजार अंदाज:</strong> <strong>माल १८-२२ दिवस रोखून ठेवा.</strong> स्थानिक बाजारातील आवक कमी होत असून पिठाच्या गिरण्यांची मागणी १४% वाढण्याची शक्यता आहे.</p><p><strong>अपेक्षित भाव:</strong> <em>₹२,४४० ते ₹२,४८५/क्विंटल</em>. तुमच्या १४० क्विंटल मालावर गोदामाचा खर्च वजा जाता सुमारे ₹१९,६०० चा निव्वळ नफा होईल.</p>',
+          pa: '<p><strong>ਮੰਡੀ ਅਨੁਮਾਨ:</strong> <strong>ਮਾਲ 18-22 ਦਿਨ ਰੋਕ ਕੇ ਰੱਖੋ।</strong> ਮੰਡੀਆਂ ਵਿੱਚ ਆਵਕ ਘਟ ਰਹੀ ਹੈ ਅਤੇ ਮਿੱਲਾਂ ਦੀ ਖਰੀਦ ਮੰਗ 14% ਵਧਣ ਦੀ ਸੰਭਾਵਨਾ ਹੈ।</p><p><strong>ਅਨੁਮਾਨਿਤ ਭਾਵ:</strong> <em>₹2,440 ਤੋਂ ₹2,485/ਕੁਇੰਟਲ</em>। ਤੁਹਾਡੀ 140 ਕੁਇੰਟਲ ਫਸਲ ਤੇ ਖਰਚੇ ਕੱਟ ਕੇ ਲਗਭਗ ₹19,600 ਦਾ ਵਾਧੂ ਮੁਨਾਫਾ ਹੋਵੇਗਾ।</p>'
+        },
+        tags: {
+          en: ['Target: ₹2,460/qtl', 'Gain: +₹19,600', 'Hold Window: 3 Weeks'],
+          hi: ['अपेक्षित भाव: ₹2,460', 'मुनाफा: +₹19,600', '3 हफ्ते रोकें'],
+          mr: ['अपेक्षित भाव: ₹२,४६०', 'नफा: +₹१९,६००', '३ आठवडे थांबा'],
+          pa: ['ਅਨੁਮਾਨਿਤ ਭਾਵ: ₹2,460', 'ਵਾਧੂ ਮੁਨਾਫਾ: +₹19,600', '3 ਹਫ਼ਤੇ ਰੋਕੋ']
+        }
+      }
+    };
+
+    function initHeroSimulator() {
+      let currentScenario = 'crop';
+      let currentLang = 'en';
+
+      const memoryEl = document.getElementById('sim-memory-text');
+      const queryEl = document.getElementById('sim-user-query');
+      const responseEl = document.getElementById('sim-ai-response');
+      const tagsEl = document.getElementById('sim-ai-tags');
+      const chips = document.querySelectorAll('.sim-chip');
+      const langBtns = document.querySelectorAll('.sim-lang-btn');
+      const customForm = document.getElementById('sim-custom-form');
+      const inputField = document.getElementById('sim-input-field');
+      const micBtn = document.getElementById('sim-mic-btn');
+
+      function render(scenarioKey, langKey) {
+        const scenario = simulatorData[scenarioKey] || simulatorData.crop;
+        const memoryText = (scenario.memory && scenario.memory[langKey]) || scenario.memory.en;
+        const queryText = (scenario.query && scenario.query[langKey]) || scenario.query.en;
+        const responseText = (scenario.response && scenario.response[langKey]) || scenario.response.en;
+        const tagList = (scenario.tags && scenario.tags[langKey]) || scenario.tags.en;
+
+        if (memoryEl) memoryEl.textContent = memoryText;
+        if (queryEl) queryEl.textContent = queryText;
+        if (responseEl) {
+          responseEl.style.opacity = '0.4';
+          setTimeout(() => {
+            responseEl.innerHTML = responseText;
+            responseEl.style.opacity = '1';
+          }, 120);
+        }
+        if (tagsEl) {
+          tagsEl.innerHTML = tagList.map((tag, idx) =>
+            `<span class="sim-ai-tag ${idx === 0 ? 'tag-accent' : ''}">${tag}</span>`
+          ).join('');
+        }
+      }
+
+      chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          chips.forEach(c => {
+            c.classList.remove('active');
+            c.setAttribute('aria-selected', 'false');
+          });
+          chip.classList.add('active');
+          chip.setAttribute('aria-selected', 'true');
+          currentScenario = chip.getAttribute('data-scenario');
+          render(currentScenario, currentLang);
+        });
+      });
+
+      langBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          langBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentLang = btn.getAttribute('data-lang');
+          render(currentScenario, currentLang);
+        });
+      });
+
+      if (micBtn) {
+        micBtn.addEventListener('click', () => {
+          // Switch to Hindi to demonstrate voice regional recognition
+          const hiBtn = document.querySelector('.sim-lang-btn[data-lang="hi"]');
+          if (hiBtn) hiBtn.click();
+          micBtn.style.transform = 'scale(1.25)';
+          setTimeout(() => { micBtn.style.transform = ''; }, 300);
+        });
+      }
+
+      if (customForm && inputField) {
+        customForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const val = inputField.value.trim();
+          if (!val) return;
+
+          queryEl.textContent = `"${val}"`;
+          responseEl.innerHTML = '<p><strong>Analyzing your query against Farm Memory...</strong> Correlating soil records, machinery fleet, and current regional weather telemetry for optimal action.</p>';
+          inputField.value = '';
+
+          setTimeout(() => {
+            responseEl.innerHTML = `<p><strong>FarmerGPT Recommendation:</strong> Context verified for your 18-acre plot. Based on your black cotton soil and current 45 HP fleet, this decision is operationally sound. No equipment overload risk detected.</p><p><em>Operational safety margin: 94%. Recommended window: Early morning before 10:00 AM.</em></p>`;
+          }, 450);
+        });
+      }
+
+      // Allow clicking question cards in #questions to trigger simulator
+      const questionCards = document.querySelectorAll('.question-card');
+      questionCards.forEach(card => {
+        card.addEventListener('click', () => {
+          const tagEl = card.querySelector('.question-tag');
+          const tagText = tagEl ? tagEl.textContent.trim().toLowerCase() : '';
+          let target = 'crop';
+
+          if (tagText.includes('machinery') || tagText.includes('equipment')) {
+            target = 'equipment';
+          } else if (tagText.includes('weather') || tagText.includes('irrigation')) {
+            target = 'weather';
+          } else if (tagText.includes('market') || tagText.includes('mandi')) {
+            target = 'mandi';
+          }
+
+          const matchingChip = document.querySelector(`.sim-chip[data-scenario="${target}"]`);
+          if (matchingChip) matchingChip.click();
+
+          const simSection = document.getElementById('hero-simulator');
+          if (simSection) {
+            simSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        });
+      });
+
+      render(currentScenario, currentLang);
+    }
+
+    // ==========================================
+    // 2. EQUIPMENT & SOIL CALCULATOR LOGIC
+    // ==========================================
+    function initEquipmentCalculator() {
+      const acreageSlider = document.getElementById('calc-acreage');
+      const acreageDisplay = document.getElementById('calc-acreage-display');
+      const hpVerdict = document.getElementById('calc-hp-verdict');
+      const implementVal = document.getElementById('calc-implement-val');
+      const hoursVal = document.getElementById('calc-hours-val');
+      const financeVal = document.getElementById('calc-finance-val');
+      const fuelVal = document.getElementById('calc-fuel-val');
+      const verdictNotes = document.getElementById('calc-verdict-notes');
+      const rationaleBox = document.getElementById('calc-rationale-box');
+
+      if (!acreageSlider) return;
+
+      let currentSoil = 'black';
+      let currentOp = 'rotavator';
+
+      function updateCalculator() {
+        const acres = Number(acreageSlider.value);
+        if (acreageDisplay) acreageDisplay.textContent = String(acres);
+
+        let hpText = '';
+        let implementText = '';
+        let estHours = 0;
+        let financeText = '';
+        let fuelText = '';
+        let noteText = '';
+        let logicText = '';
+
+        const baseHoursPerAcre = currentOp === 'rotavator' ? 4.5 : (currentOp === 'plow' ? 6.2 : 5.0);
+        estHours = Math.round(acres * baseHoursPerAcre);
+
+        if (acres <= 8) {
+          if (currentSoil === 'sandy') {
+            hpText = '30 HP – 35 HP (Compact Utility)';
+            implementText = '5-Foot (36-Blade) Light Rotavator';
+            fuelText = '2.4 – 2.8 L/hr @ 1600 RPM';
+          } else if (currentSoil === 'loam') {
+            hpText = '35 HP – 40 HP (Standard 2WD)';
+            implementText = '5.5-Foot (36-Blade) Rotavator';
+            fuelText = '2.8 – 3.2 L/hr @ 1650 RPM';
+          } else {
+            hpText = '40 HP – 42 HP (High PTO Torque)';
+            implementText = '5.5-Foot (42-Blade) Medium-Duty Rotavator';
+            fuelText = '3.2 – 3.5 L/hr @ 1700 RPM';
+          }
+          financeText = 'Custom Hiring / Rental Recommended';
+          noteText = `${acres} acres generates under 50 annual machine hours. Purchasing new equipment incurs high idle depreciation.`;
+          logicText = `At ${acres} acres, annual maintenance and loan interest exceed custom hiring by ₹38,000. Renting equipment locally preserves critical working capital.`;
+        } else if (acres <= 24) {
+          if (currentSoil === 'sandy') {
+            hpText = '40 HP – 45 HP (2WD Utility)';
+            implementText = '6-Foot (42-Blade) Multi-Speed Rotavator';
+            fuelText = '3.2 – 3.6 L/hr @ 1650 RPM';
+          } else if (currentSoil === 'loam') {
+            hpText = '45 HP – 50 HP (Dual Clutch)';
+            implementText = '6-Foot (42-Blade) Heavy-Duty Rotavator';
+            fuelText = '3.5 – 3.9 L/hr @ 1700 RPM';
+          } else {
+            hpText = '45 HP – 50 HP (Dual Clutch / High Torque)';
+            implementText = '6-Foot (42-Blade) Heavy-Duty Rotavator';
+            fuelText = '3.6 – 4.0 L/hr @ 1700 RPM';
+          }
+          financeText = 'Purchase Justified (Optimal Class)';
+          noteText = `${currentSoil === 'black' ? 'Black cotton soil requires high PTO reserve torque' : 'Loam/alluvial soil operates at high efficiency'} with 6-foot implements.`;
+          logicText = `At ${acres} acres, machine availability during the short 7-day sowing moisture window is critical. Owning pays for itself within 2.6 to 3.2 seasons.`;
+        } else {
+          if (currentSoil === 'sandy') {
+            hpText = '50 HP – 55 HP (Heavy Utility)';
+            implementText = '7-Foot (48-Blade) Rotavator / 3-Bottom MB Plow';
+            fuelText = '4.0 – 4.5 L/hr @ 1750 RPM';
+          } else if (currentSoil === 'loam') {
+            hpText = '55 HP – 60 HP (Dual Clutch 2WD/4WD)';
+            implementText = '7-Foot (48-Blade) Multi-Speed Rotavator';
+            fuelText = '4.2 – 4.8 L/hr @ 1800 RPM';
+          } else {
+            hpText = '55 HP – 60+ HP (4WD Strongly Recommended)';
+            implementText = '7-Foot Heavy-Duty Rotavator / Heavy MB Plow';
+            fuelText = '4.6 – 5.2 L/hr @ 1800 RPM';
+          }
+          financeText = 'Commercial Ownership & Custom Hire Hub';
+          noteText = `Large acreage (${acres} acres) justifies high-capacity implements and 4WD traction to prevent wheel slip in heavy soil.`;
+          logicText = `At ${acres} acres, you also have surplus capacity to rent out custom hiring services to neighbors, generating an estimated ₹70,000–₹1,20,000 additional seasonal income.`;
+        }
+
+        if (hpVerdict) hpVerdict.textContent = hpText;
+        if (implementVal) implementVal.textContent = implementText;
+        if (hoursVal) hoursVal.textContent = `~${estHours} Hours / Year`;
+        if (financeVal) financeVal.textContent = financeText;
+        if (fuelVal) fuelVal.textContent = fuelText;
+        if (verdictNotes) verdictNotes.textContent = noteText;
+        if (rationaleBox) rationaleBox.innerHTML = `<strong>FarmerGPT Logic:</strong> ${logicText}`;
+      }
+
+      acreageSlider.addEventListener('input', updateCalculator);
+
+      const soilBtns = document.querySelectorAll('#calc-soil-group button');
+      soilBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          soilBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentSoil = btn.getAttribute('data-soil') || 'black';
+          updateCalculator();
+        });
+      });
+
+      const opBtns = document.querySelectorAll('#calc-op-group button');
+      opBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          opBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentOp = btn.getAttribute('data-op') || 'rotavator';
+          updateCalculator();
+        });
+      });
+
+      updateCalculator();
+    }
+
+    // Initialize interactive modules
+    initHeroSimulator();
+    initEquipmentCalculator();
   </script>
 </body>
+
 </html>
