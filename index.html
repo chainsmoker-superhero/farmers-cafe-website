@@ -377,6 +377,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+
       .hero-canvas,
       .cursor-glow {
         display: none !important;
@@ -1123,19 +1124,102 @@
       box-shadow: var(--shadow-soft);
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+      gap: 14px;
       cursor: pointer;
-      transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+      transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 240ms ease,
+        box-shadow 240ms ease;
+      overflow: hidden;
+      text-align: left;
+    }
+
+    /* Linear-style Dynamic Cursor Spotlight Glow */
+    .question-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(320px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(26, 127, 90, 0.09) 0%, rgba(212, 175, 55, 0.05) 45%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .question-card:hover::before {
+      opacity: 1;
+    }
+
+    .question-card>* {
+      position: relative;
+      z-index: 1;
     }
 
     .question-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(26, 127, 90, 0.25);
-      box-shadow: 0 20px 36px rgba(15, 23, 42, 0.08);
       transform: translateY(-4px);
-      border-color: rgba(26, 127, 90, 0.32);
-      box-shadow: 0 20px 40px -8px rgba(26, 127, 90, 0.12), 0 0 0 1px rgba(26, 127, 90, 0.08);
+      border-color: rgba(26, 127, 90, 0.35);
+      box-shadow: 0 20px 42px -10px rgba(26, 127, 90, 0.16), 0 0 0 1px rgba(26, 127, 90, 0.12);
+    }
+
+    .question-card:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 3px;
+    }
+
+    .question-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .question-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: rgba(26, 127, 90, 0.06);
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(26, 127, 90, 0.14);
+      opacity: 0.85;
+      transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+
+    .question-action svg {
+      transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .question-card:hover .question-action {
+      opacity: 1;
+      background: rgba(26, 127, 90, 0.12);
+      border-color: rgba(26, 127, 90, 0.28);
+    }
+
+    .question-card:hover .question-action svg {
+      transform: translate(2px, -2px);
+    }
+
+    @keyframes simPulseHighlight {
+      0% {
+        box-shadow: 0 0 0 0 rgba(26, 127, 90, 0.45), 0 24px 60px -12px rgba(19, 45, 35, 0.14);
+      }
+
+      40% {
+        box-shadow: 0 0 0 9px rgba(26, 127, 90, 0.25), 0 24px 60px -12px rgba(19, 45, 35, 0.22);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(26, 127, 90, 0), 0 24px 60px -12px rgba(19, 45, 35, 0.14);
+      }
+    }
+
+    .hero-simulator-container.sim-highlight {
+      animation: simPulseHighlight 1.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .question-tag {
@@ -2164,7 +2248,8 @@
                           margins).</p>
                         <p><strong>Actionable Steps:</strong> Check undersides of leaves in Field Plot B. Spray
                           <em>Diafenthiuron 50% WP @ 240g/acre</em> or <em>Flonicamid 50 WG @ 60g/acre</em>. Apply
-                          during evening hours when wind is below 8 km/h.</p>
+                          during evening hours when wind is below 8 km/h.
+                        </p>
                       </div>
                       <div class="sim-ai-footer" id="sim-ai-tags">
                         <span class="sim-ai-tag tag-accent">Plot B • Sown 24 Days Ago</span>
@@ -2203,36 +2288,123 @@
               get clear answers grounded in your farm's reality.</p>
           </div>
           <div class="questions-grid">
-            <article class="question-card reveal">
-              <span class="question-tag">Crop Planning</span>
+            <article class="question-card reveal" data-scenario="crop_planning" role="button" tabindex="0"
+              aria-label="Ask FarmerGPT: What should I grow this season for better returns on my soil?">
+              <div class="question-card-header">
+                <span class="question-tag">Crop Planning</span>
+                <span class="question-action" aria-hidden="true">
+                  Ask FarmerGPT
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </div>
               <p class="question-text">&ldquo;What should I grow this season for better returns on my soil?&rdquo;</p>
             </article>
-            <article class="question-card reveal">
-              <span class="question-tag">Crop Health</span>
+
+            <article class="question-card reveal" data-scenario="crop" role="button" tabindex="0"
+              aria-label="Ask FarmerGPT: Why are my leaves turning yellow with brown spots?">
+              <div class="question-card-header">
+                <span class="question-tag">Crop Health</span>
+                <span class="question-action" aria-hidden="true">
+                  Ask FarmerGPT
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </div>
               <p class="question-text">&ldquo;Why are my leaves turning yellow with brown spots?&rdquo;</p>
             </article>
-            <article class="question-card reveal">
-              <span class="question-tag">Weather Timing</span>
+
+            <article class="question-card reveal" data-scenario="weather" role="button" tabindex="0"
+              aria-label="Ask FarmerGPT: Can I spray pesticide tomorrow, or will it wash away?">
+              <div class="question-card-header">
+                <span class="question-tag">Weather Timing</span>
+                <span class="question-action" aria-hidden="true">
+                  Ask FarmerGPT
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </div>
               <p class="question-text">&ldquo;Can I spray pesticide tomorrow, or will it wash away?&rdquo;</p>
             </article>
-            <article class="question-card reveal">
-              <span class="question-tag">Irrigation &amp; Spraying</span>
+
+            <article class="question-card reveal" data-scenario="irrigation" role="button" tabindex="0"
+              aria-label="Ask FarmerGPT: Will rain this week affect my irrigation schedule?">
+              <div class="question-card-header">
+                <span class="question-tag">Irrigation &amp; Spraying</span>
+                <span class="question-action" aria-hidden="true">
+                  Ask FarmerGPT
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </div>
               <p class="question-text">&ldquo;Will rain this week affect my irrigation schedule?&rdquo;</p>
             </article>
-            <article class="question-card reveal">
-              <span class="question-tag">Machinery Sizing</span>
+
+            <article class="question-card reveal" data-scenario="equipment" role="button" tabindex="0"
+              aria-label="Ask FarmerGPT: Should I buy or rent a 45 HP tractor for my 12 acres?">
+              <div class="question-card-header">
+                <span class="question-tag">Machinery Sizing</span>
+                <span class="question-action" aria-hidden="true">
+                  Ask FarmerGPT
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </div>
               <p class="question-text">&ldquo;Should I buy or rent a 45 HP tractor for my 12 acres?&rdquo;</p>
             </article>
-            <article class="question-card reveal">
-              <span class="question-tag">Equipment Decisions</span>
+
+            <article class="question-card reveal" data-scenario="implements" role="button" tabindex="0"
+              aria-label="Ask FarmerGPT: Which rotavator and implement fits best with my tractor?">
+              <div class="question-card-header">
+                <span class="question-tag">Equipment Decisions</span>
+                <span class="question-action" aria-hidden="true">
+                  Ask FarmerGPT
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </div>
               <p class="question-text">&ldquo;Which rotavator and implement fits best with my tractor?&rdquo;</p>
             </article>
-            <article class="question-card reveal">
-              <span class="question-tag">Market &amp; Mandi</span>
+
+            <article class="question-card reveal" data-scenario="mandi" role="button" tabindex="0"
+              aria-label="Ask FarmerGPT: Is this a good mandi price, or should I hold for next week?">
+              <div class="question-card-header">
+                <span class="question-tag">Market &amp; Mandi</span>
+                <span class="question-action" aria-hidden="true">
+                  Ask FarmerGPT
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </div>
               <p class="question-text">&ldquo;Is this a good mandi price, or should I hold for next week?&rdquo;</p>
             </article>
-            <article class="question-card reveal">
-              <span class="question-tag">Daily Operations</span>
+
+            <article class="question-card reveal" data-scenario="operations" role="button" tabindex="0"
+              aria-label="Ask FarmerGPT: What should I focus on doing across my fields today?">
+              <div class="question-card-header">
+                <span class="question-tag">Daily Operations</span>
+                <span class="question-action" aria-hidden="true">
+                  Ask FarmerGPT
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </div>
               <p class="question-text">&ldquo;What should I focus on doing across my fields today?&rdquo;</p>
             </article>
           </div>
@@ -2917,6 +3089,32 @@
     // 1. HERO SIMULATOR INTERACTIVE LOGIC
     // ==========================================
     const simulatorData = {
+      crop_planning: {
+        memory: {
+          en: "18 Acres • Heavy Black Soil • Nashik • Water: Borewell + Farm Pond",
+          hi: "18 एकड़ • काली भारी मिट्टी • नासिक • जल स्रोत: बोरवेल + खेत तालाब",
+          mr: "18 एकर • काळी कसदार जमीन • नाशिक • पाणी: बोअरवेल + शेततळे",
+          pa: "18 ਏਕੜ • ਕਾਲੀ ਭਾਰੀ ਮਿੱਟੀ • ਨਾਸਿਕ • ਪਾਣੀ: ਬੋਰਵੈੱਲ + ਤਲਾਬ"
+        },
+        query: {
+          en: '"What should I grow this season for better returns on my soil?"',
+          hi: '"मेरी मिट्टी पर बेहतर मुनाफे के लिए इस सीजन में मुझे क्या उगाना चाहिए?"',
+          mr: '"माझ्या जमिनीवर अधिक नफ्यासाठी या हंगामात मी काय पेरावे?"',
+          pa: '"ਮੇਰੀ ਜ਼ਮੀਨ ਤੇ ਵੱਧ ਮੁਨਾਫੇ ਲਈ ਇਸ ਸੀਜ਼ਨ ਮੈਨੂੰ ਕੀ ਬੀਜਣਾ ਚਾਹੀਦਾ ਹੈ?"'
+        },
+        response: {
+          en: '<p><strong>Crop Recommendation:</strong> <strong>Soybean (KDS 726 / Phule Sangam)</strong> followed by <strong>Rabi Chickpea (Digvijay)</strong>.</p><p><strong>Agronomic Rationale:</strong> Your heavy black soil holds moisture well into November. Soybean fixes 35-40 kg atmospheric nitrogen/acre, reducing fertilizer cost for chickpea by ₹2,400/acre. Projected net return: <em>₹42,000 &ndash; ₹46,000/acre</em>.</p>',
+          hi: '<p><strong>फसल सुझाव:</strong> <strong>सोयाबीन (KDS 726 / फुले संगम)</strong> के बाद <strong>चना (दिग्विजय)</strong> की बुवाई करें।</p><p><strong>वैज्ञानिक आधार:</strong> आपकी भारी काली मिट्टी में नमी धारण क्षमता अच्छी है। सोयाबीन 35-40 किलो नाइट्रोजन प्रति एकड़ जमीन में छोड़ता है, जिससे अगली फसल की खाद लागत ₹2,400/एकड़ कम होगी। संभावित शुद्ध मुनाफा: <em>₹42,000 - ₹46,000/एकड़</em>।</p>',
+          mr: '<p><strong>पीक शिफारस:</strong> <strong>सोयाबीन (KDS 726 / फुले संगम)</strong> नंतर <strong>रब्बी हरभरा (दिग्विजय)</strong>.</p><p><strong>कृषी कारण:</strong> तुमच्या काळ्या जमिनीत ओलावा टिकून राहतो. सोयाबीन हवेतील ३५-४० किलो नत्र जमिनीत स्थिरावतो, ज्यामुळे हरभऱ्याचा खत खर्च ₹२,४०० ने कमी होतो. अपेक्षित नफा: <em>₹४२,००० ते ₹४६,०००/एकर</em>.</p>',
+          pa: '<p><strong>ਫਸਲ ਸਿਫਾਰਸ਼:</strong> <strong>ਸੋਇਆਬੀਨ (KDS 726)</strong> ਤੋਂ ਬਾਅਦ <strong>ਛੋਲੇ (ਦਿਗਵਿਜੈ)</strong> ਦੀ ਬਿਜਾਈ ਕਰੋ।</p><p><strong>ਤਕਨੀਕੀ ਆਧਾਰ:</strong> ਤੁਹਾਡੀ ਕਾਲੀ ਮਿੱਟੀ ਵਿੱਚ ਨਮੀ ਵਧੀਆ ਰਹਿੰਦੀ ਹੈ। ਸੋਇਆਬੀਨ ਜ਼ਮੀਨ ਵਿੱਚ ਨਾਈਟ੍ਰੋਜਨ ਛੱਡਦਾ ਹੈ ਜਿਸ ਨਾਲ ਅਗਲੀ ਫਸਲ ਦੀ ਖਾਦ ਲਾਗਤ ₹2,400 ਘਟਦੀ ਹੈ। ਸੰਭਾਵਿਤ ਮੁਨਾਫਾ: <em>₹42,000 &ndash; ₹46,000/ਏਕੜ</em>।</p>'
+        },
+        tags: {
+          en: ["Heavy Black Soil", "Net Return: ₹44k/acre", "Nitrogen Fixing Rotation"],
+          hi: ["काली भारी मिट्टी", "शुद्ध लाभ: ₹44,000/एकड़", "उर्वरक बचत रोटेशन"],
+          mr: ["काळी कसदार जमीन", "नफा: ₹४४,०००/एकर", "खत बचत पीक फेरपालट"],
+          pa: ["ਕਾਲੀ ਭਾਰੀ ਮਿੱਟੀ", "ਮੁਨਾਫਾ: ₹44,000/ਏਕੜ", "ਖਾਦ ਬਚਤ ਫੇਰਬਦਲ"]
+        }
+      },
       crop: {
         memory: {
           en: "18 Acres • Heavy Black Soil • Nashik • Mahindra 575 DI (45 HP)",
@@ -2937,10 +3135,62 @@
           pa: '<p><strong>ਨਿਰੀਖਣ:</strong> ਸ਼ੁਰੂਆਤੀ <strong>ਨਰਮੇ ਦਾ ਪੱਤਾ ਮਰੋੜ ਰੋਗ (CLCuV)</strong> ਅਤੇ ਚਿੱਟੀ ਮੱਖੀ ਦਾ ਹਮਲਾ।</p><p><strong>ਕਾਰਵਾਈ:</strong> ਪਲਾਟ ਬੀ ਵਿੱਚ ਪੱਤਿਆਂ ਦੇ ਹੇਠਾਂ ਜਾਂਚ ਕਰੋ। <em>ਡਾਈਫੈਂਥਿਊਰੋਨ 50% WP @ 240 ਗ੍ਰਾਮ/ਏਕੜ</em> ਦਾ ਛਿੜਕਾਅ ਕਰੋ। ਸ਼ਾਮ ਵੇਲੇ ਜਦੋਂ ਹਵਾ ਸ਼ਾਂਤ ਹੋਵੇ ਤਾਂ ਸਪਰੇਅ ਕਰੋ।</p>'
         },
         tags: {
-          en: ['Plot B • Sown 24 Days Ago', 'Evening Window Recommended', 'Whitefly Vector'],
-          hi: ['प्लॉट बी • 24 दिन पहले बुवाई', 'शाम को छिड़काव सही', 'सफेद मक्खी नियंत्रण'],
-          mr: ['प्लॉट बी • २४ दिवसांपूर्वी पेरणी', 'संध्याकाळची फवारणी', 'पांढरी माशी'],
-          pa: ['ਪਲਾਟ ਬੀ • 24 ਦਿਨ ਪਹਿਲਾਂ ਬਿਜਾਈ', 'ਸ਼ਾਮ ਦੀ ਸਪਰੇਅ ਉੱਤਮ', 'ਚਿੱਟੀ ਮੱਖੀ ਕੰਟਰੋਲ']
+          en: ["Plot B • Sown 24 Days Ago", "Evening Window Recommended", "Whitefly Vector"],
+          hi: ["प्लॉट बी • 24 दिन पहले बुवाई", "शाम को छिड़काव सही", "सफेद मक्खी नियंत्रण"],
+          mr: ["प्लॉट बी • २४ दिवसांपूर्वी पेरणी", "संध्याकाळची फवारणी", "पांढरी माशी"],
+          pa: ["ਪਲਾਟ ਬੀ • 24 ਦਿਨ ਪਹਿਲਾਂ ਬਿਜਾਈ", "ਸ਼ਾਮ ਦੀ ਸਪਰੇਅ ਉੱਤਮ", "ਚਿੱਟੀ ਮੱਖੀ ਕੰਟਰੋਲ"]
+        }
+      },
+      weather: {
+        memory: {
+          en: "Field Plot B (7 Acres) • Nashik Taluka • Weather Station: Ozar (8 km)",
+          hi: "खेत प्लॉट बी (7 एकड़) • नासिक तालुका • मौसम केंद्र: ओझर (8 किमी)",
+          mr: "शेत प्लॉट बी (७ एकर) • नाशिक तालुका • हवामान केंद्र: ओझर (८ किमी)",
+          pa: "ਖੇਤ ਪਲਾਟ ਬੀ (7 ਏਕੜ) • ਨਾਸਿਕ ਤਾਲੁਕਾ • ਮੌਸਮ ਸਟੇਸ਼ਨ: ਓਜ਼ਰ (8 ਕਿਮੀ)"
+        },
+        query: {
+          en: '"Can I spray pesticide tomorrow, or will it wash away?"',
+          hi: '"क्या मैं कल कीटनाशक का छिड़काव कर सकता हूं या बारिश में धुल जाएगा?"',
+          mr: '"मी उद्या कीटकनाशक फवारू शकतो का, की पावसात वाहून जाईल?"',
+          pa: '"ਕੀ ਮੈਂ ਕੱਲ ਕੀਟਨਾਸ਼ਕ ਦਾ ਛਿੜਕਾਅ ਕਰ ਸਕਦਾ ਹਾਂ ਜਾਂ ਮੀਂਹ ਵਿੱਚ ਧੁਲ ਜਾਵੇਗਾ?"'
+        },
+        response: {
+          en: '<p><strong>Optimal Spray Window:</strong> <strong>Tomorrow morning (06:30 AM &ndash; 10:00 AM) is SAFE.</strong> Relative humidity 64%, wind speed 6 km/h.</p><p><strong>Actionable Warning:</strong> Do not spray after 01:00 PM. Local convective rainfall is forecast at 03:45 PM (82% probability, ~14mm rain). Morning spray achieves 4-hour rain-fastness before precipitation begins.</p>',
+          hi: '<p><strong>छिड़काव का सही समय:</strong> <strong>कल सुबह (06:30 से 10:00 बजे) का समय सुरक्षित है।</strong> आर्द्रता 64%, हवा की गति 6 किमी/घंटा।</p><p><strong>चेतावनी:</strong> दोपहर 1:00 बजे के बाद छिड़काव न करें। दोपहर 03:45 बजे तेज बारिश की संभावना है (82% संभावना, ~14 मिमी)। सुबह का छिड़काव बारिश से पहले पूरा असर दिखा देगा।</p>',
+          mr: '<p><strong>फवारणीची योग्य वेळ:</strong> <strong>उद्या सकाळी (०६:३० ते १०:००) सुरक्षित आहे.</strong> हवेतील आर्द्रता ६४%, वाऱ्याचा वेग ६ किमी/तास.</p><p><strong>सावधानता:</strong> दुपारी १:०० नंतर फवारणी करू नका. दुपारी ०३:४५ च्या सुमारास वादळी पावसाची शक्यता आहे (८२% शक्यता, ~१४ मिमी). सकाळची फवारणी पावसापूर्वी पूर्ण गुण देईल.</p>',
+          pa: '<p><strong>ਸਪਰੇਅ ਦਾ ਸਮਾਂ:</strong> <strong>ਕੱਲ ਸਵੇਰੇ (06:30 ਤੋਂ 10:00 ਵਜੇ) ਸੁਰੱਖਿਅਤ ਹੈ।</strong> ਨਮੀ 64%, ਹਵਾ ਦੀ ਰਫਤਾਰ 6 ਕਿਮੀ/ਘੰਟਾ।</p><p><strong>ਚੇਤਾਵਨੀ:</strong> ਦੁਪਹਿਰ 1:00 ਵਜੇ ਤੋਂ ਬਾਅਦ ਸਪਰੇਅ ਨਾ ਕਰੋ। ਸ਼ਾਮ 03:45 ਵਜੇ ਮੀਂਹ ਦੀ ਸੰਭਾਵਨਾ ਹੈ (82% ਸੰਭਾਵਨਾ)। ਸਵੇਰ ਦੀ ਸਪਰੇਅ ਪੱਕੀ ਹੋ ਜਾਵੇਗੀ।</p>'
+        },
+        tags: {
+          en: ["Morning Window: Safe", "Rain: 3:45 PM (82%)", "100% Rainfast Window"],
+          hi: ["सुबह का समय सुरक्षित", "दोपहर 3:45 बारिश (82%)", "धुलने का खतरा नहीं"],
+          mr: ["सकाळची वेळ सुरक्षित", "दुपारी ३:४५ पाऊस (८२%)", "पावसापूर्वी परिणाम"],
+          pa: ["ਸਵੇਰ ਦਾ ਸਮਾਂ ਸੁਰੱਖਿਅਤ", "ਸ਼ਾਮ 3:45 ਮੀਂਹ (82%)", "ਮੀਂਹ ਤੋਂ ਬਚਾਅ"]
+        }
+      },
+      irrigation: {
+        memory: {
+          en: "18 Acres • Drip Irrigation System • Soil Moisture: 48% • Nashik",
+          hi: "18 एकड़ • ड्रिप सिंचाई प्रणाली • मिट्टी में नमी: 48% • नासिक",
+          mr: "18 एकर • ठिबक सिंचन • जमिनीतील ओलावा: ४८% • नाशिक",
+          pa: "18 ਏਕੜ • ਤੁਪਕਾ ਸਿੰਚਾਈ • ਮਿੱਟੀ ਦੀ ਨਮੀ: 48% • ਨਾਸਿਕ"
+        },
+        query: {
+          en: '"Will rain this week affect my irrigation schedule?"',
+          hi: '"क्या इस हफ्ते की बारिश से मेरे सिंचाई चक्र पर असर पड़ेगा?"',
+          mr: '"या आठवड्यातील पावसामुळे माझ्या पाणी देण्याच्या वेळापत्रकावर परिणाम होईल का?"',
+          pa: '"ਕੀ ਇਸ ਹਫਤੇ ਦੇ ਮੀਂਹ ਨਾਲ ਮੇਰੇ ਪਾਣੀ ਲਾਉਣ ਦੇ ਸ਼ਡਿਊਲ ਤੇ ਅਸਰ ਪਵੇਗਾ?"'
+        },
+        response: {
+          en: '<p><strong>Irrigation Directive:</strong> <strong>Pause drip fertigation for 72 hours.</strong> Regional radar shows a localized low-pressure trough delivering 28&ndash;34mm cumulative rainfall on Thursday & Friday.</p><p><strong>Field Precaution:</strong> Clear excess runoff furrows in low-lying sections of Plot A. With moisture reaching 85%+ post-rain, running drip will cause root waterlogging and fungal root asphyxiation.</p>',
+          hi: '<p><strong>सिंचाई निर्देश:</strong> <strong>अगले 72 घंटे ड्रिप सिंचाई तुरंत रोक दें।</strong> मौसम रडार के अनुसार गुरुवार और शुक्रवार को 28-34 मिमी बारिश का अनुमान है।</p><p><strong>खेत सुरक्षा:</strong> प्लॉट ए के निचले हिस्सों में जल निकासी नाली साफ रखें। अधिक पानी भरने से पौधों की जड़ों में फफूंद और सड़न का खतरा हो सकता है।</p>',
+          mr: '<p><strong>सिंचन सल्ला:</strong> <strong>पुढील ७२ तास ठिबक सिंचन थांबवा.</strong> हवामान अंदाजानुसार गुरुवारी आणि शुक्रवारी २८-३४ मिमी पाऊस पडण्याची शक्यता आहे.</p><p><strong>दक्षता:</strong> प्लॉट ए मधील पाणी वाहून जाण्यासाठी चर मोकळे करा. जास्त पाण्यामुळे पिकांच्या मुळांना इजा आणि बुरशीजन्य कुज होण्याचा धोका टळेल.</p>',
+          pa: '<p><strong>ਸਿੰਚਾਈ ਹਦਾਇਤ:</strong> <strong>ਅਗਲੇ 72 ਘੰਟੇ ਤੁਪਕਾ ਸਿੰਚਾਈ ਰੋਕ ਦਿਓ।</strong> ਮੌਸਮ ਅਨੁਸਾਰ ਵੀਰਵਾਰ ਅਤੇ ਸ਼ੁੱਕਰਵਾਰ ਨੂੰ 28-34 ਮਿਲੀਮੀਟਰ ਮੀਂਹ ਪੈਣ ਦੀ ਸੰਭਾਵਨਾ ਹੈ।</p><p><strong>ਸਾਵਧਾਨੀ:</strong> ਪਲਾਟ ਏ ਵਿੱਚ ਪਾਣੀ ਨਿਕਾਸੀ ਦਾ ਪ੍ਰਬੰਧ ਠੀਕ ਰੱਖੋ ਤਾਂ ਜੋ ਜੜ੍ਹਾਂ ਗਲਣ ਦਾ ਖਤਰਾ ਨਾ ਰਹੇ।</p>'
+        },
+        tags: {
+          en: ["Pause Drip 72 Hrs", "Rain: 28-34mm Forecast", "Prevent Root Rot"],
+          hi: ["ड्रिप 72 घंटे रोकें", "28-34 मिमी बारिश", "जड़ सड़न से बचाव"],
+          mr: ["ठिबक ७२ तास थांबवा", "२८-३४ मिमी पाऊस", "मुळकुज प्रतिबंध"],
+          pa: ["ਸਿੰਚਾਈ 72 ਘੰਟੇ ਰੋਕੋ", "28-34mm ਮੀਂਹ ਸੰਭਾਵਨਾ", "ਜੜ੍ਹਾਂ ਦੀ ਸੁਰੱਖਿਆ"]
         }
       },
       equipment: {
@@ -2951,93 +3201,120 @@
           pa: "18 ਏਕੜ • ਕਾਲੀ ਭਾਰੀ ਮਿੱਟੀ • ਨਾਸਿਕ • ਮਹਿੰਦਰਾ 575 DI (45 HP)"
         },
         query: {
-          en: '"Which rotavator and implement size fits best with my 45 HP tractor in black soil?"',
-          hi: '"काली मिट्टी में मेरे 45 HP ट्रैक्टर के लिए कौन सा रोटावेटर सबसे सही रहेगा?"',
-          mr: '"काळी मातीमध्ये माझ्या 45 HP ट्रॅक्टरसाठी कोणता रोटाव्हेटर योग्य ठरेल?"',
-          pa: '"ਕਾਲੀ ਮਿੱਟੀ ਵਿੱਚ ਮੇਰੇ 45 HP ਟਰੈਕਟਰ ਲਈ ਕਿਹੜਾ ਰੋਟਾਵੇਟਰ ਸਭ ਤੋਂ ਵਧੀਆ ਰਹੇਗਾ?"'
+          en: '"Should I buy or rent a 45 HP tractor for my 12 acres?"',
+          hi: '"क्या मुझे अपनी 12 एकड़ जमीन के लिए 45 HP का ट्रैक्टर खरीदना चाहिए या किराए पर लेना चाहिए?"',
+          mr: '"माझ्या १२ एकर शेतीसाठी मी ४५ HP ट्रॅक्टर खरेदी करावा की भाड्याने घ्यावा?"',
+          pa: '"ਕੀ ਮੈਨੂੰ ਆਪਣੀ 12 ਏਕੜ ਜ਼ਮੀਨ ਲਈ 45 HP ਟਰੈਕਟਰ ਖਰੀਦਣਾ ਚਾਹੀਦਾ ਹੈ ਜਾਂ ਕਿਰਾਏ ਤੇ ਲੈਣਾ ਚਾਹੀਦਾ ਹੈ?"'
         },
         response: {
-          en: '<p><strong>Machinery Verdict:</strong> A <strong>6-foot (42-blade) Heavy Duty Rotavator</strong> is the ideal match for your 45 HP engine in heavy black soil.</p><p><strong>Operational Guidance:</strong> Do not go for a 7-foot unit—heavy black soil causes 32% wheel slippage and PTO lugging on 45 HP. Run your Mahindra 575 DI in <em>L-1 or L-2 gear at 1650-1750 engine RPM (540 PTO RPM)</em> for lowest fuel consumption (~3.8 L/hr).</p>',
-          hi: '<p><strong>मशीनरी फैसला:</strong> आपकी काली मिट्टी और 45 HP इंजन के लिए <strong>6 फीट (42 ब्लेड) हैवी ड्यूटी रोटावेटर</strong> सबसे सही है।</p><p><strong>तकनीकी सलाह:</strong> 7 फीट का रोटावेटर न लें, भारी मिट्टी में 45 HP पर इंजन दबेगा और डीजल ज्यादा जलेगा। महिंद्रा 575 DI को <em>L-1 या L-2 गियर में 1650-1750 RPM</em> पर चलाएं (~3.8 लीटर/घंटा डीजल)।</p>',
-          mr: '<p><strong>यंत्रसामग्री निर्णय:</strong> काळ्या मातीसाठी आणि 45 HP साठी <strong>6 फूट (42 ब्लेड) हेवी ड्युटी रोटाव्हेटर</strong> सर्वोत्तम आहे.</p><p><strong>मार्गदर्शन:</strong> 7 फुटांचा रोटाव्हेटर घेऊ नका, माती जड असल्याने इंजिनवर ताण येईल. महिंद्रा 575 DI ला <em>L-1 किंवा L-2 गिअर मध्ये 1700 RPM</em> वर चालवा (इंधन बचत ~3.8 ली/तास).</p>',
-          pa: '<p><strong>ਮਸ਼ੀਨਰੀ ਫੈਸਲਾ:</strong> ਕਾਲੀ ਮਿੱਟੀ ਅਤੇ 45 HP ਲਈ <strong>6 ਫੁੱਟ (42 ਬਲੇਡ) ਹੈਵੀ ਡਿਊਟੀ ਰੋਟਾਵੇਟਰ</strong> ਬਿਲਕੁਲ ਸਹੀ ਹੈ।</p><p><strong>ਸਲਾਹ:</strong> 7 ਫੁੱਟ ਵਾਲਾ ਨਾ ਖਰੀਦੋ, ਕਾਲੀ ਮਿੱਟੀ ਵਿੱਚ ਟਰੈਕਟਰ ਦਬੇਗਾ। ਮਹਿੰਦਰਾ 575 DI ਨੂੰ <em>L-1 ਜਾਂ L-2 ਗੇਅਰ ਵਿੱਚ 1700 RPM</em> ਤੇ ਚਲਾਓ (ਡੀਜ਼ਲ ਖਪਤ ~3.8 ਲੀਟਰ/ਘੰਟਾ)।</p>'
+          en: '<p><strong>Financial Verdict:</strong> <strong>RENT (Custom Hiring) is financially optimal.</strong></p><p><strong>Cost Comparison:</strong> For 12 acres, annual machine runtime is ~110 hours. Owning a new 45 HP tractor results in ₹1,320/operating hour (including EMI interest, depreciation, and insurance). Renting locally costs ₹750 &ndash; ₹850/hr, saving you <em>₹51,000 &ndash; ₹62,000 annually</em> unless you plan custom hiring for neighbors (break-even is 22 acres).</p>',
+          hi: '<p><strong>आर्थिक सलाह:</strong> <strong>किराए पर लेना अधिक फायदेमंद है।</strong></p><p><strong>खर्च का विश्लेषण:</strong> 12 एकड़ में साल भर में लगभग 110 घंटे ट्रैक्टर चलता है। नया ट्रैक्टर खरीदने पर प्रति घंटा खर्च ₹1,320 आता है (किश्त, टूट-फूट और बीमा जोड़कर)। जबकि किराए पर यह ₹750 से ₹850/घंटे मिल जाता है। किराए पर लेने से आपके <em>₹51,000 से ₹62,000 सालाना बचेंगे</em>।</p>',
+          mr: '<p><strong>आर्थिक निर्णय:</strong> <strong>भाड्याने घेणे अधिक फायदेशीर ठरेल.</strong></p><p><strong>खर्च तुलना:</strong> १२ एकरासाठी वर्षाला सुमारे ११० तास ट्रॅक्टर चालतो. नवीन ट्रॅक्टर घेतल्यास हप्ता आणि घसारा धरून तासाला ₹१,३२० खर्च येतो. भाड्याने घेतल्यास ₹७५० ते ₹८५०/तास पडतो. यामुळे तुमचे <em>वार्षिक ₹५१,००० ते ₹६२,००० वाचतील</em>.</p>',
+          pa: '<p><strong>ਆਰਥਿਕ ਫੈਸਲਾ:</strong> <strong>ਕਿਰਾਏ ਤੇ ਲੈਣਾ ਜ਼ਿਆਦਾ ਫਾਇਦੇਮੰਦ ਹੈ।</strong></p><p><strong>ਖਰਚ ਤੁਲਨਾ:</strong> 12 ਏਕੜ ਲਈ ਸਾਲਾਨਾ ਲਗਭਗ 110 ਘੰਟੇ ਕੰਮ ਹੁੰਦਾ ਹੈ। ਨਵਾਂ ਖਰੀਦਣ ਤੇ ਖਰਚ ₹1,320/ਘੰਟਾ ਪੈਂਦਾ ਹੈ, ਜਦਕਿ ਕਿਰਾਏ ਤੇ ₹750-₹850/ਘੰਟਾ ਮਿਲ ਜਾਂਦਾ ਹੈ। ਕਿਰਾਏ ਤੇ ਲੈਣ ਨਾਲ ਸਾਲਾਨਾ <em>₹51,000 ਤੋਂ ₹62,000 ਦੀ ਬਚਤ ਹੋਵੇਗੀ</em>।</p>'
         },
         tags: {
-          en: ['6-Ft (42 Blades)', 'Fuel: ~3.8 L/hr', 'PTO: 540 RPM (L-2 Gear)'],
-          hi: ['6 फीट (42 ब्लेड)', 'डीजल: ~3.8 ली/घंटा', 'PTO: 540 RPM'],
-          mr: ['6 फूट (42 ब्लेड)', 'इंधन: ~3.8 ली/तास', 'PTO: 540 RPM'],
-          pa: ['6 ਫੁੱਟ (42 ਬਲੇਡ)', 'ਡੀਜ਼ਲ: ~3.8 ਲੀ/ਘੰਟਾ', 'PTO: 540 RPM']
+          en: ["Verdict: Rent & Save", "Annual Saving: ₹56,000", "Break-even: 22 Acres"],
+          hi: ["सलाह: किराए पर लें", "सालाना बचत: ₹56,000", "खरीद सीमा: 22 एकड़"],
+          mr: ["निर्णय: भाड्याने घ्या", "वार्षिक बचत: ₹५६,०००", "खरेदी मर्यादा: २२ एकर"],
+          pa: ["ਸਲਾਹ: ਕਿਰਾਏ ਤੇ ਲਵੋ", "ਸਾਲਾਨਾ ਬਚਤ: ₹56,000", "ਖਰੀਦ ਸੀਮਾ: 22 ਏਕੜ"]
         }
       },
-      weather: {
+      implements: {
         memory: {
-          en: "18 Acres • Heavy Black Soil • Nashik • Mahindra 575 DI (45 HP)",
-          hi: "18 एकड़ • काली भारी मिट्टी • नासिक • महिंद्रा 575 DI (45 HP)",
-          mr: "18 एकर • काळी कसदार जमीन • नाशिक • महिंद्रा 575 DI (45 HP)",
-          pa: "18 ਏਕੜ • ਕਾਲੀ ਭਾਰੀ ਮਿੱਟੀ • ਨਾਸਿਕ • ਮਹਿੰਦਰਾ 575 DI (45 HP)"
+          en: "Owned Tractor: Mahindra 575 DI (45 HP, PTO 39.8 HP) • Heavy Black Soil",
+          hi: "ट्रैक्टर: महिंद्रा 575 DI (45 HP, PTO 39.8 HP) • काली भारी मिट्टी",
+          mr: "ट्रॅक्टर: महिंद्रा 575 DI (45 HP, PTO 39.8 HP) • काळी कसदार जमीन",
+          pa: "ਟਰੈਕਟਰ: ਮਹਿੰਦਰਾ 575 DI (45 HP, PTO 39.8 HP) • ਭਾਰੀ ਕਾਲੀ ਜ਼ਮੀਨ"
         },
         query: {
-          en: '"Can I spray pesticide tomorrow, or will expected rain wash it away?"',
-          hi: '"क्या मैं कल कीटनाशक स्प्रे कर सकता हूँ या बारिश में धुल जाएगा?"',
-          mr: '"उद्या कीटकनाशक फवारणी करावी की पावसाने वाहून जाईल?"',
-          pa: '"ਕੀ ਮੈਂ ਕੱਲ੍ਹ ਕੀਟਨਾਸ਼ਕ ਸਪਰੇਅ ਕਰ ਸਕਦਾ ਹਾਂ ਜਾਂ ਮੀਂਹ ਵਿੱਚ ਧੁਲ ਜਾਵੇਗਾ?"'
+          en: '"Which rotavator and implement fits best with my tractor?"',
+          hi: '"मेरे ट्रैक्टर के लिए कौन सा रोटावेटर और उपकरण सबसे सही रहेगा?"',
+          mr: '"माझ्या ट्रॅक्टरसाठी कोणता रोटाव्हेटर आणि अवजार सर्वात योग्य बसेल?"',
+          pa: '"ਮੇਰੇ ਟਰੈਕਟਰ ਲਈ ਕਿਹੜਾ ਰੋਟਾਵੇਟਰ ਸਭ ਤੋਂ ਵਧੀਆ ਰਹੇਗਾ?"'
         },
         response: {
-          en: '<p><strong>Rainfast Warning:</strong> <strong>Postpone spraying until Thursday morning.</strong> Radar telemetry shows 18mm rainfall arriving tomorrow between 2:00 PM and 7:00 PM in Nashik rural.</p><p><strong>Recommended Window:</strong> Most systemic fungicides require a minimum 4-6 hour rainfast window. Spraying tomorrow morning risks 70% chemical runoff into black soil. Resume spraying Thursday at 6:30 AM.</p>',
-          hi: '<p><strong>मौसम चेतावनी:</strong> <strong>छिड़काव गुरुवार सुबह तक टाल दें।</strong> नासिक ग्रामीण में कल दोपहर 2:00 से शाम 7:00 बजे के बीच 18mm बारिश की 82% संभावना है।</p><p><strong>सलाह:</strong> दवा असर करने के लिए 4-6 घंटे सूखा मौसम चाहिए। कल छिड़कने पर 70% दवा बारिश में धुल जाएगी। गुरुवार सुबह 6:30 बजे छिड़काव करें।</p>',
-          mr: '<p><strong>हवामान इशारा:</strong> <strong>फवारणी गुरुवार सकाळपर्यंत पुढे ढकला.</strong> नाशिक भागात उद्या दुपारी २ ते संध्याकाळी ७ वाजेदरम्यान १८ मिमी पावसाची शक्यता आहे.</p><p><strong>योग्य वेळ:</strong> फवारणीनंतर किमान ४-६ तास पाऊस नसणे आवश्यक आहे. उद्या फवारल्यास औषध वाहून जाईल. गुरुवार सकाळी ६:३० वाजता फवारणी करा.</p>',
-          pa: '<p><strong>ਮੌਸਮ ਚਿਤਾਵਨੀ:</strong> <strong>ਸਪਰੇਅ ਵੀਰਵਾਰ ਸਵੇਰ ਤੱਕ ਮੁਲਤਵੀ ਕਰੋ।</strong> ਨਾਸਿਕ ਇਲਾਕੇ ਵਿੱਚ ਕੱਲ੍ਹ ਦੁਪਹਿਰ ਤੋਂ ਸ਼ਾਮ ਦਰਮਿਆਨ 18mm ਮੀਂਹ ਪੈਣ ਦੀ ਪੂਰੀ ਸੰਭਾਵਨਾ ਹੈ।</p><p><strong>ਸਲਾਹ:</strong> ਦਵਾਈ ਲਈ 4-6 ਘੰਟੇ ਖੁਸ਼ਕ ਮੌਸਮ ਚਾਹੀਦਾ ਹੈ। ਕੱਲ੍ਹ ਸਪਰੇਅ ਕਰਨ ਨਾਲ ਦਵਾਈ ਧੁਲ ਜਾਵੇਗੀ। ਵੀਰਵਾਰ ਸਵੇਰੇ 6:30 ਵਜੇ ਸਪਰੇਅ ਕਰੋ।</p>'
+          en: '<p><strong>Implement Match:</strong> <strong>6-Foot Rotavator (42 L-Type Blades) with Multi-Speed Gearbox</strong>.</p><p><strong>Engineering Sizing:</strong> In heavy black soil, 45 HP tractors generate ~39.8 PTO HP. A 7-foot rotavator causes an 18% RPM drop under load and drives diesel consumption from 4.8 L/hr to 6.9 L/hr. The 6ft multi-speed setup guarantees optimal 540 RPM pulverization without engine strain.</p>',
+          hi: '<p><strong>उपकरण चयन:</strong> <strong>6 फीट रोटावेटर (42 एल-टाइप ब्लेड) मल्टी-स्पीड गियरबॉक्स के साथ</strong>।</p><p><strong>इंजन संतुलन:</strong> काली भारी मिट्टी में 45 HP ट्रैक्टर से लगभग 39.8 PTO HP मिलती है। 7 फीट रोटावेटर लगाने पर इंजन पर 18% अतिरिक्त लोड आता है और डीजल खपत 4.8 से बढ़कर 6.9 लीटर/घंटा हो जाती है। 6 फीट रोटावेटर से बेहतर जुताई और कम डीजल खर्च होगा।</p>',
+          mr: '<p><strong>अवजार शिफारस:</strong> <strong>६ फूट रोटाव्हेटर (४२ एल-ब्लेड) मल्टी-स्पीड गिअरबॉक्स</strong>.</p><p><strong>तांत्रिक कारण:</strong> काळ्या कसदार जमिनीत ४५ HP ट्रॅक्टरवर ७ फुटी रोटाव्हेटर चालवल्यास इंजिनवर ताण येतो आणि डिझेल वापर ४.८ वरून ६.९ लिटर/तास होतो. ६ फुटी रोटाव्हेटरमुळे ५४० RPM वर उत्तम नांगरणी होते आणि इंजिन सुरक्षित राहते.</p>',
+          pa: '<p><strong>ਸੰਦ ਚੋਣ:</strong> <strong>6 ਫੁੱਟ ਰੋਟਾਵੇਟਰ (42 ਐਲ-ਬਲੇਡ) ਮਲਟੀ-ਸਪੀਡ ਗਿਅਰਬਾਕਸ</strong>।</p><p><strong>ਤਕਨੀਕੀ ਕਾਰਨ:</strong> ਭਾਰੀ ਮਿੱਟੀ ਵਿੱਚ 45 HP ਲਈ 6 ਫੁੱਟ ਸਭ ਤੋਂ ਢੁਕਵਾਂ ਹੈ। 7 ਫੁੱਟ ਪਾਉਣ ਨਾਲ ਡੀਜ਼ਲ ਖਪਤ 4.8 ਤੋਂ ਵੱਧ ਕੇ 6.9 ਲੀਟਰ/ਘੰਟਾ ਹੋ ਜਾਂਦੀ ਹੈ ਅਤੇ ਟਰੈਕਟਰ ਤੇ ਬੋਝ ਪੈਂਦਾ ਹੈ।</p>'
         },
         tags: {
-          en: ['Rain Risk: 82%', 'Rainfast Window: 0 hrs', 'Reschedule: Thu Morning'],
-          hi: ['बारिश का खतरा: 82%', 'दवा धुलने का डर', 'सही समय: गुरुवार सुबह'],
-          mr: ['पावसाचा अंदाज: 82%', 'फवारणी पुढे ढकला', 'योग्य वेळ: गुरुवार सकाळ'],
-          pa: ['ਮੀਂਹ ਦਾ ਖਤਰਾ: 82%', 'ਸਪਰੇਅ ਰੱਦ ਕਰੋ', 'ਸਹੀ ਸਮਾਂ: ਵੀਰਵਾਰ ਸਵੇਰੇ']
+          en: ["Match: 6ft / 42-Blade", "Optimal PTO 540 RPM", "Fuel: 4.8 L/hr Safe"],
+          hi: ["सही चयन: 6 फीट / 42 ब्लेड", "540 PTO RPM", "डीजल: 4.8 ली/घंटा"],
+          mr: ["शिफारस: ६ फूट / ४२ ब्लेड", "५४० PTO RPM", "डिझेल बचत: ४.८ ली/तास"],
+          pa: ["ਚੋਣ: 6 ਫੁੱਟ / 42 ਬਲੇਡ", "540 PTO RPM", "ਡੀਜ਼ਲ: 4.8 ਲੀ/ਘੰਟਾ"]
         }
       },
       mandi: {
         memory: {
-          en: "18 Acres • Heavy Black Soil • Nashik • Mahindra 575 DI (45 HP)",
-          hi: "18 एकड़ • काली भारी मिट्टी • नासिक • महिंद्रा 575 DI (45 HP)",
-          mr: "18 एकर • काळी कसदार जमीन • नाशिक • महिंद्रा 575 DI (45 HP)",
-          pa: "18 ਏਕੜ • ਕਾਲੀ ਭਾਰੀ ਮਿੱਟੀ • ਨਾਸਿਕ • ਮਹਿੰਦਰਾ 575 DI (45 HP)"
+          en: "Harvested: 85 Quintals Lokwan Wheat • Moisture: 11.4% • Storage: On-Farm Silo",
+          hi: "फसल: 85 क्विंटल लोकवान गेहूं • नमी: 11.4% • भंडारण: सुरक्षित भंडार",
+          mr: "उत्पादन: ८५ क्विंटल लोकवान गहू • ओलावा: ११.४% • साठवणूक: सुरक्षित कोठार",
+          pa: "ਫਸਲ: 85 ਕੁਇੰਟਲ ਕਣਕ • ਨਮੀ: 11.4% • ਭੰਡਾਰਨ: ਫਾਰਮ ਸਟੋਰੇਜ"
         },
         query: {
-          en: '"Current wheat mandi price is ₹2,320/qtl. Should I sell now or hold for 3 weeks?"',
-          hi: '"मंडी में गेहूं का भाव ₹2,320/क्विंटल है। अभी बेचूं या 3 हफ्ते रोकूं?"',
-          mr: '"गव्हाचा बाजारभाव ₹२,३२०/क्विंटल आहे. आत्ता विकावा की ३ आठवडे थांबावे?"',
-          pa: '"ਕਣਕ ਦਾ ਮੰਡੀ ਭਾਵ ₹2,320/ਕੁਇੰਟਲ ਹੈ। ਹੁਣ ਵੇਚਾਂ ਜਾਂ 3 ਹਫ਼ਤੇ ਰੋਕਾਂ?"'
+          en: '"Is this a good mandi price, or should I hold for next week?"',
+          hi: '"क्या यह मंडी भाव सही है या मुझे अगले हफ्ते के लिए माल रोकना चाहिए?"',
+          mr: '"हा बाजारभाव योग्य आहे की पुढच्या आठवड्यासाठी माल थांबवावा?"',
+          pa: '"ਕੀ ਇਹ ਮੰਡੀ ਭਾਵ ਸਹੀ ਹੈ ਜਾਂ ਅਗਲੇ ਹਫਤੇ ਲਈ ਰੋਕਣਾ ਚਾਹੀਦਾ ਹੈ?"'
         },
         response: {
-          en: '<p><strong>Mandi Forecast:</strong> <strong>Hold your stock for 18-22 days.</strong> Influx in district mandis has peaked and mill procurement demand is projected to rise 14% by month-end.</p><p><strong>Projected Target:</strong> Anticipated price band: <em>₹2,440 &ndash; ₹2,485/qtl</em> (+₹140/qtl gain). On your estimated 140 quintals, holding yields an incremental net gain of ~₹19,600 after accounting for warehouse storage costs.</p>',
-          hi: '<p><strong>मंडी पूर्वानुमान:</strong> <strong>माल को 18-22 दिन रोक कर रखें।</strong> नजदीकी मंडियों में आवक कम हो रही है और मिलों की खरीद मांग महीने के अंत तक 14% बढ़ेगी।</p><p><strong>संभावित भाव:</strong> <em>₹2,440 से ₹2,485/क्विंटल</em> का अनुमान है (+₹140/क्विंटल फायदा)। आपकी 140 क्विंटल फसल पर गोदाम खर्च काटकर करीब ₹19,600 का अतिरिक्त शुद्ध मुनाफा होगा।</p>',
-          mr: '<p><strong>बाजार अंदाज:</strong> <strong>माल १८-२२ दिवस रोखून ठेवा.</strong> स्थानिक बाजारातील आवक कमी होत असून पिठाच्या गिरण्यांची मागणी १४% वाढण्याची शक्यता आहे.</p><p><strong>अपेक्षित भाव:</strong> <em>₹२,४४० ते ₹२,४८५/क्विंटल</em>. तुमच्या १४० क्विंटल मालावर गोदामाचा खर्च वजा जाता सुमारे ₹१९,६०० चा निव्वळ नफा होईल.</p>',
-          pa: '<p><strong>ਮੰਡੀ ਅਨੁਮਾਨ:</strong> <strong>ਮਾਲ 18-22 ਦਿਨ ਰੋਕ ਕੇ ਰੱਖੋ।</strong> ਮੰਡੀਆਂ ਵਿੱਚ ਆਵਕ ਘਟ ਰਹੀ ਹੈ ਅਤੇ ਮਿੱਲਾਂ ਦੀ ਖਰੀਦ ਮੰਗ 14% ਵਧਣ ਦੀ ਸੰਭਾਵਨਾ ਹੈ।</p><p><strong>ਅਨੁਮਾਨਿਤ ਭਾਵ:</strong> <em>₹2,440 ਤੋਂ ₹2,485/ਕੁਇੰਟਲ</em>। ਤੁਹਾਡੀ 140 ਕੁਇੰਟਲ ਫਸਲ ਤੇ ਖਰਚੇ ਕੱਟ ਕੇ ਲਗਭਗ ₹19,600 ਦਾ ਵਾਧੂ ਮੁਨਾਫਾ ਹੋਵੇਗਾ।</p>'
+          en: '<p><strong>Mandi Forecast:</strong> <strong>Hold your stock for 12&ndash;16 days.</strong> Influx in district mandis has peaked and mill procurement demand is projected to rise 14% by month-end.</p><p><strong>Projected Target:</strong> Anticipated price band: <em>₹2,440 &ndash; ₹2,485/qtl</em> (+₹140/qtl gain). On your estimated 85 quintals, holding yields an incremental net gain of ~₹11,900 after accounting for warehouse storage costs.</p>',
+          hi: '<p><strong>मंडी पूर्वानुमान:</strong> <strong>माल को 12-16 दिन रोक कर रखें।</strong> नजदीकी मंडियों में आवक कम हो रही है और मिलों की खरीद मांग महीने के अंत तक 14% बढ़ेगी।</p><p><strong>संभावित भाव:</strong> <em>₹2,440 से ₹2,485/क्विंटल</em> का अनुमान है (+₹140/क्विंटल फायदा)। आपकी 85 क्विंटल फसल पर गोदाम खर्च काटकर करीब ₹11,900 का अतिरिक्त शुद्ध मुनाफा होगा।</p>',
+          mr: '<p><strong>बाजार अंदाज:</strong> <strong>माल १२-१६ दिवस रोखून ठेवा.</strong> स्थानिक बाजारातील आवक कमी होत असून पिठाच्या गिरण्यांची मागणी १४% वाढण्याची शक्यता आहे.</p><p><strong>अपेक्षित भाव:</strong> <em>₹२,४४० ते ₹२,४८५/क्विंटल</em>. तुमच्या ८५ क्विंटल मालावर गोदामाचा खर्च वजा जाता सुमारे ₹११,९०० चा निव्वळ नफा होईल.</p>',
+          pa: '<p><strong>ਮੰਡੀ ਅਨੁਮਾਨ:</strong> <strong>ਮਾਲ 12-16 ਦਿਨ ਰੋਕ ਕੇ ਰੱਖੋ।</strong> ਮੰਡੀਆਂ ਵਿੱਚ ਆਵਕ ਘਟ ਰਹੀ ਹੈ ਅਤੇ ਮਿੱਲਾਂ ਦੀ ਖਰੀਦ ਮੰਗ 14% ਵਧਣ ਦੀ ਸੰਭਾਵਨਾ ਹੈ।</p><p><strong>ਅਨੁਮਾਨਿਤ ਭਾਵ:</strong> <em>₹2,440 ਤੋਂ ₹2,485/ਕੁਇੰਟਲ</em>। ਤੁਹਾਡੀ 85 ਕੁਇੰਟਲ ਫਸਲ ਤੇ ਖਰਚੇ ਕੱਟ ਕੇ ਲਗਭਗ ₹11,900 ਦਾ ਵਾਧੂ ਮੁਨਾਫਾ ਹੋਵੇਗਾ।</p>'
         },
         tags: {
-          en: ['Target: ₹2,460/qtl', 'Gain: +₹19,600', 'Hold Window: 3 Weeks'],
-          hi: ['अपेक्षित भाव: ₹2,460', 'मुनाफा: +₹19,600', '3 हफ्ते रोकें'],
-          mr: ['अपेक्षित भाव: ₹२,४६०', 'नफा: +₹१९,६००', '३ आठवडे थांबा'],
-          pa: ['ਅਨੁਮਾਨਿਤ ਭਾਵ: ₹2,460', 'ਵਾਧੂ ਮੁਨਾਫਾ: +₹19,600', '3 ਹਫ਼ਤੇ ਰੋਕੋ']
+          en: ["Target: ₹2,460/qtl", "Gain: +₹11,900", "Hold Window: 2 Weeks"],
+          hi: ["अपेक्षित भाव: ₹2,460", "मुनाफा: +₹11,900", "2 हफ्ते रोकें"],
+          mr: ["अपेक्षित भाव: ₹२,४६०", "नफा: +₹११,९००", "२ आठवडे थांबा"],
+          pa: ["ਅਨੁਮਾਨਿਤ ਭਾਵ: ₹2,460", "ਵਾਧੂ ਮੁਨਾਫਾ: +₹11,900", "2 ਹਫ਼ਤੇ ਰੋਕੋ"]
+        }
+      },
+      operations: {
+        memory: {
+          en: "18 Acres • Nashik Plot A & B • Day 24 of Season • Weather: 31°C, Wind 6 km/h",
+          hi: "18 एकड़ • नासिक प्लॉट ए और बी • सीजन का 24वां दिन • मौसम: 31°C, हवा 6 किमी/घं",
+          mr: "18 एकर • नाशिक प्लॉट ए आणि बी • हंगामाचा २४ वा दिवस • हवामान: ३१°C, वारा ६ किमी/तास",
+          pa: "18 ਏਕੜ • ਨਾਸਿਕ ਪਲਾਟ ਏ ਅਤੇ ਬੀ • ਸੀਜ਼ਨ ਦਾ 24ਵਾਂ ਦਿਨ • ਮੌਸਮ: 31°C, ਹਵਾ 6 km/h"
+        },
+        query: {
+          en: '"What should I focus on doing across my fields today?"',
+          hi: '"आज मुझे अपने खेतों में किन कामों पर सबसे ज्यादा ध्यान देना चाहिए?"',
+          mr: '"आज मी माझ्या शेतात कोणत्या कामांना प्राधान्य द्यायला हवे?"',
+          pa: '"ਅੱਜ ਮੈਨੂੰ ਆਪਣੇ ਖੇਤਾਂ ਵਿੱਚ ਕਿਹੜੇ ਕੰਮਾਂ ਤੇ ਧਿਆਨ ਦੇਣਾ ਚਾਹੀਦਾ ਹੈ?"'
+        },
+        response: {
+          en: '<p><strong>Today\x27s Priority Operational Brief (3 Action Items):</strong></p><p><strong>1. Pest Scouting (Plot B):</strong> Scout lower leaf surfaces between 07:00&ndash;09:30 AM before temperatures rise above 30°C.</p><p><strong>2. Fertigation (Plot A):</strong> Run micro-drip with water-soluble 19:19:19 @ 4.5 kg/acre during morning pressure cycle.</p><p><strong>3. Farm Pond Maintenance:</strong> Inspect inlet desilting silt-trap before expected weekend rains.</p>',
+          hi: '<p><strong>आज की कार्ययोजना (3 मुख्य प्राथमिकताएं):</strong></p><p><strong>1. कीट निरीक्षण (प्लॉट बी):</strong> सुबह 07:00 से 09:30 बजे के बीच पत्तियों के नीचे रस चूसक कीटों की जांच करें।</p><p><strong>2. खाद प्रबंधन (प्लॉट ए):</strong> सुबह ड्रिप द्वारा 19:19:19 (4.5 किलो/एकड़) दें।</p><p><strong>3. खेत तालाब देखभाल:</strong> सप्ताहांत बारिश से पहले इनलेट नाली की सफाई सुनिश्चित करें।</p>',
+          mr: '<p><strong>आजची कार्यसूची (३ महत्त्वाची कामे):</strong></p><p><strong>१. कीड पाहणी (प्लॉट बी):</strong> सकाळी ०७:०० ते ०९:३० दरम्यान पानांखालील रसशोषक किडींची पाहणी करा.</p><p><strong>२. खत व्यवस्थापन (प्लॉट ए):</strong> सकाळच्या वेळेत ठिबकद्वारे १९:१९:१९ (४.५ किलो/एकर) सोडावे.</p><p><strong>३. शेततळे तपासणी:</strong> पावसापूर्वी इनलेटच्या गाळ काढण्याची खात्री करा.</p>',
+          pa: '<p><strong>ਅੱਜ ਦੀਆਂ ਤਰਜੀਹਾਂ (3 ਮੁੱਖ ਕੰਮ):</strong></p><p><strong>1. ਕੀੜੇ ਨਿਰੀਖਣ (ਪਲਾਟ ਬੀ):</strong> ਸਵੇਰੇ 07:00 ਤੋਂ 09:30 ਵਿਚਕਾਰ ਪੱਤਿਆਂ ਦੀ ਜਾਂਚ ਕਰੋ।</p><p><strong>2. ਖਾਦ ਪ੍ਰਬੰਧ (ਪਲਾਟ ਏ):</strong> ਤੁਪਕਾ ਰਾਹੀਂ 19:19:19 (4.5 ਕਿੱਲੋ/ਏਕੜ) ਦਿਓ।</p><p><strong>3. ਪਾਣੀ ਨਿਕਾਸ:</strong> ਮੀਂਹ ਤੋਂ ਪਹਿਲਾਂ ਨਾਲੀਆਂ ਦੀ ਸਫਾਈ ਯਕੀਨੀ ਬਣਾਓ।</p>'
+        },
+        tags: {
+          en: ["3 Action Priorities", "Morning Drip 19:19:19", "Pond Silt-Trap Audit"],
+          hi: ["3 जरूरी काम", "सुबह 19:19:19 खाद", "जल निकासी सफाई"],
+          mr: ["३ महत्त्वाची कामे", "सकाळी १९:१९:१९ खत", "शेततळे इनलेट तपासणी"],
+          pa: ["3 ਮੁੱਖ ਕੰਮ", "ਸਵੇਰ ਦੀ ਖਾਦ 19:19:19", "ਨਾਲੀਆਂ ਦੀ ਸਫਾਈ"]
         }
       }
     };
 
     function initHeroSimulator() {
-      let currentScenario = 'crop';
-      let currentLang = 'en';
+      let currentScenario = "crop";
+      let currentLang = "en";
 
-      const memoryEl = document.getElementById('sim-memory-text');
-      const queryEl = document.getElementById('sim-user-query');
-      const responseEl = document.getElementById('sim-ai-response');
-      const tagsEl = document.getElementById('sim-ai-tags');
-      const chips = document.querySelectorAll('.sim-chip');
-      const langBtns = document.querySelectorAll('.sim-lang-btn');
-      const customForm = document.getElementById('sim-custom-form');
-      const inputField = document.getElementById('sim-input-field');
-      const micBtn = document.getElementById('sim-mic-btn');
+      const memoryEl = document.getElementById("sim-memory-text");
+      const queryEl = document.getElementById("sim-user-query");
+      const responseEl = document.getElementById("sim-ai-response");
+      const tagsEl = document.getElementById("sim-ai-tags");
+      const chips = document.querySelectorAll(".sim-chip");
+      const langBtns = document.querySelectorAll(".sim-lang-btn");
+      const customForm = document.getElementById("sim-custom-form");
+      const inputField = document.getElementById("sim-input-field");
+      const micBtn = document.getElementById("sim-mic-btn");
+      const simSection = document.getElementById("hero-simulator");
 
-      function render(scenarioKey, langKey) {
+      function render(scenarioKey, langKey, animated = false) {
         const scenario = simulatorData[scenarioKey] || simulatorData.crop;
         const memoryText = (scenario.memory && scenario.memory[langKey]) || scenario.memory.en;
         const queryText = (scenario.query && scenario.query[langKey]) || scenario.query.en;
@@ -3045,62 +3322,84 @@
         const tagList = (scenario.tags && scenario.tags[langKey]) || scenario.tags.en;
 
         if (memoryEl) memoryEl.textContent = memoryText;
-        if (queryEl) queryEl.textContent = queryText;
-        if (responseEl) {
-          responseEl.style.opacity = '0.4';
-          setTimeout(() => {
-            responseEl.innerHTML = responseText;
-            responseEl.style.opacity = '1';
-          }, 120);
+        if (queryEl) {
+          if (animated) {
+            queryEl.style.opacity = "0";
+            setTimeout(() => {
+              queryEl.textContent = queryText;
+              queryEl.style.transition = "opacity 0.25s ease";
+              queryEl.style.opacity = "1";
+            }, 80);
+          } else {
+            queryEl.textContent = queryText;
+          }
         }
+
+        if (responseEl) {
+          if (animated) {
+            responseEl.style.opacity = "0.35";
+            responseEl.innerHTML = "<p style=\"color:var(--muted); font-style: italic;\">Accessing Farm Memory &amp; calculating agronomic parameters...</p>";
+            setTimeout(() => {
+              responseEl.innerHTML = responseText;
+              responseEl.style.transition = "opacity 0.3s ease";
+              responseEl.style.opacity = "1";
+            }, 260);
+          } else {
+            responseEl.style.opacity = "0.4";
+            setTimeout(() => {
+              responseEl.innerHTML = responseText;
+              responseEl.style.opacity = "1";
+            }, 120);
+          }
+        }
+
         if (tagsEl) {
           tagsEl.innerHTML = tagList.map((tag, idx) =>
-            `<span class="sim-ai-tag ${idx === 0 ? 'tag-accent' : ''}">${tag}</span>`
-          ).join('');
+            `<span class="sim-ai-tag ${idx === 0 ? "tag-accent" : ""}">${tag}</span>`
+          ).join("");
         }
       }
 
       chips.forEach(chip => {
-        chip.addEventListener('click', () => {
+        chip.addEventListener("click", () => {
           chips.forEach(c => {
-            c.classList.remove('active');
-            c.setAttribute('aria-selected', 'false');
+            c.classList.remove("active");
+            c.setAttribute("aria-selected", "false");
           });
-          chip.classList.add('active');
-          chip.setAttribute('aria-selected', 'true');
-          currentScenario = chip.getAttribute('data-scenario');
-          render(currentScenario, currentLang);
+          chip.classList.add("active");
+          chip.setAttribute("aria-selected", "true");
+          currentScenario = chip.getAttribute("data-scenario");
+          render(currentScenario, currentLang, false);
         });
       });
 
       langBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          langBtns.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          currentLang = btn.getAttribute('data-lang');
-          render(currentScenario, currentLang);
+        btn.addEventListener("click", () => {
+          langBtns.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          currentLang = btn.getAttribute("data-lang");
+          render(currentScenario, currentLang, false);
         });
       });
 
       if (micBtn) {
-        micBtn.addEventListener('click', () => {
-          // Switch to Hindi to demonstrate voice regional recognition
+        micBtn.addEventListener("click", () => {
           const hiBtn = document.querySelector('.sim-lang-btn[data-lang="hi"]');
           if (hiBtn) hiBtn.click();
-          micBtn.style.transform = 'scale(1.25)';
-          setTimeout(() => { micBtn.style.transform = ''; }, 300);
+          micBtn.style.transform = "scale(1.25)";
+          setTimeout(() => { micBtn.style.transform = ""; }, 300);
         });
       }
 
       if (customForm && inputField) {
-        customForm.addEventListener('submit', (e) => {
+        customForm.addEventListener("submit", (e) => {
           e.preventDefault();
           const val = inputField.value.trim();
           if (!val) return;
 
           queryEl.textContent = `"${val}"`;
-          responseEl.innerHTML = '<p><strong>Analyzing your query against Farm Memory...</strong> Correlating soil records, machinery fleet, and current regional weather telemetry for optimal action.</p>';
-          inputField.value = '';
+          responseEl.innerHTML = "<p><strong>Analyzing your query against Farm Memory...</strong> Correlating soil records, machinery fleet, and current regional weather telemetry for optimal action.</p>";
+          inputField.value = "";
 
           setTimeout(() => {
             responseEl.innerHTML = `<p><strong>FarmerGPT Recommendation:</strong> Context verified for your 18-acre plot. Based on your black cotton soil and current 45 HP fleet, this decision is operationally sound. No equipment overload risk detected.</p><p><em>Operational safety margin: 94%. Recommended window: Early morning before 10:00 AM.</em></p>`;
@@ -3108,33 +3407,62 @@
         });
       }
 
-      // Allow clicking question cards in #questions to trigger simulator
-      const questionCards = document.querySelectorAll('.question-card');
-      questionCards.forEach(card => {
-        card.addEventListener('click', () => {
-          const tagEl = card.querySelector('.question-tag');
-          const tagText = tagEl ? tagEl.textContent.trim().toLowerCase() : '';
-          let target = 'crop';
+      // ==========================================
+      // Interactive Question Cards in #questions
+      // ==========================================
+      const questionCards = document.querySelectorAll(".question-card");
+      const questionGrid = document.querySelector(".questions-grid");
 
-          if (tagText.includes('machinery') || tagText.includes('equipment')) {
-            target = 'equipment';
-          } else if (tagText.includes('weather') || tagText.includes('irrigation')) {
-            target = 'weather';
-          } else if (tagText.includes('market') || tagText.includes('mandi')) {
-            target = 'mandi';
+      // Dynamic cursor spotlight tracker across question cards
+      if (questionGrid) {
+        questionGrid.addEventListener("pointermove", (e) => {
+          questionCards.forEach(card => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty("--mouse-x", `${x}px`);
+            card.style.setProperty("--mouse-y", `${y}px`);
+          });
+        });
+      }
+
+      function triggerQuestionCard(card) {
+        const scenarioKey = card.getAttribute("data-scenario") || "crop";
+        currentScenario = scenarioKey;
+
+        // Highlight matching top chip if it corresponds to the 4 main categories
+        chips.forEach(c => {
+          if (c.getAttribute("data-scenario") === scenarioKey) {
+            c.classList.add("active");
+            c.setAttribute("aria-selected", "true");
+          } else {
+            c.classList.remove("active");
+            c.setAttribute("aria-selected", "false");
           }
+        });
 
-          const matchingChip = document.querySelector(`.sim-chip[data-scenario="${target}"]`);
-          if (matchingChip) matchingChip.click();
+        // Smooth scroll with eye-catching highlight ring on the simulator
+        if (simSection) {
+          simSection.scrollIntoView({ behavior: "smooth", block: "center" });
+          simSection.classList.remove("sim-highlight");
+          void simSection.offsetWidth; // trigger reflow
+          simSection.classList.add("sim-highlight");
+        }
 
-          const simSection = document.getElementById('hero-simulator');
-          if (simSection) {
-            simSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        render(currentScenario, currentLang, true);
+      }
+
+      questionCards.forEach(card => {
+        card.addEventListener("click", () => triggerQuestionCard(card));
+        card.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            triggerQuestionCard(card);
           }
         });
       });
 
-      render(currentScenario, currentLang);
+      render(currentScenario, currentLang, false);
     }
 
     // ==========================================
