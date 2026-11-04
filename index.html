@@ -2076,6 +2076,13 @@
               type="video/mp4">
             <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
               type="video/mp4">
+            <source src="videos/hero-farm.webm" type="video/webm">
+            <source
+              src="https://upload.wikimedia.org/wikipedia/commons/transcoded/d/dc/Deutsche_Welle_-_Daily_Drone_-_Getreideernte.webm/Deutsche_Welle_-_Daily_Drone_-_Getreideernte.webm.480p.vp9.webm"
+              type="video/webm">
+            <source
+              src="https://upload.wikimedia.org/wikipedia/commons/transcoded/2/26/Combine_harvester_on_a_Koeru_field_in_Estonia%2C_July_2021.webm/Combine_harvester_on_a_Koeru_field_in_Estonia%2C_July_2021.webm.360p.mpeg4.mov"
+              type="video/mp4">
           </video>
           <div class="hero-video-scrim"></div>
         </div>
@@ -3288,6 +3295,7 @@
     initEquipmentCalculator();
 
     // Video Play/Pause Ambient Toggle (Farmerscafe style)
+    // Video Play/Pause Ambient Toggle (Statiq style)
     const heroBgVideo = document.getElementById('hero-bg-video');
     const heroVideoToggle = document.getElementById('hero-video-toggle');
     const videoToggleDot = document.getElementById('video-toggle-dot');
@@ -3307,7 +3315,39 @@
           heroBgVideo.style.opacity = '0.35';
         }
       });
-    }
+      if (heroBgVideo) {
+        // Explicitly enforce muted property to satisfy browser autoplay policies
+        heroBgVideo.muted = true;
+        heroBgVideo.setAttribute('muted', '');
+        const promise = heroBgVideo.play();
+        if (promise !== undefined) {
+          promise.catch(() => {
+            const onFirstInteraction = () => {
+              heroBgVideo.play();
+              window.removeEventListener('click', onFirstInteraction);
+              window.removeEventListener('scroll', onFirstInteraction);
+            };
+            window.addEventListener('click', onFirstInteraction);
+            window.addEventListener('scroll', onFirstInteraction);
+          });
+        }
+
+        if (heroVideoToggle) {
+          heroVideoToggle.addEventListener('click', () => {
+            if (heroBgVideo.paused) {
+              heroBgVideo.play();
+              if (videoToggleDot) videoToggleDot.classList.remove('is-paused');
+              if (videoToggleLabel) videoToggleLabel.textContent = 'Ambient Drone Video: Active';
+              heroBgVideo.style.opacity = '0.75';
+            } else {
+              heroBgVideo.pause();
+              if (videoToggleDot) videoToggleDot.classList.add('is-paused');
+              if (videoToggleLabel) videoToggleLabel.textContent = 'Ambient Video: Paused';
+              heroBgVideo.style.opacity = '0.35';
+            }
+          });
+        }
+      }
   </script>
 </body>
 
