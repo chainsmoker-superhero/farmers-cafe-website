@@ -328,56 +328,22 @@
       box-shadow: 0 0 0 5px rgba(212, 175, 55, 0.14);
     }
 
-    /* Hero Section with Farmerscafe-style Background Video */
     .hero {
       position: relative;
-      padding-top: 56px;
-      padding-bottom: 96px;
-      overflow: hidden;
-      background: #06120B;
-      color: #FFFFFF;
+      padding-top: 52px;
     }
 
-    .hero-video-wrapper {
+    .hero::before {
+      content: "";
       position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
+      top: -30px;
+      right: 5%;
+      width: 520px;
+      height: 520px;
+      background: radial-gradient(circle, rgba(26, 127, 90, 0.12) 0%, rgba(212, 175, 55, 0.08) 45%, transparent 70%);
+      filter: blur(60px);
       pointer-events: none;
-      z-index: 0;
-    }
-
-    .hero-bg-video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      transform: translate(-50%, -50%);
-      object-fit: cover;
-      opacity: 0.75;
-      transition: opacity 600ms ease;
-    }
-
-    .hero-video-scrim {
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 75% 35%, rgba(26, 127, 90, 0.4) 0%, transparent 60%),
-        linear-gradient(180deg,
-          rgba(6, 18, 11, 0.85) 0%,
-          rgba(6, 18, 11, 0.58) 40%,
-          rgba(6, 18, 11, 0.85) 80%,
-          #FFFFFF 100%);
-      pointer-events: none;
-    }
-
-    .hero .container {
-      position: relative;
-      z-index: 2;
+      z-index: -1;
     }
 
     .hero-grid {
@@ -399,26 +365,15 @@
     .hero-copy h1 {
       font-size: clamp(3.15rem, 10vw, 6.4rem);
       max-width: 11ch;
-      color: #FFFFFF;
-      text-shadow: 0 4px 30px rgba(0, 0, 0, 0.45);
     }
 
-    .hero-copy .headline-accent {
+    .headline-accent {
       display: block;
-      color: #4ADE80;
+      color: var(--primary);
       font-family: "Fraunces", Georgia, serif;
       font-style: italic;
       font-weight: 500;
       letter-spacing: -0.02em;
-      text-shadow: 0 0 35px rgba(74, 222, 128, 0.5);
-    }
-
-    .hero-copy .eyebrow {
-      background: rgba(26, 127, 90, 0.4);
-      border: 1px solid rgba(74, 222, 128, 0.35);
-      color: #86EFAC;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 0 20px rgba(74, 222, 128, 0.15);
     }
 
     .hero-copy p {
@@ -433,22 +388,19 @@
       margin: 22px 0 0 !important;
       font-size: clamp(1.12rem, 2.2vw, 1.35rem) !important;
       font-weight: 600;
-      color: #F8FAFC !important;
+      color: var(--text) !important;
       letter-spacing: -0.02em;
       line-height: 1.4 !important;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
     }
 
     .hero-subhead strong {
-      color: #4ADE80;
+      color: var(--primary);
     }
 
     .hero-copy p.hero-desc {
       margin: 12px 0 0;
       font-size: clamp(0.98rem, 1.8vw, 1.12rem);
       line-height: 1.7;
-      color: #E2E8F0;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
     }
 
     .hero-actions {
@@ -464,104 +416,6 @@
       padding: 0 18px;
       font-size: 0.92rem;
       font-weight: 600;
-      background: rgba(255, 255, 255, 0.12);
-      border-color: rgba(255, 255, 255, 0.25);
-      color: #FFFFFF;
-      backdrop-filter: blur(14px);
-    }
-
-    .hero-actions .button-secondary:hover {
-      background: rgba(255, 255, 255, 0.22);
-      border-color: rgba(255, 255, 255, 0.45);
-      color: #FFFFFF;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
-    }
-
-    .hero-meta {
-      margin-top: 40px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 8px 0;
-    }
-
-    .hero-stat {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 0 20px 0 0;
-      color: #CBD5E1;
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-
-    .hero-stat:not(:last-child)::after {
-      content: "";
-      display: inline-block;
-      width: 1px;
-      height: 16px;
-      background: rgba(255, 255, 255, 0.18);
-      margin-left: 20px;
-    }
-
-    .hero-stat strong {
-      color: #FFFFFF;
-      font-size: 1.05rem;
-      font-weight: 700;
-    }
-
-    /* Floating Video Ambient Toggle Button (Farmerscafe signature) */
-    .hero-video-toggle {
-      position: absolute;
-      bottom: 24px;
-      left: 24px;
-      z-index: 10;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 14px;
-      border-radius: 999px;
-      background: rgba(6, 18, 11, 0.72);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(14px);
-      color: #E2E8F0;
-      font-family: inherit;
-      font-size: 0.76rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 180ms ease;
-    }
-
-    .hero-video-toggle:hover {
-      background: rgba(6, 18, 11, 0.9);
-      border-color: rgba(74, 222, 128, 0.5);
-      color: #FFFFFF;
-      transform: translateY(-1px);
-    }
-
-    .video-toggle-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #10B981;
-      box-shadow: 0 0 8px #10B981;
-      animation: simPulse 2s infinite ease-in-out;
-    }
-
-    .video-toggle-dot.is-paused {
-      background: #94A3B8;
-      box-shadow: none;
-      animation: none;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .hero-bg-video {
-        display: none;
-      }
-
-      .hero-video-wrapper {
-        background: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-      }
     }
 
     .button {
@@ -611,6 +465,39 @@
       background: #fff;
       color: var(--text);
       border-color: rgba(15, 23, 42, 0.12);
+    }
+
+    .hero-meta {
+      margin-top: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 0;
+    }
+
+    .hero-stat {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 20px 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .hero-stat:not(:last-child)::after {
+      content: "";
+      display: inline-block;
+      width: 1px;
+      height: 16px;
+      background: var(--border);
+      margin-left: 20px;
+    }
+
+    .hero-stat strong {
+      color: var(--primary);
+      font-size: 1.05rem;
+      font-weight: 700;
     }
 
     .hero-visual,
@@ -2069,24 +1956,6 @@
 
     <main id="main-content">
       <section class="hero" id="top">
-        <div class="hero-video-wrapper" aria-hidden="true">
-          <video class="hero-bg-video" id="hero-bg-video" autoplay muted loop playsinline
-            poster="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1920&q=80">
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-green-field-41121-large.mp4"
-              type="video/mp4">
-            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
-              type="video/mp4">
-            <source src="videos/hero-farm.webm" type="video/webm">
-            <source
-              src="https://upload.wikimedia.org/wikipedia/commons/transcoded/d/dc/Deutsche_Welle_-_Daily_Drone_-_Getreideernte.webm/Deutsche_Welle_-_Daily_Drone_-_Getreideernte.webm.480p.vp9.webm"
-              type="video/webm">
-            <source
-              src="https://upload.wikimedia.org/wikipedia/commons/transcoded/2/26/Combine_harvester_on_a_Koeru_field_in_Estonia%2C_July_2021.webm/Combine_harvester_on_a_Koeru_field_in_Estonia%2C_July_2021.webm.360p.mpeg4.mov"
-              type="video/mp4">
-          </video>
-          <div class="hero-video-scrim"></div>
-        </div>
-
         <div class="container hero-grid">
           <div class="hero-copy reveal">
             <span class="eyebrow">Farmers Cafe</span>
@@ -2117,113 +1986,169 @@
             </div>
           </div>
 
-          <div class="hero-visual reveal hero-simulator-container" id="hero-simulator">
-            <div class="sim-ambient-glow" aria-hidden="true"></div>
-            <div class="sim-header">
-              <div class="sim-status">
-                <span class="sim-live-dot" aria-hidden="true"></span>
-                <span class="sim-title">FarmerGPT Live Session</span>
-                <span class="sim-version-badge">v2.4 • Stateful</span>
-              </div>
-              <div class="sim-lang-picker" aria-label="Select regional language for simulation">
-                <button class="sim-lang-btn active" data-lang="en" type="button">English</button>
-                <button class="sim-lang-btn" data-lang="hi" type="button">हिंदी</button>
-                <button class="sim-lang-btn" data-lang="mr" type="button">मराठी</button>
-                <button class="sim-lang-btn" data-lang="pa" type="button">ਪੰਜਾਬੀ</button>
-              </div>
-            </div>
-
-            <div class="sim-prompt-chips" role="tablist" aria-label="Sample farmer questions">
-              <button class="sim-chip active" data-scenario="crop" role="tab" aria-selected="true" type="button">
-                <span class="sim-chip-icon">🌿</span>
-                <span>Leaf Curling</span>
-              </button>
-              <button class="sim-chip" data-scenario="equipment" role="tab" aria-selected="false" type="button">
-                <span class="sim-chip-icon">🚜</span>
-                <span>45 HP &amp; Rotavator</span>
-              </button>
-              <button class="sim-chip" data-scenario="weather" role="tab" aria-selected="false" type="button">
-                <span class="sim-chip-icon">🌧️</span>
-                <span>Spray vs Rain</span>
-              </button>
-              <button class="sim-chip" data-scenario="mandi" role="tab" aria-selected="false" type="button">
-                <span class="sim-chip-icon">📊</span>
-                <span>Wheat Mandi</span>
-              </button>
-            </div>
-
-            <div class="sim-screen" aria-live="polite">
-              <div class="sim-memory-pill">
-                <div class="sim-memory-icon" aria-hidden="true">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                    <path
-                      d="M12 2a9 9 0 0 1 9 9c0 4.14-2.8 7.64-6.66 8.66l-.34.09V22h-4v-2.25l-.34-.09A9.004 9.004 0 0 1 3 11a9 9 0 0 1 9-9z" />
-                    <path d="M9 10h.01M15 10h.01M9.5 14a3.5 3.5 0 0 0 5 0" />
-                  </svg>
-                </div>
-                <div class="sim-memory-content">
-                  <span class="sim-memory-label">Recalled Farm Memory</span>
-                  <span class="sim-memory-val" id="sim-memory-text">18 Acres • Heavy Black Soil • Nashik • Mahindra
-                    575 DI (45 HP)</span>
-                </div>
-              </div>
-
-              <div class="sim-msg sim-msg-user">
-                <div class="sim-user-avatar">👨‍🌾</div>
-                <div class="sim-bubble sim-bubble-user" id="sim-user-query">
-                  "Why are my cotton leaves curling upward with faint yellow spots?"
-                </div>
-              </div>
-
-              <div class="sim-msg sim-msg-ai">
-                <div class="sim-ai-avatar">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <path
-                      d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
-                  </svg>
-                </div>
-                <div class="sim-bubble sim-bubble-ai">
-                  <div class="sim-ai-header">
-                    <span class="sim-ai-name">FarmerGPT Guidance</span>
-                    <span class="sim-confidence-tag">98% Diagnosis Match</span>
+          <div class="hero-visual reveal" aria-hidden="true">
+            <svg viewBox="0 0 620 520" xmlns="http://www.w3.org/2000/svg" role="img">
+              <defs>
+                <linearGradient id="fieldLine" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#1A7F5A" stop-opacity="0.75" />
+                  <stop offset="100%" stop-color="#D4AF37" stop-opacity="0.4" />
+                </linearGradient>
+                <filter id="blurGlow">
+                  <feGaussianBlur stdDeviation="18" />
+                </filter>
+              </defs>
+              <circle cx="470" cy="102" r="54" fill="#D4AF37" opacity="0.14" filter="url(#blurGlow)" />
+              <circle cx="182" cy="142" r="82" fill="#1A7F5A" opacity="0.12" filter="url(#blurGlow)" />
+              <path d="M76 340C140 292 214 268 294 268C385 268 467 301 539 364" stroke="url(#fieldLine)"
+                stroke-width="2.5" stroke-linecap="round" />
+              <path d="M84 384C163 332 236 308 308 308C393 308 463 333 530 385" stroke="url(#fieldLine)"
+                stroke-width="2.5" stroke-linecap="round" opacity="0.8" />
+              <path d="M104 426C168 389 237 370 310 370C390 370 454 388 515 425" stroke="url(#fieldLine)"
+                stroke-width="2.5" stroke-linecap="round" opacity="0.66" />
+              <path d="M234 106C261 86 293 76 330 76C386 76 436 103 479 156C516 202 536 258 540 326" stroke="#0F172A"
+                stroke-opacity="0.08" stroke-width="1.6" fill="none" />
+              <path d="M186 132C224 166 244 210 247 263C249 307 234 349 202 390" stroke="#1A7F5A" stroke-opacity="0.4"
+                stroke-width="2.2" fill="none" stroke-dasharray="6 8" />
+              <g transform="translate(120 120)">
+                <rect x="0" y="0" width="378" height="240" rx="28" fill="#FFFFFF" fill-opacity="0.84" stroke="#1A7F5A"
+                  stroke-opacity="0.12" />
+                <path d="M46 164C92 128 128 112 178 112C232 112 264 128 316 164" stroke="#1A7F5A" stroke-width="3"
+                  fill="none" stroke-linecap="round" />
+                <path d="M62 186C108 150 141 134 185 134C230 134 266 147 302 178" stroke="#D4AF37" stroke-width="2.6"
+                  fill="none" stroke-linecap="round" opacity="0.8" />
+                <circle cx="184" cy="94" r="36" fill="#F3F8F4" stroke="#1A7F5A" stroke-opacity="0.14" />
+                <path d="M184 64V45" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round" />
+                <path d="M207 72L219 58" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round" />
+                <path d="M216 95H236" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round" />
+                <path d="M207 118L219 132" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round" />
+                <path d="M184 124V143" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round" />
+                <path d="M161 118L149 132" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round" />
+                <path d="M152 95H132" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round" />
+                <path d="M161 72L149 58" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round" />
+                <path
+                  d="M176 82C183 72 196 68 208 74C220 80 225 94 221 106C217 118 206 127 194 127C180 127 168 118 164 106"
+                  stroke="#1A7F5A" stroke-width="2.3" fill="none" />
+                <path d="M188 90C193 97 197 107 199 119" stroke="#D4AF37" stroke-width="2.3" stroke-linecap="round" />
+                <g>
+                  <circle cx="74" cy="70" r="8" fill="#1A7F5A" />
+                  <circle cx="118" cy="56" r="6" fill="#D4AF37" />
+                  <circle cx="300" cy="58" r="7" fill="#1A7F5A" />
+                  <circle cx="326" cy="98" r="5" fill="#D4AF37" />
+                  <circle cx="314" cy="174" r="7" fill="#1A7F5A" />
+                  <circle cx="82" cy="188" r="6" fill="#D4AF37" />
+                  <path d="M74 70L118 56L184 94L300 58L326 98L314 174L202 190L82 188Z" stroke="#0F172A"
+                    stroke-opacity="0.08" stroke-width="1.4" fill="none" />
+                </g>
+              </g>
+            </svg>
+            <div class="hero-surface">
+              <span class="glass-chip">Understands Your Land</span>
+              <span class="glass-chip">Farm Memory &amp; Context</span>
+              <span class="glass-chip">Live in Early Access</span>
+              <div class="hero-visual reveal hero-simulator-container" id="hero-simulator">
+                <div class="sim-ambient-glow" aria-hidden="true"></div>
+                <div class="sim-header">
+                  <div class="sim-status">
+                    <span class="sim-live-dot" aria-hidden="true"></span>
+                    <span class="sim-title">FarmerGPT Live Session</span>
+                    <span class="sim-version-badge">v2.4 • Stateful</span>
                   </div>
-                  <div class="sim-ai-body" id="sim-ai-response">
-                    <p><strong>Primary Diagnosis:</strong> Classic early-stage <strong>Cotton Leaf Curl Virus
-                        (CLCuV)</strong> combined with sucking pest infestation (Whitefly nymphs under leaf
-                      margins).</p>
-                    <p><strong>Actionable Steps:</strong> Check undersides of leaves in Field Plot B. Spray
-                      <em>Diafenthiuron 50% WP @ 240g/acre</em> or <em>Flonicamid 50 WG @ 60g/acre</em>. Apply
-                      during evening hours when wind is below 8 km/h.
-                    </p>
-                  </div>
-                  <div class="sim-ai-footer" id="sim-ai-tags">
-                    <span class="sim-ai-tag tag-accent">Plot B • Sown 24 Days Ago</span>
-                    <span class="sim-ai-tag">Evening Window Recommended</span>
+                  <div class="sim-lang-picker" aria-label="Select regional language for simulation">
+                    <button class="sim-lang-btn active" data-lang="en" type="button">English</button>
+                    <button class="sim-lang-btn" data-lang="hi" type="button">हिंदी</button>
+                    <button class="sim-lang-btn" data-lang="mr" type="button">मराठी</button>
+                    <button class="sim-lang-btn" data-lang="pa" type="button">ਪੰਜਾਬੀ</button>
                   </div>
                 </div>
+
+                <div class="sim-prompt-chips" role="tablist" aria-label="Sample farmer questions">
+                  <button class="sim-chip active" data-scenario="crop" role="tab" aria-selected="true" type="button">
+                    <span class="sim-chip-icon">🌿</span>
+                    <span>Leaf Curling</span>
+                  </button>
+                  <button class="sim-chip" data-scenario="equipment" role="tab" aria-selected="false" type="button">
+                    <span class="sim-chip-icon">🚜</span>
+                    <span>45 HP &amp; Rotavator</span>
+                  </button>
+                  <button class="sim-chip" data-scenario="weather" role="tab" aria-selected="false" type="button">
+                    <span class="sim-chip-icon">🌧️</span>
+                    <span>Spray vs Rain</span>
+                  </button>
+                  <button class="sim-chip" data-scenario="mandi" role="tab" aria-selected="false" type="button">
+                    <span class="sim-chip-icon">📊</span>
+                    <span>Wheat Mandi</span>
+                  </button>
+                </div>
+
+                <div class="sim-screen" aria-live="polite">
+                  <div class="sim-memory-pill">
+                    <div class="sim-memory-icon" aria-hidden="true">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.2">
+                        <path
+                          d="M12 2a9 9 0 0 1 9 9c0 4.14-2.8 7.64-6.66 8.66l-.34.09V22h-4v-2.25l-.34-.09A9.004 9.004 0 0 1 3 11a9 9 0 0 1 9-9z" />
+                        <path d="M9 10h.01M15 10h.01M9.5 14a3.5 3.5 0 0 0 5 0" />
+                      </svg>
+                    </div>
+                    <div class="sim-memory-content">
+                      <span class="sim-memory-label">Recalled Farm Memory</span>
+                      <span class="sim-memory-val" id="sim-memory-text">18 Acres • Heavy Black Soil • Nashik • Mahindra
+                        575 DI (45 HP)</span>
+                    </div>
+                  </div>
+
+                  <div class="sim-msg sim-msg-user">
+                    <div class="sim-user-avatar">👨‍🌾</div>
+                    <div class="sim-bubble sim-bubble-user" id="sim-user-query">
+                      "Why are my cotton leaves curling upward with faint yellow spots?"
+                    </div>
+                  </div>
+
+                  <div class="sim-msg sim-msg-ai">
+                    <div class="sim-ai-avatar">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <path
+                          d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                      </svg>
+                    </div>
+                    <div class="sim-bubble sim-bubble-ai">
+                      <div class="sim-ai-header">
+                        <span class="sim-ai-name">FarmerGPT Guidance</span>
+                        <span class="sim-confidence-tag">98% Diagnosis Match</span>
+                      </div>
+                      <div class="sim-ai-body" id="sim-ai-response">
+                        <p><strong>Primary Diagnosis:</strong> Classic early-stage <strong>Cotton Leaf Curl Virus
+                            (CLCuV)</strong> combined with sucking pest infestation (Whitefly nymphs under leaf
+                          margins).</p>
+                        <p><strong>Actionable Steps:</strong> Check undersides of leaves in Field Plot B. Spray
+                          <em>Diafenthiuron 50% WP @ 240g/acre</em> or <em>Flonicamid 50 WG @ 60g/acre</em>. Apply
+                          during evening hours when wind is below 8 km/h.</p>
+                      </div>
+                      <div class="sim-ai-footer" id="sim-ai-tags">
+                        <span class="sim-ai-tag tag-accent">Plot B • Sown 24 Days Ago</span>
+                        <span class="sim-ai-tag">Evening Window Recommended</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <form class="sim-input-bar" id="sim-custom-form" onsubmit="return false;">
+                  <span class="sim-mic-btn" id="sim-mic-btn" title="Simulate regional voice query"
+                    aria-label="Simulate voice input">🎙️</span>
+                  <input type="text" class="sim-input" id="sim-input-field"
+                    placeholder="Ask FarmerGPT in English, हिंदी, मराठी, ਪੰਜਾਬੀ..."
+                    aria-label="Simulate custom farm query">
+                  <button type="submit" class="sim-send-btn" id="sim-send-btn" aria-label="Submit query">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.5">
+                      <line x1="22" y1="2" x2="11" y2="13"></line>
+                      <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                  </button>
+                </form>
               </div>
             </div>
-
-            <form class="sim-input-bar" id="sim-custom-form" onsubmit="return false;">
-              <span class="sim-mic-btn" id="sim-mic-btn" title="Simulate regional voice query"
-                aria-label="Simulate voice input">🎙️</span>
-              <input type="text" class="sim-input" id="sim-input-field"
-                placeholder="Ask FarmerGPT in English, हिंदी, मराठी, ਪੰਜਾਬੀ..." aria-label="Simulate custom farm query">
-              <button type="submit" class="sim-send-btn" id="sim-send-btn" aria-label="Submit query">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="22" y1="2" x2="11" y2="13"></line>
-                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                </svg>
-              </button>
-            </form>
-          </div>
-        </div>
-
-        <button class="hero-video-toggle" id="hero-video-toggle" type="button"
-          aria-label="Toggle ambient background video motion">
-          <span class="video-toggle-dot" id="video-toggle-dot" aria-hidden="true"></span>
-          <span class="video-toggle-label" id="video-toggle-label">Ambient Drone Video: Active</span>
-        </button>
       </section>
 
       <section id="questions">
@@ -3293,61 +3218,6 @@
     // Initialize interactive modules
     initHeroSimulator();
     initEquipmentCalculator();
-
-    // Video Play/Pause Ambient Toggle (Farmerscafe style)
-    // Video Play/Pause Ambient Toggle (Statiq style)
-    const heroBgVideo = document.getElementById('hero-bg-video');
-    const heroVideoToggle = document.getElementById('hero-video-toggle');
-    const videoToggleDot = document.getElementById('video-toggle-dot');
-    const videoToggleLabel = document.getElementById('video-toggle-label');
-
-    if (heroBgVideo && heroVideoToggle) {
-      heroVideoToggle.addEventListener('click', () => {
-        if (heroBgVideo.paused) {
-          heroBgVideo.play();
-          if (videoToggleDot) videoToggleDot.classList.remove('is-paused');
-          if (videoToggleLabel) videoToggleLabel.textContent = 'Ambient Drone Video: Active';
-          heroBgVideo.style.opacity = '0.75';
-        } else {
-          heroBgVideo.pause();
-          if (videoToggleDot) videoToggleDot.classList.add('is-paused');
-          if (videoToggleLabel) videoToggleLabel.textContent = 'Ambient Video: Paused';
-          heroBgVideo.style.opacity = '0.35';
-        }
-      });
-      if (heroBgVideo) {
-        // Explicitly enforce muted property to satisfy browser autoplay policies
-        heroBgVideo.muted = true;
-        heroBgVideo.setAttribute('muted', '');
-        const promise = heroBgVideo.play();
-        if (promise !== undefined) {
-          promise.catch(() => {
-            const onFirstInteraction = () => {
-              heroBgVideo.play();
-              window.removeEventListener('click', onFirstInteraction);
-              window.removeEventListener('scroll', onFirstInteraction);
-            };
-            window.addEventListener('click', onFirstInteraction);
-            window.addEventListener('scroll', onFirstInteraction);
-          });
-        }
-
-        if (heroVideoToggle) {
-          heroVideoToggle.addEventListener('click', () => {
-            if (heroBgVideo.paused) {
-              heroBgVideo.play();
-              if (videoToggleDot) videoToggleDot.classList.remove('is-paused');
-              if (videoToggleLabel) videoToggleLabel.textContent = 'Ambient Drone Video: Active';
-              heroBgVideo.style.opacity = '0.75';
-            } else {
-              heroBgVideo.pause();
-              if (videoToggleDot) videoToggleDot.classList.add('is-paused');
-              if (videoToggleLabel) videoToggleLabel.textContent = 'Ambient Video: Paused';
-              heroBgVideo.style.opacity = '0.35';
-            }
-          });
-        }
-      }
   </script>
 </body>
 
