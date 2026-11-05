@@ -156,149 +156,451 @@
       margin: 0 auto;
     }
 
-    .nav {
+    /* ==========================================
+       MODERN FLOATING ISLAND HEADER & NAVIGATION
+       ========================================== */
+    .site-header {
       position: sticky;
       top: 0;
-      z-index: 100;
-      backdrop-filter: blur(16px);
-      background: rgba(255, 255, 255, 0.88);
-      border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 14px 20px 8px;
+      pointer-events: none; /* Let clicks pass outside the floating island */
+      transition: padding 280ms cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .nav-inner {
+    .site-header.is-scrolled {
+      padding-top: 8px;
+      padding-bottom: 6px;
+    }
+
+    .nav-island {
+      pointer-events: auto;
+      max-width: 1220px;
+      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      min-height: var(--nav-height);
       gap: 16px;
+      padding: 8px 14px 8px 18px;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(26, 127, 90, 0.12);
+      box-shadow: 0 10px 30px -6px rgba(15, 23, 42, 0.06), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+      transition: all 260ms cubic-bezier(0.16, 1, 0.3, 1);
     }
 
+    .site-header.is-scrolled .nav-island {
+      background: rgba(255, 255, 255, 0.92);
+      border-color: rgba(26, 127, 90, 0.20);
+      box-shadow: 0 16px 36px -6px rgba(19, 45, 35, 0.10), 0 0 0 1px rgba(255, 255, 255, 0.95) inset;
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+
+    /* Brand Lockup */
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-weight: 700;
-      letter-spacing: -0.03em;
+      gap: 11px;
+      text-decoration: none;
+      color: var(--text);
+      transition: transform 180ms ease;
+      flex-shrink: 0;
+    }
+
+    .brand:hover {
+      transform: translateY(-1px);
+    }
+
+    .brand-logo-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .brand-mark {
-      width: 40px;
-      height: 40px;
-      border-radius: 14px;
-      background: linear-gradient(145deg, rgba(26, 127, 90, 0.14), rgba(26, 127, 90, 0.04));
-      border: 1px solid rgba(26, 127, 90, 0.16);
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(26, 127, 90, 0.14) 0%, rgba(212, 175, 55, 0.12) 100%);
+      border: 1px solid rgba(26, 127, 90, 0.22);
       display: grid;
       place-items: center;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      box-shadow: 0 2px 8px rgba(26, 127, 90, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 240ms ease;
     }
 
-    .brand-label {
+    .brand:hover .brand-mark {
+      transform: scale(1.05) rotate(2deg);
+      box-shadow: 0 4px 14px rgba(26, 127, 90, 0.22), inset 0 1px 0 rgba(255, 255, 255, 1);
+    }
+
+    .brand-text {
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 1px;
     }
 
-    .brand-label strong {
+    .brand-name-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .brand-name {
       font-size: 15px;
+      font-weight: 750;
+      letter-spacing: -0.035em;
+      color: var(--text);
+      line-height: 1.15;
     }
 
-    .brand-label span {
-      font-size: 12px;
+    .brand-version-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 1px 6px;
+      border-radius: 9999px;
+      background: rgba(26, 127, 90, 0.08);
+      border: 1px solid rgba(26, 127, 90, 0.20);
+      color: var(--primary);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      line-height: 1.2;
+    }
+
+    .brand-tagline {
+      font-size: 11px;
       color: var(--soft);
       font-weight: 500;
+      letter-spacing: -0.01em;
+      line-height: 1;
     }
 
-    .nav-links {
-      position: fixed;
-      inset: var(--nav-height) 16px auto 16px;
-      background: rgba(255, 255, 255, 0.98);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      box-shadow: var(--shadow-soft);
-      padding: 12px;
-      display: none;
-      flex-direction: column;
-      gap: 4px;
+    /* Nav Track & Links (Linear Segmented Pill Style) */
+    .nav-track {
+      display: none; /* Shown on desktop >= 980px */
     }
 
-    .nav-links a {
-      padding: 14px 16px;
-      border-radius: 16px;
-      color: var(--muted);
-      font-weight: 600;
-      transition: background-color 180ms ease, color 180ms ease;
-    }
-
-    .nav-links a:hover,
-    .nav-links a:focus-visible {
-      background: rgba(26, 127, 90, 0.08);
-      color: var(--primary);
-      outline: none;
-    }
-
-    .nav-links.is-open {
+    .nav-links-wrap {
       display: flex;
+      align-items: center;
+      gap: 2px;
+      padding: 3px 4px;
+      border-radius: 9999px;
+      background: rgba(15, 23, 42, 0.035);
+      border: 1px solid rgba(15, 23, 42, 0.05);
     }
 
+    .nav-link {
+      position: relative;
+      padding: 6px 12px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      transition: all 180ms ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+    }
+
+    .nav-link:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .nav-link.active {
+      color: var(--primary);
+      background: #ffffff;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06), 0 0 0 1px rgba(26, 127, 90, 0.14);
+      font-weight: 700;
+    }
+
+    .nav-link-badge {
+      font-size: 9px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 1px 5px;
+      border-radius: 999px;
+      background: rgba(212, 175, 55, 0.16);
+      color: #997300;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      line-height: 1.1;
+    }
+
+    /* Action Area & Live Indicator */
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
+      flex-shrink: 0;
     }
 
-    .nav-cta {
-      display: none;
+    .nav-status-badge {
+      display: none; /* Shown on desktop >= 1160px */
+      align-items: center;
+      gap: 7px;
+      padding: 5px 11px;
+      border-radius: 9999px;
+      background: rgba(26, 127, 90, 0.06);
+      border: 1px solid rgba(26, 127, 90, 0.16);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary);
+      white-space: nowrap;
     }
 
-    .nav-toggle {
-      width: 46px;
-      height: 46px;
-      border: 1px solid var(--border);
-      border-radius: 15px;
-      background: rgba(255, 255, 255, 0.9);
+    .status-pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #2ECC71;
+      position: relative;
+      display: inline-block;
+    }
+
+    .status-pulse-dot::after {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: 50%;
+      background: #2ECC71;
+      animation: liveStatusGlow 2s infinite ease-out;
+    }
+
+    @keyframes liveStatusGlow {
+      0% {
+        transform: scale(0.9);
+        opacity: 0.8;
+      }
+      70% {
+        transform: scale(2.2);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(2.2);
+        opacity: 0;
+      }
+    }
+
+    /* Modern Pill CTA Button */
+    .button-cta-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, var(--primary) 0%, #136043 100%);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 650;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+      box-shadow: 0 4px 14px -2px rgba(26, 127, 90, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap;
+    }
+
+    .button-cta-pill:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 22px -3px rgba(26, 127, 90, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+      background: linear-gradient(135deg, #1f946a 0%, #156d4c 100%);
+    }
+
+    .button-cta-pill:active {
+      transform: translateY(1px);
+      box-shadow: 0 2px 8px rgba(26, 127, 90, 0.25);
+    }
+
+    .button-cta-pill .cta-arrow {
+      transition: transform 200ms ease;
+    }
+
+    .button-cta-pill:hover .cta-arrow {
+      transform: translate(2px, -2px);
+    }
+
+    /* Mobile Toggle Button */
+    .nav-mobile-toggle {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      background: rgba(255, 255, 255, 0.85);
       display: inline-flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: var(--shadow-soft);
+      transition: all 180ms ease;
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
     }
 
-    .nav-toggle span,
-    .nav-toggle span::before,
-    .nav-toggle span::after {
+    .nav-mobile-toggle:hover {
+      background: #ffffff;
+      border-color: rgba(26, 127, 90, 0.25);
+    }
+
+    .toggle-icon-bar,
+    .toggle-icon-bar::before,
+    .toggle-icon-bar::after {
       display: block;
-      width: 18px;
+      width: 17px;
       height: 2px;
       border-radius: 999px;
       background: var(--text);
-      transition: transform 180ms ease, opacity 180ms ease;
+      transition: transform 220ms ease, opacity 220ms ease;
       content: "";
     }
 
-    .nav-toggle span {
+    .toggle-icon-bar {
       position: relative;
     }
 
-    .nav-toggle span::before {
+    .toggle-icon-bar::before {
       position: absolute;
-      transform: translateY(-6px);
+      transform: translateY(-5px);
     }
 
-    .nav-toggle span::after {
+    .toggle-icon-bar::after {
       position: absolute;
-      transform: translateY(6px);
+      transform: translateY(5px);
     }
 
-    .nav-toggle[aria-expanded="true"] span {
+    .nav-mobile-toggle[aria-expanded="true"] .toggle-icon-bar {
       background: transparent;
     }
 
-    .nav-toggle[aria-expanded="true"] span::before {
+    .nav-mobile-toggle[aria-expanded="true"] .toggle-icon-bar::before {
       transform: rotate(45deg);
     }
 
-    .nav-toggle[aria-expanded="true"] span::after {
+    .nav-mobile-toggle[aria-expanded="true"] .toggle-icon-bar::after {
       transform: rotate(-45deg);
+    }
+
+    /* Mobile Dropdown Sheet */
+    .nav-mobile-sheet {
+      position: fixed;
+      top: 76px;
+      left: 16px;
+      right: 16px;
+      max-width: 460px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(28px) saturate(190%);
+      -webkit-backdrop-filter: blur(28px) saturate(190%);
+      border: 1px solid rgba(26, 127, 90, 0.16);
+      border-radius: 28px;
+      box-shadow: 0 24px 60px -12px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+      padding: 20px;
+      opacity: 0;
+      transform: translateY(-10px) scale(0.97);
+      pointer-events: none;
+      transition: all 260ms cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 999;
+    }
+
+    .nav-mobile-sheet.is-open {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+
+    .mobile-status-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+      margin-bottom: 14px;
+    }
+
+    .mobile-status-header .nav-status-badge {
+      display: inline-flex;
+    }
+
+    .mobile-version-text {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--soft);
+    }
+
+    .mobile-nav-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .mobile-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: 16px;
+      text-decoration: none;
+      color: var(--text);
+      transition: background 160ms ease, transform 160ms ease;
+    }
+
+    .mobile-nav-item:hover,
+    .mobile-nav-item:focus-visible {
+      background: rgba(26, 127, 90, 0.06);
+      transform: translateX(3px);
+    }
+
+    .mobile-item-icon {
+      font-size: 18px;
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      background: rgba(26, 127, 90, 0.08);
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+
+    .mobile-item-text {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .mobile-item-text strong {
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .mobile-item-text span {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .mobile-sheet-footer {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(15, 23, 42, 0.06);
+    }
+
+    .mobile-cta-btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 18px;
+      font-size: 14px;
+      font-weight: 700;
     }
 
     main section {
@@ -1976,29 +2278,16 @@
     }
 
     @media (min-width: 980px) {
-      .nav-links {
-        position: static;
-        inset: auto;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 2px;
-        padding: 0;
-        background: transparent;
-        border: 0;
-        box-shadow: none;
+      .nav-track {
+        display: block;
       }
 
-      .nav-links a {
-        padding: 10px 14px;
-      }
-
-      .nav-cta {
-        display: inline-flex;
-      }
-
-      .nav-toggle {
+      .nav-mobile-toggle {
         display: none;
+      }
+
+      .nav-mobile-sheet {
+        display: none !important;
       }
 
       .hero-grid {
@@ -2037,39 +2326,143 @@
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="site-shell">
-    <header class="nav" aria-label="Main navigation">
-      <div class="container nav-inner">
-        <a class="brand" href="#top" aria-label="Farmers Cafe home">
-          <span class="brand-mark" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M6 15C8.2 10.2 13.1 6.9 19 6C18.2 11.8 14.7 16.6 10 18C8.5 18.4 7 17.3 6.6 15.8C6.5 15.5 6.4 15.3 6 15Z"
-                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M8 16C10.4 13.4 13.1 11.4 16 10" stroke="currentColor" stroke-width="1.8"
-                stroke-linecap="round" />
-            </svg>
-          </span>
-          <span class="brand-label">
-            <strong>Farmers Cafe</strong>
-            <span>Building AI for Agriculture</span>
-          </span>
+    <header class="site-header" id="site-header" role="banner">
+      <div class="nav-island">
+        <!-- Brand Lockup -->
+        <a class="brand" href="#top" aria-label="Farmers Cafe Home">
+          <div class="brand-logo-wrap">
+            <span class="brand-mark" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12" stroke="url(#navLogoGrad)" stroke-width="2.2" stroke-linecap="round"/>
+                <path d="M7 16C9.5 11 14 8 19 6C18 11 15 15.5 10 18C8.8 18.5 7.6 17.5 7 16Z" fill="url(#navLeafGrad)" stroke="#1A7F5A" stroke-width="1.6" stroke-linejoin="round"/>
+                <circle cx="12" cy="12" r="2.2" fill="#D4AF37"/>
+                <defs>
+                  <linearGradient id="navLogoGrad" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#1A7F5A"/>
+                    <stop offset="1" stop-color="#D4AF37"/>
+                  </linearGradient>
+                  <linearGradient id="navLeafGrad" x1="7" y1="6" x2="19" y2="18" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#2ECC71" stop-opacity="0.35"/>
+                    <stop offset="1" stop-color="#1A7F5A" stop-opacity="0.65"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </span>
+          </div>
+          <div class="brand-text">
+            <div class="brand-name-row">
+              <strong class="brand-name">Farmers Cafe</strong>
+              <span class="brand-version-badge" aria-label="Version 2.4">v2.4</span>
+            </div>
+            <span class="brand-tagline">AI for Agriculture</span>
+          </div>
         </a>
 
-        <nav class="nav-links" id="site-menu">
-          <a href="#farmergpt">FarmerGPT</a>
-          <a href="#capabilities">Capabilities</a>
-          <a href="#why">Why We Exist</a>
-          <a href="#roadmap">Roadmap</a>
-          <a href="#roots">Roots</a>
-          <a href="#contact">Contact</a>
+        <!-- Center Navigation Links (Pill Track) -->
+        <nav class="nav-track" id="site-menu" aria-label="Main menu">
+          <div class="nav-links-wrap">
+            <a class="nav-link active" href="#top" data-section="top">Overview</a>
+            <a class="nav-link" href="#hero-simulator" data-section="hero-simulator">
+              Simulator
+              <span class="nav-link-badge">Live</span>
+            </a>
+            <a class="nav-link" href="#questions" data-section="questions">Guidance</a>
+            <a class="nav-link" href="#farmergpt" data-section="farmergpt">Farm Memory</a>
+            <a class="nav-link" href="#equipment" data-section="equipment">Equipment</a>
+            <a class="nav-link" href="#capabilities" data-section="capabilities">Capabilities</a>
+            <a class="nav-link" href="#roadmap" data-section="roadmap">Roadmap</a>
+            <a class="nav-link" href="#contact" data-section="contact">Contact</a>
+          </div>
         </nav>
 
+        <!-- Header Actions -->
         <div class="nav-actions">
-          <a class="button button-primary nav-cta" href="#contact">Get Early Access</a>
-          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu"
-            aria-label="Open navigation menu">
-            <span></span>
+          <div class="nav-status-badge" title="Early access is active" aria-hidden="true">
+            <span class="status-pulse-dot"></span>
+            <span class="status-label">Early Access</span>
+          </div>
+
+          <a class="button-cta-pill" href="#contact">
+            <span>Get Early Access</span>
+            <svg class="cta-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button class="nav-mobile-toggle" type="button" aria-expanded="false" aria-controls="nav-mobile-sheet"
+            aria-label="Toggle navigation menu">
+            <span class="toggle-icon-bar" aria-hidden="true"></span>
           </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Sheet -->
+      <div class="nav-mobile-sheet" id="nav-mobile-sheet" aria-hidden="true">
+        <div class="mobile-sheet-content">
+          <div class="mobile-status-header">
+            <div class="nav-status-badge">
+              <span class="status-pulse-dot"></span>
+              <span class="status-label">Early Access Live</span>
+            </div>
+            <span class="mobile-version-text">FarmerGPT v2.4</span>
+          </div>
+
+          <div class="mobile-nav-grid">
+            <a class="mobile-nav-item" href="#hero-simulator">
+              <span class="mobile-item-icon">⚡</span>
+              <div class="mobile-item-text">
+                <strong>Live AI Simulator</strong>
+                <span>Instant answers in EN, HI, MR, PA</span>
+              </div>
+            </a>
+            <a class="mobile-nav-item" href="#questions">
+              <span class="mobile-item-icon">🌾</span>
+              <div class="mobile-item-text">
+                <strong>Practical Field Guidance</strong>
+                <span>8 clickable farm questions</span>
+              </div>
+            </a>
+            <a class="mobile-nav-item" href="#farmergpt">
+              <span class="mobile-item-icon">🧠</span>
+              <div class="mobile-item-text">
+                <strong>Farm Memory System</strong>
+                <span>Persistent land &amp; crop context</span>
+              </div>
+            </a>
+            <a class="mobile-nav-item" href="#equipment">
+              <span class="mobile-item-icon">🚜</span>
+              <div class="mobile-item-text">
+                <strong>Equipment Sizing Calculator</strong>
+                <span>Tractor HP &amp; implement matcher</span>
+              </div>
+            </a>
+            <a class="mobile-nav-item" href="#capabilities">
+              <span class="mobile-item-icon">🛡️</span>
+              <div class="mobile-item-text">
+                <strong>Platform Capabilities</strong>
+                <span>Diagnosis, weather, mandi intel</span>
+              </div>
+            </a>
+            <a class="mobile-nav-item" href="#roadmap">
+              <span class="mobile-item-icon">🗺️</span>
+              <div class="mobile-item-text">
+                <strong>Roadmap</strong>
+                <span>Phased agricultural ecosystem</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="mobile-sheet-footer">
+            <a class="button button-primary mobile-cta-btn" href="#contact">
+              <span>Get Early Access</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </header>
@@ -3022,23 +3415,92 @@
   </script>
 
   <script>
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMenu = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-links a');
+    // ==========================================
+    // MODERN HEADER: Scroll state, Mobile Sheet & ScrollSpy
+    // ==========================================
+    const siteHeader = document.getElementById('site-header');
+    const mobileToggle = document.querySelector('.nav-mobile-toggle');
+    const mobileSheet = document.getElementById('nav-mobile-sheet');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-item, .mobile-cta-btn');
+    const navTrackLinks = document.querySelectorAll('.nav-track .nav-link');
 
-    if (navToggle && navMenu) {
-      navToggle.addEventListener('click', () => {
-        const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-        navToggle.setAttribute('aria-expanded', String(!isOpen));
-        navMenu.classList.toggle('is-open', !isOpen);
+    // 1. Header scroll styling on scroll
+    function updateHeaderOnScroll() {
+      if (window.scrollY > 24) {
+        siteHeader?.classList.add('is-scrolled');
+      } else {
+        siteHeader?.classList.remove('is-scrolled');
+      }
+    }
+    window.addEventListener('scroll', updateHeaderOnScroll, { passive: true });
+    updateHeaderOnScroll();
+
+    // 2. Mobile menu open/close & dismissal
+    if (mobileToggle && mobileSheet) {
+      function closeMobileSheet() {
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        mobileSheet.classList.remove('is-open');
+        mobileSheet.setAttribute('aria-hidden', 'true');
+      }
+
+      function openMobileSheet() {
+        mobileToggle.setAttribute('aria-expanded', 'true');
+        mobileSheet.classList.add('is-open');
+        mobileSheet.setAttribute('aria-hidden', 'false');
+      }
+
+      mobileToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = mobileToggle.getAttribute('aria-expanded') === 'true';
+        if (isOpen) {
+          closeMobileSheet();
+        } else {
+          openMobileSheet();
+        }
       });
 
-      navLinks.forEach((link) => {
+      mobileLinks.forEach((link) => {
         link.addEventListener('click', () => {
-          navToggle.setAttribute('aria-expanded', 'false');
-          navMenu.classList.remove('is-open');
+          closeMobileSheet();
         });
       });
+
+      // Dismiss on outside click
+      document.addEventListener('click', (e) => {
+        if (!mobileSheet.contains(e.target) && !mobileToggle.contains(e.target)) {
+          closeMobileSheet();
+        }
+      });
+
+      // Dismiss on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileSheet.classList.contains('is-open')) {
+          closeMobileSheet();
+        }
+      });
+    }
+
+    // 3. Active ScrollSpy for Desktop Nav Pills
+    const sectionIds = ['top', 'hero-simulator', 'questions', 'farmergpt', 'equipment', 'capabilities', 'roadmap', 'contact'];
+    const observedSections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+    if ('IntersectionObserver' in window && observedSections.length > 0) {
+      const spyObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const currentId = entry.target.id;
+            navTrackLinks.forEach(link => {
+              if (link.getAttribute('data-section') === currentId) {
+                link.classList.add('active');
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          }
+        });
+      }, { rootMargin: '-20% 0px -55% 0px', threshold: 0 });
+
+      observedSections.forEach(sec => spyObserver.observe(sec));
     }
 
     const revealItems = document.querySelectorAll('.reveal');
