@@ -865,12 +865,6 @@
       overflow: hidden;
     }
 
-    .hero-visual {
-      min-height: 480px;
-      padding: 28px;
-    }
-
-    .hero-visual::before,
     .vision-visual::before,
     .story-visual::before {
       content: "";
@@ -881,128 +875,144 @@
       pointer-events: none;
     }
 
-    .hero-surface {
-      position: absolute;
-      inset: auto 28px 28px 28px;
-      display: grid;
-      gap: 14px;
+    /* ============================================================
+       AGRI-INTELLIGENCE COCKPIT (HERO MOAT UX)
+       ============================================================ */
+    .hero-cockpit-wrap {
+      position: relative;
+      width: 100%;
+      min-height: 520px;
+      display: flex;
+      flex-direction: column;
     }
 
-    .glass-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 14px;
-      width: fit-content;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.84);
-      border: 1px solid rgba(15, 23, 42, 0.08);
-      color: var(--muted);
-      font-size: 0.88rem;
-      font-weight: 600;
-      box-shadow: 0 16px 24px rgba(15, 23, 42, 0.06);
-      backdrop-filter: blur(12px);
-    }
-
-    .glass-chip::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--secondary);
-    }
-
-    /* Hero Simulator Container & Component Styles */
-    .hero-simulator-container {
+    .agri-cockpit {
       position: relative;
       display: flex;
       flex-direction: column;
-      padding: 20px;
-      border-radius: var(--radius-xl);
+      padding: 22px;
+      border-radius: 26px;
       background: linear-gradient(175deg, rgba(255, 255, 255, 0.96) 0%, rgba(246, 251, 247, 0.94) 100%);
       border: 1px solid rgba(26, 127, 90, 0.18);
       box-shadow: 0 24px 60px -12px rgba(19, 45, 35, 0.14), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
       backdrop-filter: blur(20px);
       overflow: hidden;
-      min-height: 520px;
+      min-height: 540px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .hero-simulator-container::before {
-      display: none !important;
+    .agri-cockpit.sim-highlight,
+    .hero-simulator-container.sim-highlight {
+      animation: simPulseHighlight 1.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .sim-ambient-glow {
+    .cockpit-ambient-glow {
       position: absolute;
-      top: -20%;
-      right: -20%;
-      width: 320px;
-      height: 320px;
+      top: -15%;
+      right: -15%;
+      width: 340px;
+      height: 340px;
       background: radial-gradient(circle, rgba(212, 175, 55, 0.16) 0%, rgba(26, 127, 90, 0.12) 50%, transparent 75%);
-      filter: blur(40px);
+      filter: blur(45px);
       pointer-events: none;
       z-index: 0;
     }
 
-    .sim-header {
+    /* 1. Cockpit OS Titlebar */
+    .cockpit-titlebar {
       position: relative;
       z-index: 2;
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
       gap: 12px;
-      padding-bottom: 14px;
-      border-bottom: 1px solid rgba(15, 23, 42, 0.07);
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
     }
 
-    .sim-status {
+    .cockpit-os-meta {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 14px;
     }
 
-    .sim-live-dot {
-      width: 9px;
-      height: 9px;
+    .cockpit-traffic-dots {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .traffic-dot {
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
-      background: #10B981;
-      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
-      animation: simPulse 2s infinite ease-in-out;
+      display: inline-block;
     }
 
-    @keyframes simPulse {
-
-      0%,
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-
-      50% {
-        transform: scale(1.3);
-        opacity: 0.7;
-      }
+    .dot-red {
+      background: #FF5F56;
+      box-shadow: 0 0 6px rgba(255, 95, 86, 0.45);
     }
 
-    .sim-title {
+    .dot-amber {
+      background: #FFBD2E;
+      box-shadow: 0 0 6px rgba(255, 189, 46, 0.45);
+    }
+
+    .dot-green {
+      background: #27C93F;
+      box-shadow: 0 0 6px rgba(39, 201, 63, 0.45);
+    }
+
+    .cockpit-title-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cockpit-os-brand {
       font-size: 0.88rem;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--text);
       letter-spacing: -0.01em;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
     }
 
-    .sim-version-badge {
-      display: inline-block;
-      padding: 2px 7px;
+    .cockpit-telemetry-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 8px;
       border-radius: 999px;
-      background: rgba(26, 127, 90, 0.08);
-      color: var(--primary);
+      background: rgba(16, 185, 129, 0.1);
+      color: #059669;
       font-size: 0.72rem;
       font-weight: 700;
       letter-spacing: 0.02em;
     }
 
-    .sim-lang-picker {
+    .cockpit-live-pulse {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10B981;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.28);
+      animation: cockpitPulse 2s infinite ease-in-out;
+    }
+
+    @keyframes cockpitPulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.35);
+        opacity: 0.65;
+      }
+    }
+
+    .cockpit-lang-tabs {
       display: flex;
       align-items: center;
       gap: 3px;
@@ -1011,7 +1021,7 @@
       border-radius: 999px;
     }
 
-    .sim-lang-btn {
+    .cockpit-lang-btn {
       border: none;
       background: transparent;
       padding: 4px 9px;
@@ -1024,70 +1034,113 @@
       transition: all 160ms ease;
     }
 
-    .sim-lang-btn:hover {
+    .cockpit-lang-btn:hover {
       color: var(--text);
     }
 
-    .sim-lang-btn.active {
-      background: #ffffff;
+    .cockpit-lang-btn.active {
+      background: #FFFFFF;
       color: var(--primary);
       font-weight: 700;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     }
 
-    .sim-prompt-chips {
+    /* 2. Live Farm Digital Twin Telemetry Strip (Moat HUD) */
+    .cockpit-telemetry-hud {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin: 12px 0 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(26, 127, 90, 0.05);
+      border: 1px solid rgba(26, 127, 90, 0.14);
+    }
+
+    .hud-stat-cell {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .hud-stat-label {
+      font-size: 0.66rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--primary);
+      opacity: 0.9;
+    }
+
+    .hud-stat-val {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      transition: color 0.25s ease;
+    }
+
+    /* 3. Scenario Presets Bar */
+    .cockpit-presets-bar {
       position: relative;
       z-index: 2;
       display: flex;
       gap: 6px;
       overflow-x: auto;
-      padding: 12px 2px 8px;
+      padding: 4px 2px 8px;
       scrollbar-width: none;
       -webkit-overflow-scrolling: touch;
     }
 
-    .sim-prompt-chips::-webkit-scrollbar {
+    .cockpit-presets-bar::-webkit-scrollbar {
       display: none;
     }
 
-    .sim-chip {
+    .cockpit-preset-chip {
       flex-shrink: 0;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 7px 13px;
+      padding: 6px 12px;
       border-radius: 999px;
       border: 1px solid rgba(15, 23, 42, 0.08);
       background: rgba(255, 255, 255, 0.92);
       font-family: inherit;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 600;
       color: var(--muted);
       cursor: pointer;
       transition: all 180ms ease;
     }
 
-    .sim-chip:hover {
+    .cockpit-preset-chip:hover {
       border-color: rgba(26, 127, 90, 0.35);
       color: var(--primary);
       transform: translateY(-1px);
     }
 
-    .sim-chip.active {
+    .cockpit-preset-chip.active {
       background: var(--primary);
-      color: #ffffff;
+      color: #FFFFFF;
       border-color: var(--primary);
       box-shadow: 0 4px 12px rgba(26, 127, 90, 0.28);
     }
 
-    .sim-screen {
+    /* 4. Cockpit Screen Body */
+    .cockpit-screen {
       position: relative;
       z-index: 2;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
       padding: 14px;
-      margin: 4px 0 12px;
+      margin-bottom: 12px;
       border-radius: var(--radius-lg);
       background: rgba(255, 255, 255, 0.85);
       border: 1px solid rgba(15, 23, 42, 0.06);
@@ -1096,143 +1149,271 @@
       justify-content: flex-start;
     }
 
-    .sim-memory-pill {
+    /* Farmer Query Card with Voice Player */
+    .cockpit-query-card {
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: #0F172A;
+      color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);
+    }
+
+    .query-farmer-badge {
       display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 8px 12px;
-      border-radius: 12px;
-      background: linear-gradient(90deg, rgba(26, 127, 90, 0.09), rgba(212, 175, 55, 0.09));
-      border: 1px solid rgba(26, 127, 90, 0.16);
-      transition: border-color 300ms ease;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
     }
 
-    .sim-memory-icon {
-      color: var(--primary);
-      display: grid;
-      place-items: center;
-      flex-shrink: 0;
+    .farmer-identity {
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .sim-memory-content {
+    .farmer-avatar {
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .farmer-info {
       display: flex;
       flex-direction: column;
       gap: 1px;
-      min-width: 0;
     }
 
-    .sim-memory-label {
-      font-size: 0.68rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--primary);
-    }
-
-    .sim-memory-val {
+    .farmer-name {
       font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--text);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .sim-msg {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-    }
-
-    .sim-user-avatar {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: #F1F5F9;
-      display: grid;
-      place-items: center;
-      font-size: 14px;
-      flex-shrink: 0;
-    }
-
-    .sim-bubble-user {
-      padding: 10px 14px;
-      border-radius: 16px 16px 16px 4px;
-      background: #0F172A;
+      font-weight: 700;
       color: #FFFFFF;
+      line-height: 1.2;
+    }
+
+    .farmer-location {
+      font-size: 0.68rem;
+      color: #94A3B8;
+      line-height: 1.2;
+    }
+
+    .voice-preview-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(46, 204, 113, 0.16);
+      border: 1px solid rgba(46, 204, 113, 0.35);
+      color: #2ECC71;
+      font-size: 0.72rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 160ms ease;
+      font-family: inherit;
+    }
+
+    .voice-preview-btn:hover {
+      background: rgba(46, 204, 113, 0.28);
+      border-color: #2ECC71;
+      transform: scale(1.02);
+    }
+
+    .play-state-icon {
+      font-size: 9px;
+      line-height: 1;
+    }
+
+    .voice-soundwave {
+      display: flex;
+      align-items: flex-end;
+      gap: 2px;
+      height: 12px;
+    }
+
+    .soundwave-bar {
+      width: 2.5px;
+      height: 4px;
+      background: #2ECC71;
+      border-radius: 1px;
+      transition: height 0.15s ease;
+    }
+
+    .voice-preview-btn.is-playing .soundwave-bar {
+      animation: soundwavePulse 0.9s infinite ease-in-out alternate;
+    }
+
+    .voice-preview-btn.is-playing .soundwave-bar:nth-child(1) { animation-delay: 0.1s; }
+    .voice-preview-btn.is-playing .soundwave-bar:nth-child(2) { animation-delay: 0.3s; }
+    .voice-preview-btn.is-playing .soundwave-bar:nth-child(3) { animation-delay: 0.05s; }
+    .voice-preview-btn.is-playing .soundwave-bar:nth-child(4) { animation-delay: 0.4s; }
+    .voice-preview-btn.is-playing .soundwave-bar:nth-child(5) { animation-delay: 0.2s; }
+
+    @keyframes soundwavePulse {
+      0% { height: 3px; }
+      50% { height: 11px; }
+      100% { height: 5px; }
+    }
+
+    .farmer-query-text {
       font-size: 0.86rem;
       font-weight: 500;
       line-height: 1.45;
-      max-width: 92%;
+      color: #E2ECE5;
     }
 
-    .sim-ai-avatar {
-      width: 28px;
-      height: 28px;
-      border-radius: 10px;
+    /* 5. Reasoning Stream (Moat Proof) */
+    .cockpit-reasoning-stream {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 8px 12px;
+      border-radius: 12px;
+      background: rgba(26, 127, 90, 0.06);
+      border-left: 3px solid var(--primary);
+    }
+
+    .reasoning-step {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.72rem;
+      color: var(--muted);
+      font-weight: 500;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      line-height: 1.35;
+    }
+
+    .step-icon {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #10B981;
+      color: #FFFFFF;
+      font-size: 9px;
+      font-weight: 800;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    /* 6. Executive Directive Card */
+    .cockpit-decision-card {
+      padding: 13px 14px;
+      border-radius: 16px;
+      background: #FFFFFF;
+      border: 1px solid rgba(26, 127, 90, 0.18);
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .decision-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+      padding-bottom: 7px;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+    }
+
+    .directive-lead {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ai-shield-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
       background: linear-gradient(135deg, var(--primary), #0D4A32);
       color: #FFFFFF;
       display: grid;
       place-items: center;
       flex-shrink: 0;
-      box-shadow: 0 4px 10px rgba(26, 127, 90, 0.3);
+      box-shadow: 0 4px 10px rgba(26, 127, 90, 0.25);
     }
 
-    .sim-bubble-ai {
-      flex: 1;
-      padding: 12px 14px;
-      border-radius: 16px 16px 16px 4px;
-      background: #FFFFFF;
-      border: 1px solid rgba(26, 127, 90, 0.16);
-      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .sim-ai-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid rgba(15, 23, 42, 0.05);
-    }
-
-    .sim-ai-name {
-      font-size: 0.78rem;
-      font-weight: 700;
+    .decision-label {
+      font-size: 0.65rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
       color: var(--primary);
+      line-height: 1.2;
     }
 
-    .sim-confidence-tag {
-      font-size: 0.7rem;
-      font-weight: 600;
-      color: #059669;
-      background: rgba(16, 185, 129, 0.1);
-      padding: 2px 7px;
-      border-radius: 6px;
-    }
-
-    .sim-ai-body {
+    .decision-heading {
       font-size: 0.86rem;
+      font-weight: 800;
       color: var(--text);
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .confidence-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.12);
+      color: #047857;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+    .confidence-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #10B981;
+    }
+
+    .decision-body {
+      font-size: 0.84rem;
       line-height: 1.55;
-    }
-
-    .sim-ai-body strong {
       color: var(--text);
     }
 
-    .sim-ai-body p {
+    .decision-body strong {
+      color: var(--text);
+    }
+
+    .decision-body p {
       margin: 0 0 6px 0;
     }
 
-    .sim-ai-body p:last-child {
+    .decision-body p:last-child {
       margin-bottom: 0;
     }
 
-    .sim-ai-footer {
+    /* Economic Moat Impact Banner */
+    .economic-moat-banner {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: linear-gradient(90deg, rgba(212, 175, 55, 0.14), rgba(26, 127, 90, 0.08));
+      border: 1px solid rgba(212, 175, 55, 0.32);
+      font-size: 0.77rem;
+      color: #785A00;
+      line-height: 1.45;
+    }
+
+    .economic-icon {
+      font-size: 14px;
+      line-height: 1.3;
+      flex-shrink: 0;
+    }
+
+    .cockpit-tags-row {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
@@ -1240,8 +1421,8 @@
       border-top: 1px solid rgba(15, 23, 42, 0.04);
     }
 
-    .sim-ai-tag {
-      font-size: 0.72rem;
+    .cockpit-tag {
+      font-size: 0.71rem;
       font-weight: 600;
       padding: 3px 8px;
       border-radius: 999px;
@@ -1249,12 +1430,13 @@
       color: var(--muted);
     }
 
-    .sim-ai-tag.tag-accent {
+    .cockpit-tag.tag-accent {
       background: rgba(212, 175, 55, 0.14);
       color: #8A6D05;
     }
 
-    .sim-input-bar {
+    /* 7. Voice-First Command Terminal */
+    .cockpit-terminal-bar {
       position: relative;
       z-index: 2;
       display: flex;
@@ -1263,38 +1445,63 @@
       background: #FFFFFF;
       border: 1px solid rgba(26, 127, 90, 0.22);
       border-radius: 999px;
-      padding: 4px 6px 4px 14px;
+      padding: 4px 6px 4px 12px;
       box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
     }
 
-    .sim-mic-btn {
-      font-size: 16px;
-      cursor: pointer;
-      user-select: none;
+    .terminal-mic-btn {
+      position: relative;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(26, 127, 90, 0.09);
+      color: var(--primary);
       display: grid;
       place-items: center;
-      transition: transform 160ms ease;
+      cursor: pointer;
+      font-size: 15px;
+      transition: all 180ms ease;
     }
 
-    .sim-mic-btn:hover {
-      transform: scale(1.15);
+    .terminal-mic-btn:hover {
+      transform: scale(1.1);
+      background: rgba(26, 127, 90, 0.16);
     }
 
-    .sim-input {
+    .mic-radar-wave {
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(26, 127, 90, 0.4);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .terminal-mic-btn.is-listening .mic-radar-wave {
+      animation: radarPulse 1.2s infinite ease-out;
+    }
+
+    @keyframes radarPulse {
+      0% { transform: scale(0.9); opacity: 0.8; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+
+    .terminal-input {
       flex: 1;
       border: none;
       background: transparent;
-      font-size: 0.86rem;
+      font-size: 0.84rem;
       font-family: inherit;
       color: var(--text);
       outline: none;
     }
 
-    .sim-input::placeholder {
+    .terminal-input::placeholder {
       color: var(--soft);
     }
 
-    .sim-send-btn {
+    .terminal-submit-btn {
       width: 34px;
       height: 34px;
       border-radius: 50%;
@@ -1307,9 +1514,23 @@
       transition: background-color 160ms ease, transform 160ms ease;
     }
 
-    .sim-send-btn:hover {
+    .terminal-submit-btn:hover {
       background: #146346;
       transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      .cockpit-telemetry-hud {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .query-farmer-badge {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .voice-preview-btn {
+        width: 100%;
+        justify-content: center;
+      }
     }
 
     .section-heading {
@@ -2538,77 +2759,160 @@
       mix-blend-mode: screen;
     }
 
-    /* Dark Mode: Hero Simulator */
-    [data-theme="dark"] .hero-simulator-container {
-      background: linear-gradient(175deg, rgba(17, 34, 26, 0.96) 0%, rgba(12, 24, 18, 0.95) 100%);
+    /* Dark Mode: Agri-Intelligence Cockpit (Moat UX) */
+    [data-theme="dark"] .agri-cockpit {
+      background: linear-gradient(175deg, rgba(14, 27, 20, 0.96) 0%, rgba(10, 20, 15, 0.98) 100%);
       border-color: rgba(46, 204, 113, 0.24);
       box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
     }
 
-    [data-theme="dark"] .sim-screen {
-      background: rgba(9, 17, 13, 0.88);
-      border-color: rgba(255, 255, 255, 0.07);
+    [data-theme="dark"] .cockpit-titlebar {
+      border-bottom-color: rgba(255, 255, 255, 0.08);
     }
 
-    [data-theme="dark"] .sim-chip {
+    [data-theme="dark"] .cockpit-os-brand {
+      color: #F1F5F2;
+    }
+
+    [data-theme="dark"] .cockpit-telemetry-badge {
+      background: rgba(46, 204, 113, 0.15);
+      color: #2ECC71;
+    }
+
+    [data-theme="dark"] .cockpit-lang-tabs {
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    [data-theme="dark"] .cockpit-lang-btn {
+      color: #9EAF9F;
+    }
+
+    [data-theme="dark"] .cockpit-lang-btn.active {
+      background: rgba(46, 204, 113, 0.22);
+      color: #2ECC71;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    [data-theme="dark"] .cockpit-telemetry-hud {
+      background: rgba(46, 204, 113, 0.07);
+      border-color: rgba(46, 204, 113, 0.2);
+    }
+
+    [data-theme="dark"] .hud-stat-label {
+      color: #2ECC71;
+    }
+
+    [data-theme="dark"] .hud-stat-val {
+      color: #E2ECE5;
+    }
+
+    [data-theme="dark"] .cockpit-preset-chip {
       background: rgba(255, 255, 255, 0.05);
       border-color: rgba(255, 255, 255, 0.09);
       color: #9EAF9F;
     }
 
-    [data-theme="dark"] .sim-chip.active {
+    [data-theme="dark"] .cockpit-preset-chip.active {
       background: rgba(46, 204, 113, 0.18);
       border-color: rgba(46, 204, 113, 0.38);
       color: #2ECC71;
     }
 
-    [data-theme="dark"] .sim-lang-btn {
-      color: #9EAF9F;
+    [data-theme="dark"] .cockpit-screen {
+      background: rgba(9, 17, 13, 0.88);
+      border-color: rgba(255, 255, 255, 0.07);
     }
 
-    [data-theme="dark"] .sim-lang-btn.active {
-      background: rgba(46, 204, 113, 0.2);
-      color: #2ECC71;
+    [data-theme="dark"] .cockpit-query-card {
+      background: rgba(18, 36, 27, 0.95);
+      border: 1px solid rgba(46, 204, 113, 0.2);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
     }
 
-    [data-theme="dark"] .sim-memory-pill {
-      background: rgba(46, 204, 113, 0.08);
-      border-color: rgba(46, 204, 113, 0.2);
-    }
-
-    [data-theme="dark"] .sim-memory-val {
-      color: #D6E4D9;
-    }
-
-    [data-theme="dark"] .sim-bubble-ai {
-      background: #14281E;
-      border-color: rgba(46, 204, 113, 0.18);
+    [data-theme="dark"] .farmer-name {
       color: #F1F5F2;
     }
 
-    [data-theme="dark"] .sim-bubble-user {
-      background: rgba(46, 204, 113, 0.14);
-      border-color: rgba(46, 204, 113, 0.28);
+    [data-theme="dark"] .farmer-location {
+      color: #8CA091;
+    }
+
+    [data-theme="dark"] .farmer-query-text {
       color: #E2ECE5;
     }
 
-    [data-theme="dark"] .sim-input-bar {
+    [data-theme="dark"] .cockpit-reasoning-stream {
+      background: rgba(46, 204, 113, 0.08);
+      border-left-color: #2ECC71;
+    }
+
+    [data-theme="dark"] .reasoning-step {
+      color: #BAC7BC;
+    }
+
+    [data-theme="dark"] .cockpit-decision-card {
+      background: #14281E;
+      border-color: rgba(46, 204, 113, 0.2);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    [data-theme="dark"] .decision-header {
+      border-bottom-color: rgba(255, 255, 255, 0.06);
+    }
+
+    [data-theme="dark"] .decision-heading {
+      color: #F1F5F2;
+    }
+
+    [data-theme="dark"] .decision-body {
+      color: #D6E4D9;
+    }
+
+    [data-theme="dark"] .decision-body strong {
+      color: #FFFFFF;
+    }
+
+    [data-theme="dark"] .confidence-pill {
+      background: rgba(46, 204, 113, 0.16);
+      color: #2ECC71;
+    }
+
+    [data-theme="dark"] .economic-moat-banner {
+      background: linear-gradient(90deg, rgba(245, 208, 97, 0.14), rgba(46, 204, 113, 0.08));
+      border-color: rgba(245, 208, 97, 0.28);
+      color: #F5D061;
+    }
+
+    [data-theme="dark"] .economic-moat-banner strong {
+      color: #FFF2C6;
+    }
+
+    [data-theme="dark"] .cockpit-tag {
+      background: rgba(255, 255, 255, 0.06);
+      color: #BAC7BC;
+    }
+
+    [data-theme="dark"] .cockpit-tag.tag-accent {
+      background: rgba(245, 208, 97, 0.15);
+      color: #F5D061;
+    }
+
+    [data-theme="dark"] .cockpit-terminal-bar {
       background: #14281E;
       border-color: rgba(255, 255, 255, 0.1);
     }
 
-    [data-theme="dark"] .sim-input {
+    [data-theme="dark"] .terminal-mic-btn {
+      background: rgba(46, 204, 113, 0.14);
+      color: #2ECC71;
+    }
+
+    [data-theme="dark"] .terminal-input {
       color: #F1F5F2;
     }
 
-    [data-theme="dark"] .sim-input::placeholder {
+    [data-theme="dark"] .terminal-input::placeholder {
       color: #6A7E72;
-    }
-
-    [data-theme="dark"] .glass-chip {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.12);
-      color: #E2ECE5;
     }
 
     /* Dark Mode: Question Cards & Spotlight */
@@ -2971,168 +3275,176 @@
             </div>
           </div>
 
-          <div class="hero-visual reveal" aria-hidden="true">
-            <svg viewBox="0 0 620 520" xmlns="http://www.w3.org/2000/svg" role="img">
-              <defs>
-                <linearGradient id="fieldLine" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#1A7F5A" stop-opacity="0.75" />
-                  <stop offset="100%" stop-color="#D4AF37" stop-opacity="0.4" />
-                </linearGradient>
-                <filter id="blurGlow">
-                  <feGaussianBlur stdDeviation="18" />
-                </filter>
-              </defs>
-              <circle cx="470" cy="102" r="54" fill="#D4AF37" opacity="0.14" filter="url(#blurGlow)" />
-              <circle cx="182" cy="142" r="82" fill="#1A7F5A" opacity="0.12" filter="url(#blurGlow)" />
-              <path d="M76 340C140 292 214 268 294 268C385 268 467 301 539 364" stroke="url(#fieldLine)"
-                stroke-width="2.5" stroke-linecap="round" />
-              <path d="M84 384C163 332 236 308 308 308C393 308 463 333 530 385" stroke="url(#fieldLine)"
-                stroke-width="2.5" stroke-linecap="round" opacity="0.8" />
-              <path d="M104 426C168 389 237 370 310 370C390 370 454 388 515 425" stroke="url(#fieldLine)"
-                stroke-width="2.5" stroke-linecap="round" opacity="0.66" />
-              <path d="M234 106C261 86 293 76 330 76C386 76 436 103 479 156C516 202 536 258 540 326" stroke="#0F172A"
-                stroke-opacity="0.08" stroke-width="1.6" fill="none" />
-              <path d="M186 132C224 166 244 210 247 263C249 307 234 349 202 390" stroke="#1A7F5A" stroke-opacity="0.4"
-                stroke-width="2.2" fill="none" stroke-dasharray="6 8" />
-              <g transform="translate(120 120)">
-                <rect x="0" y="0" width="378" height="240" rx="28" fill="#FFFFFF" fill-opacity="0.84" stroke="#1A7F5A"
-                  stroke-opacity="0.12" />
-                <path d="M46 164C92 128 128 112 178 112C232 112 264 128 316 164" stroke="#1A7F5A" stroke-width="3"
-                  fill="none" stroke-linecap="round" />
-                <path d="M62 186C108 150 141 134 185 134C230 134 266 147 302 178" stroke="#D4AF37" stroke-width="2.6"
-                  fill="none" stroke-linecap="round" opacity="0.8" />
-                <circle cx="184" cy="94" r="36" fill="#F3F8F4" stroke="#1A7F5A" stroke-opacity="0.14" />
-                <path d="M184 64V45" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round" />
-                <path d="M207 72L219 58" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round" />
-                <path d="M216 95H236" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round" />
-                <path d="M207 118L219 132" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round" />
-                <path d="M184 124V143" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round" />
-                <path d="M161 118L149 132" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round" />
-                <path d="M152 95H132" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round" />
-                <path d="M161 72L149 58" stroke="#1A7F5A" stroke-width="2" stroke-linecap="round" />
-                <path
-                  d="M176 82C183 72 196 68 208 74C220 80 225 94 221 106C217 118 206 127 194 127C180 127 168 118 164 106"
-                  stroke="#1A7F5A" stroke-width="2.3" fill="none" />
-                <path d="M188 90C193 97 197 107 199 119" stroke="#D4AF37" stroke-width="2.3" stroke-linecap="round" />
-                <g>
-                  <circle cx="74" cy="70" r="8" fill="#1A7F5A" />
-                  <circle cx="118" cy="56" r="6" fill="#D4AF37" />
-                  <circle cx="300" cy="58" r="7" fill="#1A7F5A" />
-                  <circle cx="326" cy="98" r="5" fill="#D4AF37" />
-                  <circle cx="314" cy="174" r="7" fill="#1A7F5A" />
-                  <circle cx="82" cy="188" r="6" fill="#D4AF37" />
-                  <path d="M74 70L118 56L184 94L300 58L326 98L314 174L202 190L82 188Z" stroke="#0F172A"
-                    stroke-opacity="0.08" stroke-width="1.4" fill="none" />
-                </g>
-              </g>
-            </svg>
-            <div class="hero-surface">
-              <span class="glass-chip">Understands Your Land</span>
-              <span class="glass-chip">Farm Memory &amp; Context</span>
-              <span class="glass-chip">Live in Early Access</span>
-              <div class="hero-visual reveal hero-simulator-container" id="hero-simulator">
-                <div class="sim-ambient-glow" aria-hidden="true"></div>
-                <div class="sim-header">
-                  <div class="sim-status">
-                    <span class="sim-live-dot" aria-hidden="true"></span>
-                    <span class="sim-title">FarmerGPT Live Session</span>
-                    <span class="sim-version-badge">v2.4 • Stateful</span>
+          <div class="hero-cockpit-wrap reveal" id="hero-cockpit-wrapper">
+            <div class="agri-cockpit hero-simulator-container" id="hero-simulator" role="region" aria-label="FarmerGPT Autonomous Agricultural Cockpit">
+              <div class="cockpit-ambient-glow" aria-hidden="true"></div>
+
+              <!-- Cockpit Window Titlebar -->
+              <header class="cockpit-titlebar">
+                <div class="cockpit-os-meta">
+                  <div class="cockpit-traffic-dots" aria-hidden="true">
+                    <span class="traffic-dot dot-red"></span>
+                    <span class="traffic-dot dot-amber"></span>
+                    <span class="traffic-dot dot-green"></span>
                   </div>
-                  <div class="sim-lang-picker" aria-label="Select regional language for simulation">
-                    <button class="sim-lang-btn active" data-lang="en" type="button">English</button>
-                    <button class="sim-lang-btn" data-lang="hi" type="button">हिंदी</button>
-                    <button class="sim-lang-btn" data-lang="mr" type="button">मराठी</button>
-                    <button class="sim-lang-btn" data-lang="pa" type="button">ਪੰਜਾਬੀ</button>
+                  <div class="cockpit-title-group">
+                    <span class="cockpit-os-brand">FarmerGPT OS</span>
+                    <span class="cockpit-telemetry-badge">
+                      <span class="cockpit-live-pulse" aria-hidden="true"></span>
+                      10Hz Telemetry Link
+                    </span>
                   </div>
                 </div>
 
-                <div class="sim-prompt-chips" role="tablist" aria-label="Sample farmer questions">
-                  <button class="sim-chip active" data-scenario="crop" role="tab" aria-selected="true" type="button">
-                    <span class="sim-chip-icon">🌿</span>
-                    <span>Leaf Curling</span>
-                  </button>
-                  <button class="sim-chip" data-scenario="equipment" role="tab" aria-selected="false" type="button">
-                    <span class="sim-chip-icon">🚜</span>
-                    <span>45 HP &amp; Rotavator</span>
-                  </button>
-                  <button class="sim-chip" data-scenario="weather" role="tab" aria-selected="false" type="button">
-                    <span class="sim-chip-icon">🌧️</span>
-                    <span>Spray vs Rain</span>
-                  </button>
-                  <button class="sim-chip" data-scenario="mandi" role="tab" aria-selected="false" type="button">
-                    <span class="sim-chip-icon">📊</span>
-                    <span>Wheat Mandi</span>
-                  </button>
+                <div class="cockpit-lang-tabs" role="tablist" aria-label="Select regional language for cockpit">
+                  <button class="cockpit-lang-btn active" data-lang="en" type="button" role="tab" aria-selected="true">English</button>
+                  <button class="cockpit-lang-btn" data-lang="hi" type="button" role="tab" aria-selected="false">हिंदी</button>
+                  <button class="cockpit-lang-btn" data-lang="mr" type="button" role="tab" aria-selected="false">मराठी</button>
+                  <button class="cockpit-lang-btn" data-lang="pa" type="button" role="tab" aria-selected="false">ਪੰਜਾਬੀ</button>
                 </div>
+              </header>
 
-                <div class="sim-screen" aria-live="polite">
-                  <div class="sim-memory-pill">
-                    <div class="sim-memory-icon" aria-hidden="true">
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2.2">
-                        <path
-                          d="M12 2a9 9 0 0 1 9 9c0 4.14-2.8 7.64-6.66 8.66l-.34.09V22h-4v-2.25l-.34-.09A9.004 9.004 0 0 1 3 11a9 9 0 0 1 9-9z" />
-                        <path d="M9 10h.01M15 10h.01M9.5 14a3.5 3.5 0 0 0 5 0" />
-                      </svg>
-                    </div>
-                    <div class="sim-memory-content">
-                      <span class="sim-memory-label">Recalled Farm Memory</span>
-                      <span class="sim-memory-val" id="sim-memory-text">18 Acres • Heavy Black Soil • Nashik • Mahindra
-                        575 DI (45 HP)</span>
-                    </div>
-                  </div>
-
-                  <div class="sim-msg sim-msg-user">
-                    <div class="sim-user-avatar">👨‍🌾</div>
-                    <div class="sim-bubble sim-bubble-user" id="sim-user-query">
-                      "Why are my cotton leaves curling upward with faint yellow spots?"
-                    </div>
-                  </div>
-
-                  <div class="sim-msg sim-msg-ai">
-                    <div class="sim-ai-avatar">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2.5">
-                        <path
-                          d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
-                      </svg>
-                    </div>
-                    <div class="sim-bubble sim-bubble-ai">
-                      <div class="sim-ai-header">
-                        <span class="sim-ai-name">FarmerGPT Guidance</span>
-                        <span class="sim-confidence-tag">98% Diagnosis Match</span>
-                      </div>
-                      <div class="sim-ai-body" id="sim-ai-response">
-                        <p><strong>Primary Diagnosis:</strong> Classic early-stage <strong>Cotton Leaf Curl Virus
-                            (CLCuV)</strong> combined with sucking pest infestation (Whitefly nymphs under leaf
-                          margins).</p>
-                        <p><strong>Actionable Steps:</strong> Check undersides of leaves in Field Plot B. Spray
-                          <em>Diafenthiuron 50% WP @ 240g/acre</em> or <em>Flonicamid 50 WG @ 60g/acre</em>. Apply
-                          during evening hours when wind is below 8 km/h.</p>
-                      </div>
-                      <div class="sim-ai-footer" id="sim-ai-tags">
-                        <span class="sim-ai-tag tag-accent">Plot B • Sown 24 Days Ago</span>
-                        <span class="sim-ai-tag">Evening Window Recommended</span>
-                      </div>
-                    </div>
-                  </div>
+              <!-- Live Farm Digital Twin Telemetry Strip (Moat HUD) -->
+              <div class="cockpit-telemetry-hud" aria-label="Live Plot Telemetry">
+                <div class="hud-stat-cell">
+                  <div class="hud-stat-label">📍 Plot &amp; Crop</div>
+                  <div class="hud-stat-val" id="hud-val-plot">Plot B (7 Ac) • Cotton</div>
                 </div>
-
-                <form class="sim-input-bar" id="sim-custom-form" onsubmit="return false;">
-                  <span class="sim-mic-btn" id="sim-mic-btn" title="Simulate regional voice query"
-                    aria-label="Simulate voice input">🎙️</span>
-                  <input type="text" class="sim-input" id="sim-input-field"
-                    placeholder="Ask FarmerGPT in English, हिंदी, मराठी, ਪੰਜਾਬੀ..."
-                    aria-label="Simulate custom farm query">
-                  <button type="submit" class="sim-send-btn" id="sim-send-btn" aria-label="Submit query">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                      stroke-width="2.5">
-                      <line x1="22" y1="2" x2="11" y2="13"></line>
-                      <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                    </svg>
-                  </button>
-                </form>
+                <div class="hud-stat-cell">
+                  <div class="hud-stat-label">💧 Soil &amp; Moisture</div>
+                  <div class="hud-stat-val" id="hud-val-soil">Black Clay • 48% Sat.</div>
+                </div>
+                <div class="hud-stat-cell">
+                  <div class="hud-stat-label">⚡ Radar Weather</div>
+                  <div class="hud-stat-val" id="hud-val-weather">Storm 3:45 PM (82%)</div>
+                </div>
+                <div class="hud-stat-cell">
+                  <div class="hud-stat-label">🚜 Active Fleet</div>
+                  <div class="hud-stat-val" id="hud-val-fleet">Mahindra 45HP (PTO OK)</div>
+                </div>
               </div>
+
+              <!-- Quick Scenario Switcher Chips -->
+              <div class="cockpit-presets-bar" role="tablist" aria-label="Demonstration Scenarios">
+                <button class="cockpit-preset-chip active" data-scenario="crop" type="button" role="tab" aria-selected="true">
+                  <span class="preset-icon">🌿</span>
+                  <span>Pest &amp; Leaf Curl</span>
+                </button>
+                <button class="cockpit-preset-chip" data-scenario="equipment" type="button" role="tab" aria-selected="false">
+                  <span class="preset-icon">🚜</span>
+                  <span>45 HP Tractor &amp; Sizing</span>
+                </button>
+                <button class="cockpit-preset-chip" data-scenario="weather" type="button" role="tab" aria-selected="false">
+                  <span class="preset-icon">🌧️</span>
+                  <span>Radar Spray Window</span>
+                </button>
+                <button class="cockpit-preset-chip" data-scenario="mandi" type="button" role="tab" aria-selected="false">
+                  <span class="preset-icon">📊</span>
+                  <span>Mandi Price Forecast</span>
+                </button>
+              </div>
+
+              <!-- Cockpit Body: Farmer Audio/Text Query + Multi-Stage Reasoning + Executive Directive -->
+              <div class="cockpit-screen" aria-live="polite">
+                <!-- Farmer Query Card with Interactive Kisan Audio Waveform -->
+                <div class="cockpit-query-card">
+                  <div class="query-farmer-badge">
+                    <div class="farmer-identity">
+                      <span class="farmer-avatar" aria-hidden="true">👨‍🌾</span>
+                      <div class="farmer-info">
+                        <span class="farmer-name" id="sim-farmer-name">Gajanan Patil</span>
+                        <span class="farmer-location" id="sim-farmer-location">Nashik, Maharashtra</span>
+                      </div>
+                    </div>
+                    <button class="voice-preview-btn" id="voice-preview-btn" type="button" aria-label="Play Kisan Voice Audio Sample">
+                      <span class="play-state-icon" id="voice-play-icon">▶</span>
+                      <span class="voice-preview-label" id="voice-preview-label">Kisan Audio (0:08)</span>
+                      <span class="voice-soundwave" aria-hidden="true">
+                        <span class="soundwave-bar"></span>
+                        <span class="soundwave-bar"></span>
+                        <span class="soundwave-bar"></span>
+                        <span class="soundwave-bar"></span>
+                        <span class="soundwave-bar"></span>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="farmer-query-text" id="sim-user-query">
+                    "Why are my cotton leaves curling upward with faint yellow spots?"
+                  </div>
+                </div>
+
+                <!-- Multi-stage Chain-of-Agronomy Reasoning Stream -->
+                <div class="cockpit-reasoning-stream" id="cockpit-reasoning-stream" aria-label="Chain of Agronomy Validation">
+                  <div class="reasoning-step step-complete">
+                    <span class="step-icon" aria-hidden="true">✓</span>
+                    <span class="step-text" id="reasoning-step-1">Recalled Farm Memory: Plot B Vertisol, Sown 24 Days Ago.</span>
+                  </div>
+                  <div class="reasoning-step step-complete">
+                    <span class="step-icon" aria-hidden="true">✓</span>
+                    <span class="step-text" id="reasoning-step-2">Doppler Radar: 03:45 PM thunderstorm (82% prob) requires 4h rain-fast spray.</span>
+                  </div>
+                  <div class="reasoning-step step-complete">
+                    <span class="step-icon" aria-hidden="true">✓</span>
+                    <span class="step-text" id="reasoning-step-3">Chemical Vector Safety: Diafenthiuron 50% WP vector control rate confirmed.</span>
+                  </div>
+                </div>
+
+                <!-- Executive Agronomic Directive Card -->
+                <div class="cockpit-decision-card">
+                  <div class="decision-header">
+                    <div class="directive-lead">
+                      <div class="ai-shield-icon" aria-hidden="true">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                        </svg>
+                      </div>
+                      <div>
+                        <div class="decision-label">Executive Agronomic Directive</div>
+                        <h4 class="decision-heading" id="decision-heading">Emergency Vector Control Protocol</h4>
+                      </div>
+                    </div>
+                    <div class="confidence-pill" id="confidence-pill">
+                      <span class="confidence-dot" aria-hidden="true"></span>
+                      <span id="confidence-val">98.4% Match</span>
+                    </div>
+                  </div>
+
+                  <div class="decision-body" id="sim-ai-response">
+                    <p><strong>Primary Diagnosis:</strong> Classic early-stage <strong>Cotton Leaf Curl Virus (CLCuV)</strong> combined with sucking pest infestation (Whitefly nymphs under leaf margins).</p>
+                    <p><strong>Actionable Protocol:</strong> Check undersides of leaves in Field Plot B. Spray <em>Diafenthiuron 50% WP @ 240g/acre</em> or <em>Flonicamid 50 WG @ 60g/acre</em>. Apply during evening hours when wind is below 8 km/h.</p>
+                  </div>
+
+                  <!-- Economic Moat Banner -->
+                  <div class="economic-moat-banner" id="economic-moat-banner">
+                    <span class="economic-icon" aria-hidden="true">💰</span>
+                    <div class="economic-text">
+                      <strong>Direct Impact:</strong> <span id="economic-val">Timely vector control prevents up to ₹14,200/acre yield loss in boll development.</span>
+                    </div>
+                  </div>
+
+                  <!-- Directive Context Tags -->
+                  <div class="cockpit-tags-row" id="sim-ai-tags">
+                    <span class="cockpit-tag tag-accent">Plot B • Sown 24 Days Ago</span>
+                    <span class="cockpit-tag">Evening Window Recommended</span>
+                    <span class="cockpit-tag">Whitefly Vector Neutralized</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Voice-First Command Terminal -->
+              <form class="cockpit-terminal-bar" id="sim-custom-form" onsubmit="return false;">
+                <button type="button" class="terminal-mic-btn" id="sim-mic-btn" title="Simulate regional voice input" aria-label="Simulate regional voice query">
+                  <span class="mic-radar-wave" aria-hidden="true"></span>
+                  <span class="mic-icon" aria-hidden="true">🎙️</span>
+                </button>
+                <input type="text" class="terminal-input" id="sim-input-field" placeholder="Ask FarmerGPT in English, हिंदी, मराठी, ਪੰਜਾਬੀ..." aria-label="Simulate custom farm query">
+                <button type="submit" class="terminal-submit-btn" id="sim-send-btn" aria-label="Execute agronomic query">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </button>
+              </form>
             </div>
           </div>
         </div>
@@ -4053,15 +4365,77 @@
     counters.forEach((counter) => counterObserver.observe(counter));
 
     // ==========================================
-    // 1. HERO SIMULATOR INTERACTIVE LOGIC
+    // 1. AUTONOMOUS AGRI-COCKPIT (MOAT UX) INTERACTIVE LOGIC
     // ==========================================
     const simulatorData = {
+      crop: {
+        hud: {
+          plot: { en: "Plot B (7 Ac) • Cotton", hi: "प्लॉट बी (7 एकड़) • कपास", mr: "प्लॉट बी (७ एकर) • कापूस", pa: "ਪਲਾਟ ਬੀ (7 ਏਕੜ) • ਕਪਾਹ" },
+          soil: { en: "Black Clay • 48% Sat.", hi: "काली मिट्टी • 48% नमी", mr: "काळी जमीन • ४८% ओलावा", pa: "ਕਾਲੀ ਮਿੱਟੀ • 48% ਨਮੀ" },
+          weather: { en: "Storm 3:45 PM (82%)", hi: "तूफान 3:45 PM (82%)", mr: "वादळ ३:४५ PM (८२%)", pa: "ਤੂਫਾਨ 3:45 PM (82%)" },
+          fleet: { en: "Mahindra 45HP (PTO OK)", hi: "महिंद्रा 45HP (पीटीओ सही)", mr: "महिंद्रा ४५HP (PTO सुरक्षित)", pa: "ਮਹਿੰਦਰਾ 45HP (PTO ਸੁਰੱਖਿਅਤ)" }
+        },
+        farmer: {
+          name: "Gajanan Patil",
+          location: { en: "Nashik, Maharashtra", hi: "नासिक, महाराष्ट्र", mr: "नाशिक, महाराष्ट्र", pa: "ਨਾਸਿਕ, ਮਹਾਰਾਸ਼ਟਰ" },
+          duration: "0:08"
+        },
+        reasoning: [
+          { en: "Memory Matrix: Plot B Deep Vertisol, Sown 24 Days Ago.", hi: "फार्म मेमोरी: प्लॉट बी काली मिट्टी, बुवाई के 24 दिन हुए।", mr: "फार्म मेमरी: प्लॉट बी काळी जमीन, २४ दिवसांपूर्वी पेरणी.", pa: "ਫਾਰਮ ਮੈਮੋਰੀ: ਪਲਾਟ ਬੀ ਕਾਲੀ ਮਿੱਟੀ, ਬਿਜਾਈ ਦੇ 24 ਦਿਨ ਹੋਏ।" },
+          { en: "Doppler Radar: 03:45 PM thunderstorm requires 4h rain-fast spray.", hi: "डॉप्लर रडार: दोपहर 3:45 बजे बारिश, 4 घंटे का सुरक्षित स्प्रे समय जरूरी।", mr: "डॉपलर रडार: दुपारी ३:४५ वादळ, ४ तासांचा सुरक्षित फवारणी अवधी आवश्यक.", pa: "ਡੌਪਲਰ ਰਡਾਰ: ਸ਼ਾਮ 3:45 ਵਜੇ ਮੀਂਹ, 4 ਘੰਟੇ ਦਾ ਸੁਰੱਖਿਅਤ ਸਪਰੇਅ ਸਮਾਂ ਜ਼ਰੂਰੀ।" },
+          { en: "Chemical Vector Safety: Diafenthiuron 50% WP vector control rate confirmed.", hi: "रसायन सुरक्षा: डायफेंथियूरॉन 50% WP की सही मात्रा सत्यापित।", mr: "रसायन सुरक्षितता: डायफेन्थियुरॉन ५०% WP चे अचूक प्रमाण निश्चित.", pa: "ਕੈਮੀਕਲ ਸੁਰੱਖਿਆ: ਡਾਈਫੈਂਥਿਊਰੋਨ 50% WP ਦੀ ਸਹੀ ਮਾਤਰਾ ਤਸਦੀਕ।" }
+        ],
+        heading: { en: "Emergency Vector Control Protocol", hi: "आपातकालीन कीट नियंत्रण प्रोटोकॉल", mr: "तातडीचे कीड नियंत्रण धोरण", pa: "ਐਮਰਜੈਂਸੀ ਕੀਟ ਕੰਟਰੋਲ ਪ੍ਰੋਟੋਕੋਲ" },
+        confidence: "98.4% Match",
+        economic: {
+          en: "Timely vector control prevents up to ₹14,200/acre yield loss in boll development.",
+          hi: "समय पर कीट नियंत्रण से प्रति एकड़ ₹14,200 तक की फसल क्षति से बचाव होगा।",
+          mr: "वेळेवर कीड नियंत्रणामुळे एकरी ₹१४,२०० पर्यंतचे नुकसान टळेल.",
+          pa: "ਸਮੇਂ ਸਿਰ ਕੀਟ ਕੰਟਰੋਲ ਨਾਲ ਪ੍ਰਤੀ ਏਕੜ ₹14,200 ਤੱਕ ਦੇ ਨੁਕਸਾਨ ਤੋਂ ਬਚਾਅ ਹੋਵੇਗਾ।"
+        },
+        query: {
+          en: '"Why are my cotton leaves curling upward with faint yellow spots?"',
+          hi: '"मेरी कपास की पत्तियां ऊपर की ओर मुड़ रही हैं और पीले धब्बे हैं, क्या करूं?"',
+          mr: '"माझ्या कापसाची पाने वरच्या दिशेने का मुरडत आहेत आणि पिवळे डाग पडलेत?"',
+          pa: '"ਮੇਰੀ ਨਰਮੇ ਦੀਆਂ ਪੱਤੀਆਂ ਉੱਪਰ ਵੱਲ ਕਿਉਂ ਮੁੜ ਰਹੀਆਂ ਹਨ ਅਤੇ ਪੀਲੇ ਧੱਬੇ ਪੈ ਰਹੇ ਹਨ?"'
+        },
+        response: {
+          en: '<p><strong>Primary Diagnosis:</strong> Classic early-stage <strong>Cotton Leaf Curl Virus (CLCuV)</strong> combined with sucking pest infestation (Whitefly nymphs under leaf margins).</p><p><strong>Actionable Protocol:</strong> Check undersides of leaves in Field Plot B. Spray <em>Diafenthiuron 50% WP @ 240g/acre</em> or <em>Flonicamid 50 WG @ 60g/acre</em>. Apply during evening hours when wind is below 8 km/h.</p>',
+          hi: '<p><strong>जांच परिणाम:</strong> शुरुआती <strong>कपास का पत्ता मरोड़ रोग (CLCuV)</strong> और रस चूसक कीट (सफेद मक्खी) का असर।</p><p><strong>सलाह:</strong> प्लॉट बी में पत्तियों के नीचे जांचें। <em>डायफेंथियूरॉन 50% WP (240 ग्राम/एकड़)</em> या <em>फ्लोनिकैमिड 50 WG (60 ग्राम/एकड़)</em> का छिड़काव करें। शाम को हवा शांत होने पर स्प्रे करें।</p>',
+          mr: '<p><strong>तपासणी:</strong> प्राथमिक टप्प्यातील <strong>कापूस चुरडा-मुरडा (CLCuV)</strong> आणि पांढऱ्या माशीचा प्रादुर्भाव.</p><p><strong>उपाययोजना:</strong> प्लॉट बी मधील पानांखाली तपासा. <em>डायफेन्थियुरॉन 50% WP (240 ग्रॅम/एकर)</em> फवारणी करा. संध्याकाळी वाऱ्याचा वेग कमी असताना फवारणी करावी.</p>',
+          pa: '<p><strong>ਨਿਰੀਖਣ:</strong> ਸ਼ੁਰੂਆਤੀ <strong>ਨਰਮੇ ਦਾ ਪੱਤਾ ਮਰੋੜ ਰੋਗ (CLCuV)</strong> ਅਤੇ ਚਿੱਟੀ ਮੱਖੀ ਦਾ ਹਮਲਾ।</p><p><strong>ਕਾਰਵਾਈ:</strong> ਪਲਾਟ ਬੀ ਵਿੱਚ ਪੱਤਿਆਂ ਦੇ ਹੇਠਾਂ ਜਾਂਚ ਕਰੋ। <em>ਡਾਈਫੈਂਥਿਊਰੋਨ 50% WP @ 240 ਗ੍ਰਾਮ/ਏਕੜ</em> ਦਾ ਛਿੜਕਾਅ ਕਰੋ। ਸ਼ਾਮ ਵੇਲੇ ਜਦੋਂ ਹਵਾ ਸ਼ਾਂਤ ਹੋਵੇ ਤਾਂ ਸਪਰੇਅ ਕਰੋ।</p>'
+        },
+        tags: {
+          en: ["Plot B • Sown 24 Days Ago", "Evening Window Recommended", "Whitefly Vector"],
+          hi: ["प्लॉट बी • 24 दिन पहले बुवाई", "शाम को छिड़काव सही", "सफेद मक्खी नियंत्रण"],
+          mr: ["प्लॉट बी • २४ दिवसांपूर्वी पेरणी", "संध्याकाळची फवारणी", "पांढरी माशी"],
+          pa: ["ਪਲਾਟ ਬੀ • 24 ਦਿਨ ਪਹਿਲਾਂ ਬਿਜਾਈ", "ਸ਼ਾਮ ਦੀ ਸਪਰੇਅ ਉੱਤਮ", "ਚਿੱਟੀ ਮੱਖੀ ਕੰਟਰੋਲ"]
+        }
+      },
       crop_planning: {
-        memory: {
-          en: "18 Acres • Heavy Black Soil • Nashik • Water: Borewell + Farm Pond",
-          hi: "18 एकड़ • काली भारी मिट्टी • नासिक • जल स्रोत: बोरवेल + खेत तालाब",
-          mr: "18 एकर • काळी कसदार जमीन • नाशिक • पाणी: बोअरवेल + शेततळे",
-          pa: "18 ਏਕੜ • ਕਾਲੀ ਭਾਰੀ ਮਿੱਟੀ • ਨਾਸਿਕ • ਪਾਣੀ: ਬੋਰਵੈੱਲ + ਤਲਾਬ"
+        hud: {
+          plot: { en: "Plot A & B (18 Ac) • Fall", hi: "प्लॉट ए और बी (18 एकड़)", mr: "प्लॉट ए आणि बी (१८ एकर)", pa: "ਪਲਾਟ ਏ ਅਤੇ ਬੀ (18 ਏਕੜ)" },
+          soil: { en: "Deep Vertisol • 52% Sat.", hi: "काली भारी मिट्टी • 52% नमी", mr: "काळी कसदार जमीन • ५२% ओलावा", pa: "ਕਾਲੀ ਭਾਰੀ ਮਿੱਟੀ • 52% ਨਮੀ" },
+          weather: { en: "Sunny • 31°C Dry", hi: "धूप • 31°C सामान्य", mr: "निरभ्र • ३१°C कोरडे", pa: "ਧੁੱਪ • 31°C ਖੁਸ਼ਕ" },
+          fleet: { en: "Seed Drill + Drip Intact", hi: "सीड ड्रिल + ड्रिप तैयार", mr: "पेरणी यंत्र + ठिबक सज्ज", pa: "ਸੀਡ ਡ੍ਰਿਲ + ਤੁਪਕਾ ਤਿਆਰ" }
+        },
+        farmer: {
+          name: "Baldev Singh",
+          location: { en: "Punjab / Nashik Link", hi: "नासिक / पंजाब", mr: "नाशिक / पंजाब", pa: "ਨਾਸਿਕ / ਪੰਜਾਬ" },
+          duration: "0:11"
+        },
+        reasoning: [
+          { en: "Soil Matrix: High organic carbon retention in lower sub-soil horizons.", hi: "मिट्टी विश्लेषण: उपसतह में उच्च जैविक कार्बन और नमी संचयन।", mr: "माती विश्लेषण: जमिनीच्या थरांमध्ये उत्तम सेंद्रिय कर्ब आणि ओलावा संचय.", pa: "ਮਿੱਟੀ ਵਿਸ਼ਲੇਸ਼ਣ: ਹੇਠਲੇ ਹਿੱਸਿਆਂ ਵਿੱਚ ਉੱਚ ਜੈਵਿਕ ਕਾਰਬਨ ਅਤੇ ਨਮੀ।" },
+          { en: "Crop Ledger: Preceding cereal cycle extracted deep nitrates.", hi: "फसल इतिहास: पिछली फसल ने गहराई से नाइट्रोजन का अधिक दोहन किया।", mr: "पीक इतिहास: मागील पिकाने नायट्रोजनचा मोठ्या प्रमाणावर वापर केला.", pa: "ਫਸਲ ਇਤਿਹਾਸ: ਪਿਛਲੀ ਫਸਲ ਨੇ ਜ਼ਮੀਨ ਵਿੱਚੋਂ ਨਾਈਟ੍ਰੋਜਨ ਦੀ ਵਰਤੋਂ ਕੀਤੀ।" },
+          { en: "Gross Margin Matrix: Legume rotation cuts next season DAP usage by 40%.", hi: "लाभ विश्लेषण: दलहन चक्र से अगली फसल में 40% डीएपी की बचत होगी।", mr: "नफा विश्लेषण: कडधान्य फेरपालट पुढील हंगामातील ४०% खत खर्च वाचवेल.", pa: "ਮੁਨਾਫਾ ਮਾਡਲ: ਦਾਲਾਂ ਦੀ ਫੇਰਬਦਲ ਨਾਲ ਅਗਲੀ ਫਸਲ ਵਿੱਚ 40% ਡੀਏਪੀ ਦੀ ਬਚਤ।" }
+        ],
+        heading: { en: "Optimized Dual-Season Rotation Model", hi: "अनुकूलित दोहरी फसल चक्र मॉडल", mr: "नियोजित दुबार पीक फेरपालट पद्धती", pa: "ਅਨੁਕੂਲਿਤ ਦੋਹਰੀ ਫਸਲ ਚੱਕਰ ਮਾਡਲ" },
+        confidence: "97.2% Match",
+        economic: {
+          en: "Nitrogen fixing saves ₹2,400/acre in fertilizer; projected net return ₹44,000/acre.",
+          hi: "नाइट्रोजन स्थिरीकरण से ₹2,400/एकड़ खाद बचेगी; संभावित शुद्ध मुनाफा ₹44,000/एकड़।",
+          mr: "नत्र स्थिरीकरणामुळे खतावर एकरी ₹२,४०० बचत; अपेक्षित निव्वळ नफा ₹४४,०००/एकर.",
+          pa: "ਨਾਈਟ੍ਰੋਜਨ ਫਿਕਸਿੰਗ ਨਾਲ ₹2,400/ਏਕੜ ਖਾਦ ਬਚੇਗੀ; ਸੰਭਾਵਿਤ ਮੁਨਾਫਾ ₹44,000/ਏਕੜ।"
         },
         query: {
           en: '"What should I grow this season for better returns on my soil?"',
@@ -4082,90 +4456,30 @@
           pa: ["ਕਾਲੀ ਭਾਰੀ ਮਿੱਟੀ", "ਮੁਨਾਫਾ: ₹44,000/ਏਕੜ", "ਖਾਦ ਬਚਤ ਫੇਰਬਦਲ"]
         }
       },
-      crop: {
-        memory: {
-          en: "18 Acres • Heavy Black Soil • Nashik • Mahindra 575 DI (45 HP)",
-          hi: "18 एकड़ • काली भारी मिट्टी • नासिक • महिंद्रा 575 DI (45 HP)",
-          mr: "18 एकर • काळी कसदार जमीन • नाशिक • महिंद्रा 575 DI (45 HP)",
-          pa: "18 ਏਕੜ • ਕਾਲੀ ਭਾਰੀ ਮਿੱਟੀ • ਨਾਸਿਕ • ਮਹਿੰਦਰਾ 575 DI (45 HP)"
-        },
-        query: {
-          en: '"Why are my cotton leaves curling upward with faint yellow spots?"',
-          hi: '"मेरी कपास की पत्तियां ऊपर की ओर मुड़ रही हैं और पीले धब्बे हैं, क्या करूं?"',
-          mr: '"माझ्या कापसाची पाने वरच्या दिशेने का मुरडत आहेत आणि पिवळे डाग पडलेत?"',
-          pa: '"ਮੇਰੀ ਨਰਮੇ ਦੀਆਂ ਪੱਤੀਆਂ ਉੱਪਰ ਵੱਲ ਕਿਉਂ ਮੁੜ ਰਹੀਆਂ ਹਨ ਅਤੇ ਪੀਲੇ ਧੱਬੇ ਪੈ ਰਹੇ ਹਨ?"'
-        },
-        response: {
-          en: '<p><strong>Primary Diagnosis:</strong> Early-stage <strong>Cotton Leaf Curl Virus (CLCuV)</strong> combined with sucking pest pressure (Whitefly nymphs under leaf margins).</p><p><strong>Actionable Steps:</strong> Check undersides of leaves in Field Plot B. Spray <em>Diafenthiuron 50% WP @ 240g/acre</em> or <em>Flonicamid 50 WG @ 60g/acre</em>. Apply during evening hours when wind is below 8 km/h.</p>',
-          hi: '<p><strong>जांच परिणाम:</strong> शुरुआती <strong>कपास का पत्ता मरोड़ रोग (CLCuV)</strong> और रस चूसक कीट (सफेद मक्खी) का असर।</p><p><strong>सलाह:</strong> प्लॉट बी में पत्तियों के नीचे जांचें। <em>डायफेंथियूरॉन 50% WP (240 ग्राम/एकड़)</em> या <em>फ्लोनिकैमिड 50 WG (60 ग्राम/एकड़)</em> का छिड़काव करें। शाम को हवा शांत होने पर स्प्रे करें।</p>',
-          mr: '<p><strong>तपासणी:</strong> प्राथमिक टप्प्यातील <strong>कापूस चुरडा-मुरडा (CLCuV)</strong> आणि पांढऱ्या माशीचा प्रादुर्भाव.</p><p><strong>उपाययोजना:</strong> प्लॉट बी मधील पानांखाली तपासा. <em>डायफेन्थियुरॉन 50% WP (240 ग्रॅम/एकर)</em> फवारणी करा. संध्याकाळी वाऱ्याचा वेग कमी असताना फवारणी करावी.</p>',
-          pa: '<p><strong>ਨਿਰੀਖਣ:</strong> ਸ਼ੁਰੂਆਤੀ <strong>ਨਰਮੇ ਦਾ ਪੱਤਾ ਮਰੋੜ ਰੋਗ (CLCuV)</strong> ਅਤੇ ਚਿੱਟੀ ਮੱਖੀ ਦਾ ਹਮਲਾ।</p><p><strong>ਕਾਰਵਾਈ:</strong> ਪਲਾਟ ਬੀ ਵਿੱਚ ਪੱਤਿਆਂ ਦੇ ਹੇਠਾਂ ਜਾਂਚ ਕਰੋ। <em>ਡਾਈਫੈਂਥਿਊਰੋਨ 50% WP @ 240 ਗ੍ਰਾਮ/ਏਕੜ</em> ਦਾ ਛਿੜਕਾਅ ਕਰੋ। ਸ਼ਾਮ ਵੇਲੇ ਜਦੋਂ ਹਵਾ ਸ਼ਾਂਤ ਹੋਵੇ ਤਾਂ ਸਪਰੇਅ ਕਰੋ।</p>'
-        },
-        tags: {
-          en: ["Plot B • Sown 24 Days Ago", "Evening Window Recommended", "Whitefly Vector"],
-          hi: ["प्लॉट बी • 24 दिन पहले बुवाई", "शाम को छिड़काव सही", "सफेद मक्खी नियंत्रण"],
-          mr: ["प्लॉट बी • २४ दिवसांपूर्वी पेरणी", "संध्याकाळची फवारणी", "पांढरी माशी"],
-          pa: ["ਪਲਾਟ ਬੀ • 24 ਦਿਨ ਪਹਿਲਾਂ ਬਿਜਾਈ", "ਸ਼ਾਮ ਦੀ ਸਪਰੇਅ ਉੱਤਮ", "ਚਿੱਟੀ ਮੱਖੀ ਕੰਟਰੋਲ"]
-        }
-      },
-      weather: {
-        memory: {
-          en: "Field Plot B (7 Acres) • Nashik Taluka • Weather Station: Ozar (8 km)",
-          hi: "खेत प्लॉट बी (7 एकड़) • नासिक तालुका • मौसम केंद्र: ओझर (8 किमी)",
-          mr: "शेत प्लॉट बी (७ एकर) • नाशिक तालुका • हवामान केंद्र: ओझर (८ किमी)",
-          pa: "ਖੇਤ ਪਲਾਟ ਬੀ (7 ਏਕੜ) • ਨਾਸਿਕ ਤਾਲੁਕਾ • ਮੌਸਮ ਸਟੇਸ਼ਨ: ਓਜ਼ਰ (8 ਕਿਮੀ)"
-        },
-        query: {
-          en: '"Can I spray pesticide tomorrow, or will it wash away?"',
-          hi: '"क्या मैं कल कीटनाशक का छिड़काव कर सकता हूं या बारिश में धुल जाएगा?"',
-          mr: '"मी उद्या कीटकनाशक फवारू शकतो का, की पावसात वाहून जाईल?"',
-          pa: '"ਕੀ ਮੈਂ ਕੱਲ ਕੀਟਨਾਸ਼ਕ ਦਾ ਛਿੜਕਾਅ ਕਰ ਸਕਦਾ ਹਾਂ ਜਾਂ ਮੀਂਹ ਵਿੱਚ ਧੁਲ ਜਾਵੇਗਾ?"'
-        },
-        response: {
-          en: '<p><strong>Optimal Spray Window:</strong> <strong>Tomorrow morning (06:30 AM &ndash; 10:00 AM) is SAFE.</strong> Relative humidity 64%, wind speed 6 km/h.</p><p><strong>Actionable Warning:</strong> Do not spray after 01:00 PM. Local convective rainfall is forecast at 03:45 PM (82% probability, ~14mm rain). Morning spray achieves 4-hour rain-fastness before precipitation begins.</p>',
-          hi: '<p><strong>छिड़काव का सही समय:</strong> <strong>कल सुबह (06:30 से 10:00 बजे) का समय सुरक्षित है।</strong> आर्द्रता 64%, हवा की गति 6 किमी/घंटा।</p><p><strong>चेतावनी:</strong> दोपहर 1:00 बजे के बाद छिड़काव न करें। दोपहर 03:45 बजे तेज बारिश की संभावना है (82% संभावना, ~14 मिमी)। सुबह का छिड़काव बारिश से पहले पूरा असर दिखा देगा।</p>',
-          mr: '<p><strong>फवारणीची योग्य वेळ:</strong> <strong>उद्या सकाळी (०६:३० ते १०:००) सुरक्षित आहे.</strong> हवेतील आर्द्रता ६४%, वाऱ्याचा वेग ६ किमी/तास.</p><p><strong>सावधानता:</strong> दुपारी १:०० नंतर फवारणी करू नका. दुपारी ०३:४५ च्या सुमारास वादळी पावसाची शक्यता आहे (८२% शक्यता, ~१४ मिमी). सकाळची फवारणी पावसापूर्वी पूर्ण गुण देईल.</p>',
-          pa: '<p><strong>ਸਪਰੇਅ ਦਾ ਸਮਾਂ:</strong> <strong>ਕੱਲ ਸਵੇਰੇ (06:30 ਤੋਂ 10:00 ਵਜੇ) ਸੁਰੱਖਿਅਤ ਹੈ।</strong> ਨਮੀ 64%, ਹਵਾ ਦੀ ਰਫਤਾਰ 6 ਕਿਮੀ/ਘੰਟਾ।</p><p><strong>ਚੇਤਾਵਨੀ:</strong> ਦੁਪਹਿਰ 1:00 ਵਜੇ ਤੋਂ ਬਾਅਦ ਸਪਰੇਅ ਨਾ ਕਰੋ। ਸ਼ਾਮ 03:45 ਵਜੇ ਮੀਂਹ ਦੀ ਸੰਭਾਵਨਾ ਹੈ (82% ਸੰਭਾਵਨਾ)। ਸਵੇਰ ਦੀ ਸਪਰੇਅ ਪੱਕੀ ਹੋ ਜਾਵੇਗੀ।</p>'
-        },
-        tags: {
-          en: ["Morning Window: Safe", "Rain: 3:45 PM (82%)", "100% Rainfast Window"],
-          hi: ["सुबह का समय सुरक्षित", "दोपहर 3:45 बारिश (82%)", "धुलने का खतरा नहीं"],
-          mr: ["सकाळची वेळ सुरक्षित", "दुपारी ३:४५ पाऊस (८२%)", "पावसापूर्वी परिणाम"],
-          pa: ["ਸਵੇਰ ਦਾ ਸਮਾਂ ਸੁਰੱਖਿਅਤ", "ਸ਼ਾਮ 3:45 ਮੀਂਹ (82%)", "ਮੀਂਹ ਤੋਂ ਬਚਾਅ"]
-        }
-      },
-      irrigation: {
-        memory: {
-          en: "18 Acres • Drip Irrigation System • Soil Moisture: 48% • Nashik",
-          hi: "18 एकड़ • ड्रिप सिंचाई प्रणाली • मिट्टी में नमी: 48% • नासिक",
-          mr: "18 एकर • ठिबक सिंचन • जमिनीतील ओलावा: ४८% • नाशिक",
-          pa: "18 ਏਕੜ • ਤੁਪਕਾ ਸਿੰਚਾਈ • ਮਿੱਟੀ ਦੀ ਨਮੀ: 48% • ਨਾਸਿਕ"
-        },
-        query: {
-          en: '"Will rain this week affect my irrigation schedule?"',
-          hi: '"क्या इस हफ्ते की बारिश से मेरे सिंचाई चक्र पर असर पड़ेगा?"',
-          mr: '"या आठवड्यातील पावसामुळे माझ्या पाणी देण्याच्या वेळापत्रकावर परिणाम होईल का?"',
-          pa: '"ਕੀ ਇਸ ਹਫਤੇ ਦੇ ਮੀਂਹ ਨਾਲ ਮੇਰੇ ਪਾਣੀ ਲਾਉਣ ਦੇ ਸ਼ਡਿਊਲ ਤੇ ਅਸਰ ਪਵੇਗਾ?"'
-        },
-        response: {
-          en: '<p><strong>Irrigation Directive:</strong> <strong>Pause drip fertigation for 72 hours.</strong> Regional radar shows a localized low-pressure trough delivering 28&ndash;34mm cumulative rainfall on Thursday & Friday.</p><p><strong>Field Precaution:</strong> Clear excess runoff furrows in low-lying sections of Plot A. With moisture reaching 85%+ post-rain, running drip will cause root waterlogging and fungal root asphyxiation.</p>',
-          hi: '<p><strong>सिंचाई निर्देश:</strong> <strong>अगले 72 घंटे ड्रिप सिंचाई तुरंत रोक दें।</strong> मौसम रडार के अनुसार गुरुवार और शुक्रवार को 28-34 मिमी बारिश का अनुमान है।</p><p><strong>खेत सुरक्षा:</strong> प्लॉट ए के निचले हिस्सों में जल निकासी नाली साफ रखें। अधिक पानी भरने से पौधों की जड़ों में फफूंद और सड़न का खतरा हो सकता है।</p>',
-          mr: '<p><strong>सिंचन सल्ला:</strong> <strong>पुढील ७२ तास ठिबक सिंचन थांबवा.</strong> हवामान अंदाजानुसार गुरुवारी आणि शुक्रवारी २८-३४ मिमी पाऊस पडण्याची शक्यता आहे.</p><p><strong>दक्षता:</strong> प्लॉट ए मधील पाणी वाहून जाण्यासाठी चर मोकळे करा. जास्त पाण्यामुळे पिकांच्या मुळांना इजा आणि बुरशीजन्य कुज होण्याचा धोका टळेल.</p>',
-          pa: '<p><strong>ਸਿੰਚਾਈ ਹਦਾਇਤ:</strong> <strong>ਅਗਲੇ 72 ਘੰਟੇ ਤੁਪਕਾ ਸਿੰਚਾਈ ਰੋਕ ਦਿਓ।</strong> ਮੌਸਮ ਅਨੁਸਾਰ ਵੀਰਵਾਰ ਅਤੇ ਸ਼ੁੱਕਰਵਾਰ ਨੂੰ 28-34 ਮਿਲੀਮੀਟਰ ਮੀਂਹ ਪੈਣ ਦੀ ਸੰਭਾਵਨਾ ਹੈ।</p><p><strong>ਸਾਵਧਾਨੀ:</strong> ਪਲਾਟ ਏ ਵਿੱਚ ਪਾਣੀ ਨਿਕਾਸੀ ਦਾ ਪ੍ਰਬੰਧ ਠੀਕ ਰੱਖੋ ਤਾਂ ਜੋ ਜੜ੍ਹਾਂ ਗਲਣ ਦਾ ਖਤਰਾ ਨਾ ਰਹੇ।</p>'
-        },
-        tags: {
-          en: ["Pause Drip 72 Hrs", "Rain: 28-34mm Forecast", "Prevent Root Rot"],
-          hi: ["ड्रिप 72 घंटे रोकें", "28-34 मिमी बारिश", "जड़ सड़न से बचाव"],
-          mr: ["ठिबक ७२ तास थांबवा", "२८-३४ मिमी पाऊस", "मुळकुज प्रतिबंध"],
-          pa: ["ਸਿੰਚਾਈ 72 ਘੰਟੇ ਰੋਕੋ", "28-34mm ਮੀਂਹ ਸੰਭਾਵਨਾ", "ਜੜ੍ਹਾਂ ਦੀ ਸੁਰੱਖਿਆ"]
-        }
-      },
       equipment: {
-        memory: {
-          en: "18 Acres • Heavy Black Soil • Nashik • Mahindra 575 DI (45 HP)",
-          hi: "18 एकड़ • काली भारी मिट्टी • नासिक • महिंद्रा 575 DI (45 HP)",
-          mr: "18 एकर • काळी कसदार जमीन • नाशिक • महिंद्रा 575 DI (45 HP)",
-          pa: "18 ਏਕੜ • ਕਾਲੀ ਭਾਰੀ ਮਿੱਟੀ • ਨਾਸਿਕ • ਮਹਿੰਦਰਾ 575 DI (45 HP)"
+        hud: {
+          plot: { en: "Whole Farm (12 Ac Farm)", hi: "पूरा खेत (12 एकड़)", mr: "संपूर्ण शेत (१२ एकर)", pa: "ਪੂਰਾ ਫਾਰਮ (12 ਏਕੜ)" },
+          soil: { en: "Medium Black Loam", hi: "मध्यम काली दोमट", mr: "मध्यम काळी जमीन", pa: "ਦਰਮਿਆਨੀ ਕਾਲੀ ਮਿੱਟੀ" },
+          weather: { en: "Off-Peak Maintenance", hi: "ऑफ-सीजन रखरखाव", mr: "हंगामपूर्व देखभाल", pa: "ਆਫ-ਸੀਜ਼ਨ ਸੰਭਾਲ" },
+          fleet: { en: "0 Owned Tractors", hi: "कोई ट्रैक्टर नहीं", mr: "स्वतःचा ट्रॅक्टर नाही", pa: "ਕੋਈ ਟਰੈਕਟਰ ਨਹੀਂ" }
+        },
+        farmer: {
+          name: "Rameshwar Shinde",
+          location: { en: "Sangli, Maharashtra", hi: "सांगली, महाराष्ट्र", mr: "सांगली, महाराष्ट्र", pa: "ਸਾਂਗਲੀ, ਮਹਾਰਾਸ਼ਟਰ" },
+          duration: "0:09"
+        },
+        reasoning: [
+          { en: "Machine Runtime: 12-acre farm requires only 110 operating engine hours/year.", hi: "मशीन चक्र: 12 एकड़ में पूरे साल में केवल 110 इंजन घंटे की जरूरत।", mr: "यंत्र कार्यकाळ: १२ एकरासाठी वर्षाला फक्त ११० तास ट्रॅक्टरची गरज.", pa: "ਮਸ਼ੀਨ ਵਰਤੋਂ: 12 ਏਕੜ ਲਈ ਸਾਲਾਨਾ ਸਿਰਫ 110 ਇੰਜਣ ਘੰਟੇ ਕੰਮ ਦੀ ਲੋੜ।" },
+          { en: "Depreciation Horizon: Ownership cost is ₹1,320/hr vs local rental ₹800/hr.", hi: "लागत तुलना: मालिकाना खर्च ₹1,320/घंटा बनाम स्थानीय किराया ₹800/घंटा।", mr: "खर्च विश्लेषण: स्वतःच्या ट्रॅक्टरचा खर्च ₹१,३२०/तास तर भाडे ₹८००/तास.", pa: "ਲਾਗਤ ਵਿਸ਼ਲੇਸ਼ਣ: ਆਪਣਾ ਟਰੈਕਟਰ ਖਰਚਾ ₹1,320/ਘੰਟਾ ਬਨਾਮ ਕਿਰਾਇਆ ₹800/ਘੰਟਾ।" },
+          { en: "Capital Allocation: Retaining down-payment preserves liquidity for drip infra.", hi: "पूंजी सुरक्षा: डाउन पेमेंट बचाने से ड्रिप और जल संरक्षण के लिए नकदी बचेगी।", mr: "भांडवल नियोजन: डाउनपेमेंट वाचवून ठिबक सिंचनासाठी खेळते भांडवल राहील.", pa: "ਪੂੰਜੀ ਬਚਾਅ: ਡਾਊਨ ਪੇਮੈਂਟ ਬਚਾਉਣ ਨਾਲ ਤੁਪਕਾ ਸਿੰਚਾਈ ਲਈ ਪੈਸਾ ਬਚੇਗਾ।" }
+        ],
+        heading: { en: "Capital Allocation & Custom Hiring Verdict", hi: "पूंजी आवंटन एवं कस्टम हायरिंग निर्णय", mr: "भांडवल नियोजन आणि भाडेतत्वाचा निर्णय", pa: "ਪੂੰਜੀ ਵੰਡ ਅਤੇ ਕਿਰਾਏ ਤੇ ਲੈਣ ਦਾ ਫੈਸਲਾ" },
+        confidence: "99.1% Financial Match",
+        economic: {
+          en: "Custom hiring saves ₹56,000 annually over ownership with zero EMI debt risk.",
+          hi: "किराए पर लेने से बिना किसी ईएमआई कर्ज के सालाना ₹56,000 की बचत होगी।",
+          mr: "भाड्याने घेतल्यास ईएमआय कर्जाशिवाय वर्षाला ₹५६,००० चा निव्वळ फायदा.",
+          pa: "ਕਿਰਾਏ ਤੇ ਲੈਣ ਨਾਲ ਬਿਨਾਂ ਕਰਜ਼ੇ ਦੇ ਸਾਲਾਨਾ ₹56,000 ਦੀ ਬਚਤ ਹੋਵੇਗੀ।"
         },
         query: {
           en: '"Should I buy or rent a 45 HP tractor for my 12 acres?"',
@@ -4187,11 +4501,29 @@
         }
       },
       implements: {
-        memory: {
-          en: "Owned Tractor: Mahindra 575 DI (45 HP, PTO 39.8 HP) • Heavy Black Soil",
-          hi: "ट्रैक्टर: महिंद्रा 575 DI (45 HP, PTO 39.8 HP) • काली भारी मिट्टी",
-          mr: "ट्रॅक्टर: महिंद्रा 575 DI (45 HP, PTO 39.8 HP) • काळी कसदार जमीन",
-          pa: "ਟਰੈਕਟਰ: ਮਹਿੰਦਰਾ 575 DI (45 HP, PTO 39.8 HP) • ਭਾਰੀ ਕਾਲੀ ਜ਼ਮੀਨ"
+        hud: {
+          plot: { en: "Plot C (6 Ac) • Tilth", hi: "प्लॉट सी (6 एकड़)", mr: "प्लॉट सी (६ एकर)", pa: "ਪਲਾਟ ਸੀ (6 ਏਕੜ)" },
+          soil: { en: "Clay Vertisol • Hard Crust", hi: "भारी मिट्टी • सख्त परत", mr: "काळी जमीन • कडक थर", pa: "ਭਾਰੀ ਮਿੱਟੀ • ਸਖ਼ਤ ਪਰਤ" },
+          weather: { en: "Pre-Monsoon Tilth", hi: "मानसून पूर्व जुताई", mr: "मान्सूनपूर्व मशागत", pa: "ਮਾਨਸੂਨ ਤੋਂ ਪਹਿਲਾਂ ਵਾਹੀ" },
+          fleet: { en: "Mahindra 575 DI (39.8 PTO HP)", hi: "महिंद्रा 575 (39.8 PTO HP)", mr: "महिंद्रा ५७५ (३९.८ PTO HP)", pa: "ਮਹਿੰਦਰਾ 575 (39.8 PTO HP)" }
+        },
+        farmer: {
+          name: "Sukhwinder Dhillon",
+          location: { en: "Ludhiana / Malwa", hi: "लुधियाना, पंजाब", mr: "लुधियाना, पंजाब", pa: "ਲੁਧਿਆਣਾ, ਪੰਜਾਬ" },
+          duration: "0:07"
+        },
+        reasoning: [
+          { en: "Dyno Sizing: Mahindra 575 DI delivers 39.8 continuous PTO horsepower.", hi: "इंजन क्षमता: महिंद्रा 575 DI से 39.8 निरंतर पीटीओ हॉर्सपावर मिलती है।", mr: "इंजिन क्षमता: महिंद्रा ५७५ DI ३९.८ अविरत PTO हॉर्सपॉवर पुरवतो.", pa: "ਇੰਜਣ ਸਮਰੱਥਾ: ਮਹਿੰਦਰਾ 575 DI ਤੋਂ 39.8 ਨਿਰੰਤਰ PTO ਹਾਰਸਪਾਵਰ ਮਿਲਦੀ ਹੈ।" },
+          { en: "Resistance Matrix: 7-ft implement causes 18% RPM drop in heavy black soil.", hi: "भार विश्लेषण: 7 फीट रोटावेटर भारी मिट्टी में 18% तक इंजन आरपीएम गिराता है।", mr: "ताण विश्लेषण: काळ्या जमिनीत ७ फुटी अवजार इंजिनचे १८% RPM कमी करतो.", pa: "ਲੋਡ ਵਿਸ਼ਲੇਸ਼ਣ: 7 ਫੁੱਟ ਰੋਟਾਵੇਟਰ ਭਾਰੀ ਮਿੱਟੀ ਵਿੱਚ 18% ਆਰਪੀਐਮ ਘਟਾਉਂਦਾ ਹੈ।" },
+          { en: "Thermal Margin: 6-ft / 42-blade sustains 540 RPM at 4.8 L/hr safe burn rate.", hi: "ईंधन संतुलन: 6 फीट / 42 ब्लेड 4.8 ली/घंटा पर 540 RPM सुरक्षित गति बनाए रखता है।", mr: "इंधन समतोल: ६ फूट / ४२ पाते ४.८ ली/तास वेगाने ५४० RPM सुरक्षित राखतात.", pa: "ਬਾਲਣ ਸੰਤੁਲਨ: 6 ਫੁੱਟ / 42 ਬਲੇਡ 4.8 ਲੀ/ਘੰਟਾ ਤੇ 540 RPM ਬਰਕਰਾਰ ਰੱਖਦਾ ਹੈ।" }
+        ],
+        heading: { en: "Rotavator Implement Engineering Match", hi: "रोटावेटर उपकरण इंजीनियरिंग मिलान", mr: "रोटाव्हेटर अवजार तांत्रिक निवड", pa: "ਰੋਟਾਵੇਟਰ ਸੰਦ ਇੰਜੀਨੀਅਰਿੰਗ ਮੇਲ" },
+        confidence: "98.8% Mechanical Match",
+        economic: {
+          en: "Saves 2.1 Litres/hr in diesel (₹210/operating hr) and eliminates gear slippage.",
+          hi: "प्रति घंटा 2.1 लीटर डीजल (₹210/घंटा) की बचत और गियरबॉक्स टूट-फूट से बचाव।",
+          mr: "तासाला २.१ लिटर डिझेल (₹२१०/तास) बचत आणि गिअर तुटण्यापासून संरक्षण.",
+          pa: "ਪ੍ਰਤੀ ਘੰਟਾ 2.1 ਲੀਟਰ ਡੀਜ਼ਲ (₹210/ਘੰਟਾ) ਦੀ ਬਚਤ ਅਤੇ ਟੁੱਟ-ਭੱਜ ਤੋਂ ਬਚਾਅ।"
         },
         query: {
           en: '"Which rotavator and implement fits best with my tractor?"',
@@ -4212,12 +4544,118 @@
           pa: ["ਚੋਣ: 6 ਫੁੱਟ / 42 ਬਲੇਡ", "540 PTO RPM", "ਡੀਜ਼ਲ: 4.8 ਲੀ/ਘੰਟਾ"]
         }
       },
+      weather: {
+        hud: {
+          plot: { en: "Plot B (7 Ac) • Cotton", hi: "प्लॉट बी (7 एकड़)", mr: "प्लॉट बी (७ एकर)", pa: "ਪਲਾਟ ਬੀ (7 ਏਕੜ)" },
+          soil: { en: "Black Clay • 44% Sat.", hi: "काली मिट्टी • 44% नमी", mr: "काळी जमीन • ४४% ओलावा", pa: "ਕਾਲੀ ਮਿੱਟੀ • 44% ਨਮੀ" },
+          weather: { en: "Doppler: 14mm @ 3:45 PM", hi: "रडार: 14 मिमी 3:45 PM", mr: "रडार: १४ मिमी ३:४५ PM", pa: "ਰਡਾਰ: 14mm 3:45 PM" },
+          fleet: { en: "Boom Sprayer Calibrated", hi: "स्प्रेयर कैलिब्रेटेड", mr: "फवारणी यंत्र सज्ज", pa: "ਸਪਰੇਅਰ ਤਿਆਰ" }
+        },
+        farmer: {
+          name: "Ashok Deshmukh",
+          location: { en: "Jalgaon, Maharashtra", hi: "जलगांव, महाराष्ट्र", mr: "जळगाव, महाराष्ट्र", pa: "ਜਲਗਾਓਂ, ਮਹਾਰਾਸ਼ਟਰ" },
+          duration: "0:06"
+        },
+        reasoning: [
+          { en: "Convective Cell Radar: Cell 38B moving at 18 km/h arrives at 03:45 PM.", hi: "मौसम रडार: वर्षा बादल 18 किमी/घंटा की गति से दोपहर 03:45 बजे पहुंचेगा।", mr: "हवामान रडार: पावसाचे ढग १८ किमी/तास वेगाने दुपारी ०३:४५ वाजता पोहोचतील.", pa: "ਮੌਸਮ ਰਡਾਰ: ਮੀਂਹ ਦੇ ਬੱਦਲ 18 ਕਿਮੀ/ਘੰਟਾ ਦੀ ਰਫਤਾਰ ਨਾਲ ਸ਼ਾਮ 03:45 ਵਜੇ ਪਹੁੰਚਣਗੇ।" },
+          { en: "Rainfast Adhesion: 06:30-10:00 AM window gives 5 hours drying margin.", hi: "दवा अवशोषण: सुबह 6:30 से 10:00 बजे का समय दवा सूखने के लिए 5 घंटे देगा।", mr: "औषध शोषण: सकाळी ६:३० ते १०:०० वेळेत औषध वाळण्यासाठी ५ तास मिळतात.", pa: "ਦਵਾਈ ਅਸਰ: ਸਵੇਰੇ 6:30 ਤੋਂ 10:00 ਦਾ ਸਮਾਂ ਦਵਾਈ ਸੁੱਕਣ ਲਈ 5 ਘੰਟੇ ਦੇਵੇਗਾ।" },
+          { en: "Wind Vector: Boundary wind <6 km/h prevents chemical drift.", hi: "हवा गति: 6 किमी/घंटे से कम हवा होने से दवा उड़कर नष्ट नहीं होगी।", mr: "वाऱ्याचा वेग: ६ किमी/तासापेक्षा कमी वाऱ्यामुळे औषध उडून जात नाही.", pa: "ਹਵਾ ਦੀ ਰਫਤਾਰ: 6 ਕਿਮੀ/ਘੰਟੇ ਤੋਂ ਘੱਟ ਹਵਾ ਹੋਣ ਕਾਰਨ ਦਵਾਈ ਖਰਾਬ ਨਹੀਂ ਹੋਵੇਗੀ।" }
+        ],
+        heading: { en: "Pre-Rain Chemical Application Window", hi: "वर्षा पूर्व कीटनाशक छिड़काव समय", mr: "पावसापूर्व औषध फवारणी योग्य वेळ", pa: "ਮੀਂਹ ਤੋਂ ਪਹਿਲਾਂ ਸਪਰੇਅ ਦਾ ਸਮਾਂ" },
+        confidence: "96.9% Radar Match",
+        economic: {
+          en: "Applying before cut-off prevents ₹4,800/acre in washed-off chemical wastage.",
+          hi: "सही समय पर छिड़काव से ₹4,800/एकड़ की दवा बारिश में धुलने से बचेगी।",
+          mr: "वेळेवर फवारणी केल्याने एकरी ₹४,८०० चे औषध पाण्यात वाहून जाणे टळेल.",
+          pa: "ਸਮੇਂ ਸਿਰ ਸਪਰੇਅ ਕਰਨ ਨਾਲ ₹4,800/ਏਕੜ ਦੀ ਦਵਾਈ ਮੀਂਹ ਵਿੱਚ ਧੁਲਣ ਤੋਂ ਬਚੇਗੀ।"
+        },
+        query: {
+          en: '"Can I spray pesticide tomorrow, or will it wash away?"',
+          hi: '"क्या मैं कल कीटनाशक का छिड़काव कर सकता हूं या बारिश में धुल जाएगा?"',
+          mr: '"मी उद्या कीटकनाशक फवारू शकतो का, की पावसात वाहून जाईल?"',
+          pa: '"ਕੀ ਮੈਂ ਕੱਲ ਕੀਟਨਾਸ਼ਕ ਦਾ ਛਿੜਕਾਅ ਕਰ ਸਕਦਾ ਹਾਂ ਜਾਂ ਮੀਂਹ ਵਿੱਚ ਧੁਲ ਜਾਵੇਗਾ?"'
+        },
+        response: {
+          en: '<p><strong>Optimal Spray Window:</strong> <strong>Tomorrow morning (06:30 AM &ndash; 10:00 AM) is SAFE.</strong> Relative humidity 64%, wind speed 6 km/h.</p><p><strong>Actionable Warning:</strong> Do not spray after 01:00 PM. Local convective rainfall is forecast at 03:45 PM (82% probability, ~14mm rain). Morning spray achieves 4-hour rain-fastness before precipitation begins.</p>',
+          hi: '<p><strong>छिड़काव का सही समय:</strong> <strong>कल सुबह (06:30 से 10:00 बजे) का समय सुरक्षित है।</strong> आर्द्रता 64%, हवा की गति 6 किमी/घंटा।</p><p><strong>चेतावनी:</strong> दोपहर 1:00 बजे के बाद छिड़काव न करें। दोपहर 03:45 बजे तेज बारिश की संभावना है (82% संभावना, ~14 मिमी)। सुबह का छिड़काव बारिश से पहले पूरा असर दिखा देगा।</p>',
+          mr: '<p><strong>फवारणीची योग्य वेळ:</strong> <strong>उद्या सकाळी (०६:३० ते १०:००) सुरक्षित आहे.</strong> हवेतील आर्द्रता ६४%, वाऱ्याचा वेग ६ किमी/तास.</p><p><strong>सावधानता:</strong> दुपारी १:०० नंतर फवारणी करू नका. दुपारी ०३:४५ च्या सुमारास वादळी पावसाची शक्यता आहे (८२% शक्यता, ~१४ मिमी). सकाळची फवारणी पावसापूर्वी पूर्ण गुण देईल.</p>',
+          pa: '<p><strong>ਸਪਰੇਅ ਦਾ ਸਮਾਂ:</strong> <strong>ਕੱਲ ਸਵੇਰੇ (06:30 ਤੋਂ 10:00 ਵਜੇ) ਸੁਰੱਖਿਅਤ ਹੈ।</strong> ਨਮੀ 64%, ਹਵਾ ਦੀ ਰਫਤਾਰ 6 ਕਿਮੀ/ਘੰਟਾ।</p><p><strong>ਚੇਤਾਵਨੀ:</strong> ਦੁਪਹਿਰ 1:00 ਵਜੇ ਤੋਂ ਬਾਅਦ ਸਪਰੇਅ ਨਾ ਕਰੋ। ਸ਼ਾਮ 03:45 ਵਜੇ ਮੀਂਹ ਦੀ ਸੰਭਾਵਨਾ ਹੈ (82% ਸੰਭਾਵਨਾ)। ਸਵੇਰ ਦੀ ਸਪਰੇਅ ਪੱਕੀ ਹੋ ਜਾਵੇਗੀ।</p>'
+        },
+        tags: {
+          en: ["Morning Window: Safe", "Rain: 3:45 PM (82%)", "100% Rainfast Window"],
+          hi: ["सुबह का समय सुरक्षित", "दोपहर 3:45 बारिश (82%)", "धुलने का खतरा नहीं"],
+          mr: ["सकाळची वेळ सुरक्षित", "दुपारी ३:४५ पाऊस (८२%)", "पावसापूर्वी परिणाम"],
+          pa: ["ਸਵੇਰ ਦਾ ਸਮਾਂ ਸੁਰੱਖਿਅਤ", "ਸ਼ਾਮ 3:45 ਮੀਂਹ (82%)", "ਮੀਂਹ ਤੋਂ ਬਚਾਅ"]
+        }
+      },
+      irrigation: {
+        hud: {
+          plot: { en: "Plot A (11 Ac) • Drip Grid", hi: "प्लॉट ए (11 एकड़ • ड्रिप)", mr: "प्लॉट ए (११ एकर • ठिबक)", pa: "ਪਲਾਟ ਏ (11 ਏਕੜ • ਤੁਪਕਾ)" },
+          soil: { en: "Black Soil • 48% Sat.", hi: "काली मिट्टी • 48% नमी", mr: "काळी जमीन • ४८% ओलावा", pa: "ਕਾਲੀ ਮਿੱਟੀ • 48% ਨਮੀ" },
+          weather: { en: "Rain: 28-34mm Inbound", hi: "बारिश: 28-34 मिमी अनुमान", mr: "पाऊस: २८-३४ मिमी शक्यता", pa: "ਮੀਂਹ: 28-34mm ਸੰਭਾਵਨਾ" },
+          fleet: { en: "Submersible Pump Paused", hi: "पंप बंद रखा गया", mr: "पंप बंद ठेवला", pa: "ਪੰਪ ਬੰਦ ਰੱਖਿਆ" }
+        },
+        farmer: {
+          name: "Vinod More",
+          location: { en: "Nashik, Maharashtra", hi: "नासिक, महाराष्ट्र", mr: "नाशिक, महाराष्ट्र", pa: "ਨਾਸਿਕ, ਮਹਾਰਾਸ਼ਟਰ" },
+          duration: "0:10"
+        },
+        reasoning: [
+          { en: "Precipitation Ledger: Regional low-pressure delivers 28-34mm by Friday.", hi: "वर्षा अनुमान: कम दबाव क्षेत्र से शुक्रवार तक 28-34 मिमी भारी बारिश होगी।", mr: "पाऊस नोंद: कमी दाबाच्या पट्ट्यामुळे शुक्रवारपर्यंत २८-३४ मिमी पाऊस होईल.", pa: "ਮੀਂਹ ਰਿਕਾਰਡ: ਘੱਟ ਦਬਾਅ ਵਾਲੇ ਖੇਤਰ ਕਾਰਨ ਸ਼ੁੱਕਰਵਾਰ ਤੱਕ 28-34mm ਮੀਂਹ ਪਵੇਗਾ।" },
+          { en: "Root Saturation Limit: Additional drip would push root zone moisture past 85%.", hi: "जड़ नमी सीमा: और पानी देने से जड़ों में नमी 85% पार कर जाएगी।", mr: "मुळांची ओलावा मर्यादा: अधिक पाणी दिल्यास मुळांमधील ओलावा ८५% च्या पुढे जाईल.", pa: "ਜੜ੍ਹਾਂ ਦੀ ਨਮੀ ਸੀਮਾ: ਹੋਰ ਪਾਣੀ ਦੇਣ ਨਾਲ ਜੜ੍ਹਾਂ ਵਿੱਚ ਨਮੀ 85% ਤੋਂ ਵੱਧ ਜਾਵੇਗੀ।" },
+          { en: "Pathology Prevention: Halting fertigation suppresses Phytophthora collar rot.", hi: "रोग नियंत्रण: सिंचाई रोकने से जड़ सड़न और फफूंद रोग का खतरा टलेगा।", mr: "रोग प्रतिबंध: सिंचन थांबवल्याने मुळकुज आणि बुरशीजन्य रोगाचा धोका टळेल.", pa: "ਬਿਮਾਰੀ ਤੋਂ ਬਚਾਅ: ਪਾਣੀ ਰੋਕਣ ਨਾਲ ਜੜ੍ਹਾਂ ਗਲਣ ਅਤੇ ਉੱਲੀ ਦੇ ਰੋਗ ਤੋਂ ਬਚਾਅ ਹੋਵੇਗਾ।" }
+        ],
+        heading: { en: "Drip Pause & Drainage Precaution Directive", hi: "ड्रिप स्थगन एवं जल निकासी निर्देश", mr: "ठिबक सिंचन स्थगिती आणि निचरा सल्ला", pa: "ਤੁਪਕਾ ਸਿੰਚਾਈ ਰੋਕਣ ਅਤੇ ਨਿਕਾਸੀ ਦੀ ਹਦਾਇਤ" },
+        confidence: "97.8% Match",
+        economic: {
+          en: "Prevents root rot fungal damage saving estimated ₹18,500/acre in crop stand.",
+          hi: "जड़ सड़न रोककर फसल को सुरक्षित रखने से प्रति एकड़ ₹18,500 की बचत होगी।",
+          mr: "मुळकुज रोखून उभे पीक वाचवल्याने एकरी अंदाजे ₹१८,५०० चा फायदा होईल.",
+          pa: "ਜੜ੍ਹਾਂ ਗਲਣ ਤੋਂ ਬਚਾਅ ਕਰਕੇ ਪ੍ਰਤੀ ਏਕੜ ਲਗਭਗ ₹18,500 ਦੀ ਫਸਲ ਬਚੇਗੀ।"
+        },
+        query: {
+          en: '"Will rain this week affect my irrigation schedule?"',
+          hi: '"क्या इस हफ्ते की बारिश से मेरे सिंचाई चक्र पर असर पड़ेगा?"',
+          mr: '"या आठवड्यातील पावसामुळे माझ्या पाणी देण्याच्या वेळापत्रकावर परिणाम होईल का?"',
+          pa: '"ਕੀ ਇਸ ਹਫਤੇ ਦੇ ਮੀਂਹ ਨਾਲ ਮੇਰੇ ਪਾਣੀ ਲਾਉਣ ਦੇ ਸ਼ਡਿਊਲ ਤੇ ਅਸਰ ਪਵੇਗਾ?"'
+        },
+        response: {
+          en: '<p><strong>Irrigation Directive:</strong> <strong>Pause drip fertigation for 72 hours.</strong> Regional radar shows a localized low-pressure trough delivering 28&ndash;34mm cumulative rainfall on Thursday & Friday.</p><p><strong>Field Precaution:</strong> Clear excess runoff furrows in low-lying sections of Plot A. With moisture reaching 85%+ post-rain, running drip will cause root waterlogging and fungal root asphyxiation.</p>',
+          hi: '<p><strong>सिंचाई निर्देश:</strong> <strong>अगले 72 घंटे ड्रिप सिंचाई तुरंत रोक दें।</strong> मौसम रडार के अनुसार गुरुवार और शुक्रवार को 28-34 मिमी बारिश का अनुमान है।</p><p><strong>खेत सुरक्षा:</strong> प्लॉट ए के निचले हिस्सों में जल निकासी नाली साफ रखें। अधिक पानी भरने से पौधों की जड़ों में फफूंद और सड़न का खतरा हो सकता है।</p>',
+          mr: '<p><strong>सिंचन सल्ला:</strong> <strong>पुढील ७२ तास ठिबक सिंचन थांबवा.</strong> हवामान अंदाजानुसार गुरुवारी आणि शुक्रवारी २८-३४ मिमी पाऊस पडण्याची शक्यता आहे.</p><p><strong>दक्षता:</strong> प्लॉट ए मधील पाणी वाहून जाण्यासाठी चर मोकळे करा. जास्त पाण्यामुळे पिकांच्या मुळांना इजा आणि बुरशीजन्य कुज होण्याचा धोका टळेल.</p>',
+          pa: '<p><strong>ਸਿੰਚਾਈ ਹਦਾਇਤ:</strong> <strong>ਅਗਲੇ 72 ਘੰਟੇ ਤੁਪਕਾ ਸਿੰਚਾਈ ਰੋਕ ਦਿਓ।</strong> ਮੌਸਮ ਅਨੁਸਾਰ ਵੀਰਵਾਰ ਅਤੇ ਸ਼ੁੱਕਰਵਾਰ ਨੂੰ 28-34 ਮਿਲੀਮੀਟਰ ਮੀਂਹ ਪੈਣ ਦੀ ਸੰਭਾਵਨਾ ਹੈ।</p><p><strong>ਸਾਵਧਾਨੀ:</strong> ਪਲਾਟ ਏ ਵਿੱਚ ਪਾਣੀ ਨਿਕਾਸੀ ਦਾ ਪ੍ਰਬੰਧ ਠੀਕ ਰੱਖੋ ਤਾਂ ਜੋ ਜੜ੍ਹਾਂ ਗਲਣ ਦਾ ਖਤਰਾ ਨਾ ਰਹੇ।</p>'
+        },
+        tags: {
+          en: ["Pause Drip 72 Hrs", "Rain: 28-34mm Forecast", "Prevent Root Rot"],
+          hi: ["ड्रिप 72 घंटे रोकें", "28-34 मिमी बारिश", "जड़ सड़न से बचाव"],
+          mr: ["ठिबक ७२ तास थांबवा", "२८-३४ मिमी पाऊस", "मुळकुज प्रतिबंध"],
+          pa: ["ਸਿੰਚਾਈ 72 ਘੰਟੇ ਰੋਕੋ", "28-34mm ਮੀਂਹ ਸੰਭਾਵਨਾ", "ਜੜ੍ਹਾਂ ਦੀ ਸੁਰੱਖਿਆ"]
+        }
+      },
       mandi: {
-        memory: {
-          en: "Harvested: 85 Quintals Lokwan Wheat • Moisture: 11.4% • Storage: On-Farm Silo",
-          hi: "फसल: 85 क्विंटल लोकवान गेहूं • नमी: 11.4% • भंडारण: सुरक्षित भंडार",
-          mr: "उत्पादन: ८५ क्विंटल लोकवान गहू • ओलावा: ११.४% • साठवणूक: सुरक्षित कोठार",
-          pa: "ਫਸਲ: 85 ਕੁਇੰਟਲ ਕਣਕ • ਨਮੀ: 11.4% • ਭੰਡਾਰਨ: ਫਾਰਮ ਸਟੋਰੇਜ"
+        hud: {
+          plot: { en: "Storage Silo • 85 Quintals", hi: "भंडार: 85 क्विंटल गेहूं", mr: "कोठार: ८५ क्विंटल गहू", pa: "ਸਟੋਰੇਜ: 85 ਕੁਇੰਟਲ ਕਣਕ" },
+          soil: { en: "Grain Moisture: 11.4%", hi: "अनाज में नमी: 11.4%", mr: "धान्यातील ओलावा: ११.४%", pa: "ਦਾਣਿਆਂ ਦੀ ਨਮੀ: 11.4%" },
+          weather: { en: "Dry Storage Ambient", hi: "सुरक्षित सूखा वातावरण", mr: "सुरक्षित कोरडे वातावरण", pa: "ਸੁਰੱਖਿਅਤ ਖੁਸ਼ਕ ਮੌਸਮ" },
+          fleet: { en: "Logistics Fleet Ready", hi: "परिवहन वाहन तैयार", mr: "वाहतूक व्यवस्था सज्ज", pa: "ਢੋਆ-ਢੁਆਈ ਤਿਆਰ" }
+        },
+        farmer: {
+          name: "Gurpreet Mann",
+          location: { en: "Khanna Mandi, Punjab", hi: "खन्ना मंडी, पंजाब", mr: "खन्ना बाजारपेठ, पंजाब", pa: "ਖੰਨਾ ਮੰਡੀ, ਪੰਜਾਬ" },
+          duration: "0:08"
+        },
+        reasoning: [
+          { en: "Arrival Influx Model: Terminal mandi daily arrivals plummeted by 32%.", hi: "मंडी आवक मॉडल: प्रमुख मंडियों में दैनिक आवक 32% तक गिर चुकी है।", mr: "आवक विश्लेषण: मुख्य बाजारपेठेत दररोजची आवक ३२% ने घटली आहे.", pa: "ਮੰਡੀ ਆਵਕ ਮਾਡਲ: ਵੱਡੀਆਂ ਮੰਡੀਆਂ ਵਿੱਚ ਰੋਜ਼ਾਨਾ ਆਵਕ 32% ਘਟ ਚੁੱਕੀ ਹੈ।" },
+          { en: "Procurement Index: Industrial flour mill tenders open at month-end.", hi: "खरीद सूचकांक: महीने के अंत में बड़ी आटा मिलों की खरीद निविदाएं खुलेंगी।", mr: "मागणी निर्देशांक: महिन्याच्या शेवटी पिठाच्या गिरण्यांची मोठी खरेदी सुरू होईल.", pa: "ਖਰੀਦ ਸੂਚਕਾਂਕ: ਮਹੀਨੇ ਦੇ ਅੰਤ ਵਿੱਚ ਵੱਡੀਆਂ ਆਟਾ ਮਿੱਲਾਂ ਦੀ ਖਰੀਦ ਵਧੇਗੀ।" },
+          { en: "Net Arbitrage: Projected price rise (+₹140/qtl) easily offsets storage fees.", hi: "शुद्ध मुनाफा: अपेक्षित भाव वृद्धि (+₹140/क्विंटल) भंडारण शुल्क से कहीं अधिक है।", mr: "निव्वळ फायदा: अपेक्षित दरवाढ (+₹१४०/क्विंटल) गोदामाच्या भाड्यापेक्षा खूप जास्त आहे.", pa: "ਸ਼ੁੱਧ ਮੁਨਾਫਾ: ਅਨੁਮਾਨਿਤ ਭਾਵ ਵਾਧਾ (+₹140/ਕੁਇੰਟਲ) ਗੋਦਾਮ ਖਰਚੇ ਨਾਲੋਂ ਕਿਤੇ ਵੱਧ ਹੈ।" }
+        ],
+        heading: { en: "Mandi Price Arbitrage & Holding Strategy", hi: "मंडी भाव विश्लेषण एवं भंडारण रणनीति", mr: "बाजारभाव विश्लेषण आणि साठवणूक धोरण", pa: "ਮੰਡੀ ਭਾਵ ਵਿਸ਼ਲੇਸ਼ਣ ਅਤੇ ਸਟੋਰੇਜ ਰਣਨੀਤੀ" },
+        confidence: "95.4% Price Match",
+        economic: {
+          en: "Holding stock 14 days projects an incremental net gain of ₹11,900 across 85 qtl.",
+          hi: "माल को 14 दिन रोकने से 85 क्विंटल पर ₹11,900 का अतिरिक्त शुद्ध मुनाफा होगा।",
+          mr: "माल १४ दिवस रोखून ठेवल्यास ८५ क्विंटलवर ₹११,९०० चा अतिरिक्त नफा होईल.",
+          pa: "ਮਾਲ 14 ਦਿਨ ਰੋਕਣ ਨਾਲ 85 ਕੁਇੰਟਲ ਤੇ ₹11,900 ਦਾ ਵਾਧੂ ਸ਼ੁੱਧ ਮੁਨਾਫਾ ਹੋਵੇਗਾ।"
         },
         query: {
           en: '"Is this a good mandi price, or should I hold for next week?"',
@@ -4239,11 +4677,29 @@
         }
       },
       operations: {
-        memory: {
-          en: "18 Acres • Nashik Plot A & B • Day 24 of Season • Weather: 31°C, Wind 6 km/h",
-          hi: "18 एकड़ • नासिक प्लॉट ए और बी • सीजन का 24वां दिन • मौसम: 31°C, हवा 6 किमी/घं",
-          mr: "18 एकर • नाशिक प्लॉट ए आणि बी • हंगामाचा २४ वा दिवस • हवामान: ३१°C, वारा ६ किमी/तास",
-          pa: "18 ਏਕੜ • ਨਾਸਿਕ ਪਲਾਟ ਏ ਅਤੇ ਬੀ • ਸੀਜ਼ਨ ਦਾ 24ਵਾਂ ਦਿਨ • ਮੌਸਮ: 31°C, ਹਵਾ 6 km/h"
+        hud: {
+          plot: { en: "All 18 Acres • Day 24", hi: "पूरे 18 एकड़ • 24वां दिन", mr: "संपूर्ण १८ एकर • २४ वा दिवस", pa: "ਪੂਰੇ 18 ਏਕੜ • 24ਵਾਂ ਦਿਨ" },
+          soil: { en: "Moisture Optimal", hi: "नमी अनुकूल", mr: "ओलावा उत्तम", pa: "ਨਮੀ ਅਨੁਕੂਲ" },
+          weather: { en: "Temp 31°C • Wind 6 km/h", hi: "तापमान 31°C • हवा 6 km/h", mr: "तापमान ३१°C • वारा ६ किमी", pa: "ਤਾਪਮਾਨ 31°C • ਹਵਾ 6 km/h" },
+          fleet: { en: "Sprayer & Drip Primed", hi: "स्प्रेयर और ड्रिप तैयार", mr: "फवारणी आणि ठिबक सज्ज", pa: "ਸਪਰੇਅਰ ਅਤੇ ਤੁਪਕਾ ਤਿਆਰ" }
+        },
+        farmer: {
+          name: "Gajanan Patil",
+          location: { en: "Nashik, Maharashtra", hi: "नासिक, महाराष्ट्र", mr: "नाशिक, महाराष्ट्र", pa: "ਨਾਸਿਕ, ਮਹਾਰਾਸ਼ਟਰ" },
+          duration: "0:12"
+        },
+        reasoning: [
+          { en: "Phenological Stage: Square development stage requires immediate whitefly check.", hi: "फसल अवस्था: कलियां बनने के समय सफेद मक्खी का तुरंत निरीक्षण जरूरी।", mr: "पिकाची अवस्था: पात्या लागण्याच्या वेळी पांढऱ्या माशीची तातडीने पाहणी आवश्यक.", pa: "ਫਸਲ ਅਵਸਥਾ: ਡੋਡੀਆਂ ਬਣਨ ਸਮੇਂ ਚਿੱਟੀ ਮੱਖੀ ਦਾ ਤੁਰੰਤ ਨਿਰੀਖਣ ਜ਼ਰੂਰੀ।" },
+          { en: "Nutrient Pressure: High vegetative growth demands 19:19:19 morning drip pulse.", hi: "पोषण संतुलन: तेज वानस्पतिक बढ़वार के लिए सुबह 19:19:19 खाद ड्रिप से दें।", mr: "पोषण समतोल: जलद वाढीसाठी सकाळी १९:१९:१९ विद्राव्य खत ठिबकद्वारे सोडा.", pa: "ਪੋਸ਼ਣ ਸੰਤੁਲਨ: ਤੇਜ਼ ਵਾਧੇ ਲਈ ਸਵੇਰੇ 19:19:19 ਖਾਦ ਤੁਪਕਾ ਰਾਹੀਂ ਦਿਓ।" },
+          { en: "Storm Hardening: Silt traps and drainage furrows must be cleared today.", hi: "बारिश सुरक्षा: खेत तालाब और जल निकासी नालियों से गाद आज ही हटाएं।", mr: "पावसाची पूर्वतयारी: शेततळ्यातील गाळ आणि निचरा चर आजच स्वच्छ करा.", pa: "ਮੀਂਹ ਦੀ ਤਿਆਰੀ: ਖੇਤ ਤਲਾਬ ਅਤੇ ਨਿਕਾਸੀ ਨਾਲੀਆਂ ਦੀ ਸਫਾਈ ਅੱਜ ਹੀ ਕਰੋ।" }
+        ],
+        heading: { en: "Daily Agronomic Action Brief", hi: "दैनिक कृषि कार्ययोजना", mr: "दैनिक शेती कृती आराखडा", pa: "ਰੋਜ਼ਾਨਾ ਖੇਤੀ ਕਾਰਜ ਯੋਜਨਾ" },
+        confidence: "99.3% Operational Match",
+        economic: {
+          en: "Executing daily synchronized tasks optimizes yield trajectory by up to 18%.",
+          hi: "नियमित समयबद्ध कार्यों से फसल पैदावार में 18% तक का सुधार होता है।",
+          mr: "वेळेवर नियोजनबद्ध कामे केल्याने पिकाच्या उत्पादनात १८% पर्यंत वाढ होते.",
+          pa: "ਸਮੇਂ ਸਿਰ ਯੋਜਨਾਬੱਧ ਕੰਮ ਕਰਨ ਨਾਲ ਝਾੜ ਵਿੱਚ 18% ਤੱਕ ਦਾ ਵਾਧਾ ਹੁੰਦਾ ਹੈ।"
         },
         query: {
           en: '"What should I focus on doing across my fields today?"',
@@ -4252,7 +4708,7 @@
           pa: '"ਅੱਜ ਮੈਨੂੰ ਆਪਣੇ ਖੇਤਾਂ ਵਿੱਚ ਕਿਹੜੇ ਕੰਮਾਂ ਤੇ ਧਿਆਨ ਦੇਣਾ ਚਾਹੀਦਾ ਹੈ?"'
         },
         response: {
-          en: '<p><strong>Today\x27s Priority Operational Brief (3 Action Items):</strong></p><p><strong>1. Pest Scouting (Plot B):</strong> Scout lower leaf surfaces between 07:00&ndash;09:30 AM before temperatures rise above 30°C.</p><p><strong>2. Fertigation (Plot A):</strong> Run micro-drip with water-soluble 19:19:19 @ 4.5 kg/acre during morning pressure cycle.</p><p><strong>3. Farm Pond Maintenance:</strong> Inspect inlet desilting silt-trap before expected weekend rains.</p>',
+          en: "<p><strong>Today's Priority Operational Brief (3 Action Items):</strong></p><p><strong>1. Pest Scouting (Plot B):</strong> Scout lower leaf surfaces between 07:00&ndash;09:30 AM before temperatures rise above 30°C.</p><p><strong>2. Fertigation (Plot A):</strong> Run micro-drip with water-soluble 19:19:19 @ 4.5 kg/acre during morning pressure cycle.</p><p><strong>3. Farm Pond Maintenance:</strong> Inspect inlet desilting silt-trap before expected weekend rains.</p>",
           hi: '<p><strong>आज की कार्ययोजना (3 मुख्य प्राथमिकताएं):</strong></p><p><strong>1. कीट निरीक्षण (प्लॉट बी):</strong> सुबह 07:00 से 09:30 बजे के बीच पत्तियों के नीचे रस चूसक कीटों की जांच करें।</p><p><strong>2. खाद प्रबंधन (प्लॉट ए):</strong> सुबह ड्रिप द्वारा 19:19:19 (4.5 किलो/एकड़) दें।</p><p><strong>3. खेत तालाब देखभाल:</strong> सप्ताहांत बारिश से पहले इनलेट नाली की सफाई सुनिश्चित करें।</p>',
           mr: '<p><strong>आजची कार्यसूची (३ महत्त्वाची कामे):</strong></p><p><strong>१. कीड पाहणी (प्लॉट बी):</strong> सकाळी ०७:०० ते ०९:३० दरम्यान पानांखालील रसशोषक किडींची पाहणी करा.</p><p><strong>२. खत व्यवस्थापन (प्लॉट ए):</strong> सकाळच्या वेळेत ठिबकद्वारे १९:१९:१९ (४.५ किलो/एकर) सोडावे.</p><p><strong>३. शेततळे तपासणी:</strong> पावसापूर्वी इनलेटच्या गाळ काढण्याची खात्री करा.</p>',
           pa: '<p><strong>ਅੱਜ ਦੀਆਂ ਤਰਜੀਹਾਂ (3 ਮੁੱਖ ਕੰਮ):</strong></p><p><strong>1. ਕੀੜੇ ਨਿਰੀਖਣ (ਪਲਾਟ ਬੀ):</strong> ਸਵੇਰੇ 07:00 ਤੋਂ 09:30 ਵਿਚਕਾਰ ਪੱਤਿਆਂ ਦੀ ਜਾਂਚ ਕਰੋ।</p><p><strong>2. ਖਾਦ ਪ੍ਰਬੰਧ (ਪਲਾਟ ਏ):</strong> ਤੁਪਕਾ ਰਾਹੀਂ 19:19:19 (4.5 ਕਿੱਲੋ/ਏਕੜ) ਦਿਓ।</p><p><strong>3. ਪਾਣੀ ਨਿਕਾਸ:</strong> ਮੀਂਹ ਤੋਂ ਪਹਿਲਾਂ ਨਾਲੀਆਂ ਦੀ ਸਫਾਈ ਯਕੀਨੀ ਬਣਾਓ।</p>'
@@ -4269,26 +4725,95 @@
     function initHeroSimulator() {
       let currentScenario = "crop";
       let currentLang = "en";
+      let isAudioPlaying = false;
+      let audioTimer = null;
 
-      const memoryEl = document.getElementById("sim-memory-text");
+      // Telemetry HUD elements
+      const hudPlot = document.getElementById("hud-val-plot");
+      const hudSoil = document.getElementById("hud-val-soil");
+      const hudWeather = document.getElementById("hud-val-weather");
+      const hudFleet = document.getElementById("hud-val-fleet");
+
+      // Farmer query & voice card elements
+      const farmerName = document.getElementById("sim-farmer-name");
+      const farmerLoc = document.getElementById("sim-farmer-location");
       const queryEl = document.getElementById("sim-user-query");
+      const voiceBtn = document.getElementById("voice-preview-btn");
+      const voicePlayIcon = document.getElementById("voice-play-icon");
+      const voiceLabel = document.getElementById("voice-preview-label");
+
+      // Reasoning chain elements
+      const step1 = document.getElementById("reasoning-step-1");
+      const step2 = document.getElementById("reasoning-step-2");
+      const step3 = document.getElementById("reasoning-step-3");
+
+      // Decision card elements
+      const headingEl = document.getElementById("decision-heading");
+      const confidenceVal = document.getElementById("confidence-val");
       const responseEl = document.getElementById("sim-ai-response");
+      const economicVal = document.getElementById("economic-val");
       const tagsEl = document.getElementById("sim-ai-tags");
-      const chips = document.querySelectorAll(".sim-chip");
-      const langBtns = document.querySelectorAll(".sim-lang-btn");
+
+      // Interactive controls
+      const chips = document.querySelectorAll(".cockpit-preset-chip");
+      const langBtns = document.querySelectorAll(".cockpit-lang-btn");
       const customForm = document.getElementById("sim-custom-form");
       const inputField = document.getElementById("sim-input-field");
       const micBtn = document.getElementById("sim-mic-btn");
       const simSection = document.getElementById("hero-simulator");
 
-      function render(scenarioKey, langKey, animated = false) {
-        const scenario = simulatorData[scenarioKey] || simulatorData.crop;
-        const memoryText = (scenario.memory && scenario.memory[langKey]) || scenario.memory.en;
-        const queryText = (scenario.query && scenario.query[langKey]) || scenario.query.en;
-        const responseText = (scenario.response && scenario.response[langKey]) || scenario.response.en;
-        const tagList = (scenario.tags && scenario.tags[langKey]) || scenario.tags.en;
+      function stopVoicePlayback() {
+        if (audioTimer) {
+          clearTimeout(audioTimer);
+          audioTimer = null;
+        }
+        isAudioPlaying = false;
+        if (voiceBtn) voiceBtn.classList.remove("is-playing");
+        if (voicePlayIcon) voicePlayIcon.textContent = "▶";
+        const scenario = simulatorData[currentScenario] || simulatorData.crop;
+        const dur = (scenario.farmer && scenario.farmer.duration) || "0:08";
+        if (voiceLabel) voiceLabel.textContent = `Kisan Audio (${dur})`;
+      }
 
-        if (memoryEl) memoryEl.textContent = memoryText;
+      function toggleVoicePlayback() {
+        if (isAudioPlaying) {
+          stopVoicePlayback();
+          return;
+        }
+
+        isAudioPlaying = true;
+        if (voiceBtn) voiceBtn.classList.add("is-playing");
+        if (voicePlayIcon) voicePlayIcon.textContent = "⏹";
+        if (voiceLabel) voiceLabel.textContent = "Playing Kisan Voice...";
+
+        // Simulate audio playback duration
+        audioTimer = setTimeout(() => {
+          stopVoicePlayback();
+        }, 6200);
+      }
+
+      if (voiceBtn) {
+        voiceBtn.addEventListener("click", toggleVoicePlayback);
+      }
+
+      function render(scenarioKey, langKey, animated = false) {
+        stopVoicePlayback();
+        const scenario = simulatorData[scenarioKey] || simulatorData.crop;
+
+        // 1. Update Telemetry HUD
+        if (hudPlot && scenario.hud) hudPlot.textContent = scenario.hud.plot[langKey] || scenario.hud.plot.en;
+        if (hudSoil && scenario.hud) hudSoil.textContent = scenario.hud.soil[langKey] || scenario.hud.soil.en;
+        if (hudWeather && scenario.hud) hudWeather.textContent = scenario.hud.weather[langKey] || scenario.hud.weather.en;
+        if (hudFleet && scenario.hud) hudFleet.textContent = scenario.hud.fleet[langKey] || scenario.hud.fleet.en;
+
+        // 2. Update Farmer Profile
+        if (farmerName && scenario.farmer) farmerName.textContent = scenario.farmer.name;
+        if (farmerLoc && scenario.farmer) farmerLoc.textContent = scenario.farmer.location[langKey] || scenario.farmer.location.en;
+        const duration = (scenario.farmer && scenario.farmer.duration) || "0:08";
+        if (voiceLabel) voiceLabel.textContent = `Kisan Audio (${duration})`;
+
+        // 3. Update Farmer Query
+        const queryText = (scenario.query && scenario.query[langKey]) || scenario.query.en;
         if (queryEl) {
           if (animated) {
             queryEl.style.opacity = "0";
@@ -4302,10 +4827,29 @@
           }
         }
 
+        // 4. Update Reasoning Stream
+        if (scenario.reasoning && scenario.reasoning.length >= 3) {
+          if (step1) step1.textContent = scenario.reasoning[0][langKey] || scenario.reasoning[0].en;
+          if (step2) step2.textContent = scenario.reasoning[1][langKey] || scenario.reasoning[1].en;
+          if (step3) step3.textContent = scenario.reasoning[2][langKey] || scenario.reasoning[2].en;
+        }
+
+        // 5. Update Executive Directive
+        if (headingEl && scenario.heading) {
+          headingEl.textContent = scenario.heading[langKey] || scenario.heading.en;
+        }
+        if (confidenceVal && scenario.confidence) {
+          confidenceVal.textContent = scenario.confidence;
+        }
+        if (economicVal && scenario.economic) {
+          economicVal.textContent = scenario.economic[langKey] || scenario.economic.en;
+        }
+
+        const responseText = (scenario.response && scenario.response[langKey]) || scenario.response.en;
         if (responseEl) {
           if (animated) {
             responseEl.style.opacity = "0.35";
-            responseEl.innerHTML = "<p style=\"color:var(--muted); font-style: italic;\">Accessing Farm Memory &amp; calculating agronomic parameters...</p>";
+            responseEl.innerHTML = '<p style="color:var(--muted); font-style: italic;">Ingesting 10Hz field telemetry &amp; calculating agronomic torque &amp; chemical margins...</p>';
             setTimeout(() => {
               responseEl.innerHTML = responseText;
               responseEl.style.transition = "opacity 0.3s ease";
@@ -4316,17 +4860,20 @@
             setTimeout(() => {
               responseEl.innerHTML = responseText;
               responseEl.style.opacity = "1";
-            }, 120);
+            }, 100);
           }
         }
 
-        if (tagsEl) {
+        // 6. Update Context Tags
+        const tagList = (scenario.tags && scenario.tags[langKey]) || scenario.tags.en;
+        if (tagsEl && tagList) {
           tagsEl.innerHTML = tagList.map((tag, idx) =>
-            `<span class="sim-ai-tag ${idx === 0 ? "tag-accent" : ""}">${tag}</span>`
+            `<span class="cockpit-tag ${idx === 0 ? "tag-accent" : ""}">${tag}</span>`
           ).join("");
         }
       }
 
+      // Presets chips click handler
       chips.forEach(chip => {
         chip.addEventListener("click", () => {
           chips.forEach(c => {
@@ -4340,47 +4887,83 @@
         });
       });
 
+      // Regional language picker
       langBtns.forEach(btn => {
         btn.addEventListener("click", () => {
-          langBtns.forEach(b => b.classList.remove("active"));
+          langBtns.forEach(b => {
+            b.classList.remove("active");
+            b.setAttribute("aria-selected", "false");
+          });
           btn.classList.add("active");
+          btn.setAttribute("aria-selected", "true");
           currentLang = btn.getAttribute("data-lang");
           render(currentScenario, currentLang, false);
         });
       });
 
+      // Microphone button: simulates voice recognition & audio wave ripple
       if (micBtn) {
         micBtn.addEventListener("click", () => {
-          const hiBtn = document.querySelector('.sim-lang-btn[data-lang="hi"]');
-          if (hiBtn) hiBtn.click();
-          micBtn.style.transform = "scale(1.25)";
-          setTimeout(() => { micBtn.style.transform = ""; }, 300);
+          micBtn.classList.add("is-listening");
+          if (inputField) {
+            inputField.placeholder = "Listening in Hindi / Marathi / English...";
+            inputField.value = "";
+          }
+
+          setTimeout(() => {
+            micBtn.classList.remove("is-listening");
+            const sampleVoicePrompt = currentLang === "hi"
+              ? "कपास में पत्ता मरोड़ रोग और रस चूसक कीट का सही छिड़काव क्या है?"
+              : currentLang === "mr"
+              ? "कापसातील पाने मुरडणे आणि रसशोषक किडींवर कोणती फवारणी करावी?"
+              : currentLang === "pa"
+              ? "ਨਰਮੇ ਵਿੱਚ ਪੱਤਾ ਮਰੋੜ ਰੋਗ ਤੇ ਕਿਹੜੀ ਸਪਰੇਅ ਕਰਨੀ ਚਾਹੀਦੀ ਹੈ?"
+              : "What is the optimal chemical control for leaf curl virus and whitefly?";
+
+            if (inputField) {
+              inputField.value = sampleVoicePrompt;
+              inputField.placeholder = "Ask FarmerGPT in English, हिंदी, मराठी, ਪੰਜਾਬੀ...";
+            }
+
+            // Simulate sending voice transcription
+            if (customForm) {
+              customForm.dispatchEvent(new Event("submit"));
+            }
+          }, 1100);
         });
       }
 
+      // Command terminal submission
       if (customForm && inputField) {
         customForm.addEventListener("submit", (e) => {
           e.preventDefault();
           const val = inputField.value.trim();
           if (!val) return;
 
-          queryEl.textContent = `"${val}"`;
-          responseEl.innerHTML = "<p><strong>Analyzing your query against Farm Memory...</strong> Correlating soil records, machinery fleet, and current regional weather telemetry for optimal action.</p>";
-          inputField.value = "";
+          stopVoicePlayback();
+          if (queryEl) queryEl.textContent = `"${val}"`;
+          if (headingEl) headingEl.textContent = "Autonomous Context Synthesis";
+          if (confidenceVal) confidenceVal.textContent = "99.1% Custom Match";
+          if (economicVal) economicVal.textContent = "Real-time field calculation prevents ₹8,500/acre in misallocated inputs.";
+          if (step1) step1.textContent = "Digital Twin: Recalled Vertisol soil profile & 18-acre boundary.";
+          if (step2) step2.textContent = "Atmospheric Model: Correlated local barometric pressure & wind trajectory.";
+          if (step3) step3.textContent = "Fleet Check: Mahindra 575 DI PTO rated capacity within safe bounds.";
 
-          setTimeout(() => {
-            responseEl.innerHTML = `<p><strong>FarmerGPT Recommendation:</strong> Context verified for your 18-acre plot. Based on your black cotton soil and current 45 HP fleet, this decision is operationally sound. No equipment overload risk detected.</p><p><em>Operational safety margin: 94%. Recommended window: Early morning before 10:00 AM.</em></p>`;
-          }, 450);
+          if (responseEl) {
+            responseEl.innerHTML = '<p><strong>Synthesizing Grounded Field Recommendation...</strong> Running telemetry validation across soil moisture, fleet telemetry, and regional agronomic benchmarks.</p>';
+            inputField.value = "";
+
+            setTimeout(() => {
+              responseEl.innerHTML = `<p><strong>FarmerGPT Direct Recommendation:</strong> Verified specifically for your 18-acre Nashik plot. Based on your black cotton soil profile and active 45 HP fleet, this operation is verified with zero equipment stress risk.</p><p><em>Mechanical torque safety: 94.8%. Rainfast adhesion envelope: Confirmed safe before 01:00 PM.</em></p>`;
+            }, 450);
+          }
         });
       }
 
-      // ==========================================
-      // Interactive Question Cards in #questions
-      // ==========================================
+      // Question Cards Integration in #questions
       const questionCards = document.querySelectorAll(".question-card");
       const questionGrid = document.querySelector(".questions-grid");
 
-      // Dynamic cursor spotlight tracker across question cards
       if (questionGrid) {
         questionGrid.addEventListener("pointermove", (e) => {
           questionCards.forEach(card => {
@@ -4397,7 +4980,7 @@
         const scenarioKey = card.getAttribute("data-scenario") || "crop";
         currentScenario = scenarioKey;
 
-        // Highlight matching top chip if it corresponds to the 4 main categories
+        // Highlight matching preset chip if present
         chips.forEach(c => {
           if (c.getAttribute("data-scenario") === scenarioKey) {
             c.classList.add("active");
@@ -4408,11 +4991,11 @@
           }
         });
 
-        // Smooth scroll with eye-catching highlight ring on the simulator
+        // Smooth scroll to cockpit with highlight pulse
         if (simSection) {
           simSection.scrollIntoView({ behavior: "smooth", block: "center" });
           simSection.classList.remove("sim-highlight");
-          void simSection.offsetWidth; // trigger reflow
+          void simSection.offsetWidth;
           simSection.classList.add("sim-highlight");
         }
 
