@@ -44,6 +44,19 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600;1,9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
+  <script>
+    (function () {
+      try {
+        const savedTheme = localStorage.getItem('fc-theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) { }
+    })();
+  </script>
   <style>
     :root {
       --primary: #1A7F5A;
@@ -2320,6 +2333,423 @@
         transform: none;
       }
     }
+    /* ==========================================
+       THEME TOGGLE BUTTON & DARK MODE STYLING
+       ========================================== */
+    .theme-toggle {
+      width: 38px;
+      height: 38px;
+      border-radius: 9999px;
+      background: rgba(15, 23, 42, 0.04);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--text);
+      transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .theme-toggle:hover {
+      background: rgba(15, 23, 42, 0.08);
+      transform: scale(1.06);
+    }
+
+    .theme-toggle:active {
+      transform: scale(0.92);
+    }
+
+    .theme-toggle .icon-sun {
+      display: none;
+    }
+
+    .theme-toggle .icon-moon {
+      display: block;
+      transition: transform 260ms ease;
+    }
+
+    .theme-toggle:hover .icon-moon {
+      transform: rotate(-12deg);
+    }
+
+    .mobile-theme-toggle {
+      width: auto;
+      height: 34px;
+      padding: 0 12px;
+      gap: 6px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .theme-mode-text {
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    /* ------------------------------------------
+       DARK THEME TOKEN OVERRIDES ([data-theme="dark"])
+       ------------------------------------------ */
+    [data-theme="dark"] {
+      color-scheme: dark;
+      --primary: #2ECC71;
+      --secondary: #34D399;
+      --accent: #F5D061;
+      --background: #08100C;
+      --surface: #0E1B15;
+      --surface-strong: #13241C;
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #F1F5F2;
+      --muted: #9EAF9F;
+      --soft: #6A7E72;
+      --shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.42);
+      --glow-primary: rgba(46, 204, 113, 0.22);
+      --glow-accent: rgba(245, 208, 97, 0.2);
+    }
+
+    [data-theme="dark"] body {
+      background: var(--background);
+      color: var(--text);
+    }
+
+    /* Theme Toggle button in dark mode */
+    [data-theme="dark"] .theme-toggle {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.12);
+      color: #F5D061;
+    }
+
+    [data-theme="dark"] .theme-toggle:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(245, 208, 97, 0.3);
+    }
+
+    [data-theme="dark"] .theme-toggle .icon-moon {
+      display: none;
+    }
+
+    [data-theme="dark"] .theme-toggle .icon-sun {
+      display: block;
+      color: #F5D061;
+      transition: transform 260ms ease;
+    }
+
+    [data-theme="dark"] .theme-toggle:hover .icon-sun {
+      transform: rotate(45deg);
+    }
+
+    /* Dark Mode: Floating Island Header */
+    [data-theme="dark"] .site-header .nav-island {
+      background: rgba(14, 27, 21, 0.82);
+      border-color: rgba(46, 204, 113, 0.20);
+      box-shadow: 0 12px 32px -6px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    [data-theme="dark"] .site-header.is-scrolled .nav-island {
+      background: rgba(14, 27, 21, 0.94);
+      border-color: rgba(46, 204, 113, 0.28);
+      box-shadow: 0 18px 40px -6px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    }
+
+    [data-theme="dark"] .brand {
+      color: #F1F5F2;
+    }
+
+    [data-theme="dark"] .brand-mark {
+      background: linear-gradient(135deg, rgba(46, 204, 113, 0.18) 0%, rgba(245, 208, 97, 0.12) 100%);
+      border-color: rgba(46, 204, 113, 0.3);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    }
+
+    [data-theme="dark"] .brand-name {
+      color: #F1F5F2;
+    }
+
+    [data-theme="dark"] .brand-version-badge {
+      background: rgba(46, 204, 113, 0.12);
+      border-color: rgba(46, 204, 113, 0.3);
+      color: #2ECC71;
+    }
+
+    [data-theme="dark"] .nav-links-wrap {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.07);
+    }
+
+    [data-theme="dark"] .nav-link {
+      color: #9EAF9F;
+    }
+
+    [data-theme="dark"] .nav-link:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    [data-theme="dark"] .nav-link.active {
+      color: #2ECC71;
+      background: rgba(46, 204, 113, 0.15);
+      box-shadow: 0 0 0 1px rgba(46, 204, 113, 0.32);
+    }
+
+    [data-theme="dark"] .nav-mobile-toggle {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    [data-theme="dark"] .nav-mobile-toggle .toggle-icon-bar,
+    [data-theme="dark"] .nav-mobile-toggle .toggle-icon-bar::before,
+    [data-theme="dark"] .nav-mobile-toggle .toggle-icon-bar::after {
+      background: #F1F5F2;
+    }
+
+    [data-theme="dark"] .nav-mobile-sheet {
+      background: rgba(14, 27, 21, 0.96);
+      border-color: rgba(46, 204, 113, 0.22);
+      box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    [data-theme="dark"] .mobile-nav-item {
+      color: #F1F5F2;
+    }
+
+    [data-theme="dark"] .mobile-nav-item:hover {
+      background: rgba(46, 204, 113, 0.12);
+    }
+
+    [data-theme="dark"] .mobile-item-icon {
+      background: rgba(46, 204, 113, 0.14);
+    }
+
+    /* Dark Mode: Hero & Background Ambiance */
+    [data-theme="dark"] .hero {
+      background: radial-gradient(130% 90% at 50% -10%, rgba(46, 204, 113, 0.12) 0%, rgba(245, 208, 97, 0.06) 40%, #08100C 85%);
+    }
+
+    [data-theme="dark"] .hero::before {
+      background: radial-gradient(circle, rgba(46, 204, 113, 0.18) 0%, rgba(245, 208, 97, 0.10) 45%, transparent 70%);
+      filter: blur(80px);
+    }
+
+    [data-theme="dark"] .cursor-glow {
+      background: radial-gradient(circle, rgba(46, 204, 113, 0.18) 0%, rgba(245, 208, 97, 0.10) 38%, transparent 70%);
+      mix-blend-mode: screen;
+    }
+
+    /* Dark Mode: Hero Simulator */
+    [data-theme="dark"] .hero-simulator-container {
+      background: linear-gradient(175deg, rgba(17, 34, 26, 0.96) 0%, rgba(12, 24, 18, 0.95) 100%);
+      border-color: rgba(46, 204, 113, 0.24);
+      box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+    }
+
+    [data-theme="dark"] .sim-screen {
+      background: rgba(9, 17, 13, 0.88);
+      border-color: rgba(255, 255, 255, 0.07);
+    }
+
+    [data-theme="dark"] .sim-chip {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.09);
+      color: #9EAF9F;
+    }
+
+    [data-theme="dark"] .sim-chip.active {
+      background: rgba(46, 204, 113, 0.18);
+      border-color: rgba(46, 204, 113, 0.38);
+      color: #2ECC71;
+    }
+
+    [data-theme="dark"] .sim-lang-btn {
+      color: #9EAF9F;
+    }
+
+    [data-theme="dark"] .sim-lang-btn.active {
+      background: rgba(46, 204, 113, 0.2);
+      color: #2ECC71;
+    }
+
+    [data-theme="dark"] .sim-memory-pill {
+      background: rgba(46, 204, 113, 0.08);
+      border-color: rgba(46, 204, 113, 0.2);
+    }
+
+    [data-theme="dark"] .sim-memory-val {
+      color: #D6E4D9;
+    }
+
+    [data-theme="dark"] .sim-bubble-ai {
+      background: #14281E;
+      border-color: rgba(46, 204, 113, 0.18);
+      color: #F1F5F2;
+    }
+
+    [data-theme="dark"] .sim-bubble-user {
+      background: rgba(46, 204, 113, 0.14);
+      border-color: rgba(46, 204, 113, 0.28);
+      color: #E2ECE5;
+    }
+
+    [data-theme="dark"] .sim-input-bar {
+      background: #14281E;
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    [data-theme="dark"] .sim-input {
+      color: #F1F5F2;
+    }
+
+    [data-theme="dark"] .sim-input::placeholder {
+      color: #6A7E72;
+    }
+
+    [data-theme="dark"] .glass-chip {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.12);
+      color: #E2ECE5;
+    }
+
+    /* Dark Mode: Question Cards & Spotlight */
+    [data-theme="dark"] .question-card {
+      background: rgba(14, 27, 21, 0.88);
+      border-color: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.4);
+    }
+
+    [data-theme="dark"] .question-card::before {
+      background: radial-gradient(320px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(46, 204, 113, 0.15) 0%, rgba(245, 208, 97, 0.08) 45%, transparent 70%);
+    }
+
+    [data-theme="dark"] .question-card:hover {
+      background: rgba(17, 34, 26, 0.95);
+      border-color: rgba(46, 204, 113, 0.38);
+      box-shadow: 0 22px 48px -10px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(46, 204, 113, 0.22);
+    }
+
+    [data-theme="dark"] .question-text {
+      color: #F1F5F2;
+    }
+
+    [data-theme="dark"] .question-action {
+      background: rgba(46, 204, 113, 0.12);
+      border-color: rgba(46, 204, 113, 0.28);
+      color: #2ECC71;
+    }
+
+    [data-theme="dark"] .question-card:hover .question-action {
+      background: rgba(46, 204, 113, 0.22);
+      border-color: rgba(46, 204, 113, 0.45);
+    }
+
+    [data-theme="dark"] .connecting-banner {
+      background: linear-gradient(135deg, rgba(46, 204, 113, 0.12), rgba(245, 208, 97, 0.1));
+      border-color: rgba(46, 204, 113, 0.25);
+    }
+
+    /* Dark Mode: Equipment Calculator */
+    [data-theme="dark"] #equipment {
+      background: #0B1711;
+    }
+
+    [data-theme="dark"] .equipment-calculator {
+      background: linear-gradient(175deg, #11231A 0%, #0D1B14 100%);
+      border-color: rgba(46, 204, 113, 0.22);
+      box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.55);
+    }
+
+    [data-theme="dark"] .calc-controls,
+    [data-theme="dark"] .calc-results-card,
+    [data-theme="dark"] .equipment-card {
+      background: #14281E;
+      border-color: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    [data-theme="dark"] .calc-choice-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.08);
+      color: #9EAF9F;
+    }
+
+    [data-theme="dark"] .calc-choice-btn:hover {
+      background: rgba(255, 255, 255, 0.09);
+      color: #F1F5F2;
+    }
+
+    [data-theme="dark"] .calc-choice-btn.active {
+      background: rgba(46, 204, 113, 0.2);
+      border-color: rgba(46, 204, 113, 0.4);
+      color: #2ECC71;
+    }
+
+    [data-theme="dark"] .calc-metric-row {
+      border-bottom-color: rgba(255, 255, 255, 0.06);
+    }
+
+    [data-theme="dark"] .calc-metric-val {
+      color: #F1F5F2;
+    }
+
+    [data-theme="dark"] .calc-rationale {
+      background: rgba(46, 204, 113, 0.1);
+      border-color: rgba(46, 204, 113, 0.22);
+      color: #D6E4D9;
+    }
+
+    /* Dark Mode: Capabilities, Roadmap, Founder & Contact */
+    [data-theme="dark"] #capabilities {
+      background: #08100C;
+    }
+
+    [data-theme="dark"] .capability-card,
+    [data-theme="dark"] .roadmap-item,
+    [data-theme="dark"] .founder-copy,
+    [data-theme="dark"] .contact-card,
+    [data-theme="dark"] .contact-item,
+    [data-theme="dark"] .quote-card,
+    [data-theme="dark"] .story-visual,
+    [data-theme="dark"] .vision-visual {
+      background: rgba(14, 27, 21, 0.9);
+      border-color: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.4);
+    }
+
+    [data-theme="dark"] .capability-card:hover,
+    [data-theme="dark"] .roadmap-item:hover {
+      border-color: rgba(46, 204, 113, 0.35);
+      background: rgba(17, 34, 26, 0.95);
+      box-shadow: 0 22px 48px -10px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(46, 204, 113, 0.2);
+    }
+
+    [data-theme="dark"] .button-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      color: #F1F5F2;
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    [data-theme="dark"] .button-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      border-color: rgba(46, 204, 113, 0.35);
+    }
+
+    [data-theme="dark"] .footer {
+      background: #050B08;
+      border-top-color: rgba(255, 255, 255, 0.08);
+    }
+
+    /* SVG diagram visibility in dark mode */
+    [data-theme="dark"] svg rect[fill="#FFFFFF"],
+    [data-theme="dark"] svg rect[fill="#F9FCF9"] {
+      fill: #14281E !important;
+      fill-opacity: 0.95 !important;
+    }
+
+    [data-theme="dark"] svg circle[fill="#F3F8F4"] {
+      fill: #102119 !important;
+    }
   </style>
 </head>
 
@@ -2382,6 +2812,27 @@
             <span class="status-label">Early Access</span>
           </div>
 
+          <!-- Light vs Dark Theme Toggle -->
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark/light theme"
+            title="Toggle dark or light theme">
+            <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+
           <a class="button-cta-pill" href="#contact">
             <span>Get Early Access</span>
             <svg class="cta-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -2406,7 +2857,26 @@
               <span class="status-pulse-dot"></span>
               <span class="status-label">Early Access Live</span>
             </div>
-            <span class="mobile-version-text">FarmerGPT v2.4</span>
+            <button class="theme-toggle mobile-theme-toggle" id="mobile-theme-toggle" type="button"
+              aria-label="Toggle color theme">
+              <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+              <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+              <span class="theme-mode-text">Theme</span>
+            </button>
           </div>
 
           <div class="mobile-nav-grid">
@@ -3423,6 +3893,45 @@
     const mobileSheet = document.getElementById('nav-mobile-sheet');
     const mobileLinks = document.querySelectorAll('.mobile-nav-item, .mobile-cta-btn');
     const navTrackLinks = document.querySelectorAll('.nav-track .nav-link');
+
+    // 0. Theme Toggle Controller (Sun vs Moon)
+    const themeToggles = document.querySelectorAll('.theme-toggle');
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      try {
+        localStorage.setItem('fc-theme', theme);
+      } catch (e) { }
+
+      themeToggles.forEach(btn => {
+        btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+        btn.setAttribute('title', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+      });
+    }
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') || 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+
+      themeToggles.forEach(btn => {
+        btn.style.transform = 'scale(0.85) rotate(45deg)';
+        setTimeout(() => { btn.style.transform = ''; }, 220);
+      });
+
+      applyTheme(next);
+    }
+
+    themeToggles.forEach(btn => {
+      btn.addEventListener('click', toggleTheme);
+    });
+
+    if (window.matchMedia) {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('fc-theme')) {
+          applyTheme(e.matches ? 'dark' : 'light');
+        }
+      });
+    }
 
     // 1. Header scroll styling on scroll
     function updateHeaderOnScroll() {
