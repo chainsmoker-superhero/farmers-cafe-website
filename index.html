@@ -703,7 +703,7 @@
       z-index: 2;
       display: grid;
       gap: 36px;
-      align-items: center;
+      align-items: start;
     }
 
     .hero-copy h1,
@@ -881,23 +881,26 @@
     .hero-cockpit-wrap {
       position: relative;
       width: 100%;
-      min-height: 520px;
+      height: 700px;
       display: flex;
       flex-direction: column;
+      align-self: start;
     }
 
     .agri-cockpit {
       position: relative;
       display: flex;
       flex-direction: column;
-      padding: 22px;
+      height: 100%;
+      max-height: 100%;
+      padding: 20px 22px;
       border-radius: 26px;
       background: linear-gradient(175deg, rgba(255, 255, 255, 0.96) 0%, rgba(246, 251, 247, 0.94) 100%);
       border: 1px solid rgba(26, 127, 90, 0.18);
       box-shadow: 0 24px 60px -12px rgba(19, 45, 35, 0.14), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
       backdrop-filter: blur(20px);
       overflow: hidden;
-      min-height: 540px;
+      box-sizing: border-box;
       transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -929,6 +932,7 @@
       gap: 12px;
       padding-bottom: 12px;
       border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+      flex-shrink: 0;
     }
 
     .cockpit-os-meta {
@@ -1052,11 +1056,12 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 8px;
-      margin: 12px 0 10px;
-      padding: 10px 12px;
+      margin: 10px 0 8px;
+      padding: 9px 12px;
       border-radius: 14px;
       background: rgba(26, 127, 90, 0.05);
       border: 1px solid rgba(26, 127, 90, 0.14);
+      flex-shrink: 0;
     }
 
     .hud-stat-cell {
@@ -1096,6 +1101,7 @@
       padding: 4px 2px 8px;
       scrollbar-width: none;
       -webkit-overflow-scrolling: touch;
+      flex-shrink: 0;
     }
 
     .cockpit-presets-bar::-webkit-scrollbar {
@@ -1139,14 +1145,37 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      padding: 14px;
-      margin-bottom: 12px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
       border-radius: var(--radius-lg);
       background: rgba(255, 255, 255, 0.85);
       border: 1px solid rgba(15, 23, 42, 0.06);
       box-shadow: 0 8px 24px rgba(15, 23, 42, 0.03) inset;
-      flex: 1;
+      flex: 1 1 0;
+      min-height: 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(26, 127, 90, 0.25) transparent;
+      overscroll-behavior: contain;
       justify-content: flex-start;
+    }
+
+    .cockpit-screen::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    .cockpit-screen::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .cockpit-screen::-webkit-scrollbar-thumb {
+      background: rgba(26, 127, 90, 0.22);
+      border-radius: 999px;
+    }
+
+    .cockpit-screen::-webkit-scrollbar-thumb:hover {
+      background: var(--primary);
     }
 
     /* Farmer Query Card with Voice Player */
@@ -1159,6 +1188,7 @@
       flex-direction: column;
       gap: 8px;
       box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);
+      flex-shrink: 0;
     }
 
     .query-farmer-badge {
@@ -1273,6 +1303,7 @@
       border-radius: 12px;
       background: rgba(26, 127, 90, 0.06);
       border-left: 3px solid var(--primary);
+      flex-shrink: 0;
     }
 
     .reasoning-step {
@@ -1309,6 +1340,7 @@
       display: flex;
       flex-direction: column;
       gap: 9px;
+      flex-shrink: 0;
     }
 
     .decision-header {
@@ -1447,6 +1479,7 @@
       border-radius: 999px;
       padding: 4px 6px 4px 12px;
       box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+      flex-shrink: 0;
     }
 
     .terminal-mic-btn {
@@ -1519,7 +1552,16 @@
       transform: scale(1.05);
     }
 
+    @media (max-width: 991px) {
+      .hero-cockpit-wrap {
+        height: 640px;
+      }
+    }
+
     @media (max-width: 600px) {
+      .hero-cockpit-wrap {
+        height: 620px;
+      }
       .cockpit-telemetry-hud {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -2821,6 +2863,11 @@
     [data-theme="dark"] .cockpit-screen {
       background: rgba(9, 17, 13, 0.88);
       border-color: rgba(255, 255, 255, 0.07);
+      scrollbar-color: rgba(46, 204, 113, 0.28) transparent;
+    }
+
+    [data-theme="dark"] .cockpit-screen::-webkit-scrollbar-thumb {
+      background: rgba(46, 204, 113, 0.28);
     }
 
     [data-theme="dark"] .cockpit-query-card {
@@ -4812,6 +4859,10 @@
         const duration = (scenario.farmer && scenario.farmer.duration) || "0:08";
         if (voiceLabel) voiceLabel.textContent = `Kisan Audio (${duration})`;
 
+        // Reset scroll position inside cockpit screen smoothly on switch
+        const screenEl = document.querySelector(".cockpit-screen");
+        if (screenEl) screenEl.scrollTop = 0;
+
         // 3. Update Farmer Query
         const queryText = (scenario.query && scenario.query[langKey]) || scenario.query.en;
         if (queryEl) {
@@ -4824,6 +4875,7 @@
             }, 80);
           } else {
             queryEl.textContent = queryText;
+            queryEl.style.opacity = "1";
           }
         }
 
@@ -4856,11 +4908,8 @@
               responseEl.style.opacity = "1";
             }, 260);
           } else {
-            responseEl.style.opacity = "0.4";
-            setTimeout(() => {
-              responseEl.innerHTML = responseText;
-              responseEl.style.opacity = "1";
-            }, 100);
+            responseEl.innerHTML = responseText;
+            responseEl.style.opacity = "1";
           }
         }
 
