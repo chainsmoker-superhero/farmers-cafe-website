@@ -779,11 +779,16 @@
 
     .headline-accent {
       display: block;
-      color: var(--primary);
-      font-family: "Fraunces", Georgia, serif;
+      font-family: var(--font-heading);
       font-style: italic;
       font-weight: 500;
       letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #10B981 0%, #059669 45%, #D4AF37 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      transition: filter 0.3s ease;
     }
 
     .hero-copy p {
@@ -867,14 +872,61 @@
     }
 
     .button-primary {
-      background: var(--primary);
-      color: #fff;
+      position: relative;
+      background: linear-gradient(180deg, #1f9468 0%, #16704e 100%);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px -2px rgba(26, 127, 90, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      overflow: hidden;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      touch-action: manipulation;
+    }
+
+    .button-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.24), transparent);
+      transform: skewX(-20deg);
+      pointer-events: none;
+    }
+
+    .button-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px -4px rgba(26, 127, 90, 0.52), inset 0 1px 0 rgba(255, 255, 255, 0.38);
+      background: linear-gradient(180deg, #24a574 0%, #187d57 100%);
+    }
+
+    .button-primary:hover::before {
+      left: 150%;
+      transition: left 0.65s ease-in-out;
+    }
+
+    .button-primary:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px -1px rgba(26, 127, 90, 0.4);
     }
 
     .button-secondary {
-      background: #fff;
+      position: relative;
+      background: rgba(255, 255, 255, 0.88);
       color: var(--text);
-      border-color: rgba(15, 23, 42, 0.12);
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.88);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      touch-action: manipulation;
+    }
+
+    .button-secondary:hover {
+      transform: translateY(-2px);
+      background: #FFFFFF;
+      border-color: rgba(26, 127, 90, 0.3);
+      box-shadow: 0 8px 20px -4px rgba(15, 23, 42, 0.08);
+      color: var(--primary);
     }
 
     .hero-meta {
@@ -4658,6 +4710,343 @@
       color: #2ECC71;
     }
 
+  
+    /* ==========================================
+       WORLD-CLASS UX & MICRO-INTERACTIONS SUITE
+       ========================================== */
+
+    /* 1. Hero Live Telemetry Pill */
+    .hero-live-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 6px 14px;
+      margin-bottom: 20px;
+      border-radius: 999px;
+      background: rgba(26, 127, 90, 0.08);
+      border: 1px solid rgba(26, 127, 90, 0.24);
+      box-shadow: 0 2px 10px rgba(26, 127, 90, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(14px);
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--primary);
+      width: fit-content;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      touch-action: manipulation;
+    }
+
+    .hero-live-pill:hover {
+      background: rgba(26, 127, 90, 0.14);
+      border-color: rgba(26, 127, 90, 0.38);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(26, 127, 90, 0.12);
+    }
+
+    .live-pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10B981;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+      animation: livePulse 2s infinite ease-in-out;
+    }
+
+    @keyframes livePulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.7; box-shadow: 0 0 0 5px rgba(16, 185, 129, 0.15); }
+    }
+
+    .live-pill-badge {
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(212, 175, 55, 0.18);
+      color: #9A7B1C;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    /* 2. Decision Actions Group & Copy Directive Button */
+    .decision-actions-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cockpit-copy-btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 11px;
+      min-height: 32px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      font-family: inherit;
+      touch-action: manipulation;
+    }
+
+    .cockpit-copy-btn::after {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: inherit;
+    }
+
+    .cockpit-copy-btn:hover {
+      background: #FFFFFF;
+      color: var(--primary);
+      border-color: rgba(26, 127, 90, 0.35);
+      box-shadow: 0 2px 8px rgba(26, 127, 90, 0.12);
+      transform: translateY(-1px);
+    }
+
+    .cockpit-copy-btn.copied {
+      background: rgba(16, 185, 129, 0.12);
+      border-color: #10B981;
+      color: #059669;
+    }
+
+    /* 3. Equipment Calculator Dynamic Efficiency Gauge */
+    .calc-efficiency-wrap {
+      margin-top: 14px;
+      padding: 12px 14px;
+      background: rgba(26, 127, 90, 0.06);
+      border: 1px solid rgba(26, 127, 90, 0.15);
+      border-radius: 12px;
+    }
+
+    .calc-eff-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 7px;
+      font-size: 0.74rem;
+    }
+
+    .calc-eff-title {
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .calc-eff-percent {
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .calc-eff-track {
+      width: 100%;
+      height: 6px;
+      background: rgba(15, 23, 42, 0.08);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .calc-eff-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #D4AF37 0%, #10B981 60%, #059669 100%);
+      border-radius: 999px;
+      transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* 4. World-Class Toast Notification System */
+    .fc-toast-container {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      pointer-events: none;
+    }
+
+    .fc-toast {
+      pointer-events: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 10px 18px;
+      background: rgba(15, 23, 42, 0.94);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(16px);
+      animation: toastIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      transition: opacity 0.22s ease, transform 0.22s ease;
+    }
+
+    @keyframes toastIn {
+      from {
+        opacity: 0;
+        transform: translateY(14px) scale(0.96);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* 5. Floating Scroll to Top Pill */
+    .floating-top-pill {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 15px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.88);
+      color: var(--text);
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px);
+      font-size: 0.78rem;
+      font-weight: 700;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s;
+      cursor: pointer;
+      touch-action: manipulation;
+    }
+
+    .floating-top-pill.is-visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .floating-top-pill:hover {
+      transform: translateY(-2px);
+      background: #FFFFFF;
+      border-color: var(--primary);
+      color: var(--primary);
+      box-shadow: 0 12px 28px -4px rgba(26, 127, 90, 0.22);
+    }
+
+    /* Active mic animation */
+    .terminal-mic-btn.mic-active {
+      background: rgba(239, 68, 68, 0.2);
+      border-color: #EF4444;
+      animation: micPulsing 1s infinite alternate;
+    }
+
+    @keyframes micPulsing {
+      0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+      100% { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+    }
+
+    /* 6. Dark Theme Overrides for Luxury UX Elements */
+    [data-theme="dark"] .hero-live-pill {
+      background: rgba(46, 204, 113, 0.12);
+      border-color: rgba(46, 204, 113, 0.28);
+      color: #2ECC71;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    [data-theme="dark"] .headline-accent {
+      background: linear-gradient(135deg, #34D399 0%, #10B981 40%, #F5D061 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      filter: drop-shadow(0 2px 18px rgba(52, 211, 153, 0.28));
+    }
+
+    [data-theme="dark"] .button-primary {
+      background: linear-gradient(180deg, #2ECC71 0%, #20A055 100%);
+      color: #050B08;
+      font-weight: 700;
+      box-shadow: 0 4px 20px -2px rgba(46, 204, 113, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    [data-theme="dark"] .button-primary:hover {
+      background: linear-gradient(180deg, #38E07F 0%, #25B260 100%);
+      box-shadow: 0 8px 30px -2px rgba(46, 204, 113, 0.62), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+    }
+
+    [data-theme="dark"] .button-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      color: #F1F5F2;
+      border-color: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    }
+
+    [data-theme="dark"] .button-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: #2ECC71;
+      color: #2ECC71;
+    }
+
+    [data-theme="dark"] .cockpit-copy-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.12);
+      color: #BAC7BC;
+    }
+
+    [data-theme="dark"] .cockpit-copy-btn:hover {
+      background: rgba(46, 204, 113, 0.15);
+      border-color: #2ECC71;
+      color: #2ECC71;
+    }
+
+    [data-theme="dark"] .cockpit-copy-btn.copied {
+      background: rgba(46, 204, 113, 0.25);
+      border-color: #2ECC71;
+      color: #2ECC71;
+    }
+
+    [data-theme="dark"] .calc-efficiency-wrap {
+      background: rgba(46, 204, 113, 0.08);
+      border-color: rgba(46, 204, 113, 0.22);
+    }
+
+    [data-theme="dark"] .calc-eff-track {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    [data-theme="dark"] .calc-eff-percent {
+      color: #2ECC71;
+    }
+
+    [data-theme="dark"] .fc-toast {
+      background: rgba(14, 27, 21, 0.95);
+      color: #F1F5F2;
+      border-color: rgba(46, 204, 113, 0.3);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.65), 0 0 24px rgba(46, 204, 113, 0.18);
+    }
+
+    [data-theme="dark"] .floating-top-pill {
+      background: rgba(18, 36, 27, 0.88);
+      color: #F1F5F2;
+      border-color: rgba(46, 204, 113, 0.25);
+      box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    [data-theme="dark"] .floating-top-pill:hover {
+      background: #14281E;
+      border-color: #2ECC71;
+      color: #2ECC71;
+      box-shadow: 0 12px 28px -4px rgba(46, 204, 113, 0.35);
+    }
+
   </style>
 </head>
 
@@ -4866,6 +5255,11 @@
         <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
         <div class="container hero-grid">
           <div class="hero-copy reveal">
+            <div class="hero-live-pill" aria-label="Platform architecture status">
+              <span class="live-pill-dot" aria-hidden="true"></span>
+              <span class="live-pill-text">Autonomous Agriculture Platform &bull; v2.6 Live</span>
+              <span class="live-pill-badge">Zero Hallucination</span>
+            </div>
             <span class="eyebrow">Farmers Cafe</span>
             <h1>The Future of Farming <span class="headline-accent">is Intelligent.</span></h1>
             <p class="hero-subhead"><strong>Meet FarmerGPT.</strong> The intelligence platform built for your farm.</p>
@@ -5372,9 +5766,18 @@
                         <h4 class="decision-heading" id="decision-heading">Emergency Vector Control Protocol</h4>
                       </div>
                     </div>
-                    <div class="confidence-pill" id="confidence-pill">
-                      <span class="confidence-dot" aria-hidden="true"></span>
-                      <span id="confidence-val">98.4% Match</span>
+                    <div class="decision-actions-group">
+                      <div class="confidence-pill" id="confidence-pill">
+                        <span class="confidence-dot" aria-hidden="true"></span>
+                        <span id="confidence-val">98.4% Match</span>
+                      </div>
+                      <button class="cockpit-copy-btn" id="cockpit-copy-btn" type="button" aria-label="Copy Agronomic Advisory" title="Copy Advisory to clipboard">
+                        <svg class="copy-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        <span class="copy-label">Copy Directive</span>
+                      </button>
                     </div>
                   </div>
 
@@ -5493,6 +5896,15 @@
                   <h4 class="calc-verdict-title" id="calc-hp-verdict">45 HP &ndash; 50 HP (Dual Clutch)</h4>
                   <p class="calc-verdict-desc" id="calc-verdict-notes">Black cotton soil demands high PTO reserve
                     torque. Paired with a 6-foot (42-blade) multi-speed rotavator to prevent engine lugging.</p>
+                  <div class="calc-efficiency-wrap" id="calc-efficiency-wrap">
+                    <div class="calc-eff-header">
+                      <span class="calc-eff-title">Power-to-Implement Efficiency Envelope</span>
+                      <strong class="calc-eff-percent" id="calc-eff-percent">98% Optimal</strong>
+                    </div>
+                    <div class="calc-eff-track">
+                      <div class="calc-eff-bar" id="calc-eff-bar" style="width: 98%;"></div>
+                    </div>
+                  </div>
                 </div>
 
                 <div class="calc-metric-grid">
@@ -6259,6 +6671,27 @@
     const mobileLinks = document.querySelectorAll('.mobile-nav-item, .mobile-cta-btn');
     const navTrackLinks = document.querySelectorAll('.nav-track .nav-link');
 
+    // ==========================================
+    // TOAST NOTIFICATION SYSTEM
+    // ==========================================
+    function showToast(message, type = 'info') {
+      const container = document.getElementById('fc-toast-container');
+      if (!container) return;
+      const toast = document.createElement('div');
+      toast.className = 'fc-toast toast-' + type;
+      toast.setAttribute('role', 'status');
+      toast.innerHTML = message;
+      container.appendChild(toast);
+
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(12px) scale(0.96)';
+        setTimeout(() => {
+          if (toast.parentNode) toast.parentNode.removeChild(toast);
+        }, 250);
+      }, 3000);
+    }
+
     // 0. Theme Toggle Controller (Sun vs Moon)
     const themeToggles = document.querySelectorAll('.theme-toggle');
 
@@ -6284,6 +6717,7 @@
       });
 
       applyTheme(next);
+      showToast(next === 'dark' ? '🌙 Obsidian Dark Mode' : '☀️ Editorial Light Mode', 'theme');
     }
 
     themeToggles.forEach(btn => {
@@ -6815,10 +7249,62 @@
       const micBtn = document.getElementById("sim-mic-btn");
       const simSection = document.getElementById("hero-simulator");
 
+      let audioCtx = null;
+      let audioCountdown = null;
+      let audioNoteInterval = null;
+
+      function playKisanVoiceSynth() {
+        try {
+          const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+          if (!AudioContextClass) return;
+          if (!audioCtx) audioCtx = new AudioContextClass();
+          if (audioCtx.state === 'suspended') audioCtx.resume();
+
+          const freqs = [329.63, 392.00, 440.00, 523.25, 587.33, 659.25];
+          let noteIdx = 0;
+
+          const playHarmonic = () => {
+            if (!isAudioPlaying || !audioCtx) return;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            const filter = audioCtx.createBiquadFilter();
+
+            filter.type = 'lowpass';
+            filter.frequency.setValueAtTime(950, audioCtx.currentTime);
+
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(freqs[noteIdx % freqs.length], audioCtx.currentTime);
+            noteIdx++;
+
+            gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.045, audioCtx.currentTime + 0.08);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.42);
+
+            osc.connect(filter);
+            filter.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.45);
+          };
+
+          playHarmonic();
+          audioNoteInterval = setInterval(playHarmonic, 480);
+        } catch (e) { }
+      }
+
       function stopVoicePlayback() {
         if (audioTimer) {
           clearTimeout(audioTimer);
           audioTimer = null;
+        }
+        if (audioCountdown) {
+          clearInterval(audioCountdown);
+          audioCountdown = null;
+        }
+        if (audioNoteInterval) {
+          clearInterval(audioNoteInterval);
+          audioNoteInterval = null;
         }
         isAudioPlaying = false;
         if (voiceBtn) voiceBtn.classList.remove("is-playing");
@@ -6837,16 +7323,58 @@
         isAudioPlaying = true;
         if (voiceBtn) voiceBtn.classList.add("is-playing");
         if (voicePlayIcon) voicePlayIcon.textContent = "⏹";
-        if (voiceLabel) voiceLabel.textContent = "Playing Kisan Voice...";
 
-        // Simulate audio playback duration
+        let remaining = 8;
+        const updateTimerLabel = () => {
+          if (voiceLabel) voiceLabel.textContent = `Playing Kisan Voice (${remaining}s)...`;
+        };
+        updateTimerLabel();
+
+        playKisanVoiceSynth();
+
+        audioCountdown = setInterval(() => {
+          remaining--;
+          if (remaining <= 0) {
+            stopVoicePlayback();
+          } else {
+            updateTimerLabel();
+          }
+        }, 1000);
+
         audioTimer = setTimeout(() => {
           stopVoicePlayback();
-        }, 6200);
+        }, remaining * 1000 + 200);
       }
 
       if (voiceBtn) {
         voiceBtn.addEventListener("click", toggleVoicePlayback);
+      }
+
+      // Copy Directive Action
+      const copyBtn = document.getElementById("cockpit-copy-btn");
+      if (copyBtn) {
+        copyBtn.addEventListener("click", () => {
+          const heading = document.getElementById("decision-heading")?.textContent || "Advisory";
+          const body = document.getElementById("sim-ai-response")?.innerText || "";
+          const economic = document.getElementById("economic-val")?.textContent || "";
+          const tags = Array.from(document.querySelectorAll("#sim-ai-tags .cockpit-tag")).map(t => t.textContent).join(" • ");
+
+          const copyText = `🌾 FarmerGPT Agronomic Directive: ${heading}\n\n${body}\n\n💰 Direct Impact: ${economic}\n🏷️ Context: ${tags}\n\nGenerated by Farmers Cafe (www.farmerscafe.co.in)`;
+
+          navigator.clipboard.writeText(copyText).then(() => {
+            copyBtn.classList.add("copied");
+            const label = copyBtn.querySelector(".copy-label");
+            if (label) label.textContent = "Copied!";
+            showToast("📋 Agronomic Directive copied to clipboard!", "success");
+
+            setTimeout(() => {
+              copyBtn.classList.remove("copied");
+              if (label) label.textContent = "Copy Directive";
+            }, 2200);
+          }).catch(() => {
+            showToast("Could not copy to clipboard", "error");
+          });
+        });
       }
 
       function render(scenarioKey, langKey, animated = false) {
@@ -6885,11 +7413,27 @@
           }
         }
 
-        // 4. Update Reasoning Stream
+        // 4. Update Reasoning Stream with sequential neural animation
         if (scenario.reasoning && scenario.reasoning.length >= 3) {
           if (step1) step1.textContent = scenario.reasoning[0][langKey] || scenario.reasoning[0].en;
           if (step2) step2.textContent = scenario.reasoning[1][langKey] || scenario.reasoning[1].en;
           if (step3) step3.textContent = scenario.reasoning[2][langKey] || scenario.reasoning[2].en;
+
+          if (animated) {
+            const steps = [step1, step2, step3].filter(Boolean);
+            steps.forEach((st, i) => {
+              const p = st.closest('.reasoning-step');
+              if (p) {
+                p.style.opacity = '0';
+                p.style.transform = 'translateX(-8px)';
+                setTimeout(() => {
+                  p.style.transition = 'all 0.28s cubic-bezier(0.16, 1, 0.3, 1)';
+                  p.style.opacity = '1';
+                  p.style.transform = 'translateX(0)';
+                }, i * 90);
+              }
+            });
+          }
         }
 
         // 5. Update Executive Directive
@@ -6959,32 +7503,34 @@
       // Microphone button: simulates voice recognition & audio wave ripple
       if (micBtn) {
         micBtn.addEventListener("click", () => {
-          micBtn.classList.add("is-listening");
+          micBtn.classList.add("mic-active");
+          showToast("🎙️ Simulating voice query in regional dialect...", "info");
+
+          const sampleVoicePrompt = currentLang === "hi"
+            ? "कपास में पत्ता मरोड़ रोग और रस चूसक कीट का सही छिड़काव क्या है?"
+            : currentLang === "mr"
+            ? "कापसातील पाने मुरडणे आणि रसशोषक किडींवर कोणती फवारणी करावी?"
+            : currentLang === "pa"
+            ? "ਨਰਮੇ ਵਿੱਚ ਪੱਤਾ ਮਰੋੜ ਰੋਗ ਤੇ ਕਿਹੜੀ ਸਪਰੇਅ ਕਰਨੀ ਚਾਹੀਦੀ ਹੈ?"
+            : "What is the optimal chemical control for leaf curl virus and whitefly?";
+
           if (inputField) {
-            inputField.placeholder = "Listening in Hindi / Marathi / English...";
             inputField.value = "";
+            inputField.placeholder = "Transcribing vernacular voice...";
           }
 
-          setTimeout(() => {
-            micBtn.classList.remove("is-listening");
-            const sampleVoicePrompt = currentLang === "hi"
-              ? "कपास में पत्ता मरोड़ रोग और रस चूसक कीट का सही छिड़काव क्या है?"
-              : currentLang === "mr"
-              ? "कापसातील पाने मुरडणे आणि रसशोषक किडींवर कोणती फवारणी करावी?"
-              : currentLang === "pa"
-              ? "ਨਰਮੇ ਵਿੱਚ ਪੱਤਾ ਮਰੋੜ ਰੋਗ ਤੇ ਕਿਹੜੀ ਸਪਰੇਅ ਕਰਨੀ ਚਾਹੀਦੀ ਹੈ?"
-              : "What is the optimal chemical control for leaf curl virus and whitefly?";
-
-            if (inputField) {
-              inputField.value = sampleVoicePrompt;
-              inputField.placeholder = "Ask FarmerGPT in English, हिंदी, मराठी, ਪੰਜਾਬੀ...";
+          let charIdx = 0;
+          const typeTimer = setInterval(() => {
+            if (charIdx < sampleVoicePrompt.length) {
+              if (inputField) inputField.value += sampleVoicePrompt[charIdx];
+              charIdx++;
+            } else {
+              clearInterval(typeTimer);
+              micBtn.classList.remove("mic-active");
+              if (inputField) inputField.placeholder = "Ask FarmerGPT in English, हिंदी, मराठी, ਪੰਜਾਬੀ...";
+              if (customForm) customForm.dispatchEvent(new Event("submit"));
             }
-
-            // Simulate sending voice transcription
-            if (customForm) {
-              customForm.dispatchEvent(new Event("submit"));
-            }
-          }, 1100);
+          }, 24);
         });
       }
 
@@ -7172,6 +7718,21 @@
         if (fuelVal) fuelVal.textContent = fuelText;
         if (verdictNotes) verdictNotes.textContent = noteText;
         if (rationaleBox) rationaleBox.innerHTML = `<strong>FarmerGPT Logic:</strong> ${logicText}`;
+
+        const effPercentEl = document.getElementById('calc-eff-percent');
+        const effBarEl = document.getElementById('calc-eff-bar');
+
+        let effPercent = 95;
+        if (acres >= 10 && acres <= 28) {
+          effPercent = currentSoil === 'black' ? 98 : 96;
+        } else if (acres < 10) {
+          effPercent = currentSoil === 'black' ? 89 : 92;
+        } else {
+          effPercent = currentSoil === 'black' ? 96 : 94;
+        }
+
+        if (effPercentEl) effPercentEl.textContent = `${effPercent}% (Optimal Reserve Torque)`;
+        if (effBarEl) effBarEl.style.width = `${effPercent}%`;
       }
 
       acreageSlider.addEventListener('input', updateCalculator);
@@ -7225,33 +7786,15 @@
       tabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
           if (btn.classList.contains('tab-deactivated') || btn.getAttribute('aria-disabled') === 'true') {
+            const prodName = btn.querySelector('.tab-name')?.textContent || 'This product';
+            showToast(`🚜 <strong>${prodName}</strong> is in active engineering. Coming Soon in Phase 2!`, 'info');
+            btn.style.transform = 'scale(0.96)';
+            setTimeout(() => { btn.style.transform = ''; }, 180);
             return;
           }
           const prod = btn.getAttribute('data-product');
           switchProductTab(prod);
         });
-
-      // Wire up data-jump-product links (from Hero, Navbar, Footer)
-      document.querySelectorAll('[data-jump-product]').forEach(link => {
-        link.addEventListener('click', (e) => {
-          const prod = link.getAttribute('data-jump-product');
-          if (prod) {
-            switchProductTab(prod);
-          }
-        });
-      });
-
-      // Ensure FarmerGPT tab is active when navigating to any of its sub-modules
-      ['#equipment', '#capabilities', '#why', '#roadmap'].forEach(hash => {
-        document.querySelectorAll(`a[href="${hash}"]`).forEach(link => {
-          link.addEventListener('click', () => {
-            const fgptTab = document.querySelector('[data-product="farmergpt"]');
-            if (fgptTab && !fgptTab.classList.contains('active')) {
-              fgptTab.click();
-            }
-          });
-        });
-      });
 
         btn.addEventListener('keydown', (e) => {
           const tabs = Array.from(tabBtns);
@@ -7273,6 +7816,39 @@
             tabs[nextIdx].focus();
             tabs[nextIdx].click();
           }
+        });
+      });
+
+      // Wire up data-jump-product links (from Hero, Navbar, Footer)
+      document.querySelectorAll('[data-jump-product]').forEach(link => {
+        link.addEventListener('click', (e) => {
+          const prod = link.getAttribute('data-jump-product');
+          if (prod) {
+            switchProductTab(prod);
+          }
+        });
+      });
+
+      // Wire up hero matrix coming-soon chips
+      document.querySelectorAll('.matrix-satellite-chip.chip-coming-soon').forEach(chip => {
+        chip.addEventListener('click', (e) => {
+          e.preventDefault();
+          const name = chip.querySelector('.satellite-name')?.textContent || 'Architecture';
+          showToast(`⚡ <strong>${name}</strong> is in active development for the enterprise ecosystem.`, 'info');
+          chip.style.transform = 'scale(0.97)';
+          setTimeout(() => { chip.style.transform = ''; }, 180);
+        });
+      });
+
+      // Ensure FarmerGPT tab is active when navigating to any of its sub-modules
+      ['#equipment', '#capabilities', '#why', '#roadmap'].forEach(hash => {
+        document.querySelectorAll(`a[href="${hash}"]`).forEach(link => {
+          link.addEventListener('click', () => {
+            const fgptTab = document.querySelector('[data-product="farmergpt"]');
+            if (fgptTab && !fgptTab.classList.contains('active')) {
+              fgptTab.click();
+            }
+          });
         });
       });
     }
@@ -7576,7 +8152,58 @@
     initHeroSimulator();
     initProductTabs();
     initEquipmentCalculator();
+
+    // Floating Scroll to Top Pill
+    const floatingTop = document.getElementById('floating-top-pill');
+    if (floatingTop) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 600) {
+          floatingTop.classList.add('is-visible');
+        } else {
+          floatingTop.classList.remove('is-visible');
+        }
+      }, { passive: true });
+
+      floatingTop.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // Power-User Keyboard Shortcuts
+    document.addEventListener('keydown', (e) => {
+      const activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : '';
+      if (activeTag === 'input' || activeTag === 'textarea') {
+        if (e.key === 'Escape') {
+          document.activeElement.blur();
+        }
+        return;
+      }
+
+      if (e.key === 'd' || e.key === 'D' || e.key === 't' || e.key === 'T') {
+        toggleTheme();
+      } else if (e.key === '/') {
+        const simInput = document.getElementById('sim-input-field');
+        if (simInput) {
+          e.preventDefault();
+          simInput.focus();
+          showToast('⌨️ Terminal Focused', 'info');
+        }
+      } else if (e.key === 'Escape') {
+        if (mobileSheet && mobileSheet.classList.contains('is-open')) {
+          closeMobileSheet();
+        }
+      }
+    });
   </script>
+  <!-- World-Class UX Micro-Components: Toast Notification Container & Floating Scroll-to-Top -->
+  <div class="fc-toast-container" id="fc-toast-container" aria-live="polite" aria-atomic="true"></div>
+  <a href="#top" class="floating-top-pill" id="floating-top-pill" aria-label="Back to top" title="Scroll to top">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+    <span>Top</span>
+  </a>
 </body>
 
 </html>
