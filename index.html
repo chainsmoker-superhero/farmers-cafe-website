@@ -3757,6 +3757,685 @@
     [data-theme="dark"] svg circle[fill="#F3F8F4"] {
       fill: #102119 !important;
     }
+  
+    /* ============================================================
+       HERO ENTERPRISE ARCHITECTURE CARD
+       ============================================================ */
+    .hero-enterprise-wrap {
+      position: relative;
+      width: 100%;
+      min-height: 580px;
+      display: flex;
+      flex-direction: column;
+      align-self: start;
+    }
+
+    .hero-enterprise-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      padding: 26px;
+      border-radius: 26px;
+      background: linear-gradient(175deg, rgba(255, 255, 255, 0.96) 0%, rgba(246, 251, 247, 0.94) 100%);
+      border: 1px solid rgba(26, 127, 90, 0.2);
+      box-shadow: 0 24px 60px -12px rgba(19, 45, 35, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+      backdrop-filter: blur(20px);
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+
+    .enterprise-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    }
+
+    .enterprise-brand-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(26, 127, 90, 0.08);
+      border: 1px solid rgba(26, 127, 90, 0.18);
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+
+    .enterprise-live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10B981;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+      animation: pulse-dot 2s infinite ease-in-out;
+    }
+
+    .enterprise-version {
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--muted);
+      background: rgba(15, 23, 42, 0.04);
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .enterprise-matrix-hub {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .matrix-satellites-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .matrix-satellite-chip {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(15, 23, 42, 0.07);
+      text-decoration: none;
+      color: var(--text);
+      transition: all 220ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .matrix-satellite-chip:hover {
+      transform: translateX(4px);
+      border-color: rgba(26, 127, 90, 0.35);
+      background: #FFFFFF;
+      box-shadow: 0 8px 24px -4px rgba(19, 45, 35, 0.1);
+    }
+
+    .matrix-satellite-chip.active-chip {
+      background: linear-gradient(135deg, rgba(26, 127, 90, 0.08), rgba(212, 175, 55, 0.05));
+      border: 1.5px solid rgba(26, 127, 90, 0.35);
+      box-shadow: 0 6px 20px -4px rgba(26, 127, 90, 0.12);
+    }
+
+    .satellite-icon-col {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(15, 23, 42, 0.03);
+      border-radius: 8px;
+    }
+
+    .matrix-satellite-chip.active-chip .satellite-icon-col {
+      background: rgba(26, 127, 90, 0.14);
+    }
+
+    .satellite-info-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .satellite-name {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .satellite-tag {
+      font-size: 0.72rem;
+      color: var(--muted);
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .matrix-satellite-chip.active-chip .satellite-name {
+      color: var(--primary);
+    }
+
+    .satellite-arrow {
+      font-size: 0.88rem;
+      color: var(--muted);
+      font-weight: 700;
+      transition: transform 200ms ease;
+    }
+
+    .matrix-satellite-chip:hover .satellite-arrow {
+      transform: translateX(3px);
+      color: var(--primary);
+    }
+
+    .enterprise-stats-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(26, 127, 90, 0.05);
+      border: 1px solid rgba(26, 127, 90, 0.12);
+    }
+
+    .ent-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 2px;
+    }
+
+    .ent-num {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--primary);
+      font-family: var(--font-heading);
+    }
+
+    .ent-lbl {
+      font-size: 0.65rem;
+      color: var(--muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .enterprise-flagship-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 18px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      color: #FFFFFF;
+      text-decoration: none;
+      box-shadow: 0 10px 24px -6px rgba(15, 23, 42, 0.25);
+      transition: all 220ms ease;
+    }
+
+    .enterprise-flagship-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px -6px rgba(15, 23, 42, 0.35);
+    }
+
+    .cta-left {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .cta-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #10B981;
+    }
+
+    .enterprise-flagship-cta strong {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: #F8FAFC;
+    }
+
+    .enterprise-flagship-cta span:last-child {
+      font-size: 0.72rem;
+      color: #94A3B8;
+    }
+
+    .cta-btn-icon {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #10B981;
+      flex-shrink: 0;
+    }
+
+    /* ============================================================
+       FARMERGPT STUDIO & COCKPIT CONSOLIDATED TAB PANEL
+       ============================================================ */
+    #panel-farmergpt.product-tab-panel.active {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.15fr);
+      gap: 32px;
+      align-items: start;
+    }
+
+    .farmergpt-studio-col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .farmergpt-studio-header {
+      padding: 24px 26px;
+      border-radius: var(--radius-xl);
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(26, 127, 90, 0.16);
+      box-shadow: 0 16px 40px -10px rgba(19, 45, 35, 0.07);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .farmergpt-studio-header h3 {
+      font-size: clamp(1.5rem, 2.6vw, 2rem);
+      margin: 0;
+      color: var(--text);
+    }
+
+    .farmergpt-studio-tagline {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin: 0;
+    }
+
+    .farmergpt-studio-desc {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .farm-memory-spotlight {
+      padding: 22px 24px;
+      border-radius: var(--radius-xl);
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(26, 127, 90, 0.18);
+      box-shadow: 0 16px 40px -10px rgba(19, 45, 35, 0.07);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .memory-spotlight-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .memory-spotlight-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--primary);
+      background: rgba(26, 127, 90, 0.08);
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    .memory-spotlight-sub {
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: #10B981;
+    }
+
+    .farm-memory-spotlight h4 {
+      font-size: 1.1rem;
+      margin: 0;
+      color: var(--text);
+    }
+
+    .memory-grid-compact {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .memory-cell-compact {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(26, 127, 90, 0.04);
+      border: 1px solid rgba(26, 127, 90, 0.1);
+    }
+
+    .memory-cell-icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .memory-cell-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .memory-cell-text strong {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .memory-cell-text span {
+      font-size: 0.72rem;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+
+    .memory-spotlight-footer {
+      font-size: 0.76rem;
+      color: var(--muted);
+      font-style: italic;
+      padding-top: 4px;
+      border-top: 1px solid rgba(15, 23, 42, 0.06);
+    }
+
+    .studio-questions-block {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .studio-questions-header {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .studio-questions-header h4 {
+      font-size: 1.1rem;
+      margin: 0;
+      color: var(--text);
+    }
+
+    .studio-questions-header p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .studio-questions-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    .studio-question-card {
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      text-align: left;
+      font-family: inherit;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
+      transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .studio-question-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(26, 127, 90, 0.35);
+      background: #FFFFFF;
+      box-shadow: 0 8px 20px -4px rgba(19, 45, 35, 0.1);
+    }
+
+    .studio-question-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+    }
+
+    .studio-question-tag {
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--primary);
+    }
+
+    .studio-question-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .studio-question-card:hover .studio-question-action {
+      color: var(--primary);
+    }
+
+    .studio-question-text {
+      font-size: 0.8rem;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--text);
+      margin: 0;
+    }
+
+    .studio-voice-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 12px;
+      background: rgba(26, 127, 90, 0.06);
+      border: 1px solid rgba(26, 127, 90, 0.14);
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--primary);
+      flex-wrap: wrap;
+    }
+
+    .farmergpt-simulator-col {
+      position: sticky;
+      top: 92px;
+      align-self: start;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 720px;
+      max-height: calc(100vh - 120px);
+    }
+
+    .farmergpt-simulator-col .agri-cockpit {
+      height: 100%;
+      max-height: 100%;
+    }
+
+    @media (max-width: 1080px) {
+      #panel-farmergpt.product-tab-panel.active {
+        grid-template-columns: 1fr;
+      }
+
+      .farmergpt-simulator-col {
+        position: relative;
+        top: 0;
+        height: auto;
+        min-height: 640px;
+        max-height: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .memory-grid-compact {
+        grid-template-columns: 1fr;
+      }
+
+      .studio-questions-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Dark Mode Overrides for Hero Enterprise & FarmerGPT Studio */
+    [data-theme="dark"] .hero-enterprise-card {
+      background: linear-gradient(175deg, rgba(14, 27, 20, 0.96) 0%, rgba(10, 20, 15, 0.98) 100%);
+      border-color: rgba(46, 204, 113, 0.24);
+      box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+    }
+
+    [data-theme="dark"] .enterprise-card-header {
+      border-bottom-color: rgba(255, 255, 255, 0.08);
+    }
+
+    [data-theme="dark"] .enterprise-brand-pill {
+      background: rgba(46, 204, 113, 0.12);
+      border-color: rgba(46, 204, 113, 0.28);
+      color: #2ECC71;
+    }
+
+    [data-theme="dark"] .enterprise-version {
+      background: rgba(255, 255, 255, 0.06);
+      color: #94A3B8;
+    }
+
+    [data-theme="dark"] .matrix-satellite-chip {
+      background: rgba(18, 36, 27, 0.85);
+      border-color: rgba(255, 255, 255, 0.08);
+      color: #F1F5F2;
+    }
+
+    [data-theme="dark"] .matrix-satellite-chip:hover {
+      background: rgba(24, 48, 36, 0.95);
+      border-color: rgba(46, 204, 113, 0.4);
+    }
+
+    [data-theme="dark"] .matrix-satellite-chip.active-chip {
+      background: linear-gradient(135deg, rgba(46, 204, 113, 0.14), rgba(212, 175, 55, 0.08));
+      border-color: rgba(46, 204, 113, 0.4);
+    }
+
+    [data-theme="dark"] .satellite-name {
+      color: #F1F5F2;
+    }
+
+    [data-theme="dark"] .matrix-satellite-chip.active-chip .satellite-name {
+      color: #2ECC71;
+    }
+
+    [data-theme="dark"] .satellite-tag {
+      color: #94A3B8;
+    }
+
+    [data-theme="dark"] .enterprise-stats-strip {
+      background: rgba(18, 36, 27, 0.85);
+      border-color: rgba(46, 204, 113, 0.2);
+    }
+
+    [data-theme="dark"] .ent-num {
+      color: #2ECC71;
+    }
+
+    [data-theme="dark"] .ent-lbl {
+      color: #94A3B8;
+    }
+
+    [data-theme="dark"] .farmergpt-studio-header {
+      background: rgba(18, 36, 27, 0.85);
+      border-color: rgba(46, 204, 113, 0.2);
+    }
+
+    [data-theme="dark"] .farmergpt-studio-header h3 {
+      color: #F1F5F2;
+    }
+
+    [data-theme="dark"] .farmergpt-studio-tagline {
+      color: #2ECC71;
+    }
+
+    [data-theme="dark"] .farmergpt-studio-desc {
+      color: #94A3B8;
+    }
+
+    [data-theme="dark"] .farm-memory-spotlight {
+      background: rgba(18, 36, 27, 0.85);
+      border-color: rgba(46, 204, 113, 0.2);
+    }
+
+    [data-theme="dark"] .memory-spotlight-badge {
+      background: rgba(46, 204, 113, 0.14);
+      color: #2ECC71;
+    }
+
+    [data-theme="dark"] .farm-memory-spotlight h4 {
+      color: #F1F5F2;
+    }
+
+    [data-theme="dark"] .memory-cell-compact {
+      background: rgba(14, 27, 20, 0.7);
+      border-color: rgba(46, 204, 113, 0.16);
+    }
+
+    [data-theme="dark"] .memory-cell-text strong {
+      color: #F1F5F2;
+    }
+
+    [data-theme="dark"] .memory-cell-text span {
+      color: #94A3B8;
+    }
+
+    [data-theme="dark"] .memory-spotlight-footer {
+      border-top-color: rgba(255, 255, 255, 0.08);
+      color: #94A3B8;
+    }
+
+    [data-theme="dark"] .studio-questions-header h4 {
+      color: #F1F5F2;
+    }
+
+    [data-theme="dark"] .studio-questions-header p {
+      color: #94A3B8;
+    }
+
+    [data-theme="dark"] .studio-question-card {
+      background: rgba(18, 36, 27, 0.85);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    [data-theme="dark"] .studio-question-card:hover {
+      background: rgba(24, 48, 36, 0.95);
+      border-color: rgba(46, 204, 113, 0.4);
+    }
+
+    [data-theme="dark"] .studio-question-tag {
+      color: #2ECC71;
+    }
+
+    [data-theme="dark"] .studio-question-text {
+      color: #F1F5F2;
+    }
+
+    [data-theme="dark"] .studio-question-action {
+      color: #94A3B8;
+    }
+
+    [data-theme="dark"] .studio-voice-strip {
+      background: rgba(18, 36, 27, 0.85);
+      border-color: rgba(46, 204, 113, 0.2);
+      color: #2ECC71;
+    }
+
   </style>
 </head>
 
@@ -3799,16 +4478,16 @@
         <nav class="nav-track" id="site-menu" aria-label="Main menu">
           <div class="nav-links-wrap">
             <a class="nav-link active" href="#top" data-section="top">Overview</a>
-            <a class="nav-link" href="#hero-simulator" data-section="hero-simulator">
-              Simulator
+            <a class="nav-link" href="#ecosystem" data-section="ecosystem" data-jump-product="farmergpt">
+              FarmerGPT
               <span class="nav-link-badge">Live</span>
             </a>
             <a class="nav-link" href="#ecosystem" data-section="ecosystem">Ecosystem</a>
-            <a class="nav-link" href="#questions" data-section="questions">Guidance</a>
-            <a class="nav-link" href="#farmergpt" data-section="farmergpt">Farm Memory</a>
             <a class="nav-link" href="#equipment" data-section="equipment">Equipment</a>
             <a class="nav-link" href="#capabilities" data-section="capabilities">Capabilities</a>
+            <a class="nav-link" href="#why" data-section="why">Why Us</a>
             <a class="nav-link" href="#roadmap" data-section="roadmap">Roadmap</a>
+            <a class="nav-link" href="#roots" data-section="roots">Roots</a>
             <a class="nav-link" href="#contact" data-section="contact">Contact</a>
           </div>
         </nav>
@@ -3888,53 +4567,60 @@
           </div>
 
           <div class="mobile-nav-grid">
-            <a class="mobile-nav-item" href="#hero-simulator">
-              <span class="mobile-item-icon">⚡</span>
+            <a class="mobile-nav-item" href="#ecosystem" data-jump-product="farmergpt">
+              <span class="mobile-item-icon">🌿</span>
               <div class="mobile-item-text">
-                <strong>Live AI Simulator</strong>
-                <span>Instant answers in EN, HI, MR, PA</span>
+                <strong>FarmerGPT Live Studio</strong>
+                <span>AI Agronomist, memory &amp; simulator</span>
               </div>
             </a>
             <a class="mobile-nav-item" href="#ecosystem">
               <span class="mobile-item-icon">🏢</span>
               <div class="mobile-item-text">
-                <strong>Parent &amp; Products Ecosystem</strong>
-                <span>Alphabet model: FarmerGPT &amp; future tools</span>
-              </div>
-            </a>
-            <a class="mobile-nav-item" href="#questions">
-              <span class="mobile-item-icon">🌾</span>
-              <div class="mobile-item-text">
-                <strong>Practical Field Guidance</strong>
-                <span>8 clickable farm questions</span>
-              </div>
-            </a>
-            <a class="mobile-nav-item" href="#farmergpt">
-              <span class="mobile-item-icon">🧠</span>
-              <div class="mobile-item-text">
-                <strong>Farm Memory System</strong>
-                <span>Persistent land &amp; crop context</span>
+                <strong>Parent &amp; Products Portfolio</strong>
+                <span>Farmers Cafe parent enterprise &amp; tools</span>
               </div>
             </a>
             <a class="mobile-nav-item" href="#equipment">
               <span class="mobile-item-icon">🚜</span>
               <div class="mobile-item-text">
                 <strong>Equipment Sizing Calculator</strong>
-                <span>Tractor HP &amp; implement matcher</span>
+                <span>Soil-matched HP and implements</span>
               </div>
             </a>
             <a class="mobile-nav-item" href="#capabilities">
               <span class="mobile-item-icon">🛡️</span>
               <div class="mobile-item-text">
-                <strong>Platform Capabilities</strong>
-                <span>Diagnosis, weather, mandi intel</span>
+                <strong>Core Capabilities</strong>
+                <span>Agronomy, radar &amp; machinery models</span>
+              </div>
+            </a>
+            <a class="mobile-nav-item" href="#why">
+              <span class="mobile-item-icon">🌱</span>
+              <div class="mobile-item-text">
+                <strong>Why We Exist</strong>
+                <span>Purpose-built for Indian agriculture</span>
               </div>
             </a>
             <a class="mobile-nav-item" href="#roadmap">
               <span class="mobile-item-icon">🗺️</span>
               <div class="mobile-item-text">
-                <strong>Roadmap</strong>
-                <span>Phased agricultural ecosystem</span>
+                <strong>Vision &amp; Roadmap</strong>
+                <span>The path to autonomous agriculture</span>
+              </div>
+            </a>
+            <a class="mobile-nav-item" href="#roots">
+              <span class="mobile-item-icon">🌾</span>
+              <div class="mobile-item-text">
+                <strong>Founder Roots</strong>
+                <span>Ground truth from the black cotton soil</span>
+              </div>
+            </a>
+            <a class="mobile-nav-item" href="#contact">
+              <span class="mobile-item-icon">📬</span>
+              <div class="mobile-item-text">
+                <strong>Get Early Access</strong>
+                <span>Join the pilot cohort</span>
               </div>
             </a>
           </div>
@@ -3958,36 +4644,384 @@
         <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
         <div class="container hero-grid">
           <div class="hero-copy reveal">
-            <span class="eyebrow">Farmers Cafe</span>
-            <h1>The Future of Farming <span class="headline-accent">is Intelligent.</span></h1>
-            <p class="hero-subhead"><strong>Meet FarmerGPT.</strong> The intelligence platform built for your farm.</p>
-            <p class="hero-desc">An AI-powered agricultural intelligence platform that understands your farm, remembers
-              what matters, and helps you make better decisions across crops, weather, machinery, markets, and farm
-              operations.</p>
+            <span class="eyebrow">Farmers Cafe Enterprise</span>
+            <h1>The Sovereign Deep-Tech Enterprise <span class="headline-accent">for Agriculture.</span></h1>
+            <p class="hero-subhead"><strong>Farmers Cafe</strong> architects sovereign, field-grounded artificial intelligence for India's 140 million agriculturalists.</p>
+            <p class="hero-desc">Starting with our flagship conversational agronomist <strong>FarmerGPT</strong>, we build an interconnected ecosystem of sovereign intelligence&mdash;spanning farm ERP, computer vision pathology, mandi price arbitrage, and rural credit underwriting.</p>
             <div class="hero-actions">
-              <a class="button button-primary" href="#contact">Get Early Access</a>
-              <a class="button button-secondary" href="#questions">What It Helps With</a>
-              <a class="button button-secondary" href="#farmergpt">Farm Memory</a>
-              <a class="button button-secondary" href="#equipment">Equipment</a>
+              <a class="button button-primary" href="#ecosystem" data-jump-product="farmergpt">Experience FarmerGPT &nearr;</a>
+              <a class="button button-secondary" href="#ecosystem">Explore All 5 Products &darr;</a>
+              <a class="button button-secondary" href="#equipment">Equipment Calculator</a>
+              <a class="button button-secondary" href="#contact">Contact Parent Lab</a>
             </div>
             <div class="hero-meta" aria-label="Platform highlights">
               <div class="hero-stat">
-                <strong>Farm Memory</strong>
-                <span>Remembers your land &amp; crops</span>
+                <strong>Sovereign AI</strong>
+                <span>Field-grounded foundation models for agriculture</span>
               </div>
               <div class="hero-stat">
-                <strong>Equipment</strong>
-                <span>Machinery advice for your acres</span>
+                <strong>Flagship: FarmerGPT</strong>
+                <span>Stateful farm memory &amp; Doppler radar cockpit</span>
               </div>
               <div class="hero-stat">
-                <strong>Multilingual</strong>
-                <span>Speak naturally in your language</span>
+                <strong>Interconnected</strong>
+                <span>5 specialized platforms for the entire farm lifecycle</span>
               </div>
             </div>
           </div>
 
-          <div class="hero-cockpit-wrap reveal" id="hero-cockpit-wrapper">
-            <div class="agri-cockpit hero-simulator-container" id="hero-simulator" role="region" aria-label="FarmerGPT Autonomous Agricultural Cockpit">
+          <div class="hero-enterprise-wrap reveal" id="hero-enterprise-wrapper">
+            <div class="hero-enterprise-card" role="region" aria-label="Farmers Cafe Parent Enterprise Architecture">
+              <div class="enterprise-card-header">
+                <div class="enterprise-brand-pill">
+                  <span class="enterprise-live-dot" aria-hidden="true"></span>
+                  <span>Deep-Tech Parent Architecture</span>
+                </div>
+                <span class="enterprise-version">v2.6 Live</span>
+              </div>
+
+              <div class="enterprise-matrix-hub">
+                <div class="matrix-satellites-grid">
+                  <a href="#ecosystem" class="matrix-satellite-chip active-chip" data-jump-product="farmergpt" title="Experience FarmerGPT Flagship">
+                    <div class="satellite-icon-col">🌿</div>
+                    <div class="satellite-info-col">
+                      <div class="satellite-name">FarmerGPT</div>
+                      <div class="satellite-tag">Live Flagship &bull; Autonomous AI Agronomist &amp; Telemetry</div>
+                    </div>
+                    <span class="satellite-arrow">&rarr;</span>
+                  </a>
+
+                  <a href="#ecosystem" class="matrix-satellite-chip" data-jump-product="farmos" title="Explore FarmOS">
+                    <div class="satellite-icon-col">🚜</div>
+                    <div class="satellite-info-col">
+                      <div class="satellite-name">FarmOS</div>
+                      <div class="satellite-tag">Autonomous Farm ERP &bull; IoT Sensor Fusion &amp; Telematics</div>
+                    </div>
+                    <span class="satellite-arrow">&rarr;</span>
+                  </a>
+
+                  <a href="#ecosystem" class="matrix-satellite-chip" data-jump-product="kisanvision" title="Explore KisanVision">
+                    <div class="satellite-icon-col">👁️</div>
+                    <div class="satellite-info-col">
+                      <div class="satellite-name">KisanVision</div>
+                      <div class="satellite-tag">Edge Computer Vision &bull; Real-Time Pathology &amp; Grading</div>
+                    </div>
+                    <span class="satellite-arrow">&rarr;</span>
+                  </a>
+
+                  <a href="#ecosystem" class="matrix-satellite-chip" data-jump-product="mandipulse" title="Explore MandiPulse">
+                    <div class="satellite-icon-col">📊</div>
+                    <div class="satellite-info-col">
+                      <div class="satellite-name">MandiPulse</div>
+                      <div class="satellite-tag">Predictive APMC Arbitrage &bull; Multi-State Price Models</div>
+                    </div>
+                    <span class="satellite-arrow">&rarr;</span>
+                  </a>
+
+                  <a href="#ecosystem" class="matrix-satellite-chip" data-jump-product="agricredit" title="Explore AgriCredit AI">
+                    <div class="satellite-icon-col">💳</div>
+                    <div class="satellite-info-col">
+                      <div class="satellite-name">AgriCredit AI</div>
+                      <div class="satellite-tag">Rural FinTech &bull; Satellite Cashflow &amp; Yield Underwriting</div>
+                    </div>
+                    <span class="satellite-arrow">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Live Telemetry / Enterprise Strip -->
+              <div class="enterprise-stats-strip">
+                <div class="ent-stat">
+                  <span class="ent-num">140M+</span>
+                  <span class="ent-lbl">Indian Farmers</span>
+                </div>
+                <div class="ent-stat">
+                  <span class="ent-num">10Hz</span>
+                  <span class="ent-lbl">Radar Stream</span>
+                </div>
+                <div class="ent-stat">
+                  <span class="ent-num">4+</span>
+                  <span class="ent-lbl">Vernaculars</span>
+                </div>
+                <div class="ent-stat">
+                  <span class="ent-num">98.4%</span>
+                  <span class="ent-lbl">Match Rate</span>
+                </div>
+              </div>
+
+              <!-- Direct Jump to Flagship Product Banner -->
+              <a href="#ecosystem" class="enterprise-flagship-cta" data-jump-product="farmergpt">
+                <div class="cta-left">
+                  <span class="cta-badge">Flagship 01</span>
+                  <strong>Experience FarmerGPT Cockpit Simulator</strong>
+                  <span>Autonomous field decision engine with stateful farm memory &rarr;</span>
+                </div>
+                <span class="cta-btn-icon">&darr;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           FARMERS CAFE PARENT ENTERPRISE & SMART PRODUCT ECOSYSTEM
+           ============================================================ -->
+      <section id="ecosystem" class="ecosystem-section">
+        <div class="container">
+          <!-- 1. Farmers Cafe Parent Enterprise Architecture Header -->
+          <div class="section-heading reveal">
+            <span class="eyebrow">Parent Deep-Tech Enterprise &bull; Sovereign Agricultural Intelligence</span>
+            <h2>Farmers Cafe is the parent company. FarmerGPT is our first breakthrough.</h2>
+            <p><strong>Farmers Cafe</strong> operates as the parent deep-tech enterprise. We architect sovereign,
+              field-grounded AI systems for India's 140 million agriculturalists&mdash;starting with FarmerGPT for real-time agronomic decisions,
+              and systematically expanding across the entire farm lifecycle through specialized, interconnected intelligence platforms.</p>
+          </div>
+
+          <!-- 2. Parent Holding Enterprise Architecture Banner -->
+          <div class="parent-architecture-card reveal">
+            <div class="arch-brand-lead">
+              <div class="parent-badge-pill">
+                <span class="parent-dot" aria-hidden="true"></span>
+                <span>Farmers Cafe Group Architecture</span>
+              </div>
+              <h3 class="arch-tagline">One parent enterprise. A unified ecosystem of specialized agricultural intelligences.</h3>
+            </div>
+
+            <div class="arch-pillars-grid">
+              <div class="arch-pillar-cell">
+                <div class="pillar-num">01 / Parent Entity</div>
+                <h4>Farmers Cafe Holdings</h4>
+                <p>Central R&amp;D engine, proprietary sovereign soil and crop datasets, radar pipelines, and vernacular multi-modal intelligence models.</p>
+              </div>
+              <div class="arch-pillar-cell highlighted">
+                <div class="pillar-num">02 / Flagship Product</div>
+                <h4>FarmerGPT (Live)</h4>
+                <p>The autonomous field advisor. Stateful farm memory, Doppler telemetry radar, machinery HP sizing, and regional kisan voice companion.</p>
+              </div>
+              <div class="arch-pillar-cell">
+                <div class="pillar-num">03 / The Horizon</div>
+                <h4>Future Products</h4>
+                <p>Interconnected platforms spanning farm ERP (FarmOS), edge pathology (KisanVision), mandi arbitrage (MandiPulse), and rural credit (AgriCredit AI).</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Smart Product Tabs Component -->
+          <div class="ecosystem-tabs-wrapper reveal" id="ecosystem-tabs-block">
+            <div class="ecosystem-tabs-header">
+              <div class="tabs-label-group">
+                <span class="tabs-pre-label">Explore Portfolio</span>
+                <h3 class="tabs-main-title">Products in the Farmers Cafe Ecosystem</h3>
+              </div>
+
+              <!-- Tab Switcher Navigation -->
+              <div class="product-tabs-bar" role="tablist" aria-label="Farmers Cafe Products Portfolio">
+                <button class="product-tab-btn active" data-product="farmergpt" role="tab" aria-selected="true" aria-controls="panel-farmergpt" id="tab-farmergpt" type="button">
+                  <span class="tab-icon">🌿</span>
+                  <span class="tab-name">FarmerGPT</span>
+                  <span class="tab-badge badge-live">Live Flagship</span>
+                </button>
+                <button class="product-tab-btn" data-product="farmos" role="tab" aria-selected="false" aria-controls="panel-farmos" id="tab-farmos" type="button">
+                  <span class="tab-icon">🚜</span>
+                  <span class="tab-name">FarmOS</span>
+                  <span class="tab-badge badge-dev">Operating System</span>
+                </button>
+                <button class="product-tab-btn" data-product="kisanvision" role="tab" aria-selected="false" aria-controls="panel-kisanvision" id="tab-kisanvision" type="button">
+                  <span class="tab-icon">👁️</span>
+                  <span class="tab-name">KisanVision</span>
+                  <span class="tab-badge badge-pilot">Computer Vision</span>
+                </button>
+                <button class="product-tab-btn" data-product="mandipulse" role="tab" aria-selected="false" aria-controls="panel-mandipulse" id="tab-mandipulse" type="button">
+                  <span class="tab-icon">📊</span>
+                  <span class="tab-name">MandiPulse</span>
+                  <span class="tab-badge badge-market">Market Arbitrage</span>
+                </button>
+                <button class="product-tab-btn" data-product="agricredit" role="tab" aria-selected="false" aria-controls="panel-agricredit" id="tab-agricredit" type="button">
+                  <span class="tab-icon">💳</span>
+                  <span class="tab-name">AgriCredit AI</span>
+                  <span class="tab-badge badge-fin">Rural FinTech</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Tab Panels Stage -->
+            <div class="product-panels-stage">
+
+              <!-- PANEL 1: FarmerGPT -->
+              <div class="product-tab-panel active" data-panel="farmergpt" id="panel-farmergpt" role="tabpanel" aria-labelledby="tab-farmergpt">
+                <div class="farmergpt-studio-col">
+                  <!-- Header Block -->
+                  <div class="farmergpt-studio-header">
+                    <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;">
+                      <span class="product-lineage-badge">Product 01 &bull; Live Flagship &bull; v2.6</span>
+                      <span style="font-size: 0.74rem; font-weight: 700; color: #10B981; background: rgba(16, 185, 129, 0.1); padding: 4px 10px; border-radius: 999px;">● 10Hz Telemetry Active</span>
+                    </div>
+                    <div>
+                      <h3>FarmerGPT</h3>
+                      <p class="farmergpt-studio-tagline">Autonomous Agricultural Intelligence &amp; Field Companion OS</p>
+                    </div>
+                    <p class="farmergpt-studio-desc">FarmerGPT is the pioneer flagship product of Farmers Cafe. Built specifically for farmers in India, it pairs persistent farm digital twins with real-time Doppler radar telemetry, tractor implement engineering algorithms, and vernacular Kisan voice intelligence in Hindi, Marathi, Punjabi, and English.</p>
+                  </div>
+
+                  <!-- Farm Memory Spotlight (Elevated from standalone section) -->
+                  <div class="farm-memory-spotlight">
+                    <div class="memory-spotlight-top">
+                      <span class="memory-spotlight-badge">🧠 Stateful Farm Memory</span>
+                      <span class="memory-spotlight-sub">● Remembers Every Season</span>
+                    </div>
+                    <h4>Persistent Digital Twin &bull; Never Forgets Your Land</h4>
+                    <div class="memory-grid-compact">
+                      <div class="memory-cell-compact">
+                        <span class="memory-cell-icon">📍</span>
+                        <div class="memory-cell-text">
+                          <strong>Your Land &amp; Soil Twin</strong>
+                          <span>18.4 Ac Vertisol, sub-plot zones &amp; 24-day sowing history</span>
+                        </div>
+                      </div>
+                      <div class="memory-cell-compact">
+                        <span class="memory-cell-icon">🚜</span>
+                        <div class="memory-cell-text">
+                          <strong>Your Equipment Fleet</strong>
+                          <span>45 HP Mahindra tractor, PTO torque rating &amp; implement pairs</span>
+                        </div>
+                      </div>
+                      <div class="memory-cell-compact">
+                        <span class="memory-cell-icon">💧</span>
+                        <div class="memory-cell-text">
+                          <strong>Field Conditions &amp; Moisture</strong>
+                          <span>48% saturation, past yields &amp; localized fertilizer records</span>
+                        </div>
+                      </div>
+                      <div class="memory-cell-compact">
+                        <span class="memory-cell-icon">💬</span>
+                        <div class="memory-cell-text">
+                          <strong>Longitudinal Dialogue</strong>
+                          <span>Remembers every symptom &amp; decision—never re-asks</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="memory-spotlight-footer">
+                      Every recommendation is grounded in your farm's verified profile rather than generic web advice.
+                    </div>
+                  </div>
+
+                  <!-- Practical Field Guidance Scenarios (Elevated from standalone section) -->
+                  <div class="studio-questions-block">
+                    <div class="studio-questions-header">
+                      <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+                        <h4>Interactive Guidance Scenarios</h4>
+                        <span style="font-size: 0.72rem; font-weight: 700; color: var(--primary);">8 Grounded Scenarios</span>
+                      </div>
+                      <p>Click any scenario below to execute live agronomic reasoning in the simulator beside &rarr;</p>
+                    </div>
+
+                    <div class="studio-questions-grid questions-grid">
+                      <article class="question-card studio-question-card" data-scenario="crop_planning" role="button" tabindex="0"
+                        aria-label="Ask FarmerGPT: What should I grow this season for better returns on my soil?">
+                        <div class="studio-question-top">
+                          <span class="studio-question-tag">Crop Planning</span>
+                          <span class="studio-question-action" aria-hidden="true">
+                            Run &rarr;
+                          </span>
+                        </div>
+                        <p class="studio-question-text">&ldquo;What should I grow this season for better returns on my soil?&rdquo;</p>
+                      </article>
+
+                      <article class="question-card studio-question-card" data-scenario="crop" role="button" tabindex="0"
+                        aria-label="Ask FarmerGPT: Why are my leaves turning yellow with brown spots?">
+                        <div class="studio-question-top">
+                          <span class="studio-question-tag">Crop Health</span>
+                          <span class="studio-question-action" aria-hidden="true">
+                            Run &rarr;
+                          </span>
+                        </div>
+                        <p class="studio-question-text">&ldquo;Why are my cotton leaves curling upward with faint yellow spots?&rdquo;</p>
+                      </article>
+
+                      <article class="question-card studio-question-card" data-scenario="weather" role="button" tabindex="0"
+                        aria-label="Ask FarmerGPT: Can I spray pesticide tomorrow, or will it wash away?">
+                        <div class="studio-question-top">
+                          <span class="studio-question-tag">Weather Timing</span>
+                          <span class="studio-question-action" aria-hidden="true">
+                            Run &rarr;
+                          </span>
+                        </div>
+                        <p class="studio-question-text">&ldquo;Can I spray pesticide tomorrow, or will it wash away?&rdquo;</p>
+                      </article>
+
+                      <article class="question-card studio-question-card" data-scenario="irrigation" role="button" tabindex="0"
+                        aria-label="Ask FarmerGPT: Will rain this week affect my irrigation schedule?">
+                        <div class="studio-question-top">
+                          <span class="studio-question-tag">Irrigation &amp; Spraying</span>
+                          <span class="studio-question-action" aria-hidden="true">
+                            Run &rarr;
+                          </span>
+                        </div>
+                        <p class="studio-question-text">&ldquo;Will rain this week affect my irrigation schedule?&rdquo;</p>
+                      </article>
+
+                      <article class="question-card studio-question-card" data-scenario="equipment" role="button" tabindex="0"
+                        aria-label="Ask FarmerGPT: Should I buy or rent a 45 HP tractor for my 12 acres?">
+                        <div class="studio-question-top">
+                          <span class="studio-question-tag">Machinery Sizing</span>
+                          <span class="studio-question-action" aria-hidden="true">
+                            Run &rarr;
+                          </span>
+                        </div>
+                        <p class="studio-question-text">&ldquo;Should I buy or rent a 45 HP tractor for my 12 acres?&rdquo;</p>
+                      </article>
+
+                      <article class="question-card studio-question-card" data-scenario="implements" role="button" tabindex="0"
+                        aria-label="Ask FarmerGPT: Which rotavator and implement fits best with my tractor?">
+                        <div class="studio-question-top">
+                          <span class="studio-question-tag">Equipment Decisions</span>
+                          <span class="studio-question-action" aria-hidden="true">
+                            Run &rarr;
+                          </span>
+                        </div>
+                        <p class="studio-question-text">&ldquo;Which rotavator matches my tractor without overloading?&rdquo;</p>
+                      </article>
+
+                      <article class="question-card studio-question-card" data-scenario="mandi" role="button" tabindex="0"
+                        aria-label="Ask FarmerGPT: Is this a good mandi price, or should I hold for next week?">
+                        <div class="studio-question-top">
+                          <span class="studio-question-tag">Market &amp; Mandi</span>
+                          <span class="studio-question-action" aria-hidden="true">
+                            Run &rarr;
+                          </span>
+                        </div>
+                        <p class="studio-question-text">&ldquo;Is it better to sell my wheat now or hold for next month?&rdquo;</p>
+                      </article>
+
+                      <article class="question-card studio-question-card" data-scenario="operations" role="button" tabindex="0"
+                        aria-label="Ask FarmerGPT: What should I focus on doing across my fields today?">
+                        <div class="studio-question-top">
+                          <span class="studio-question-tag">Daily Operations</span>
+                          <span class="studio-question-action" aria-hidden="true">
+                            Run &rarr;
+                          </span>
+                        </div>
+                        <p class="studio-question-text">&ldquo;What's the best time of day to harvest given the forecast?&rdquo;</p>
+                      </article>
+                    </div>
+                  </div>
+
+                  <!-- Voice Intelligence Strip & Actions -->
+                  <div class="studio-voice-strip">
+                    <span>🎙️ Voice In: English, हिंदी, मराठी, ਪੰਜਾਬੀ</span>
+                    <span>⚡ 10Hz Telemetry Link</span>
+                    <span>💰 Economic Moat Verified</span>
+                  </div>
+
+                  <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <a class="button button-primary" href="#contact">Get Early Access to FarmerGPT</a>
+                    <a class="button button-secondary" href="#equipment">Calculate Tractor Sizing &rarr;</a>
+                  </div>
+                </div>
+
+                <!-- Right Column: Live Agri-Cockpit Simulator (Beside all FarmerGPT content!) -->
+                <div class="farmergpt-simulator-col">
+                  <div class="agri-cockpit hero-simulator-container" id="hero-simulator" role="region" aria-label="FarmerGPT Autonomous Agricultural Cockpit">
               <div class="cockpit-ambient-glow" aria-hidden="true"></div>
 
               <!-- Cockpit Window Titlebar -->
@@ -4157,169 +5191,6 @@
                 </button>
               </form>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============================================================
-           FARMERS CAFE PARENT ENTERPRISE & SMART PRODUCT ECOSYSTEM
-           ============================================================ -->
-      <section id="ecosystem" class="ecosystem-section">
-        <div class="container">
-          <!-- 1. Farmers Cafe Parent Enterprise Architecture Header -->
-          <div class="section-heading reveal">
-            <span class="eyebrow">Holding Enterprise &bull; Alphabet of Agriculture</span>
-            <h2>Farmers Cafe is the parent company. FarmerGPT is our first breakthrough.</h2>
-            <p>Just as Alphabet built the operational foundation for Google and a constellation of specialized technologies,
-              <strong>Farmers Cafe</strong> operates as the parent deep-tech holding enterprise. We architect sovereign,
-              field-grounded AI systems for India's 140 million agriculturalists&mdash;starting with FarmerGPT for real-time agronomic decisions,
-              and systematically expanding across the entire farm lifecycle.</p>
-          </div>
-
-          <!-- 2. Parent Holding Enterprise Architecture Banner -->
-          <div class="parent-architecture-card reveal">
-            <div class="arch-brand-lead">
-              <div class="parent-badge-pill">
-                <span class="parent-dot" aria-hidden="true"></span>
-                <span>Farmers Cafe Group Architecture</span>
-              </div>
-              <h3 class="arch-tagline">One parent enterprise. A unified ecosystem of specialized agricultural intelligences.</h3>
-            </div>
-
-            <div class="arch-pillars-grid">
-              <div class="arch-pillar-cell">
-                <div class="pillar-num">01 / Parent Entity</div>
-                <h4>Farmers Cafe Holdings</h4>
-                <p>Central R&amp;D engine, proprietary sovereign soil and crop datasets, radar pipelines, and vernacular multi-modal intelligence models.</p>
-              </div>
-              <div class="arch-pillar-cell highlighted">
-                <div class="pillar-num">02 / Flagship Product</div>
-                <h4>FarmerGPT (Live)</h4>
-                <p>The autonomous field advisor. Stateful farm memory, Doppler telemetry radar, machinery HP sizing, and regional kisan voice companion.</p>
-              </div>
-              <div class="arch-pillar-cell">
-                <div class="pillar-num">03 / The Horizon</div>
-                <h4>Future Products</h4>
-                <p>Interconnected platforms spanning farm ERP (FarmOS), edge pathology (KisanVision), mandi arbitrage (MandiPulse), and rural credit (AgriCredit AI).</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 3. Smart Product Tabs Component -->
-          <div class="ecosystem-tabs-wrapper reveal" id="ecosystem-tabs-block">
-            <div class="ecosystem-tabs-header">
-              <div class="tabs-label-group">
-                <span class="tabs-pre-label">Explore Portfolio</span>
-                <h3 class="tabs-main-title">Products in the Farmers Cafe Ecosystem</h3>
-              </div>
-
-              <!-- Tab Switcher Navigation -->
-              <div class="product-tabs-bar" role="tablist" aria-label="Farmers Cafe Products Portfolio">
-                <button class="product-tab-btn active" data-product="farmergpt" role="tab" aria-selected="true" aria-controls="panel-farmergpt" id="tab-farmergpt" type="button">
-                  <span class="tab-icon">🌿</span>
-                  <span class="tab-name">FarmerGPT</span>
-                  <span class="tab-badge badge-live">Live Flagship</span>
-                </button>
-                <button class="product-tab-btn" data-product="farmos" role="tab" aria-selected="false" aria-controls="panel-farmos" id="tab-farmos" type="button">
-                  <span class="tab-icon">🚜</span>
-                  <span class="tab-name">FarmOS</span>
-                  <span class="tab-badge badge-dev">Operating System</span>
-                </button>
-                <button class="product-tab-btn" data-product="kisanvision" role="tab" aria-selected="false" aria-controls="panel-kisanvision" id="tab-kisanvision" type="button">
-                  <span class="tab-icon">👁️</span>
-                  <span class="tab-name">KisanVision</span>
-                  <span class="tab-badge badge-pilot">Computer Vision</span>
-                </button>
-                <button class="product-tab-btn" data-product="mandipulse" role="tab" aria-selected="false" aria-controls="panel-mandipulse" id="tab-mandipulse" type="button">
-                  <span class="tab-icon">📊</span>
-                  <span class="tab-name">MandiPulse</span>
-                  <span class="tab-badge badge-market">Market Arbitrage</span>
-                </button>
-                <button class="product-tab-btn" data-product="agricredit" role="tab" aria-selected="false" aria-controls="panel-agricredit" id="tab-agricredit" type="button">
-                  <span class="tab-icon">💳</span>
-                  <span class="tab-name">AgriCredit AI</span>
-                  <span class="tab-badge badge-fin">Rural FinTech</span>
-                </button>
-              </div>
-            </div>
-
-            <!-- Tab Panels Stage -->
-            <div class="product-panels-stage">
-
-              <!-- PANEL 1: FarmerGPT -->
-              <div class="product-tab-panel active" data-panel="farmergpt" id="panel-farmergpt" role="tabpanel" aria-labelledby="tab-farmergpt">
-                <div class="product-info-col">
-                  <span class="product-lineage-badge">Product 01 &bull; Live Flagship</span>
-                  <div class="product-info-header">
-                    <h3>FarmerGPT</h3>
-                    <p class="product-tagline">Autonomous Agricultural Intelligence &amp; Field Companion OS</p>
-                  </div>
-                  <p class="product-desc">FarmerGPT is the pioneer consumer product of Farmers Cafe. Built specifically for farmers in India, it pairs persistent farm digital twins with real-time Doppler radar telemetry, tractor implement engineering algorithms, and vernacular Kisan voice intelligence in Hindi, Marathi, Punjabi, and English.</p>
-
-                  <div class="product-features-list">
-                    <div class="product-feature-item">
-                      <span class="feature-check">✓</span>
-                      <span><strong>Stateful Farm Memory:</strong> Retains multi-season soil health records, sowing dates, crop history, and acreage without re-asking.</span>
-                    </div>
-                    <div class="product-feature-item">
-                      <span class="feature-check">✓</span>
-                      <span><strong>Mechanical HP &amp; PTO Sizing:</strong> Dyno-matched torque algorithms prevent tractor lugging and gear damage across heavy soils.</span>
-                    </div>
-                    <div class="product-feature-item">
-                      <span class="feature-check">✓</span>
-                      <span><strong>Doppler Rain-Fast Radar:</strong> Hyper-local micro-climate alerts identify exact spraying windows to prevent chemical wash-off.</span>
-                    </div>
-                    <div class="product-feature-item">
-                      <span class="feature-check">✓</span>
-                      <span><strong>Kisan Voice Intelligence:</strong> Audio speech processing built for hands-in-soil operations in regional native dialects.</span>
-                    </div>
-                  </div>
-
-                  <span class="product-persona-tag">🎯 Built For: 140M+ Indian Farmers, Agronomists, Custom Hire Centers &amp; KVKs</span>
-
-                  <div class="product-actions-row">
-                    <a class="button button-primary" href="#hero-simulator">
-                      <span>Try FarmerGPT Cockpit Simulator ↗</span>
-                    </a>
-                    <a class="button button-secondary" href="#contact">Get Early Access</a>
-                  </div>
-                </div>
-
-                <div class="product-visual-col">
-                  <div class="visual-glass-card">
-                    <div class="visual-card-topbar">
-                      <span class="visual-brand-tag">⚡ FarmerGPT OS &bull; Live Runtime</span>
-                      <span class="visual-status-pill">● Early Access v2.6</span>
-                    </div>
-
-                    <div class="visual-grid-2col">
-                      <div class="visual-stat-box">
-                        <span class="stat-box-label">Farm Memory Twin</span>
-                        <span class="stat-box-val">18.4 Ac &bull; Vertisol</span>
-                      </div>
-                      <div class="visual-stat-box">
-                        <span class="stat-box-label">Confidence Score</span>
-                        <span class="stat-box-val">98.4% Matched</span>
-                      </div>
-                      <div class="visual-stat-box">
-                        <span class="stat-box-label">Doppler Radar</span>
-                        <span class="stat-box-val">Safe til 1:00 PM</span>
-                      </div>
-                      <div class="visual-stat-box">
-                        <span class="stat-box-label">Economic Moat</span>
-                        <span class="stat-box-val">+₹14,200/Ac Saved</span>
-                      </div>
-                    </div>
-
-                    <div class="visual-highlight-banner">
-                      <strong>Executive Directive:</strong> "Cotton Leaf Curl Virus vector identified. Diafenthiuron 50% WP @ 240g/acre applied before 10 AM rainfast cutoff preserves boll yield."
-                    </div>
-
-                    <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.76rem; color: var(--muted); padding-top: 4px;">
-                      <span>Kisan Voice Input: Marathi / Hindi</span>
-                      <span style="color: #10B981; font-weight: 700;">● 10Hz Telemetry Stream Active</span>
-                    </div>
-                  </div>
                 </div>
               </div>
 
@@ -4624,231 +5495,6 @@
               </div>
 
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="questions">
-        <div class="container">
-          <div class="section-heading reveal">
-            <span class="eyebrow">Practical Field Guidance</span>
-            <h2>What can FarmerGPT help me with?</h2>
-            <p>Farming changes with every sunrise. Ask FarmerGPT in plain words&mdash;by typing or speaking&mdash;and
-              get clear answers grounded in your farm's reality.</p>
-          </div>
-          <div class="questions-grid">
-            <article class="question-card reveal" data-scenario="crop_planning" role="button" tabindex="0"
-              aria-label="Ask FarmerGPT: What should I grow this season for better returns on my soil?">
-              <div class="question-card-header">
-                <span class="question-tag">Crop Planning</span>
-                <span class="question-action" aria-hidden="true">
-                  Ask FarmerGPT
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </span>
-              </div>
-              <p class="question-text">&ldquo;What should I grow this season for better returns on my soil?&rdquo;</p>
-            </article>
-
-            <article class="question-card reveal" data-scenario="crop" role="button" tabindex="0"
-              aria-label="Ask FarmerGPT: Why are my leaves turning yellow with brown spots?">
-              <div class="question-card-header">
-                <span class="question-tag">Crop Health</span>
-                <span class="question-action" aria-hidden="true">
-                  Ask FarmerGPT
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </span>
-              </div>
-              <p class="question-text">&ldquo;Why are my leaves turning yellow with brown spots?&rdquo;</p>
-            </article>
-
-            <article class="question-card reveal" data-scenario="weather" role="button" tabindex="0"
-              aria-label="Ask FarmerGPT: Can I spray pesticide tomorrow, or will it wash away?">
-              <div class="question-card-header">
-                <span class="question-tag">Weather Timing</span>
-                <span class="question-action" aria-hidden="true">
-                  Ask FarmerGPT
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </span>
-              </div>
-              <p class="question-text">&ldquo;Can I spray pesticide tomorrow, or will it wash away?&rdquo;</p>
-            </article>
-
-            <article class="question-card reveal" data-scenario="irrigation" role="button" tabindex="0"
-              aria-label="Ask FarmerGPT: Will rain this week affect my irrigation schedule?">
-              <div class="question-card-header">
-                <span class="question-tag">Irrigation &amp; Spraying</span>
-                <span class="question-action" aria-hidden="true">
-                  Ask FarmerGPT
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </span>
-              </div>
-              <p class="question-text">&ldquo;Will rain this week affect my irrigation schedule?&rdquo;</p>
-            </article>
-
-            <article class="question-card reveal" data-scenario="equipment" role="button" tabindex="0"
-              aria-label="Ask FarmerGPT: Should I buy or rent a 45 HP tractor for my 12 acres?">
-              <div class="question-card-header">
-                <span class="question-tag">Machinery Sizing</span>
-                <span class="question-action" aria-hidden="true">
-                  Ask FarmerGPT
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </span>
-              </div>
-              <p class="question-text">&ldquo;Should I buy or rent a 45 HP tractor for my 12 acres?&rdquo;</p>
-            </article>
-
-            <article class="question-card reveal" data-scenario="implements" role="button" tabindex="0"
-              aria-label="Ask FarmerGPT: Which rotavator and implement fits best with my tractor?">
-              <div class="question-card-header">
-                <span class="question-tag">Equipment Decisions</span>
-                <span class="question-action" aria-hidden="true">
-                  Ask FarmerGPT
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </span>
-              </div>
-              <p class="question-text">&ldquo;Which rotavator and implement fits best with my tractor?&rdquo;</p>
-            </article>
-
-            <article class="question-card reveal" data-scenario="mandi" role="button" tabindex="0"
-              aria-label="Ask FarmerGPT: Is this a good mandi price, or should I hold for next week?">
-              <div class="question-card-header">
-                <span class="question-tag">Market &amp; Mandi</span>
-                <span class="question-action" aria-hidden="true">
-                  Ask FarmerGPT
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </span>
-              </div>
-              <p class="question-text">&ldquo;Is this a good mandi price, or should I hold for next week?&rdquo;</p>
-            </article>
-
-            <article class="question-card reveal" data-scenario="operations" role="button" tabindex="0"
-              aria-label="Ask FarmerGPT: What should I focus on doing across my fields today?">
-              <div class="question-card-header">
-                <span class="question-tag">Daily Operations</span>
-                <span class="question-action" aria-hidden="true">
-                  Ask FarmerGPT
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </span>
-              </div>
-              <p class="question-text">&ldquo;What should I focus on doing across my fields today?&rdquo;</p>
-            </article>
-          </div>
-          <div class="connecting-banner reveal">
-            <strong>How does FarmerGPT know the right answer?</strong>
-            <p>Unlike generic chatbots that give textbook advice, FarmerGPT answers these questions using <strong>farm
-                memory, weather intelligence, crop intelligence, equipment intelligence, and market
-                intelligence</strong>.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="farmergpt">
-        <div class="container vision-grid">
-          <div class="vision-copy reveal">
-            <span class="eyebrow">The Platform Foundation</span>
-            <h2>An AI that actually remembers your farm.</h2>
-            <p>FarmerGPT is an AI-powered agricultural intelligence platform that understands your farm, remembers what
-              matters, and helps you make better decisions across crops, weather, machinery, markets, and farm
-              operations.</p>
-            <p>Most AI tools treat every conversation like you are a stranger. They don't know your soil, your crops, or
-              what tractor is parked in your shed. FarmerGPT builds a persistent understanding of your land and
-              remembers:</p>
-            <div class="memory-list">
-              <div class="memory-item">
-                <div class="memory-item-icon">🌱</div>
-                <div class="memory-item-text">
-                  <strong>Your Crops &amp; Land</strong>
-                  <span>Acreage, soil condition, crop varieties, and planting dates</span>
-                </div>
-              </div>
-              <div class="memory-item">
-                <div class="memory-item-icon">🚜</div>
-                <div class="memory-item-text">
-                  <strong>Your Equipment Fleet</strong>
-                  <span>Owned machinery, tractor models, attachments, and capacity</span>
-                </div>
-              </div>
-              <div class="memory-item">
-                <div class="memory-item-icon">📊</div>
-                <div class="memory-item-text">
-                  <strong>Farm Conditions &amp; History</strong>
-                  <span>Past season yields, fertilizer applications, and pest patterns</span>
-                </div>
-              </div>
-              <div class="memory-item">
-                <div class="memory-item-icon">💬</div>
-                <div class="memory-item-text">
-                  <strong>Past Conversations &amp; Preferences</strong>
-                  <span>Every problem discussed and operational decision made</span>
-                </div>
-              </div>
-            </div>
-            <p style="margin-top: 20px;">Every time you speak with FarmerGPT, recommendations become more accurate and
-              personalized&mdash;because it actually knows your farm.</p>
-          </div>
-          <div class="vision-visual reveal" aria-hidden="true">
-            <svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg">
-              <rect x="30" y="36" width="500" height="308" rx="30" fill="#FFFFFF" fill-opacity="0.86" stroke="#1A7F5A"
-                stroke-opacity="0.1" />
-              <path d="M94 265C145 221 189 198 243 198C297 198 345 219 410 266" stroke="#1A7F5A" stroke-width="3"
-                fill="none" stroke-linecap="round" />
-              <path d="M120 289C169 252 205 236 246 236C292 236 336 252 387 289" stroke="#D4AF37" stroke-width="2.3"
-                fill="none" stroke-linecap="round" opacity="0.8" />
-              <circle cx="140" cy="112" r="26" fill="#1A7F5A" fill-opacity="0.08" stroke="#1A7F5A"
-                stroke-opacity="0.14" />
-              <circle cx="418" cy="124" r="24" fill="#D4AF37" fill-opacity="0.1" stroke="#D4AF37"
-                stroke-opacity="0.22" />
-              <circle cx="279" cy="96" r="48" fill="#F3F8F4" stroke="#1A7F5A" stroke-opacity="0.12" />
-              <path
-                d="M259 96C259 80 272 67 288 67C304 67 317 80 317 96C317 112 304 125 288 125C272 125 259 112 259 96Z"
-                stroke="#1A7F5A" stroke-width="2.2" fill="none" />
-              <path d="M289 63V39" stroke="#1A7F5A" stroke-width="2.2" stroke-linecap="round" />
-              <path d="M336 96H360" stroke="#1A7F5A" stroke-width="2.2" stroke-linecap="round" />
-              <path d="M289 149V173" stroke="#1A7F5A" stroke-width="2.2" stroke-linecap="round" />
-              <path d="M241 96H217" stroke="#1A7F5A" stroke-width="2.2" stroke-linecap="round" />
-              <path d="M309 75L326 58" stroke="#D4AF37" stroke-width="2.2" stroke-linecap="round" />
-              <path d="M267 117L251 135" stroke="#D4AF37" stroke-width="2.2" stroke-linecap="round" />
-              <g opacity="0.9">
-                <rect x="88" y="132" width="106" height="72" rx="18" fill="#F9FCF9" stroke="#1A7F5A"
-                  stroke-opacity="0.14" />
-                <path d="M110 176C124 160 140 152 160 152C172 152 184 156 192 163" stroke="#1A7F5A" stroke-width="2"
-                  fill="none" stroke-linecap="round" />
-                <circle cx="140" cy="156" r="7" fill="#1A7F5A" />
-              </g>
-              <g opacity="0.9">
-                <rect x="362" y="178" width="108" height="76" rx="18" fill="#F9FCF9" stroke="#1A7F5A"
-                  stroke-opacity="0.14" />
-                <path d="M384 220L399 204L415 220L437 193" stroke="#D4AF37" stroke-width="2.4" fill="none"
-                  stroke-linecap="round" stroke-linejoin="round" />
-                <circle cx="437" cy="193" r="5" fill="#1A7F5A" />
-              </g>
-              <path d="M194 168H229L259 118" stroke="#0F172A" stroke-opacity="0.08" stroke-width="1.6" fill="none" />
-              <path d="M317 118L362 178" stroke="#0F172A" stroke-opacity="0.08" stroke-width="1.6" fill="none" />
-            </svg>
           </div>
         </div>
       </section>
@@ -5286,10 +5932,10 @@
             <span>Building AI for Agriculture</span>
           </div>
           <nav class="footer-nav" aria-label="Footer navigation">
-            <a href="#ecosystem">Ecosystem</a>
-            <a href="#questions">What It Helps With</a>
-            <a href="#farmergpt">Farm Memory</a>
-            <a href="#equipment">Equipment</a>
+            <a href="#top">Overview</a>
+            <a href="#ecosystem">Products Ecosystem</a>
+            <a href="#ecosystem" data-jump-product="farmergpt">FarmerGPT</a>
+            <a href="#equipment">Equipment Sizing</a>
             <a href="#capabilities">Capabilities</a>
             <a href="#why">Why We Exist</a>
             <a href="#roadmap">Roadmap</a>
@@ -5319,7 +5965,7 @@
             "@type": "Person",
             "name": "Atul Choudhary"
           },
-          "description": "Farmers Cafe is the parent agricultural technology enterprise (structured like Alphabet for Google). FarmerGPT is its flagship first product, spearheading an interconnected ecosystem of sovereign AI platforms across farm intelligence, telemetry, machine vision, and rural credit.",
+          "description": "Farmers Cafe is the parent agricultural technology enterprise. FarmerGPT is its flagship first product, spearheading an interconnected ecosystem of sovereign AI platforms across farm intelligence, telemetry, machine vision, and rural credit.",
           "address": {
             "@type": "PostalAddress",
             "addressCountry": "India"
@@ -5481,7 +6127,7 @@
     }
 
     // 3. Active ScrollSpy for Desktop Nav Pills
-    const sectionIds = ['top', 'hero-simulator', 'ecosystem', 'questions', 'farmergpt', 'equipment', 'capabilities', 'roadmap', 'contact'];
+    const sectionIds = ['top', 'ecosystem', 'equipment', 'capabilities', 'why', 'roadmap', 'roots', 'contact'];
     const observedSections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
 
     if ('IntersectionObserver' in window && observedSections.length > 0) {
@@ -6161,6 +6807,12 @@
         const scenarioKey = card.getAttribute("data-scenario") || "crop";
         currentScenario = scenarioKey;
 
+        // Ensure FarmerGPT product tab is active
+        const fgptTab = document.querySelector('[data-product="farmergpt"]');
+        if (fgptTab && !fgptTab.classList.contains("active")) {
+          fgptTab.click();
+        }
+
         // Highlight matching preset chip if present
         chips.forEach(c => {
           if (c.getAttribute("data-scenario") === scenarioKey) {
@@ -6172,12 +6824,14 @@
           }
         });
 
-        // Smooth scroll to cockpit with highlight pulse
+        // Subtle highlight pulse on simulator without disruptive scroll on desktop
         if (simSection) {
-          simSection.scrollIntoView({ behavior: "smooth", block: "center" });
           simSection.classList.remove("sim-highlight");
           void simSection.offsetWidth;
           simSection.classList.add("sim-highlight");
+          if (window.innerWidth <= 1080) {
+            simSection.scrollIntoView({ behavior: "smooth", block: "center" });
+          }
         }
 
         render(currentScenario, currentLang, true);
@@ -6345,6 +6999,16 @@
           const prod = btn.getAttribute('data-product');
           switchProductTab(prod);
         });
+
+      // Wire up data-jump-product links (from Hero, Navbar, Footer)
+      document.querySelectorAll('[data-jump-product]').forEach(link => {
+        link.addEventListener('click', (e) => {
+          const prod = link.getAttribute('data-jump-product');
+          if (prod) {
+            switchProductTab(prod);
+          }
+        });
+      });
 
         btn.addEventListener('keydown', (e) => {
           const tabs = Array.from(tabBtns);
