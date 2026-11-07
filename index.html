@@ -1575,6 +1575,662 @@
       }
     }
 
+    /* ============================================================
+       FARMERS CAFE PARENT ENTERPRISE & SMART PRODUCT ECOSYSTEM
+       ============================================================ */
+    .ecosystem-section {
+      padding: 96px 0 80px;
+      position: relative;
+    }
+
+    .parent-architecture-card {
+      position: relative;
+      padding: 34px 38px;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(246, 251, 247, 0.92));
+      border: 1px solid rgba(26, 127, 90, 0.16);
+      box-shadow: 0 20px 48px -12px rgba(19, 45, 35, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+      backdrop-filter: blur(20px);
+      margin-bottom: 42px;
+      overflow: hidden;
+    }
+
+    .parent-architecture-card::before {
+      content: "";
+      position: absolute;
+      top: -40%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, rgba(26, 127, 90, 0.08) 50%, transparent 75%);
+      filter: blur(50px);
+      pointer-events: none;
+    }
+
+    .arch-brand-lead {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    }
+
+    .parent-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      padding: 5px 14px;
+      border-radius: 999px;
+      background: rgba(26, 127, 90, 0.1);
+      border: 1px solid rgba(26, 127, 90, 0.2);
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .parent-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 0 3px rgba(26, 127, 90, 0.25);
+    }
+
+    .arch-tagline {
+      font-size: clamp(1.25rem, 2.5vw, 1.65rem);
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      line-height: 1.35;
+      margin: 0;
+      max-width: 42ch;
+    }
+
+    .arch-pillars-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .arch-pillar-cell {
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(15, 23, 42, 0.07);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: all 220ms ease;
+    }
+
+    .arch-pillar-cell.highlighted {
+      background: rgba(26, 127, 90, 0.06);
+      border-color: rgba(26, 127, 90, 0.28);
+      box-shadow: 0 8px 24px rgba(26, 127, 90, 0.08);
+    }
+
+    .pillar-num {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+
+    .arch-pillar-cell h4 {
+      margin: 0;
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .arch-pillar-cell p {
+      margin: 0;
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* Smart Product Tabs Section */
+    .ecosystem-tabs-wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .ecosystem-tabs-header {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .tabs-label-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .tabs-pre-label {
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+    }
+
+    .tabs-main-title {
+      font-size: clamp(1.4rem, 3vw, 1.85rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: 0;
+      color: var(--text);
+    }
+
+    .product-tabs-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 6px 2px 14px;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .product-tabs-bar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .product-tab-btn {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(15, 23, 42, 0.09);
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+      transition: all 200ms ease;
+    }
+
+    .product-tab-btn:hover {
+      border-color: rgba(26, 127, 90, 0.35);
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .product-tab-btn.active {
+      background: #0F172A;
+      color: #FFFFFF;
+      border-color: #0F172A;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.16);
+    }
+
+    .tab-icon {
+      font-size: 17px;
+      line-height: 1;
+    }
+
+    .tab-name {
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .tab-badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 999px;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+    }
+
+    .badge-live {
+      background: rgba(16, 185, 129, 0.18);
+      color: #059669;
+    }
+
+    .product-tab-btn.active .badge-live {
+      background: #10B981;
+      color: #FFFFFF;
+    }
+
+    .badge-dev {
+      background: rgba(14, 165, 233, 0.15);
+      color: #0284C7;
+    }
+
+    .product-tab-btn.active .badge-dev {
+      background: #0284C7;
+      color: #FFFFFF;
+    }
+
+    .badge-pilot {
+      background: rgba(168, 85, 247, 0.15);
+      color: #9333EA;
+    }
+
+    .product-tab-btn.active .badge-pilot {
+      background: #9333EA;
+      color: #FFFFFF;
+    }
+
+    .badge-market {
+      background: rgba(245, 158, 11, 0.18);
+      color: #D97706;
+    }
+
+    .product-tab-btn.active .badge-market {
+      background: #D97706;
+      color: #FFFFFF;
+    }
+
+    .badge-fin {
+      background: rgba(234, 179, 8, 0.18);
+      color: #B45309;
+    }
+
+    .product-tab-btn.active .badge-fin {
+      background: #B45309;
+      color: #FFFFFF;
+    }
+
+    /* Product Showcase Panels */
+    .product-panels-stage {
+      position: relative;
+      width: 100%;
+    }
+
+    .product-tab-panel {
+      display: none;
+      opacity: 0;
+      transition: opacity 280ms ease;
+    }
+
+    .product-tab-panel.active {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.95fr);
+      gap: 32px;
+      align-items: stretch;
+      opacity: 1;
+      animation: productPanelFadeIn 320ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes productPanelFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Product Info Column */
+    .product-info-col {
+      padding: 36px;
+      border-radius: var(--radius-xl);
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(26, 127, 90, 0.16);
+      box-shadow: 0 20px 48px -12px rgba(19, 45, 35, 0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .product-lineage-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      width: fit-content;
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+
+    .product-info-header h3 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin: 4px 0 8px;
+    }
+
+    .product-tagline {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin: 0;
+      line-height: 1.45;
+    }
+
+    .product-desc {
+      font-size: 0.96rem;
+      color: var(--muted);
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    .product-features-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 4px 0;
+      padding: 14px 18px;
+      border-radius: 16px;
+      background: rgba(26, 127, 90, 0.04);
+      border: 1px solid rgba(26, 127, 90, 0.1);
+    }
+
+    .product-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .feature-check {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 800;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .product-persona-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--muted);
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.04);
+      width: fit-content;
+    }
+
+    .product-actions-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-top: auto;
+      padding-top: 14px;
+    }
+
+    /* Product Visual Preview Column */
+    .product-visual-col {
+      padding: 24px;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.94), rgba(243, 248, 244, 0.94));
+      border: 1px solid rgba(26, 127, 90, 0.16);
+      box-shadow: 0 20px 48px -12px rgba(19, 45, 35, 0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 480px;
+    }
+
+    .visual-glass-card {
+      padding: 22px;
+      border-radius: 20px;
+      background: #FFFFFF;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      box-shadow: 0 12px 36px rgba(15, 23, 42, 0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .visual-card-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+    }
+
+    .visual-brand-tag {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--text);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .visual-status-pill {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.12);
+      color: #059669;
+    }
+
+    .visual-grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .visual-stat-box {
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(26, 127, 90, 0.05);
+      border: 1px solid rgba(26, 127, 90, 0.12);
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .stat-box-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .stat-box-val {
+      font-size: 0.86rem;
+      font-weight: 800;
+      color: var(--text);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+
+    .visual-highlight-banner {
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: #0F172A;
+      color: #FFFFFF;
+      font-size: 0.84rem;
+      line-height: 1.5;
+    }
+
+    .visual-highlight-banner strong {
+      color: #2ECC71;
+    }
+
+    /* Dark Mode: Ecosystem Section */
+    [data-theme="dark"] .parent-architecture-card {
+      background: linear-gradient(135deg, rgba(14, 27, 20, 0.95), rgba(10, 20, 15, 0.95));
+      border-color: rgba(46, 204, 113, 0.22);
+      box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+    }
+
+    [data-theme="dark"] .arch-brand-lead {
+      border-bottom-color: rgba(255, 255, 255, 0.08);
+    }
+
+    [data-theme="dark"] .parent-badge-pill {
+      background: rgba(46, 204, 113, 0.14);
+      border-color: rgba(46, 204, 113, 0.3);
+      color: #2ECC71;
+    }
+
+    [data-theme="dark"] .parent-dot {
+      background: #2ECC71;
+      box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.3);
+    }
+
+    [data-theme="dark"] .arch-tagline {
+      color: #F1F5F2;
+    }
+
+    [data-theme="dark"] .arch-pillar-cell {
+      background: rgba(18, 36, 27, 0.85);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    [data-theme="dark"] .arch-pillar-cell.highlighted {
+      background: rgba(46, 204, 113, 0.12);
+      border-color: rgba(46, 204, 113, 0.38);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    [data-theme="dark"] .pillar-num {
+      color: #2ECC71;
+    }
+
+    [data-theme="dark"] .arch-pillar-cell h4 {
+      color: #FFFFFF;
+    }
+
+    [data-theme="dark"] .arch-pillar-cell p {
+      color: #BAC7BC;
+    }
+
+    [data-theme="dark"] .product-tab-btn {
+      background: rgba(18, 36, 27, 0.85);
+      border-color: rgba(255, 255, 255, 0.08);
+      color: #BAC7BC;
+    }
+
+    [data-theme="dark"] .product-tab-btn:hover {
+      border-color: rgba(46, 204, 113, 0.4);
+      color: #F1F5F2;
+    }
+
+    [data-theme="dark"] .product-tab-btn.active {
+      background: #14281E;
+      color: #FFFFFF;
+      border-color: #2ECC71;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+    }
+
+    [data-theme="dark"] .product-info-col,
+    [data-theme="dark"] .product-visual-col {
+      background: rgba(14, 27, 21, 0.94);
+      border-color: rgba(46, 204, 113, 0.2);
+      box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.55);
+    }
+
+    [data-theme="dark"] .product-info-header h3 {
+      color: #FFFFFF;
+    }
+
+    [data-theme="dark"] .product-tagline {
+      color: #2ECC71;
+    }
+
+    [data-theme="dark"] .product-desc {
+      color: #BAC7BC;
+    }
+
+    [data-theme="dark"] .product-features-list {
+      background: rgba(46, 204, 113, 0.08);
+      border-color: rgba(46, 204, 113, 0.2);
+    }
+
+    [data-theme="dark"] .product-feature-item {
+      color: #E2ECE5;
+    }
+
+    [data-theme="dark"] .feature-check {
+      background: #2ECC71;
+      color: #060D09;
+    }
+
+    [data-theme="dark"] .product-persona-tag {
+      background: rgba(255, 255, 255, 0.06);
+      color: #BAC7BC;
+    }
+
+    [data-theme="dark"] .visual-glass-card {
+      background: #102018;
+      border-color: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+    }
+
+    [data-theme="dark"] .visual-card-topbar {
+      border-bottom-color: rgba(255, 255, 255, 0.08);
+    }
+
+    [data-theme="dark"] .visual-brand-tag {
+      color: #F1F5F2;
+    }
+
+    [data-theme="dark"] .visual-stat-box {
+      background: rgba(46, 204, 113, 0.08);
+      border-color: rgba(46, 204, 113, 0.2);
+    }
+
+    [data-theme="dark"] .stat-box-label {
+      color: #2ECC71;
+    }
+
+    [data-theme="dark"] .stat-box-val {
+      color: #E2ECE5;
+    }
+
+    [data-theme="dark"] .visual-highlight-banner {
+      background: rgba(9, 17, 13, 0.95);
+      border: 1px solid rgba(46, 204, 113, 0.2);
+    }
+
+    @media (max-width: 991px) {
+      .arch-pillars-grid {
+        grid-template-columns: 1fr;
+      }
+      .product-tab-panel.active {
+        grid-template-columns: 1fr;
+      }
+      .product-visual-col {
+        min-height: auto;
+      }
+    }
+
     .section-heading {
       max-width: 760px;
       margin-bottom: 32px;
@@ -3147,6 +3803,7 @@
               Simulator
               <span class="nav-link-badge">Live</span>
             </a>
+            <a class="nav-link" href="#ecosystem" data-section="ecosystem">Ecosystem</a>
             <a class="nav-link" href="#questions" data-section="questions">Guidance</a>
             <a class="nav-link" href="#farmergpt" data-section="farmergpt">Farm Memory</a>
             <a class="nav-link" href="#equipment" data-section="equipment">Equipment</a>
@@ -3236,6 +3893,13 @@
               <div class="mobile-item-text">
                 <strong>Live AI Simulator</strong>
                 <span>Instant answers in EN, HI, MR, PA</span>
+              </div>
+            </a>
+            <a class="mobile-nav-item" href="#ecosystem">
+              <span class="mobile-item-icon">🏢</span>
+              <div class="mobile-item-text">
+                <strong>Parent &amp; Products Ecosystem</strong>
+                <span>Alphabet model: FarmerGPT &amp; future tools</span>
               </div>
             </a>
             <a class="mobile-nav-item" href="#questions">
@@ -3492,6 +4156,473 @@
                   </svg>
                 </button>
               </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           FARMERS CAFE PARENT ENTERPRISE & SMART PRODUCT ECOSYSTEM
+           ============================================================ -->
+      <section id="ecosystem" class="ecosystem-section">
+        <div class="container">
+          <!-- 1. Farmers Cafe Parent Enterprise Architecture Header -->
+          <div class="section-heading reveal">
+            <span class="eyebrow">Holding Enterprise &bull; Alphabet of Agriculture</span>
+            <h2>Farmers Cafe is the parent company. FarmerGPT is our first breakthrough.</h2>
+            <p>Just as Alphabet built the operational foundation for Google and a constellation of specialized technologies,
+              <strong>Farmers Cafe</strong> operates as the parent deep-tech holding enterprise. We architect sovereign,
+              field-grounded AI systems for India's 140 million agriculturalists&mdash;starting with FarmerGPT for real-time agronomic decisions,
+              and systematically expanding across the entire farm lifecycle.</p>
+          </div>
+
+          <!-- 2. Parent Holding Enterprise Architecture Banner -->
+          <div class="parent-architecture-card reveal">
+            <div class="arch-brand-lead">
+              <div class="parent-badge-pill">
+                <span class="parent-dot" aria-hidden="true"></span>
+                <span>Farmers Cafe Group Architecture</span>
+              </div>
+              <h3 class="arch-tagline">One parent enterprise. A unified ecosystem of specialized agricultural intelligences.</h3>
+            </div>
+
+            <div class="arch-pillars-grid">
+              <div class="arch-pillar-cell">
+                <div class="pillar-num">01 / Parent Entity</div>
+                <h4>Farmers Cafe Holdings</h4>
+                <p>Central R&amp;D engine, proprietary sovereign soil and crop datasets, radar pipelines, and vernacular multi-modal intelligence models.</p>
+              </div>
+              <div class="arch-pillar-cell highlighted">
+                <div class="pillar-num">02 / Flagship Product</div>
+                <h4>FarmerGPT (Live)</h4>
+                <p>The autonomous field advisor. Stateful farm memory, Doppler telemetry radar, machinery HP sizing, and regional kisan voice companion.</p>
+              </div>
+              <div class="arch-pillar-cell">
+                <div class="pillar-num">03 / The Horizon</div>
+                <h4>Future Products</h4>
+                <p>Interconnected platforms spanning farm ERP (FarmOS), edge pathology (KisanVision), mandi arbitrage (MandiPulse), and rural credit (AgriCredit AI).</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Smart Product Tabs Component -->
+          <div class="ecosystem-tabs-wrapper reveal" id="ecosystem-tabs-block">
+            <div class="ecosystem-tabs-header">
+              <div class="tabs-label-group">
+                <span class="tabs-pre-label">Explore Portfolio</span>
+                <h3 class="tabs-main-title">Products in the Farmers Cafe Ecosystem</h3>
+              </div>
+
+              <!-- Tab Switcher Navigation -->
+              <div class="product-tabs-bar" role="tablist" aria-label="Farmers Cafe Products Portfolio">
+                <button class="product-tab-btn active" data-product="farmergpt" role="tab" aria-selected="true" aria-controls="panel-farmergpt" id="tab-farmergpt" type="button">
+                  <span class="tab-icon">🌿</span>
+                  <span class="tab-name">FarmerGPT</span>
+                  <span class="tab-badge badge-live">Live Flagship</span>
+                </button>
+                <button class="product-tab-btn" data-product="farmos" role="tab" aria-selected="false" aria-controls="panel-farmos" id="tab-farmos" type="button">
+                  <span class="tab-icon">🚜</span>
+                  <span class="tab-name">FarmOS</span>
+                  <span class="tab-badge badge-dev">Operating System</span>
+                </button>
+                <button class="product-tab-btn" data-product="kisanvision" role="tab" aria-selected="false" aria-controls="panel-kisanvision" id="tab-kisanvision" type="button">
+                  <span class="tab-icon">👁️</span>
+                  <span class="tab-name">KisanVision</span>
+                  <span class="tab-badge badge-pilot">Computer Vision</span>
+                </button>
+                <button class="product-tab-btn" data-product="mandipulse" role="tab" aria-selected="false" aria-controls="panel-mandipulse" id="tab-mandipulse" type="button">
+                  <span class="tab-icon">📊</span>
+                  <span class="tab-name">MandiPulse</span>
+                  <span class="tab-badge badge-market">Market Arbitrage</span>
+                </button>
+                <button class="product-tab-btn" data-product="agricredit" role="tab" aria-selected="false" aria-controls="panel-agricredit" id="tab-agricredit" type="button">
+                  <span class="tab-icon">💳</span>
+                  <span class="tab-name">AgriCredit AI</span>
+                  <span class="tab-badge badge-fin">Rural FinTech</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Tab Panels Stage -->
+            <div class="product-panels-stage">
+
+              <!-- PANEL 1: FarmerGPT -->
+              <div class="product-tab-panel active" data-panel="farmergpt" id="panel-farmergpt" role="tabpanel" aria-labelledby="tab-farmergpt">
+                <div class="product-info-col">
+                  <span class="product-lineage-badge">Product 01 &bull; Live Flagship</span>
+                  <div class="product-info-header">
+                    <h3>FarmerGPT</h3>
+                    <p class="product-tagline">Autonomous Agricultural Intelligence &amp; Field Companion OS</p>
+                  </div>
+                  <p class="product-desc">FarmerGPT is the pioneer consumer product of Farmers Cafe. Built specifically for farmers in India, it pairs persistent farm digital twins with real-time Doppler radar telemetry, tractor implement engineering algorithms, and vernacular Kisan voice intelligence in Hindi, Marathi, Punjabi, and English.</p>
+
+                  <div class="product-features-list">
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>Stateful Farm Memory:</strong> Retains multi-season soil health records, sowing dates, crop history, and acreage without re-asking.</span>
+                    </div>
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>Mechanical HP &amp; PTO Sizing:</strong> Dyno-matched torque algorithms prevent tractor lugging and gear damage across heavy soils.</span>
+                    </div>
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>Doppler Rain-Fast Radar:</strong> Hyper-local micro-climate alerts identify exact spraying windows to prevent chemical wash-off.</span>
+                    </div>
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>Kisan Voice Intelligence:</strong> Audio speech processing built for hands-in-soil operations in regional native dialects.</span>
+                    </div>
+                  </div>
+
+                  <span class="product-persona-tag">🎯 Built For: 140M+ Indian Farmers, Agronomists, Custom Hire Centers &amp; KVKs</span>
+
+                  <div class="product-actions-row">
+                    <a class="button button-primary" href="#hero-simulator">
+                      <span>Try FarmerGPT Cockpit Simulator ↗</span>
+                    </a>
+                    <a class="button button-secondary" href="#contact">Get Early Access</a>
+                  </div>
+                </div>
+
+                <div class="product-visual-col">
+                  <div class="visual-glass-card">
+                    <div class="visual-card-topbar">
+                      <span class="visual-brand-tag">⚡ FarmerGPT OS &bull; Live Runtime</span>
+                      <span class="visual-status-pill">● Early Access v2.6</span>
+                    </div>
+
+                    <div class="visual-grid-2col">
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Farm Memory Twin</span>
+                        <span class="stat-box-val">18.4 Ac &bull; Vertisol</span>
+                      </div>
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Confidence Score</span>
+                        <span class="stat-box-val">98.4% Matched</span>
+                      </div>
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Doppler Radar</span>
+                        <span class="stat-box-val">Safe til 1:00 PM</span>
+                      </div>
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Economic Moat</span>
+                        <span class="stat-box-val">+₹14,200/Ac Saved</span>
+                      </div>
+                    </div>
+
+                    <div class="visual-highlight-banner">
+                      <strong>Executive Directive:</strong> "Cotton Leaf Curl Virus vector identified. Diafenthiuron 50% WP @ 240g/acre applied before 10 AM rainfast cutoff preserves boll yield."
+                    </div>
+
+                    <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.76rem; color: var(--muted); padding-top: 4px;">
+                      <span>Kisan Voice Input: Marathi / Hindi</span>
+                      <span style="color: #10B981; font-weight: 700;">● 10Hz Telemetry Stream Active</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PANEL 2: FarmOS -->
+              <div class="product-tab-panel" data-panel="farmos" id="panel-farmos" role="tabpanel" aria-labelledby="tab-farmos" hidden>
+                <div class="product-info-col">
+                  <span class="product-lineage-badge">Product 02 &bull; Operating System</span>
+                  <div class="product-info-header">
+                    <h3>FarmOS</h3>
+                    <p class="product-tagline">Autonomous Farm ERP, Sensor Fusion &amp; Telemetry Hub</p>
+                  </div>
+                  <p class="product-desc">While FarmerGPT serves as the conversational intelligence interface, FarmOS acts as the underlying operating system. It synchronizes GPS field boundaries, connected IoT soil moisture probes, automated drip valves, tractor CAN-bus telematics, and operational crop ledgers into a single unified enterprise cockpit.</p>
+
+                  <div class="product-features-list">
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>Cadastral Digital Twin:</strong> Sub-meter GPS plot zoning with multi-layer soil horizon and irrigation grid mapping.</span>
+                    </div>
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>IoT Sensor Fusion:</strong> Ingests capacitive soil probes (VWC%), root zone EC, temperature, and leaf wetness at 15-min intervals.</span>
+                    </div>
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>Tractor CAN-bus Telematics:</strong> Tracks machine operating hours, diesel burn (L/hr), and PTO load across custom fleets.</span>
+                    </div>
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>Automated Field Work Orders:</strong> Generates synchronized daily task queues for drivers and field labor based on sensor triggers.</span>
+                    </div>
+                  </div>
+
+                  <span class="product-persona-tag">🎯 Built For: Progressive Farm Owners, FPOs, Agribusiness Estates &amp; Contract Farming</span>
+
+                  <div class="product-actions-row">
+                    <a class="button button-primary" href="#contact">Request FarmOS Pilot Access ↗</a>
+                    <a class="button button-secondary" href="#contact">Partner with Farmers Cafe</a>
+                  </div>
+                </div>
+
+                <div class="product-visual-col">
+                  <div class="visual-glass-card">
+                    <div class="visual-card-topbar">
+                      <span class="visual-brand-tag">🚜 FarmOS Enterprise &bull; Telemetry Hub</span>
+                      <span class="visual-status-pill" style="background: rgba(14, 165, 233, 0.15); color: #0284C7;">○ Pilot Trials Q4 2026</span>
+                    </div>
+
+                    <div class="visual-grid-2col">
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Active Plots</span>
+                        <span class="stat-box-val">Plot A, B &amp; C (18 Ac)</span>
+                      </div>
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Soil Probe VWC</span>
+                        <span class="stat-box-val">48.2% &bull; Optimal</span>
+                      </div>
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Connected Fleet</span>
+                        <span class="stat-box-val">Mahindra 575 DI (PTO OK)</span>
+                      </div>
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Drip Fertigation</span>
+                        <span class="stat-box-val">Zone 2 Valve Scheduled</span>
+                      </div>
+                    </div>
+
+                    <div class="visual-highlight-banner" style="background: #082F49;">
+                      <strong style="color: #38BDF8;">Automated Work Order #104:</strong> "Moisture probe at Plot B indicates field capacity reached. Drip paused for 72 hours. Fertigation queued for Zone 1 Monday 6:00 AM."
+                    </div>
+
+                    <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.76rem; color: var(--muted); padding-top: 4px;">
+                      <span>Telemetry Gateway: LTE-M / LoRaWAN</span>
+                      <span style="color: #0284C7; font-weight: 700;">● Cloud Sync Active</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PANEL 3: KisanVision -->
+              <div class="product-tab-panel" data-panel="kisanvision" id="panel-kisanvision" role="tabpanel" aria-labelledby="tab-kisanvision" hidden>
+                <div class="product-info-col">
+                  <span class="product-lineage-badge">Product 03 &bull; Computer Vision</span>
+                  <div class="product-info-header">
+                    <h3>KisanVision</h3>
+                    <p class="product-tagline">Edge Neural Diagnostics &amp; Drone Multi-Spectral Crop Pathology</p>
+                  </div>
+                  <p class="product-desc">KisanVision brings computer vision directly to rural smartphones and localized drones. By training proprietary visual neural networks on over 500,000 field-verified pathology samples across Indian crops, KisanVision identifies foliar blights, viral curl vectors, and pest instars at sub-millimeter resolution even in offline environments.</p>
+
+                  <div class="product-features-list">
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>Micro-Symptom Foliar Detection:</strong> Classifies fungal spores, yellow mosaic patterns, and early sucking pest nymphs.</span>
+                    </div>
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>Offline On-Device Inference:</strong> Runs on quantized edge neural models directly on sub-₹10,000 Android phones without internet.</span>
+                    </div>
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>Drone Multispectral NDVI Stitching:</strong> Scans 200+ contiguous acres to generate spatial stress heatmaps before damage spreads.</span>
+                    </div>
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>Automated FarmerGPT Handoff:</strong> Feeds visual diagnosis directly into FarmerGPT for immediate dosage calculation.</span>
+                    </div>
+                  </div>
+
+                  <span class="product-persona-tag">🎯 Built For: Progressive Growers, Field Scouts, Drone Spray Operators &amp; Seed R&amp;D</span>
+
+                  <div class="product-actions-row">
+                    <a class="button button-primary" href="#contact">Inquire for KisanVision Beta ↗</a>
+                    <a class="button button-secondary" href="#contact">Contribute Datasets</a>
+                  </div>
+                </div>
+
+                <div class="product-visual-col">
+                  <div class="visual-glass-card">
+                    <div class="visual-card-topbar">
+                      <span class="visual-brand-tag">👁️ KisanVision &bull; Neural Scanner</span>
+                      <span class="visual-status-pill" style="background: rgba(168, 85, 247, 0.15); color: #9333EA;">○ R&amp;D Lab &bull; 500k Dataset</span>
+                    </div>
+
+                    <div class="visual-grid-2col">
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Primary Pathology</span>
+                        <span class="stat-box-val">CLCuV (99.2% Conf.)</span>
+                      </div>
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Vector Detection</span>
+                        <span class="stat-box-val">Whitefly (4 nymphs/leaf)</span>
+                      </div>
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Inference Speed</span>
+                        <span class="stat-box-val">38ms (On-Device Edge)</span>
+                      </div>
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Network Mode</span>
+                        <span class="stat-box-val">100% Offline Capable</span>
+                      </div>
+                    </div>
+
+                    <div class="visual-highlight-banner" style="background: #2E1065;">
+                      <strong style="color: #C084FC;">Neural Viewfinder Bounding Box:</strong> "[Leaf Margin 4B] Early upward leaf curling accompanied by vein thickening. Bemisia tabaci vector nymphs detected on lower epidermis."
+                    </div>
+
+                    <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.76rem; color: var(--muted); padding-top: 4px;">
+                      <span>Resolution: Sub-millimeter Macro</span>
+                      <span style="color: #9333EA; font-weight: 700;">● Neural Engine Ready</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PANEL 4: MandiPulse -->
+              <div class="product-tab-panel" data-panel="mandipulse" id="panel-mandipulse" role="tabpanel" aria-labelledby="tab-mandipulse" hidden>
+                <div class="product-info-col">
+                  <span class="product-lineage-badge">Product 04 &bull; Market Arbitrage</span>
+                  <div class="product-info-header">
+                    <h3>MandiPulse</h3>
+                    <p class="product-tagline">Algorithmic Mandi Arbitrage, Influx Forecasting &amp; Commodity Intelligence</p>
+                  </div>
+                  <p class="product-desc">MandiPulse replaces opaque middlemen margins with algorithmic market discovery. By aggregating daily arrival volumes, terminal mandi pricing feeds, weather-induced supply disruptions, and institutional processor demand tenders, MandiPulse calculates whether holding stock or transporting to a neighboring district yields higher net returns.</p>
+
+                  <div class="product-features-list">
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>2,400+ APMC Mandi Ingestion:</strong> Automated normalization of modal prices, arrivals, and moisture deductions across India.</span>
+                    </div>
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>14-Day Price Trajectory:</strong> Deep time-series forecast models for wheat, cotton, soybean, onion, and pulses.</span>
+                    </div>
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>Net Freight Arbitrage Engine:</strong> Factors diesel transport rates, toll costs, and mandi commissions to identify top net-yield mandis.</span>
+                    </div>
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>Hold vs. Sell Calculator:</strong> Quantifies warehouse demurrage against anticipated price increases to optimize selling windows.</span>
+                    </div>
+                  </div>
+
+                  <span class="product-persona-tag">🎯 Built For: Commodity Farmers, Silo Operators, FPO Aggregators &amp; Rural Traders</span>
+
+                  <div class="product-actions-row">
+                    <a class="button button-primary" href="#contact">Explore MandiPulse Partnership ↗</a>
+                    <a class="button button-secondary" href="#contact">Connect with Market Team</a>
+                  </div>
+                </div>
+
+                <div class="product-visual-col">
+                  <div class="visual-glass-card">
+                    <div class="visual-card-topbar">
+                      <span class="visual-brand-tag">📊 MandiPulse &bull; APMC Arbitrage</span>
+                      <span class="visual-status-pill" style="background: rgba(245, 158, 11, 0.18); color: #D97706;">○ Phase 4 Pipeline</span>
+                    </div>
+
+                    <div class="visual-grid-2col">
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Nashik APMC</span>
+                        <span class="stat-box-val">₹2,320 / qtl (Modal)</span>
+                      </div>
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Lasalgaon APMC</span>
+                        <span class="stat-box-val">₹2,460 / qtl (+₹140)</span>
+                      </div>
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Freight Offset</span>
+                        <span class="stat-box-val">₹45/qtl Net Cost</span>
+                      </div>
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Arbitrage Spread</span>
+                        <span class="stat-box-val">+₹95/qtl Net Gain</span>
+                      </div>
+                    </div>
+
+                    <div class="visual-highlight-banner" style="background: #451A03;">
+                      <strong style="color: #FBBF24;">Strategic Market Signal:</strong> "Terminal mandi arrivals dropped 32% this week while mill procurement tenders open at month-end. Holding 85 quintals for 14 days yields an incremental net profit of ₹11,900."
+                    </div>
+
+                    <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.76rem; color: var(--muted); padding-top: 4px;">
+                      <span>Commodity: Lokwan Wheat (11.4% Moisture)</span>
+                      <span style="color: #D97706; font-weight: 700;">● Arbitrage Positive</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PANEL 5: AgriCredit AI -->
+              <div class="product-tab-panel" data-panel="agricredit" id="panel-agricredit" role="tabpanel" aria-labelledby="tab-agricredit" hidden>
+                <div class="product-info-col">
+                  <span class="product-lineage-badge">Product 05 &bull; Rural FinTech</span>
+                  <div class="product-info-header">
+                    <h3>AgriCredit AI</h3>
+                    <p class="product-tagline">Satellite-Grounded Alternative Underwriting &amp; Parametric Risk Intelligence</p>
+                  </div>
+                  <p class="product-desc">Traditional banking excludes millions of creditworthy farmers due to lack of formal financial documentation. AgriCredit AI creates a verifiable 'Agri-Credit Score' by synthesizing multi-year Sentinel-2 satellite vegetation vigor (NDVI), historical yield consistency, hyper-local soil resilience, and FarmOS telemetry to unlock lower interest rates and automated drought insurance.</p>
+
+                  <div class="product-features-list">
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>5-Year Satellite Biomass Verification:</strong> Synthesizes Copernicus Sentinel-2 time-series to verify genuine farm productivity.</span>
+                    </div>
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>Parametric Weather Indexing:</strong> Automated insurance claim disbursements triggered by Doppler radar precipitation deficits.</span>
+                    </div>
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>NABARD &amp; KCC API Gateway:</strong> Directly pipes verified agronomic creditworthiness scores into rural commercial banks.</span>
+                    </div>
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>Zero-Collateral Penalties:</strong> Underwrites actual biological land output and farm stewardship rather than paper bureaucracy.</span>
+                    </div>
+                  </div>
+
+                  <span class="product-persona-tag">🎯 Built For: Rural Banks, Micro-finance Institutions, Insurance Providers &amp; NBFCs</span>
+
+                  <div class="product-actions-row">
+                    <a class="button button-primary" href="#contact">Inquire for Banking Integration ↗</a>
+                    <a class="button button-secondary" href="#contact">FinTech Collaboration</a>
+                  </div>
+                </div>
+
+                <div class="product-visual-col">
+                  <div class="visual-glass-card">
+                    <div class="visual-card-topbar">
+                      <span class="visual-brand-tag">💳 AgriCredit &bull; Underwriting Engine</span>
+                      <span class="visual-status-pill" style="background: rgba(234, 179, 8, 0.18); color: #B45309;">○ Strategic Horizon</span>
+                    </div>
+
+                    <div class="visual-grid-2col">
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Verified Land Area</span>
+                        <span class="stat-box-val">18.4 Ac Nashik</span>
+                      </div>
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">NDVI Resilience</span>
+                        <span class="stat-box-val">0.78 (Top Decile)</span>
+                      </div>
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Default Risk Index</span>
+                        <span class="stat-box-val">1.2% &bull; Grade AAA</span>
+                      </div>
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Credit Limit Offer</span>
+                        <span class="stat-box-val">₹4,20,000 @ 6.8%</span>
+                      </div>
+                    </div>
+
+                    <div class="visual-highlight-banner" style="background: #422006;">
+                      <strong style="color: #FDE047;">Institutional Scorecard:</strong> "Gajanan Patil exhibits 5 consecutive years of above-median vegetation vigor during dry spells. Recommended for expedited KCC limit expansion with automatic weather-indexed deficit indemnity."
+                    </div>
+
+                    <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.76rem; color: var(--muted); padding-top: 4px;">
+                      <span>Underwriting Method: Satellite + FarmOS</span>
+                      <span style="color: #EAB308; font-weight: 700;">● AAA Credit Grade</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
@@ -4155,6 +5286,7 @@
             <span>Building AI for Agriculture</span>
           </div>
           <nav class="footer-nav" aria-label="Footer navigation">
+            <a href="#ecosystem">Ecosystem</a>
             <a href="#questions">What It Helps With</a>
             <a href="#farmergpt">Farm Memory</a>
             <a href="#equipment">Equipment</a>
@@ -4187,7 +5319,7 @@
             "@type": "Person",
             "name": "Atul Choudhary"
           },
-          "description": "Farmers Cafe builds AI products for agriculture. FarmerGPT, its flagship agricultural intelligence platform, delivers Farmer AI and Kisan AI capabilities with persistent farm memory.",
+          "description": "Farmers Cafe is the parent agricultural technology enterprise (structured like Alphabet for Google). FarmerGPT is its flagship first product, spearheading an interconnected ecosystem of sovereign AI platforms across farm intelligence, telemetry, machine vision, and rural credit.",
           "address": {
             "@type": "PostalAddress",
             "addressCountry": "India"
@@ -4349,7 +5481,7 @@
     }
 
     // 3. Active ScrollSpy for Desktop Nav Pills
-    const sectionIds = ['top', 'hero-simulator', 'questions', 'farmergpt', 'equipment', 'capabilities', 'roadmap', 'contact'];
+    const sectionIds = ['top', 'hero-simulator', 'ecosystem', 'questions', 'farmergpt', 'equipment', 'capabilities', 'roadmap', 'contact'];
     const observedSections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
 
     if ('IntersectionObserver' in window && observedSections.length > 0) {
@@ -5185,6 +6317,59 @@
       updateCalculator();
     }
 
+    // ==========================================
+    // 0. SMART PRODUCT TABS (FARMERS CAFE ECOSYSTEM)
+    // ==========================================
+    function initProductTabs() {
+      const tabBtns = document.querySelectorAll('.product-tab-btn');
+      const tabPanels = document.querySelectorAll('.product-tab-panel');
+      if (!tabBtns.length || !tabPanels.length) return;
+
+      function switchProductTab(targetProduct) {
+        tabBtns.forEach(btn => {
+          const isSelected = btn.getAttribute('data-product') === targetProduct;
+          btn.classList.toggle('active', isSelected);
+          btn.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+          btn.setAttribute('tabindex', isSelected ? '0' : '-1');
+        });
+
+        tabPanels.forEach(panel => {
+          const isCurrent = panel.getAttribute('data-panel') === targetProduct;
+          panel.classList.toggle('active', isCurrent);
+          panel.hidden = !isCurrent;
+        });
+      }
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const prod = btn.getAttribute('data-product');
+          switchProductTab(prod);
+        });
+
+        btn.addEventListener('keydown', (e) => {
+          const tabs = Array.from(tabBtns);
+          const idx = tabs.indexOf(btn);
+          let nextIdx = null;
+
+          if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+            nextIdx = (idx + 1) % tabs.length;
+          } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            nextIdx = (idx - 1 + tabs.length) % tabs.length;
+          } else if (e.key === 'Home') {
+            nextIdx = 0;
+          } else if (e.key === 'End') {
+            nextIdx = tabs.length - 1;
+          }
+
+          if (nextIdx !== null) {
+            e.preventDefault();
+            tabs[nextIdx].focus();
+            tabs[nextIdx].click();
+          }
+        });
+      });
+    }
+
     // ----------------------------------------------------
     // Spacetime-inspired Agricultural Hero Canvas & Particles
     // ----------------------------------------------------
@@ -5482,6 +6667,7 @@
     // Initialize interactive modules
     initHeroCanvas();
     initHeroSimulator();
+    initProductTabs();
     initEquipmentCalculator();
   </script>
 </body>
