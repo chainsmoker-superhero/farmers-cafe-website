@@ -27,23 +27,47 @@
     content="farmer ai, kissan ai, kisan ai, farmer ai apps, agriculture ai, farmergpt, farmers cafe, ai farming app india, crop advisory ai, kisan call center ai, agricultural intelligence platform">
   <meta name="author" content="Farmers Cafe">
   <meta name="theme-color" content="#FFFFFF">
+  <!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
   <meta property="og:title" content="FarmerGPT — #1 Farmer AI &amp; Kisan AI Agricultural Intelligence Platform">
   <meta property="og:description"
     content="Stateful AI built for the field. Retains farm memory and guides high-stakes decisions across crops, weather, equipment, and market timing.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.farmerscafe.co.in/">
+  <meta property="og:site_name" content="Farmers Cafe">
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:image" content="https://www.farmerscafe.co.in/images/og-preview.png">
+  <meta property="og:image:secure_url" content="https://www.farmerscafe.co.in/images/og-preview.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="FarmerGPT by Farmers Cafe — Sovereign Agricultural Intelligence Platform">
+
+  <!-- Twitter / X Cards -->
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@farmerscafe">
+  <meta name="twitter:creator" content="@farmerscafe">
   <meta name="twitter:title" content="FarmerGPT | Leading Farmer AI &amp; Kisan AI Platform">
   <meta name="twitter:description"
     content="Built by Farmers Cafe. Understands your farm, remembers what matters, and delivers practical operational guidance across crops and machinery.">
+  <meta name="twitter:image" content="https://www.farmerscafe.co.in/images/og-preview.png">
+  <meta name="twitter:image:alt" content="FarmerGPT by Farmers Cafe — Sovereign Agricultural Intelligence Platform">
+
+  <!-- Search Engine Crawlers & Dynamic Theme Colors -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FFFFFF">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0A140F">
+  <!-- Non-render-blocking Web Fonts Preload & Fallback -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600;1,9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet">
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Plus+Jakarta+Sans:wght@400..800&display=swap">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Plus+Jakarta+Sans:wght@400..800&display=swap"
+    media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Plus+Jakarta+Sans:wght@400..800&display=swap">
+  </noscript>
   <script>
     (function () {
       try {
@@ -58,6 +82,25 @@
     })();
   </script>
   <style>
+        /* CSS Font Metric Overrides for Zero Cumulative Layout Shift (CLS = 0.00) */
+    @font-face {
+      font-family: 'Plus Jakarta Sans Fallback';
+      src: local('system-ui'), local('-apple-system'), local('BlinkMacSystemFont'), local('Segoe UI'), local('Roboto');
+      ascent-override: 96%;
+      descent-override: 24%;
+      line-gap-override: 0%;
+      size-adjust: 100%;
+    }
+
+    @font-face {
+      font-family: 'Fraunces Fallback';
+      src: local('Georgia'), local('Times New Roman'), local('serif');
+      ascent-override: 98%;
+      descent-override: 28%;
+      line-gap-override: 0%;
+      size-adjust: 102%;
+    }
+
     :root {
       --primary: #1A7F5A;
       --secondary: #4CAF50;
@@ -77,6 +120,8 @@
       --radius-lg: 24px;
       --radius-md: 18px;
       --container: 1180px;
+      --font-sans: "Plus Jakarta Sans", "Plus Jakarta Sans Fallback", system-ui, -apple-system, sans-serif;
+      --font-heading: "Fraunces", "Fraunces Fallback", Georgia, serif;
       --nav-height: 76px;
     }
 
@@ -445,8 +490,11 @@
 
     /* Mobile Toggle Button */
     .nav-mobile-toggle {
-      width: 40px;
-      height: 40px;
+      position: relative;
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      min-height: 44px;
       border-radius: 12px;
       border: 1px solid rgba(15, 23, 42, 0.08);
       background: rgba(255, 255, 255, 0.85);
@@ -456,6 +504,14 @@
       cursor: pointer;
       transition: all 180ms ease;
       box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+      touch-action: manipulation;
+    }
+
+    .nav-mobile-toggle::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 12px;
     }
 
     .nav-mobile-toggle:hover {
@@ -1026,16 +1082,29 @@
     }
 
     .cockpit-lang-btn {
+      position: relative;
       border: none;
       background: transparent;
-      padding: 4px 9px;
+      padding: 6px 12px;
+      min-height: 34px;
       border-radius: 999px;
-      font-size: 0.74rem;
+      font-size: 0.76rem;
       font-weight: 600;
       font-family: inherit;
       color: var(--muted);
       cursor: pointer;
       transition: all 160ms ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      touch-action: manipulation;
+    }
+
+    .cockpit-lang-btn::after {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: inherit;
     }
 
     .cockpit-lang-btn:hover {
@@ -1109,11 +1178,13 @@
     }
 
     .cockpit-preset-chip {
+      position: relative;
       flex-shrink: 0;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 6px 12px;
+      gap: 7px;
+      padding: 8px 14px;
+      min-height: 38px;
       border-radius: 999px;
       border: 1px solid rgba(15, 23, 42, 0.08);
       background: rgba(255, 255, 255, 0.92);
@@ -1123,6 +1194,14 @@
       color: var(--muted);
       cursor: pointer;
       transition: all 180ms ease;
+      touch-action: manipulation;
+    }
+
+    .cockpit-preset-chip::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: inherit;
     }
 
     .cockpit-preset-chip:hover {
@@ -1230,19 +1309,29 @@
     }
 
     .voice-preview-btn {
+      position: relative;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
+      gap: 7px;
+      padding: 6px 13px;
+      min-height: 36px;
       border-radius: 999px;
       background: rgba(46, 204, 113, 0.16);
       border: 1px solid rgba(46, 204, 113, 0.35);
       color: #2ECC71;
-      font-size: 0.72rem;
+      font-size: 0.74rem;
       font-weight: 700;
       cursor: pointer;
       transition: all 160ms ease;
       font-family: inherit;
+      touch-action: manipulation;
+    }
+
+    .voice-preview-btn::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: inherit;
     }
 
     .voice-preview-btn:hover {
@@ -1484,8 +1573,10 @@
 
     .terminal-mic-btn {
       position: relative;
-      width: 32px;
-      height: 32px;
+      width: 38px;
+      height: 38px;
+      min-width: 38px;
+      min-height: 38px;
       border-radius: 50%;
       border: none;
       background: rgba(26, 127, 90, 0.09);
@@ -1495,6 +1586,14 @@
       cursor: pointer;
       font-size: 15px;
       transition: all 180ms ease;
+      touch-action: manipulation;
+    }
+
+    .terminal-mic-btn::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
     }
 
     .terminal-mic-btn:hover {
@@ -1535,8 +1634,11 @@
     }
 
     .terminal-submit-btn {
-      width: 34px;
-      height: 34px;
+      position: relative;
+      width: 38px;
+      height: 38px;
+      min-width: 38px;
+      min-height: 38px;
       border-radius: 50%;
       border: none;
       background: var(--primary);
@@ -1545,6 +1647,14 @@
       place-items: center;
       cursor: pointer;
       transition: background-color 160ms ease, transform 160ms ease;
+      touch-action: manipulation;
+    }
+
+    .terminal-submit-btn::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
     }
 
     .terminal-submit-btn:hover {
@@ -2717,11 +2827,13 @@
     }
 
     .calc-choice-btn {
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       gap: 2px;
-      padding: 10px 12px;
+      padding: 12px 14px;
+      min-height: 52px;
       border-radius: 12px;
       border: 1px solid rgba(15, 23, 42, 0.08);
       background: #F8FAFC;
@@ -2732,6 +2844,7 @@
       cursor: pointer;
       text-align: left;
       transition: all 180ms ease;
+      touch-action: manipulation;
     }
 
     .calc-choice-btn small {
@@ -3256,8 +3369,10 @@
        THEME TOGGLE BUTTON & DARK MODE STYLING
        ========================================== */
     .theme-toggle {
-      width: 38px;
-      height: 38px;
+      width: 42px;
+      height: 42px;
+      min-width: 42px;
+      min-height: 42px;
       border-radius: 9999px;
       background: rgba(15, 23, 42, 0.04);
       border: 1px solid rgba(15, 23, 42, 0.08);
@@ -3269,6 +3384,14 @@
       transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
       flex-shrink: 0;
       position: relative;
+      touch-action: manipulation;
+    }
+
+    .theme-toggle::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
     }
 
     .theme-toggle:hover {

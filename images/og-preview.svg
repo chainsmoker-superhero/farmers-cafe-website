@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06120C"/>
+      <stop offset="50%" stop-color="#0B1E14"/>
+      <stop offset="100%" stop-color="#07140E"/>
+    </linearGradient>
+
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(18, 38, 28, 0.88)"/>
+      <stop offset="100%" stop-color="rgba(11, 24, 18, 0.94)"/>
+    </linearGradient>
+
+    <radialGradient id="emerald-glow" cx="20%" cy="25%" r="60%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="gold-glow" cx="85%" cy="80%" r="55%">
+      <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1200" height="630" fill="url(#bg-grad)"/>
+  <rect width="1200" height="630" fill="url(#emerald-glow)"/>
+  <rect width="1200" height="630" fill="url(#gold-glow)"/>
+
+  <!-- Subtle Digital Twin Grid -->
+  <g stroke="rgba(46, 204, 113, 0.05)" stroke-width="1">
+    <line x1="80" y1="0" x2="80" y2="630"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="320" y1="0" x2="320" y2="630"/>
+    <line x1="440" y1="0" x2="440" y2="630"/>
+    <line x1="560" y1="0" x2="560" y2="630"/>
+    <line x1="680" y1="0" x2="680" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="920" y1="0" x2="920" y2="630"/>
+    <line x1="1040" y1="0" x2="1040" y2="630"/>
+    <line x1="1120" y1="0" x2="1120" y2="630"/>
+
+    <line x1="0" y1="80" x2="1200" y2="80"/>
+    <line x1="0" y1="180" x2="1200" y2="180"/>
+    <line x1="0" y1="280" x2="1200" y2="280"/>
+    <line x1="0" y1="380" x2="1200" y2="380"/>
+    <line x1="0" y1="480" x2="1200" y2="480"/>
+    <line x1="0" y1="560" x2="1200" y2="560"/>
+  </g>
+
+  <!-- Glassmorphic Center Card -->
+  <rect x="60" y="50" width="1080" height="530" rx="28" fill="url(#card-grad)" stroke="rgba(46, 204, 113, 0.28)" stroke-width="1.5" filter="url(#shadow)"/>
+
+  <!-- Top Bar inside Card -->
+  <g transform="translate(100, 95)">
+    <!-- Brand Pill -->
+    <rect width="260" height="36" rx="18" fill="rgba(46, 204, 113, 0.12)" stroke="rgba(46, 204, 113, 0.3)" stroke-width="1"/>
+    <circle cx="20" cy="18" r="4.5" fill="#10B981"/>
+    <circle cx="20" cy="18" r="8" fill="none" stroke="#10B981" stroke-opacity="0.3" stroke-width="2"/>
+    <text x="36" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" fill="#2ECC71" letter-spacing="1.2">FARMERS CAFE HOLDINGS</text>
+
+    <!-- Version Status -->
+    <text x="960" y="23" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#94A3B8" letter-spacing="0.5">● LIVE FLAGSHIP &bull; v2.6</text>
+  </g>
+
+  <!-- Title & Headline -->
+  <g transform="translate(100, 220)">
+    <text font-family="-apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Inter', sans-serif" font-size="76" font-weight="800" fill="#FFFFFF" letter-spacing="-2">FarmerGPT</text>
+    <text y="50" font-family="'Fraunces', Georgia, serif" font-size="34" font-weight="500" font-style="italic" fill="#2ECC71" letter-spacing="-0.5">The Future of Farming is Intelligent.</text>
+    <text y="92" font-family="-apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', sans-serif" font-size="19" font-weight="500" fill="#94A3B8" width="800">
+      Sovereign AI co-pilot for India's 140 million farmers. Stateful farm memory,
+    </text>
+    <text y="118" font-family="-apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', sans-serif" font-size="19" font-weight="500" fill="#94A3B8" width="800">
+      Doppler radar telemetry, machinery torque sizing &amp; regional kisan voice intelligence.
+    </text>
+  </g>
+
+  <!-- Telemetry HUD Feature Strip -->
+  <g transform="translate(100, 420)">
+    <!-- Tile 1 -->
+    <rect x="0" y="0" width="225" height="110" rx="16" fill="rgba(26, 127, 90, 0.08)" stroke="rgba(46, 204, 113, 0.2)" stroke-width="1"/>
+    <text x="18" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="18">📍</text>
+    <text x="44" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="800" fill="#2ECC71" letter-spacing="0.5">FARM MEMORY TWIN</text>
+    <text x="18" y="62" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="15" font-weight="700" fill="#F1F5F2">18.4 Ac Vertisol</text>
+    <text x="18" y="85" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="500" fill="#94A3B8">Multi-Season Crop History</text>
+
+    <!-- Tile 2 -->
+    <rect x="245" y="0" width="225" height="110" rx="16" fill="rgba(26, 127, 90, 0.08)" stroke="rgba(46, 204, 113, 0.2)" stroke-width="1"/>
+    <text x="263" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="18">⚡</text>
+    <text x="289" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="800" fill="#2ECC71" letter-spacing="0.5">DOPPLER RADAR</text>
+    <text x="263" y="62" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="15" font-weight="700" fill="#F1F5F2">10Hz Telemetry Link</text>
+    <text x="263" y="85" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="500" fill="#94A3B8">Rainfast Spray Envelope</text>
+
+    <!-- Tile 3 -->
+    <rect x="490" y="0" width="225" height="110" rx="16" fill="rgba(26, 127, 90, 0.08)" stroke="rgba(46, 204, 113, 0.2)" stroke-width="1"/>
+    <text x="508" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="18">🚜</text>
+    <text x="534" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="800" fill="#2ECC71" letter-spacing="0.5">FLEET DYNO SIZING</text>
+    <text x="508" y="62" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="15" font-weight="700" fill="#F1F5F2">45 HP Mahindra</text>
+    <text x="508" y="85" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="500" fill="#94A3B8">PTO Rated • Soil Matched</text>
+
+    <!-- Tile 4 -->
+    <rect x="735" y="0" width="265" height="110" rx="16" fill="rgba(212, 175, 55, 0.08)" stroke="rgba(212, 175, 55, 0.25)" stroke-width="1"/>
+    <text x="753" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="18">🗣️</text>
+    <text x="779" y="32" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="800" fill="#D4AF37" letter-spacing="0.5">REGIONAL KISAN VOICE</text>
+    <text x="753" y="62" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="15" font-weight="700" fill="#F1F5F2">EN • हिंदी • मराठी • ਪੰਜਾਬੀ</text>
+    <text x="753" y="85" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="700" fill="#10B981">+₹14,200/Ac Moat Saved</text>
+  </g>
+</svg>
