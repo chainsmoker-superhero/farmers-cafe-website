@@ -4010,10 +4010,109 @@
        FARMERGPT STUDIO & COCKPIT CONSOLIDATED TAB PANEL
        ============================================================ */
     #panel-farmergpt.product-tab-panel.active {
+      display: flex;
+      flex-direction: column;
+      gap: 56px;
+      opacity: 1;
+      animation: productPanelFadeIn 320ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .farmergpt-top-studio-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.15fr);
       gap: 32px;
       align-items: start;
+      width: 100%;
+    }
+
+    .farmergpt-extended-content {
+      display: flex;
+      flex-direction: column;
+      gap: 64px;
+      width: 100%;
+      padding-top: 36px;
+      border-top: 1px solid rgba(26, 127, 90, 0.16);
+    }
+
+    .farmergpt-extended-content section {
+      padding: 0 !important;
+    }
+
+    .farmergpt-extended-content .container {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Deactivated Coming Soon Tabs */
+    .product-tab-btn.tab-deactivated {
+      opacity: 0.65;
+      cursor: not-allowed;
+      border: 1px dashed rgba(15, 23, 42, 0.2);
+      background: rgba(15, 23, 42, 0.02);
+      box-shadow: none;
+    }
+
+    .product-tab-btn.tab-deactivated:hover {
+      transform: none;
+      border-color: rgba(15, 23, 42, 0.28);
+      background: rgba(15, 23, 42, 0.04);
+      box-shadow: none;
+    }
+
+    .badge-coming-soon {
+      background: rgba(100, 116, 139, 0.14);
+      color: #64748B;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 999px;
+    }
+
+    .chip-coming-soon {
+      opacity: 0.72;
+      cursor: default;
+    }
+
+    .chip-coming-soon:hover {
+      transform: none !important;
+      border-color: rgba(15, 23, 42, 0.07) !important;
+      box-shadow: none !important;
+    }
+
+    .satellite-badge-soon {
+      font-size: 0.65rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #64748B;
+      background: rgba(100, 116, 139, 0.12);
+      padding: 3px 8px;
+      border-radius: 999px;
+      margin-left: auto;
+    }
+
+    [data-theme="dark"] .farmergpt-extended-content {
+      border-top-color: rgba(255, 255, 255, 0.08);
+    }
+
+    [data-theme="dark"] .product-tab-btn.tab-deactivated {
+      background: rgba(18, 36, 27, 0.35);
+      border-color: rgba(255, 255, 255, 0.12);
+      color: #94A3B8;
+    }
+
+    [data-theme="dark"] .badge-coming-soon {
+      background: rgba(148, 163, 184, 0.16);
+      color: #94A3B8;
+    }
+
+    [data-theme="dark"] .satellite-badge-soon {
+      background: rgba(148, 163, 184, 0.14);
+      color: #94A3B8;
     }
 
     .farmergpt-studio-col {
@@ -4644,28 +4743,29 @@
         <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
         <div class="container hero-grid">
           <div class="hero-copy reveal">
-            <span class="eyebrow">Farmers Cafe Enterprise</span>
-            <h1>The Sovereign Deep-Tech Enterprise <span class="headline-accent">for Agriculture.</span></h1>
-            <p class="hero-subhead"><strong>Farmers Cafe</strong> architects sovereign, field-grounded artificial intelligence for India's 140 million agriculturalists.</p>
-            <p class="hero-desc">Starting with our flagship conversational agronomist <strong>FarmerGPT</strong>, we build an interconnected ecosystem of sovereign intelligence&mdash;spanning farm ERP, computer vision pathology, mandi price arbitrage, and rural credit underwriting.</p>
+            <span class="eyebrow">Farmers Cafe</span>
+            <h1>The Future of Farming <span class="headline-accent">is Intelligent.</span></h1>
+            <p class="hero-subhead"><strong>Meet FarmerGPT.</strong> The intelligence platform built for your farm.</p>
+            <p class="hero-desc">An AI-powered agricultural intelligence platform that understands your farm, remembers
+              what matters, and helps you make better decisions across crops, weather, machinery, markets, and farm
+              operations.</p>
             <div class="hero-actions">
-              <a class="button button-primary" href="#ecosystem" data-jump-product="farmergpt">Experience FarmerGPT &nearr;</a>
-              <a class="button button-secondary" href="#ecosystem">Explore All 5 Products &darr;</a>
-              <a class="button button-secondary" href="#equipment">Equipment Calculator</a>
-              <a class="button button-secondary" href="#contact">Contact Parent Lab</a>
+              <a class="button button-primary" href="#contact">Get Early Access</a>
+              <a class="button button-secondary" href="#ecosystem" data-jump-product="farmergpt">Experience FarmerGPT</a>
+              <a class="button button-secondary" href="#ecosystem">Products Ecosystem</a>
             </div>
             <div class="hero-meta" aria-label="Platform highlights">
               <div class="hero-stat">
-                <strong>Sovereign AI</strong>
-                <span>Field-grounded foundation models for agriculture</span>
+                <strong>Farm Memory</strong>
+                <span>Remembers your land &amp; crops</span>
               </div>
               <div class="hero-stat">
-                <strong>Flagship: FarmerGPT</strong>
-                <span>Stateful farm memory &amp; Doppler radar cockpit</span>
+                <strong>Equipment</strong>
+                <span>Machinery advice for your acres</span>
               </div>
               <div class="hero-stat">
-                <strong>Interconnected</strong>
-                <span>5 specialized platforms for the entire farm lifecycle</span>
+                <strong>Multilingual</strong>
+                <span>Speak naturally in your language</span>
               </div>
             </div>
           </div>
@@ -4691,41 +4791,41 @@
                     <span class="satellite-arrow">&rarr;</span>
                   </a>
 
-                  <a href="#ecosystem" class="matrix-satellite-chip" data-jump-product="farmos" title="Explore FarmOS">
+                  <div class="matrix-satellite-chip chip-coming-soon" title="FarmOS — Coming Soon">
                     <div class="satellite-icon-col">🚜</div>
                     <div class="satellite-info-col">
                       <div class="satellite-name">FarmOS</div>
-                      <div class="satellite-tag">Autonomous Farm ERP &bull; IoT Sensor Fusion &amp; Telematics</div>
+                      <div class="satellite-tag">Autonomous Farm ERP &bull; Coming Soon</div>
                     </div>
-                    <span class="satellite-arrow">&rarr;</span>
-                  </a>
+                    <span class="satellite-badge-soon">Coming Soon</span>
+                  </div>
 
-                  <a href="#ecosystem" class="matrix-satellite-chip" data-jump-product="kisanvision" title="Explore KisanVision">
+                  <div class="matrix-satellite-chip chip-coming-soon" title="KisanVision — Coming Soon">
                     <div class="satellite-icon-col">👁️</div>
                     <div class="satellite-info-col">
                       <div class="satellite-name">KisanVision</div>
-                      <div class="satellite-tag">Edge Computer Vision &bull; Real-Time Pathology &amp; Grading</div>
+                      <div class="satellite-tag">Edge Computer Vision Pathology &bull; Coming Soon</div>
                     </div>
-                    <span class="satellite-arrow">&rarr;</span>
-                  </a>
+                    <span class="satellite-badge-soon">Coming Soon</span>
+                  </div>
 
-                  <a href="#ecosystem" class="matrix-satellite-chip" data-jump-product="mandipulse" title="Explore MandiPulse">
+                  <div class="matrix-satellite-chip chip-coming-soon" title="MandiPulse — Coming Soon">
                     <div class="satellite-icon-col">📊</div>
                     <div class="satellite-info-col">
                       <div class="satellite-name">MandiPulse</div>
-                      <div class="satellite-tag">Predictive APMC Arbitrage &bull; Multi-State Price Models</div>
+                      <div class="satellite-tag">Predictive APMC Arbitrage &bull; Coming Soon</div>
                     </div>
-                    <span class="satellite-arrow">&rarr;</span>
-                  </a>
+                    <span class="satellite-badge-soon">Coming Soon</span>
+                  </div>
 
-                  <a href="#ecosystem" class="matrix-satellite-chip" data-jump-product="agricredit" title="Explore AgriCredit AI">
+                  <div class="matrix-satellite-chip chip-coming-soon" title="AgriCredit AI — Coming Soon">
                     <div class="satellite-icon-col">💳</div>
                     <div class="satellite-info-col">
                       <div class="satellite-name">AgriCredit AI</div>
-                      <div class="satellite-tag">Rural FinTech &bull; Satellite Cashflow &amp; Yield Underwriting</div>
+                      <div class="satellite-tag">Rural FinTech Underwriting &bull; Coming Soon</div>
                     </div>
-                    <span class="satellite-arrow">&rarr;</span>
-                  </a>
+                    <span class="satellite-badge-soon">Coming Soon</span>
+                  </div>
                 </div>
               </div>
 
@@ -4821,25 +4921,25 @@
                   <span class="tab-name">FarmerGPT</span>
                   <span class="tab-badge badge-live">Live Flagship</span>
                 </button>
-                <button class="product-tab-btn" data-product="farmos" role="tab" aria-selected="false" aria-controls="panel-farmos" id="tab-farmos" type="button">
+                <button class="product-tab-btn tab-deactivated" data-product="farmos" role="tab" aria-selected="false" aria-controls="panel-farmos" id="tab-farmos" type="button" title="FarmOS — Coming Soon" aria-disabled="true">
                   <span class="tab-icon">🚜</span>
                   <span class="tab-name">FarmOS</span>
-                  <span class="tab-badge badge-dev">Operating System</span>
+                  <span class="tab-badge badge-coming-soon">Coming Soon</span>
                 </button>
-                <button class="product-tab-btn" data-product="kisanvision" role="tab" aria-selected="false" aria-controls="panel-kisanvision" id="tab-kisanvision" type="button">
+                <button class="product-tab-btn tab-deactivated" data-product="kisanvision" role="tab" aria-selected="false" aria-controls="panel-kisanvision" id="tab-kisanvision" type="button" title="KisanVision — Coming Soon" aria-disabled="true">
                   <span class="tab-icon">👁️</span>
                   <span class="tab-name">KisanVision</span>
-                  <span class="tab-badge badge-pilot">Computer Vision</span>
+                  <span class="tab-badge badge-coming-soon">Coming Soon</span>
                 </button>
-                <button class="product-tab-btn" data-product="mandipulse" role="tab" aria-selected="false" aria-controls="panel-mandipulse" id="tab-mandipulse" type="button">
+                <button class="product-tab-btn tab-deactivated" data-product="mandipulse" role="tab" aria-selected="false" aria-controls="panel-mandipulse" id="tab-mandipulse" type="button" title="MandiPulse — Coming Soon" aria-disabled="true">
                   <span class="tab-icon">📊</span>
                   <span class="tab-name">MandiPulse</span>
-                  <span class="tab-badge badge-market">Market Arbitrage</span>
+                  <span class="tab-badge badge-coming-soon">Coming Soon</span>
                 </button>
-                <button class="product-tab-btn" data-product="agricredit" role="tab" aria-selected="false" aria-controls="panel-agricredit" id="tab-agricredit" type="button">
+                <button class="product-tab-btn tab-deactivated" data-product="agricredit" role="tab" aria-selected="false" aria-controls="panel-agricredit" id="tab-agricredit" type="button" title="AgriCredit AI — Coming Soon" aria-disabled="true">
                   <span class="tab-icon">💳</span>
                   <span class="tab-name">AgriCredit AI</span>
-                  <span class="tab-badge badge-fin">Rural FinTech</span>
+                  <span class="tab-badge badge-coming-soon">Coming Soon</span>
                 </button>
               </div>
             </div>
@@ -4849,7 +4949,8 @@
 
               <!-- PANEL 1: FarmerGPT -->
               <div class="product-tab-panel active" data-panel="farmergpt" id="panel-farmergpt" role="tabpanel" aria-labelledby="tab-farmergpt">
-                <div class="farmergpt-studio-col">
+                <div class="farmergpt-top-studio-grid">
+                  <div class="farmergpt-studio-col">
                   <!-- Header Block -->
                   <div class="farmergpt-studio-header">
                     <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;">
@@ -5192,314 +5293,11 @@
               </form>
             </div>
                 </div>
-              </div>
-
-              <!-- PANEL 2: FarmOS -->
-              <div class="product-tab-panel" data-panel="farmos" id="panel-farmos" role="tabpanel" aria-labelledby="tab-farmos" hidden>
-                <div class="product-info-col">
-                  <span class="product-lineage-badge">Product 02 &bull; Operating System</span>
-                  <div class="product-info-header">
-                    <h3>FarmOS</h3>
-                    <p class="product-tagline">Autonomous Farm ERP, Sensor Fusion &amp; Telemetry Hub</p>
-                  </div>
-                  <p class="product-desc">While FarmerGPT serves as the conversational intelligence interface, FarmOS acts as the underlying operating system. It synchronizes GPS field boundaries, connected IoT soil moisture probes, automated drip valves, tractor CAN-bus telematics, and operational crop ledgers into a single unified enterprise cockpit.</p>
-
-                  <div class="product-features-list">
-                    <div class="product-feature-item">
-                      <span class="feature-check">✓</span>
-                      <span><strong>Cadastral Digital Twin:</strong> Sub-meter GPS plot zoning with multi-layer soil horizon and irrigation grid mapping.</span>
-                    </div>
-                    <div class="product-feature-item">
-                      <span class="feature-check">✓</span>
-                      <span><strong>IoT Sensor Fusion:</strong> Ingests capacitive soil probes (VWC%), root zone EC, temperature, and leaf wetness at 15-min intervals.</span>
-                    </div>
-                    <div class="product-feature-item">
-                      <span class="feature-check">✓</span>
-                      <span><strong>Tractor CAN-bus Telematics:</strong> Tracks machine operating hours, diesel burn (L/hr), and PTO load across custom fleets.</span>
-                    </div>
-                    <div class="product-feature-item">
-                      <span class="feature-check">✓</span>
-                      <span><strong>Automated Field Work Orders:</strong> Generates synchronized daily task queues for drivers and field labor based on sensor triggers.</span>
-                    </div>
-                  </div>
-
-                  <span class="product-persona-tag">🎯 Built For: Progressive Farm Owners, FPOs, Agribusiness Estates &amp; Contract Farming</span>
-
-                  <div class="product-actions-row">
-                    <a class="button button-primary" href="#contact">Request FarmOS Pilot Access ↗</a>
-                    <a class="button button-secondary" href="#contact">Partner with Farmers Cafe</a>
-                  </div>
                 </div>
 
-                <div class="product-visual-col">
-                  <div class="visual-glass-card">
-                    <div class="visual-card-topbar">
-                      <span class="visual-brand-tag">🚜 FarmOS Enterprise &bull; Telemetry Hub</span>
-                      <span class="visual-status-pill" style="background: rgba(14, 165, 233, 0.15); color: #0284C7;">○ Pilot Trials Q4 2026</span>
-                    </div>
-
-                    <div class="visual-grid-2col">
-                      <div class="visual-stat-box">
-                        <span class="stat-box-label">Active Plots</span>
-                        <span class="stat-box-val">Plot A, B &amp; C (18 Ac)</span>
-                      </div>
-                      <div class="visual-stat-box">
-                        <span class="stat-box-label">Soil Probe VWC</span>
-                        <span class="stat-box-val">48.2% &bull; Optimal</span>
-                      </div>
-                      <div class="visual-stat-box">
-                        <span class="stat-box-label">Connected Fleet</span>
-                        <span class="stat-box-val">Mahindra 575 DI (PTO OK)</span>
-                      </div>
-                      <div class="visual-stat-box">
-                        <span class="stat-box-label">Drip Fertigation</span>
-                        <span class="stat-box-val">Zone 2 Valve Scheduled</span>
-                      </div>
-                    </div>
-
-                    <div class="visual-highlight-banner" style="background: #082F49;">
-                      <strong style="color: #38BDF8;">Automated Work Order #104:</strong> "Moisture probe at Plot B indicates field capacity reached. Drip paused for 72 hours. Fertigation queued for Zone 1 Monday 6:00 AM."
-                    </div>
-
-                    <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.76rem; color: var(--muted); padding-top: 4px;">
-                      <span>Telemetry Gateway: LTE-M / LoRaWAN</span>
-                      <span style="color: #0284C7; font-weight: 700;">● Cloud Sync Active</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- PANEL 3: KisanVision -->
-              <div class="product-tab-panel" data-panel="kisanvision" id="panel-kisanvision" role="tabpanel" aria-labelledby="tab-kisanvision" hidden>
-                <div class="product-info-col">
-                  <span class="product-lineage-badge">Product 03 &bull; Computer Vision</span>
-                  <div class="product-info-header">
-                    <h3>KisanVision</h3>
-                    <p class="product-tagline">Edge Neural Diagnostics &amp; Drone Multi-Spectral Crop Pathology</p>
-                  </div>
-                  <p class="product-desc">KisanVision brings computer vision directly to rural smartphones and localized drones. By training proprietary visual neural networks on over 500,000 field-verified pathology samples across Indian crops, KisanVision identifies foliar blights, viral curl vectors, and pest instars at sub-millimeter resolution even in offline environments.</p>
-
-                  <div class="product-features-list">
-                    <div class="product-feature-item">
-                      <span class="feature-check">✓</span>
-                      <span><strong>Micro-Symptom Foliar Detection:</strong> Classifies fungal spores, yellow mosaic patterns, and early sucking pest nymphs.</span>
-                    </div>
-                    <div class="product-feature-item">
-                      <span class="feature-check">✓</span>
-                      <span><strong>Offline On-Device Inference:</strong> Runs on quantized edge neural models directly on sub-₹10,000 Android phones without internet.</span>
-                    </div>
-                    <div class="product-feature-item">
-                      <span class="feature-check">✓</span>
-                      <span><strong>Drone Multispectral NDVI Stitching:</strong> Scans 200+ contiguous acres to generate spatial stress heatmaps before damage spreads.</span>
-                    </div>
-                    <div class="product-feature-item">
-                      <span class="feature-check">✓</span>
-                      <span><strong>Automated FarmerGPT Handoff:</strong> Feeds visual diagnosis directly into FarmerGPT for immediate dosage calculation.</span>
-                    </div>
-                  </div>
-
-                  <span class="product-persona-tag">🎯 Built For: Progressive Growers, Field Scouts, Drone Spray Operators &amp; Seed R&amp;D</span>
-
-                  <div class="product-actions-row">
-                    <a class="button button-primary" href="#contact">Inquire for KisanVision Beta ↗</a>
-                    <a class="button button-secondary" href="#contact">Contribute Datasets</a>
-                  </div>
-                </div>
-
-                <div class="product-visual-col">
-                  <div class="visual-glass-card">
-                    <div class="visual-card-topbar">
-                      <span class="visual-brand-tag">👁️ KisanVision &bull; Neural Scanner</span>
-                      <span class="visual-status-pill" style="background: rgba(168, 85, 247, 0.15); color: #9333EA;">○ R&amp;D Lab &bull; 500k Dataset</span>
-                    </div>
-
-                    <div class="visual-grid-2col">
-                      <div class="visual-stat-box">
-                        <span class="stat-box-label">Primary Pathology</span>
-                        <span class="stat-box-val">CLCuV (99.2% Conf.)</span>
-                      </div>
-                      <div class="visual-stat-box">
-                        <span class="stat-box-label">Vector Detection</span>
-                        <span class="stat-box-val">Whitefly (4 nymphs/leaf)</span>
-                      </div>
-                      <div class="visual-stat-box">
-                        <span class="stat-box-label">Inference Speed</span>
-                        <span class="stat-box-val">38ms (On-Device Edge)</span>
-                      </div>
-                      <div class="visual-stat-box">
-                        <span class="stat-box-label">Network Mode</span>
-                        <span class="stat-box-val">100% Offline Capable</span>
-                      </div>
-                    </div>
-
-                    <div class="visual-highlight-banner" style="background: #2E1065;">
-                      <strong style="color: #C084FC;">Neural Viewfinder Bounding Box:</strong> "[Leaf Margin 4B] Early upward leaf curling accompanied by vein thickening. Bemisia tabaci vector nymphs detected on lower epidermis."
-                    </div>
-
-                    <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.76rem; color: var(--muted); padding-top: 4px;">
-                      <span>Resolution: Sub-millimeter Macro</span>
-                      <span style="color: #9333EA; font-weight: 700;">● Neural Engine Ready</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- PANEL 4: MandiPulse -->
-              <div class="product-tab-panel" data-panel="mandipulse" id="panel-mandipulse" role="tabpanel" aria-labelledby="tab-mandipulse" hidden>
-                <div class="product-info-col">
-                  <span class="product-lineage-badge">Product 04 &bull; Market Arbitrage</span>
-                  <div class="product-info-header">
-                    <h3>MandiPulse</h3>
-                    <p class="product-tagline">Algorithmic Mandi Arbitrage, Influx Forecasting &amp; Commodity Intelligence</p>
-                  </div>
-                  <p class="product-desc">MandiPulse replaces opaque middlemen margins with algorithmic market discovery. By aggregating daily arrival volumes, terminal mandi pricing feeds, weather-induced supply disruptions, and institutional processor demand tenders, MandiPulse calculates whether holding stock or transporting to a neighboring district yields higher net returns.</p>
-
-                  <div class="product-features-list">
-                    <div class="product-feature-item">
-                      <span class="feature-check">✓</span>
-                      <span><strong>2,400+ APMC Mandi Ingestion:</strong> Automated normalization of modal prices, arrivals, and moisture deductions across India.</span>
-                    </div>
-                    <div class="product-feature-item">
-                      <span class="feature-check">✓</span>
-                      <span><strong>14-Day Price Trajectory:</strong> Deep time-series forecast models for wheat, cotton, soybean, onion, and pulses.</span>
-                    </div>
-                    <div class="product-feature-item">
-                      <span class="feature-check">✓</span>
-                      <span><strong>Net Freight Arbitrage Engine:</strong> Factors diesel transport rates, toll costs, and mandi commissions to identify top net-yield mandis.</span>
-                    </div>
-                    <div class="product-feature-item">
-                      <span class="feature-check">✓</span>
-                      <span><strong>Hold vs. Sell Calculator:</strong> Quantifies warehouse demurrage against anticipated price increases to optimize selling windows.</span>
-                    </div>
-                  </div>
-
-                  <span class="product-persona-tag">🎯 Built For: Commodity Farmers, Silo Operators, FPO Aggregators &amp; Rural Traders</span>
-
-                  <div class="product-actions-row">
-                    <a class="button button-primary" href="#contact">Explore MandiPulse Partnership ↗</a>
-                    <a class="button button-secondary" href="#contact">Connect with Market Team</a>
-                  </div>
-                </div>
-
-                <div class="product-visual-col">
-                  <div class="visual-glass-card">
-                    <div class="visual-card-topbar">
-                      <span class="visual-brand-tag">📊 MandiPulse &bull; APMC Arbitrage</span>
-                      <span class="visual-status-pill" style="background: rgba(245, 158, 11, 0.18); color: #D97706;">○ Phase 4 Pipeline</span>
-                    </div>
-
-                    <div class="visual-grid-2col">
-                      <div class="visual-stat-box">
-                        <span class="stat-box-label">Nashik APMC</span>
-                        <span class="stat-box-val">₹2,320 / qtl (Modal)</span>
-                      </div>
-                      <div class="visual-stat-box">
-                        <span class="stat-box-label">Lasalgaon APMC</span>
-                        <span class="stat-box-val">₹2,460 / qtl (+₹140)</span>
-                      </div>
-                      <div class="visual-stat-box">
-                        <span class="stat-box-label">Freight Offset</span>
-                        <span class="stat-box-val">₹45/qtl Net Cost</span>
-                      </div>
-                      <div class="visual-stat-box">
-                        <span class="stat-box-label">Arbitrage Spread</span>
-                        <span class="stat-box-val">+₹95/qtl Net Gain</span>
-                      </div>
-                    </div>
-
-                    <div class="visual-highlight-banner" style="background: #451A03;">
-                      <strong style="color: #FBBF24;">Strategic Market Signal:</strong> "Terminal mandi arrivals dropped 32% this week while mill procurement tenders open at month-end. Holding 85 quintals for 14 days yields an incremental net profit of ₹11,900."
-                    </div>
-
-                    <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.76rem; color: var(--muted); padding-top: 4px;">
-                      <span>Commodity: Lokwan Wheat (11.4% Moisture)</span>
-                      <span style="color: #D97706; font-weight: 700;">● Arbitrage Positive</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- PANEL 5: AgriCredit AI -->
-              <div class="product-tab-panel" data-panel="agricredit" id="panel-agricredit" role="tabpanel" aria-labelledby="tab-agricredit" hidden>
-                <div class="product-info-col">
-                  <span class="product-lineage-badge">Product 05 &bull; Rural FinTech</span>
-                  <div class="product-info-header">
-                    <h3>AgriCredit AI</h3>
-                    <p class="product-tagline">Satellite-Grounded Alternative Underwriting &amp; Parametric Risk Intelligence</p>
-                  </div>
-                  <p class="product-desc">Traditional banking excludes millions of creditworthy farmers due to lack of formal financial documentation. AgriCredit AI creates a verifiable 'Agri-Credit Score' by synthesizing multi-year Sentinel-2 satellite vegetation vigor (NDVI), historical yield consistency, hyper-local soil resilience, and FarmOS telemetry to unlock lower interest rates and automated drought insurance.</p>
-
-                  <div class="product-features-list">
-                    <div class="product-feature-item">
-                      <span class="feature-check">✓</span>
-                      <span><strong>5-Year Satellite Biomass Verification:</strong> Synthesizes Copernicus Sentinel-2 time-series to verify genuine farm productivity.</span>
-                    </div>
-                    <div class="product-feature-item">
-                      <span class="feature-check">✓</span>
-                      <span><strong>Parametric Weather Indexing:</strong> Automated insurance claim disbursements triggered by Doppler radar precipitation deficits.</span>
-                    </div>
-                    <div class="product-feature-item">
-                      <span class="feature-check">✓</span>
-                      <span><strong>NABARD &amp; KCC API Gateway:</strong> Directly pipes verified agronomic creditworthiness scores into rural commercial banks.</span>
-                    </div>
-                    <div class="product-feature-item">
-                      <span class="feature-check">✓</span>
-                      <span><strong>Zero-Collateral Penalties:</strong> Underwrites actual biological land output and farm stewardship rather than paper bureaucracy.</span>
-                    </div>
-                  </div>
-
-                  <span class="product-persona-tag">🎯 Built For: Rural Banks, Micro-finance Institutions, Insurance Providers &amp; NBFCs</span>
-
-                  <div class="product-actions-row">
-                    <a class="button button-primary" href="#contact">Inquire for Banking Integration ↗</a>
-                    <a class="button button-secondary" href="#contact">FinTech Collaboration</a>
-                  </div>
-                </div>
-
-                <div class="product-visual-col">
-                  <div class="visual-glass-card">
-                    <div class="visual-card-topbar">
-                      <span class="visual-brand-tag">💳 AgriCredit &bull; Underwriting Engine</span>
-                      <span class="visual-status-pill" style="background: rgba(234, 179, 8, 0.18); color: #B45309;">○ Strategic Horizon</span>
-                    </div>
-
-                    <div class="visual-grid-2col">
-                      <div class="visual-stat-box">
-                        <span class="stat-box-label">Verified Land Area</span>
-                        <span class="stat-box-val">18.4 Ac Nashik</span>
-                      </div>
-                      <div class="visual-stat-box">
-                        <span class="stat-box-label">NDVI Resilience</span>
-                        <span class="stat-box-val">0.78 (Top Decile)</span>
-                      </div>
-                      <div class="visual-stat-box">
-                        <span class="stat-box-label">Default Risk Index</span>
-                        <span class="stat-box-val">1.2% &bull; Grade AAA</span>
-                      </div>
-                      <div class="visual-stat-box">
-                        <span class="stat-box-label">Credit Limit Offer</span>
-                        <span class="stat-box-val">₹4,20,000 @ 6.8%</span>
-                      </div>
-                    </div>
-
-                    <div class="visual-highlight-banner" style="background: #422006;">
-                      <strong style="color: #FDE047;">Institutional Scorecard:</strong> "Gajanan Patil exhibits 5 consecutive years of above-median vegetation vigor during dry spells. Recommended for expedited KCC limit expansion with automatic weather-indexed deficit indemnity."
-                    </div>
-
-                    <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.76rem; color: var(--muted); padding-top: 4px;">
-                      <span>Underwriting Method: Satellite + FarmOS</span>
-                      <span style="color: #EAB308; font-weight: 700;">● AAA Credit Grade</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="equipment">
+                <!-- Comprehensive FarmerGPT Platform Modules (Equipment, Capabilities, Why, Roadmap) -->
+                <div class="farmergpt-extended-content">
+                  <section id="equipment">
         <div class="container">
           <div class="section-heading reveal">
             <span class="eyebrow">Dedicated Platform Capability</span>
@@ -5838,6 +5636,313 @@
               <p>Expanding into specialized intelligence tools for farmer collectives, input partners, and rural
                 financial services.</p>
             </article>
+          </div>
+        </div>
+      </section>
+                </div>
+              </div>
+
+              <!-- PANEL 2: FarmOS -->
+              <div class="product-tab-panel" data-panel="farmos" id="panel-farmos" role="tabpanel" aria-labelledby="tab-farmos" hidden>
+                <div class="product-info-col">
+                  <span class="product-lineage-badge">Product 02 &bull; Operating System</span>
+                  <div class="product-info-header">
+                    <h3>FarmOS</h3>
+                    <p class="product-tagline">Autonomous Farm ERP, Sensor Fusion &amp; Telemetry Hub</p>
+                  </div>
+                  <p class="product-desc">While FarmerGPT serves as the conversational intelligence interface, FarmOS acts as the underlying operating system. It synchronizes GPS field boundaries, connected IoT soil moisture probes, automated drip valves, tractor CAN-bus telematics, and operational crop ledgers into a single unified enterprise cockpit.</p>
+
+                  <div class="product-features-list">
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>Cadastral Digital Twin:</strong> Sub-meter GPS plot zoning with multi-layer soil horizon and irrigation grid mapping.</span>
+                    </div>
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>IoT Sensor Fusion:</strong> Ingests capacitive soil probes (VWC%), root zone EC, temperature, and leaf wetness at 15-min intervals.</span>
+                    </div>
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>Tractor CAN-bus Telematics:</strong> Tracks machine operating hours, diesel burn (L/hr), and PTO load across custom fleets.</span>
+                    </div>
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>Automated Field Work Orders:</strong> Generates synchronized daily task queues for drivers and field labor based on sensor triggers.</span>
+                    </div>
+                  </div>
+
+                  <span class="product-persona-tag">🎯 Built For: Progressive Farm Owners, FPOs, Agribusiness Estates &amp; Contract Farming</span>
+
+                  <div class="product-actions-row">
+                    <a class="button button-primary" href="#contact">Request FarmOS Pilot Access ↗</a>
+                    <a class="button button-secondary" href="#contact">Partner with Farmers Cafe</a>
+                  </div>
+                </div>
+
+                <div class="product-visual-col">
+                  <div class="visual-glass-card">
+                    <div class="visual-card-topbar">
+                      <span class="visual-brand-tag">🚜 FarmOS Enterprise &bull; Telemetry Hub</span>
+                      <span class="visual-status-pill" style="background: rgba(14, 165, 233, 0.15); color: #0284C7;">○ Pilot Trials Q4 2026</span>
+                    </div>
+
+                    <div class="visual-grid-2col">
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Active Plots</span>
+                        <span class="stat-box-val">Plot A, B &amp; C (18 Ac)</span>
+                      </div>
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Soil Probe VWC</span>
+                        <span class="stat-box-val">48.2% &bull; Optimal</span>
+                      </div>
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Connected Fleet</span>
+                        <span class="stat-box-val">Mahindra 575 DI (PTO OK)</span>
+                      </div>
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Drip Fertigation</span>
+                        <span class="stat-box-val">Zone 2 Valve Scheduled</span>
+                      </div>
+                    </div>
+
+                    <div class="visual-highlight-banner" style="background: #082F49;">
+                      <strong style="color: #38BDF8;">Automated Work Order #104:</strong> "Moisture probe at Plot B indicates field capacity reached. Drip paused for 72 hours. Fertigation queued for Zone 1 Monday 6:00 AM."
+                    </div>
+
+                    <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.76rem; color: var(--muted); padding-top: 4px;">
+                      <span>Telemetry Gateway: LTE-M / LoRaWAN</span>
+                      <span style="color: #0284C7; font-weight: 700;">● Cloud Sync Active</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PANEL 3: KisanVision -->
+              <div class="product-tab-panel" data-panel="kisanvision" id="panel-kisanvision" role="tabpanel" aria-labelledby="tab-kisanvision" hidden>
+                <div class="product-info-col">
+                  <span class="product-lineage-badge">Product 03 &bull; Computer Vision</span>
+                  <div class="product-info-header">
+                    <h3>KisanVision</h3>
+                    <p class="product-tagline">Edge Neural Diagnostics &amp; Drone Multi-Spectral Crop Pathology</p>
+                  </div>
+                  <p class="product-desc">KisanVision brings computer vision directly to rural smartphones and localized drones. By training proprietary visual neural networks on over 500,000 field-verified pathology samples across Indian crops, KisanVision identifies foliar blights, viral curl vectors, and pest instars at sub-millimeter resolution even in offline environments.</p>
+
+                  <div class="product-features-list">
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>Micro-Symptom Foliar Detection:</strong> Classifies fungal spores, yellow mosaic patterns, and early sucking pest nymphs.</span>
+                    </div>
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>Offline On-Device Inference:</strong> Runs on quantized edge neural models directly on sub-₹10,000 Android phones without internet.</span>
+                    </div>
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>Drone Multispectral NDVI Stitching:</strong> Scans 200+ contiguous acres to generate spatial stress heatmaps before damage spreads.</span>
+                    </div>
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>Automated FarmerGPT Handoff:</strong> Feeds visual diagnosis directly into FarmerGPT for immediate dosage calculation.</span>
+                    </div>
+                  </div>
+
+                  <span class="product-persona-tag">🎯 Built For: Progressive Growers, Field Scouts, Drone Spray Operators &amp; Seed R&amp;D</span>
+
+                  <div class="product-actions-row">
+                    <a class="button button-primary" href="#contact">Inquire for KisanVision Beta ↗</a>
+                    <a class="button button-secondary" href="#contact">Contribute Datasets</a>
+                  </div>
+                </div>
+
+                <div class="product-visual-col">
+                  <div class="visual-glass-card">
+                    <div class="visual-card-topbar">
+                      <span class="visual-brand-tag">👁️ KisanVision &bull; Neural Scanner</span>
+                      <span class="visual-status-pill" style="background: rgba(168, 85, 247, 0.15); color: #9333EA;">○ R&amp;D Lab &bull; 500k Dataset</span>
+                    </div>
+
+                    <div class="visual-grid-2col">
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Primary Pathology</span>
+                        <span class="stat-box-val">CLCuV (99.2% Conf.)</span>
+                      </div>
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Vector Detection</span>
+                        <span class="stat-box-val">Whitefly (4 nymphs/leaf)</span>
+                      </div>
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Inference Speed</span>
+                        <span class="stat-box-val">38ms (On-Device Edge)</span>
+                      </div>
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Network Mode</span>
+                        <span class="stat-box-val">100% Offline Capable</span>
+                      </div>
+                    </div>
+
+                    <div class="visual-highlight-banner" style="background: #2E1065;">
+                      <strong style="color: #C084FC;">Neural Viewfinder Bounding Box:</strong> "[Leaf Margin 4B] Early upward leaf curling accompanied by vein thickening. Bemisia tabaci vector nymphs detected on lower epidermis."
+                    </div>
+
+                    <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.76rem; color: var(--muted); padding-top: 4px;">
+                      <span>Resolution: Sub-millimeter Macro</span>
+                      <span style="color: #9333EA; font-weight: 700;">● Neural Engine Ready</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PANEL 4: MandiPulse -->
+              <div class="product-tab-panel" data-panel="mandipulse" id="panel-mandipulse" role="tabpanel" aria-labelledby="tab-mandipulse" hidden>
+                <div class="product-info-col">
+                  <span class="product-lineage-badge">Product 04 &bull; Market Arbitrage</span>
+                  <div class="product-info-header">
+                    <h3>MandiPulse</h3>
+                    <p class="product-tagline">Algorithmic Mandi Arbitrage, Influx Forecasting &amp; Commodity Intelligence</p>
+                  </div>
+                  <p class="product-desc">MandiPulse replaces opaque middlemen margins with algorithmic market discovery. By aggregating daily arrival volumes, terminal mandi pricing feeds, weather-induced supply disruptions, and institutional processor demand tenders, MandiPulse calculates whether holding stock or transporting to a neighboring district yields higher net returns.</p>
+
+                  <div class="product-features-list">
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>2,400+ APMC Mandi Ingestion:</strong> Automated normalization of modal prices, arrivals, and moisture deductions across India.</span>
+                    </div>
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>14-Day Price Trajectory:</strong> Deep time-series forecast models for wheat, cotton, soybean, onion, and pulses.</span>
+                    </div>
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>Net Freight Arbitrage Engine:</strong> Factors diesel transport rates, toll costs, and mandi commissions to identify top net-yield mandis.</span>
+                    </div>
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>Hold vs. Sell Calculator:</strong> Quantifies warehouse demurrage against anticipated price increases to optimize selling windows.</span>
+                    </div>
+                  </div>
+
+                  <span class="product-persona-tag">🎯 Built For: Commodity Farmers, Silo Operators, FPO Aggregators &amp; Rural Traders</span>
+
+                  <div class="product-actions-row">
+                    <a class="button button-primary" href="#contact">Explore MandiPulse Partnership ↗</a>
+                    <a class="button button-secondary" href="#contact">Connect with Market Team</a>
+                  </div>
+                </div>
+
+                <div class="product-visual-col">
+                  <div class="visual-glass-card">
+                    <div class="visual-card-topbar">
+                      <span class="visual-brand-tag">📊 MandiPulse &bull; APMC Arbitrage</span>
+                      <span class="visual-status-pill" style="background: rgba(245, 158, 11, 0.18); color: #D97706;">○ Phase 4 Pipeline</span>
+                    </div>
+
+                    <div class="visual-grid-2col">
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Nashik APMC</span>
+                        <span class="stat-box-val">₹2,320 / qtl (Modal)</span>
+                      </div>
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Lasalgaon APMC</span>
+                        <span class="stat-box-val">₹2,460 / qtl (+₹140)</span>
+                      </div>
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Freight Offset</span>
+                        <span class="stat-box-val">₹45/qtl Net Cost</span>
+                      </div>
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Arbitrage Spread</span>
+                        <span class="stat-box-val">+₹95/qtl Net Gain</span>
+                      </div>
+                    </div>
+
+                    <div class="visual-highlight-banner" style="background: #451A03;">
+                      <strong style="color: #FBBF24;">Strategic Market Signal:</strong> "Terminal mandi arrivals dropped 32% this week while mill procurement tenders open at month-end. Holding 85 quintals for 14 days yields an incremental net profit of ₹11,900."
+                    </div>
+
+                    <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.76rem; color: var(--muted); padding-top: 4px;">
+                      <span>Commodity: Lokwan Wheat (11.4% Moisture)</span>
+                      <span style="color: #D97706; font-weight: 700;">● Arbitrage Positive</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PANEL 5: AgriCredit AI -->
+              <div class="product-tab-panel" data-panel="agricredit" id="panel-agricredit" role="tabpanel" aria-labelledby="tab-agricredit" hidden>
+                <div class="product-info-col">
+                  <span class="product-lineage-badge">Product 05 &bull; Rural FinTech</span>
+                  <div class="product-info-header">
+                    <h3>AgriCredit AI</h3>
+                    <p class="product-tagline">Satellite-Grounded Alternative Underwriting &amp; Parametric Risk Intelligence</p>
+                  </div>
+                  <p class="product-desc">Traditional banking excludes millions of creditworthy farmers due to lack of formal financial documentation. AgriCredit AI creates a verifiable 'Agri-Credit Score' by synthesizing multi-year Sentinel-2 satellite vegetation vigor (NDVI), historical yield consistency, hyper-local soil resilience, and FarmOS telemetry to unlock lower interest rates and automated drought insurance.</p>
+
+                  <div class="product-features-list">
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>5-Year Satellite Biomass Verification:</strong> Synthesizes Copernicus Sentinel-2 time-series to verify genuine farm productivity.</span>
+                    </div>
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>Parametric Weather Indexing:</strong> Automated insurance claim disbursements triggered by Doppler radar precipitation deficits.</span>
+                    </div>
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>NABARD &amp; KCC API Gateway:</strong> Directly pipes verified agronomic creditworthiness scores into rural commercial banks.</span>
+                    </div>
+                    <div class="product-feature-item">
+                      <span class="feature-check">✓</span>
+                      <span><strong>Zero-Collateral Penalties:</strong> Underwrites actual biological land output and farm stewardship rather than paper bureaucracy.</span>
+                    </div>
+                  </div>
+
+                  <span class="product-persona-tag">🎯 Built For: Rural Banks, Micro-finance Institutions, Insurance Providers &amp; NBFCs</span>
+
+                  <div class="product-actions-row">
+                    <a class="button button-primary" href="#contact">Inquire for Banking Integration ↗</a>
+                    <a class="button button-secondary" href="#contact">FinTech Collaboration</a>
+                  </div>
+                </div>
+
+                <div class="product-visual-col">
+                  <div class="visual-glass-card">
+                    <div class="visual-card-topbar">
+                      <span class="visual-brand-tag">💳 AgriCredit &bull; Underwriting Engine</span>
+                      <span class="visual-status-pill" style="background: rgba(234, 179, 8, 0.18); color: #B45309;">○ Strategic Horizon</span>
+                    </div>
+
+                    <div class="visual-grid-2col">
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Verified Land Area</span>
+                        <span class="stat-box-val">18.4 Ac Nashik</span>
+                      </div>
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">NDVI Resilience</span>
+                        <span class="stat-box-val">0.78 (Top Decile)</span>
+                      </div>
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Default Risk Index</span>
+                        <span class="stat-box-val">1.2% &bull; Grade AAA</span>
+                      </div>
+                      <div class="visual-stat-box">
+                        <span class="stat-box-label">Credit Limit Offer</span>
+                        <span class="stat-box-val">₹4,20,000 @ 6.8%</span>
+                      </div>
+                    </div>
+
+                    <div class="visual-highlight-banner" style="background: #422006;">
+                      <strong style="color: #FDE047;">Institutional Scorecard:</strong> "Gajanan Patil exhibits 5 consecutive years of above-median vegetation vigor during dry spells. Recommended for expedited KCC limit expansion with automatic weather-indexed deficit indemnity."
+                    </div>
+
+                    <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.76rem; color: var(--muted); padding-top: 4px;">
+                      <span>Underwriting Method: Satellite + FarmOS</span>
+                      <span style="color: #EAB308; font-weight: 700;">● AAA Credit Grade</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
       </section>
@@ -6996,6 +7101,9 @@
 
       tabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
+          if (btn.classList.contains('tab-deactivated') || btn.getAttribute('aria-disabled') === 'true') {
+            return;
+          }
           const prod = btn.getAttribute('data-product');
           switchProductTab(prod);
         });
@@ -7007,6 +7115,18 @@
           if (prod) {
             switchProductTab(prod);
           }
+        });
+      });
+
+      // Ensure FarmerGPT tab is active when navigating to any of its sub-modules
+      ['#equipment', '#capabilities', '#why', '#roadmap'].forEach(hash => {
+        document.querySelectorAll(`a[href="${hash}"]`).forEach(link => {
+          link.addEventListener('click', () => {
+            const fgptTab = document.querySelector('[data-product="farmergpt"]');
+            if (fgptTab && !fgptTab.classList.contains('active')) {
+              fgptTab.click();
+            }
+          });
         });
       });
 
