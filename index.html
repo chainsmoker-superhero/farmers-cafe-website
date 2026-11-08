@@ -5162,155 +5162,155 @@
 
   
     /* ==========================================
-       AUTONOMOUS LIVING BIOSPHERE CANVAS STAGE
+       MINIMALIST LIVING CONSTELLATION STAGE
        ========================================== */
-    .biosphere-stage {
+    .hero-enterprise-card {
       position: relative;
-      width: 100%;
-      height: 380px;
-      min-height: 380px;
-      border-radius: 20px;
-      overflow: hidden;
-      background: radial-gradient(circle at 50% 48%, rgba(26, 127, 90, 0.08) 0%, rgba(246, 251, 247, 0.95) 70%, #FFFFFF 100%);
-      border: 1px solid rgba(26, 127, 90, 0.16);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 12px 30px -10px rgba(19, 45, 35, 0.08);
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      gap: 16px;
+      padding: 24px;
+      border-radius: 24px;
+      background: linear-gradient(175deg, rgba(255, 255, 255, 0.96) 0%, rgba(248, 252, 249, 0.94) 100%);
+      border: 1px solid rgba(26, 127, 90, 0.16);
+      box-shadow: 0 24px 60px -12px rgba(19, 45, 35, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+      backdrop-filter: blur(20px);
+      box-sizing: border-box;
+      transition: all 0.3s ease;
     }
 
-    .biosphere-canvas {
+    .constellation-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+    }
+
+    .constellation-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .constellation-pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10B981;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+      animation: livePulse 3.5s infinite ease-in-out;
+    }
+
+    .constellation-title {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .constellation-badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: rgba(212, 175, 55, 0.14);
+      color: #9A7B1C;
+    }
+
+    .constellation-stage {
+      position: relative;
+      width: 100%;
+      height: 320px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 45%, rgba(26, 127, 90, 0.05) 0%, rgba(212, 175, 55, 0.03) 50%, rgba(255, 255, 255, 0.6) 100%);
+      border: 1px solid rgba(26, 127, 90, 0.12);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .constellation-canvas {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
-      cursor: crosshair;
-      z-index: 1;
+      cursor: pointer;
     }
 
-    .biosphere-hud-top {
+    .constellation-focus-card {
       position: relative;
       z-index: 2;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      padding: 12px 14px;
-      pointer-events: none;
-    }
-
-    .bio-hud-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.88);
-      border: 1px solid rgba(15, 23, 42, 0.08);
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: var(--muted);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-      backdrop-filter: blur(8px);
-    }
-
-    .hud-ping-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #10B981;
-      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3);
-      animation: livePulse 2s infinite ease-in-out;
-    }
-
-    .hud-ping-dot.amber {
-      background: #D4AF37;
-      box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.3);
-    }
-
-    .biosphere-inspector {
-      position: relative;
-      z-index: 2;
-      margin: auto 12px 8px;
+      margin: 0 12px 12px;
       padding: 10px 14px;
-      background: rgba(255, 255, 255, 0.94);
-      border: 1px solid rgba(26, 127, 90, 0.22);
-      border-radius: 14px;
-      box-shadow: 0 8px 24px -6px rgba(19, 45, 35, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(14px);
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(26, 127, 90, 0.16);
+      box-shadow: 0 8px 20px -6px rgba(19, 45, 35, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
       pointer-events: auto;
+      transition: all 0.25s ease;
     }
 
-    .inspector-lead {
+    .focus-product-row {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
     }
 
-    .inspector-badge {
-      font-size: 0.65rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      padding: 2px 7px;
-      border-radius: 999px;
-      background: rgba(16, 185, 129, 0.14);
-      color: var(--primary);
+    .focus-product-icon {
+      font-size: 0.9rem;
     }
 
-    .inspector-title {
-      font-size: 0.92rem;
+    .focus-product-name {
+      font-size: 0.88rem;
       font-weight: 800;
       color: var(--text);
     }
 
-    .inspector-desc {
-      margin: 4px 0 6px;
+    .focus-product-tag {
+      font-size: 0.64rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.12);
+      color: var(--primary);
+    }
+
+    .focus-product-desc {
+      margin: 4px 0 0;
       font-size: 0.74rem;
       color: var(--muted);
       line-height: 1.4;
     }
 
-    .inspector-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .insp-tag {
-      font-size: 0.67rem;
-      font-weight: 600;
-      color: var(--soft);
-      padding: 2px 6px;
-      border-radius: 6px;
-      background: rgba(15, 23, 42, 0.04);
-    }
-
-    .biosphere-nav-row {
-      position: relative;
-      z-index: 2;
+    .constellation-selector-strip {
       display: flex;
       gap: 6px;
-      padding: 6px 12px 10px;
       overflow-x: auto;
       scrollbar-width: none;
+      padding-bottom: 2px;
     }
 
-    .biosphere-nav-row::-webkit-scrollbar {
+    .constellation-selector-strip::-webkit-scrollbar {
       display: none;
     }
 
-    .bio-node-btn {
+    .constellation-pill {
       flex: 1 0 auto;
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      padding: 5px 9px;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.88);
+      gap: 6px;
+      padding: 6px 11px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.85);
       border: 1px solid rgba(15, 23, 42, 0.1);
-      font-size: 0.71rem;
+      font-size: 0.74rem;
       font-weight: 700;
       color: var(--muted);
       cursor: pointer;
@@ -5319,95 +5319,85 @@
       white-space: nowrap;
     }
 
-    .bio-node-btn:hover {
+    .constellation-pill:hover {
       background: #FFFFFF;
       border-color: var(--primary);
       color: var(--primary);
       transform: translateY(-1px);
     }
 
-    .bio-node-btn.active {
-      background: rgba(16, 185, 129, 0.12);
-      border-color: #10B981;
+    .constellation-pill.active {
+      background: rgba(26, 127, 90, 0.1);
+      border-color: var(--primary);
       color: var(--primary);
-      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.15);
+      box-shadow: 0 2px 8px rgba(26, 127, 90, 0.12);
     }
 
-    .bio-btn-badge {
-      font-size: 0.58rem;
-      font-weight: 800;
-      padding: 1px 5px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.06);
-      color: var(--soft);
+    .pill-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(15, 23, 42, 0.25);
     }
 
-    .bio-btn-badge.badge-live {
+    .pill-dot.live {
       background: #10B981;
-      color: #FFFFFF;
+      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25);
     }
 
-    /* Dark Mode Biosphere */
-    [data-theme="dark"] .biosphere-stage {
-      background: radial-gradient(circle at 50% 48%, rgba(46, 204, 113, 0.12) 0%, rgba(10, 22, 16, 0.95) 75%);
-      border-color: rgba(46, 204, 113, 0.22);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 14px 36px -10px rgba(0, 0, 0, 0.6);
+    /* Dark Mode Overrides */
+    [data-theme="dark"] .hero-enterprise-card {
+      background: linear-gradient(175deg, rgba(14, 27, 21, 0.96) 0%, rgba(9, 18, 14, 0.94) 100%);
+      border-color: rgba(46, 204, 113, 0.2);
+      box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.06) inset;
     }
 
-    [data-theme="dark"] .bio-hud-pill {
-      background: rgba(14, 27, 21, 0.88);
-      border-color: rgba(255, 255, 255, 0.1);
-      color: #BAC7BC;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    }
-
-    [data-theme="dark"] .biosphere-inspector {
-      background: rgba(14, 27, 21, 0.92);
-      border-color: rgba(46, 204, 113, 0.3);
-      box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    }
-
-    [data-theme="dark"] .inspector-title {
+    [data-theme="dark"] .constellation-title {
       color: #F1F5F2;
     }
 
-    [data-theme="dark"] .inspector-desc {
+    [data-theme="dark"] .constellation-stage {
+      background: radial-gradient(circle at 50% 45%, rgba(46, 204, 113, 0.08) 0%, rgba(212, 175, 55, 0.04) 50%, rgba(10, 20, 15, 0.9) 100%);
+      border-color: rgba(46, 204, 113, 0.2);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    }
+
+    [data-theme="dark"] .constellation-focus-card {
+      background: rgba(14, 27, 21, 0.94);
+      border-color: rgba(46, 204, 113, 0.25);
+      box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    [data-theme="dark"] .focus-product-name {
+      color: #F1F5F2;
+    }
+
+    [data-theme="dark"] .focus-product-desc {
       color: #94A3B8;
     }
 
-    [data-theme="dark"] .insp-tag {
-      background: rgba(255, 255, 255, 0.06);
-      color: #BAC7BC;
-    }
-
-    [data-theme="dark"] .bio-node-btn {
+    [data-theme="dark"] .constellation-pill {
       background: rgba(255, 255, 255, 0.06);
       border-color: rgba(255, 255, 255, 0.1);
       color: #BAC7BC;
     }
 
-    [data-theme="dark"] .bio-node-btn:hover {
+    [data-theme="dark"] .constellation-pill:hover {
       background: rgba(46, 204, 113, 0.15);
       border-color: #2ECC71;
       color: #2ECC71;
     }
 
-    [data-theme="dark"] .bio-node-btn.active {
+    [data-theme="dark"] .constellation-pill.active {
       background: rgba(46, 204, 113, 0.2);
       border-color: #2ECC71;
       color: #2ECC71;
     }
 
-    [data-theme="dark"] .bio-btn-badge {
-      background: rgba(255, 255, 255, 0.1);
-      color: #BAC7BC;
+    [data-theme="dark"] .constellation-badge {
+      background: rgba(245, 208, 97, 0.15);
+      color: #F5D061;
     }
-
-    [data-theme="dark"] .bio-btn-badge.badge-live {
-      background: #2ECC71;
-      color: #050B08;
-    }
-
   </style>
 </head>
 
@@ -5653,76 +5643,55 @@
           </div>
 
           <div class="hero-enterprise-wrap reveal" id="hero-enterprise-wrapper">
-            <div class="hero-enterprise-card" role="region" aria-label="Farmers Cafe Parent Enterprise Architecture">
-              <div class="enterprise-card-header">
-                <div class="enterprise-brand-pill">
-                  <span class="enterprise-live-dot" aria-hidden="true"></span>
-                  <span>Deep-Tech Parent Architecture</span>
+            <div class="hero-enterprise-card" role="region" aria-label="Farmers Cafe Ecosystem Constellation">
+              <div class="constellation-header">
+                <div class="constellation-brand">
+                  <span class="constellation-pulse-dot" aria-hidden="true"></span>
+                  <span class="constellation-title">The Living Ecosystem</span>
                 </div>
-                <span class="enterprise-version">v2.6 Live</span>
+                <span class="constellation-badge">Parent Architecture</span>
               </div>
 
-              <!-- Living Autonomous Core Biosphere Animation Stage -->
-              <div class="biosphere-stage" id="biosphere-stage" role="region" aria-label="Interactive Farmers Cafe Orbital Biosphere">
-                <canvas id="biosphere-canvas" class="biosphere-canvas" aria-label="Orbital Digital Twin of Farmers Cafe Enterprise"></canvas>
+              <!-- Minimalist Aesthetic Canvas Stage -->
+              <div class="constellation-stage" id="constellation-stage">
+                <canvas id="constellation-canvas" class="constellation-canvas" aria-label="Farmers Cafe Living Ecosystem Constellation"></canvas>
                 
-                <!-- Floating Real-Time HUD Overlay -->
-                <div class="biosphere-hud-top">
-                  <div class="bio-hud-pill">
-                    <span class="hud-ping-dot"></span>
-                    <span>10Hz Doppler Stream</span>
+                <!-- Active Focus Card (Subtle, Minimalist, Centered at Bottom) -->
+                <div class="constellation-focus-card" id="constellation-focus-card">
+                  <div class="focus-product-row">
+                    <span class="focus-product-icon" id="focus-product-icon">🌿</span>
+                    <strong class="focus-product-name" id="focus-product-name">FarmerGPT</strong>
+                    <span class="focus-product-tag" id="focus-product-tag">Live Flagship</span>
                   </div>
-                  <div class="bio-hud-pill">
-                    <span class="hud-ping-dot amber"></span>
-                    <span>Soil Twin: Vertisol VWC 48%</span>
-                  </div>
-                </div>
-
-                <!-- Interactive Node Details Inspector Overlay -->
-                <div class="biosphere-inspector" id="biosphere-inspector">
-                  <div class="inspector-lead">
-                    <span class="inspector-badge" id="inspector-badge">Live Flagship 01</span>
-                    <strong class="inspector-title" id="inspector-title">FarmerGPT</strong>
-                  </div>
-                  <p class="inspector-desc" id="inspector-desc">Autonomous Field Decision Engine &bull; Stateful Farm Memory &bull; Vernacular Kisan Voice</p>
-                  <div class="inspector-meta" id="inspector-meta">
-                    <span class="insp-tag">● 10Hz Radar Link</span>
-                    <span class="insp-tag">● Sub-200ms Inference</span>
-                    <span class="insp-tag">● Mechanical Match</span>
-                  </div>
-                </div>
-
-                <!-- Interactive Satellite Selector Bar -->
-                <div class="biosphere-nav-row" role="tablist" aria-label="Ecosystem products navigation">
-                  <button class="bio-node-btn active" data-product="farmergpt" type="button" role="tab" aria-selected="true" title="FarmerGPT — Live Flagship">
-                    <span class="bio-btn-icon">🌿</span>
-                    <span class="bio-btn-name">FarmerGPT</span>
-                    <span class="bio-btn-badge badge-live">Live</span>
-                  </button>
-                  <button class="bio-node-btn" data-product="farmos" type="button" role="tab" aria-selected="false" title="FarmOS — Autonomous Farm ERP">
-                    <span class="bio-btn-icon">🚜</span>
-                    <span class="bio-btn-name">FarmOS</span>
-                    <span class="bio-btn-badge">Phase 2</span>
-                  </button>
-                  <button class="bio-node-btn" data-product="kisanvision" type="button" role="tab" aria-selected="false" title="KisanVision — Edge Computer Vision">
-                    <span class="bio-btn-icon">👁️</span>
-                    <span class="bio-btn-name">KisanVision</span>
-                    <span class="bio-btn-badge">Phase 2</span>
-                  </button>
-                  <button class="bio-node-btn" data-product="mandipulse" type="button" role="tab" aria-selected="false" title="MandiPulse — APMC Arbitrage">
-                    <span class="bio-btn-icon">📊</span>
-                    <span class="bio-btn-name">MandiPulse</span>
-                    <span class="bio-btn-badge">Phase 2</span>
-                  </button>
-                  <button class="bio-node-btn" data-product="agricredit" type="button" role="tab" aria-selected="false" title="AgriCredit AI — Rural FinTech">
-                    <span class="bio-btn-icon">💳</span>
-                    <span class="bio-btn-name">AgriCredit</span>
-                    <span class="bio-btn-badge">Phase 2</span>
-                  </button>
+                  <p class="focus-product-desc" id="focus-product-desc">Autonomous Field Decision Engine &bull; Stateful Farm Memory &bull; Vernacular Kisan Voice</p>
                 </div>
               </div>
 
-              <!-- Live Telemetry / Enterprise Strip -->
+              <!-- Minimalist Product Selector Strip -->
+              <div class="constellation-selector-strip" role="tablist" aria-label="Ecosystem products navigation">
+                <button class="constellation-pill active" data-product="farmergpt" type="button" role="tab" aria-selected="true" title="FarmerGPT — Live Flagship">
+                  <span class="pill-dot live"></span>
+                  <span>FarmerGPT</span>
+                </button>
+                <button class="constellation-pill" data-product="farmos" type="button" role="tab" aria-selected="false" title="FarmOS — Autonomous Farm ERP">
+                  <span class="pill-dot"></span>
+                  <span>FarmOS</span>
+                </button>
+                <button class="constellation-pill" data-product="kisanvision" type="button" role="tab" aria-selected="false" title="KisanVision — Edge Computer Vision">
+                  <span class="pill-dot"></span>
+                  <span>KisanVision</span>
+                </button>
+                <button class="constellation-pill" data-product="mandipulse" type="button" role="tab" aria-selected="false" title="MandiPulse — APMC Arbitrage">
+                  <span class="pill-dot"></span>
+                  <span>MandiPulse</span>
+                </button>
+                <button class="constellation-pill" data-product="agricredit" type="button" role="tab" aria-selected="false" title="AgriCredit AI — Rural FinTech">
+                  <span class="pill-dot"></span>
+                  <span>AgriCredit AI</span>
+                </button>
+              </div>
+
+              <!-- Enterprise Telemetry Strip -->
               <div class="enterprise-stats-strip">
                 <div class="ent-stat">
                   <span class="ent-num">140M+</span>
@@ -8255,62 +8224,65 @@
     // ==========================================
     // AUTONOMOUS CORE BIOSPHERE ORBITAL ENGINE
     // ==========================================
-    function initBiosphereCanvas() {
-      const canvas = document.getElementById('biosphere-canvas');
+    // ==========================================
+    // THE LIVING CONSTELLATION: SERENE & AESTHETIC CANVAS
+    // ==========================================
+    function initConstellationCanvas() {
+      const canvas = document.getElementById('constellation-canvas');
       if (!canvas) return;
       const ctx = canvas.getContext('2d');
       if (!ctx) return;
 
-      const inspectorTitle = document.getElementById('inspector-title');
-      const inspectorBadge = document.getElementById('inspector-badge');
-      const inspectorDesc = document.getElementById('inspector-desc');
-      const inspectorMeta = document.getElementById('inspector-meta');
-      const nodeBtns = document.querySelectorAll('.bio-node-btn');
+      const focusIcon = document.getElementById('focus-product-icon');
+      const focusName = document.getElementById('focus-product-name');
+      const focusTag = document.getElementById('focus-product-tag');
+      const focusDesc = document.getElementById('focus-product-desc');
+      const pillBtns = document.querySelectorAll('.constellation-pill');
 
-      const productsData = {
+      const products = {
         farmergpt: {
-          title: "FarmerGPT",
-          badge: "Live Flagship 01",
+          name: "FarmerGPT",
+          tag: "Live Flagship",
+          icon: "🌿",
           desc: "Autonomous Field Decision Engine • Stateful Farm Memory • Vernacular Kisan Voice",
-          tags: ["● 10Hz Radar Link", "● Sub-200ms Inference", "● Mechanical Match"],
-          color: "#10B981",
-          icon: "🌿"
+          r: 82,
+          baseAngle: -Math.PI / 2
         },
         farmos: {
-          title: "FarmOS",
-          badge: "Operating System • Phase 2",
-          desc: "Autonomous Farm ERP • IoT Soil Probes • Drone Telemetry & Work Orders",
-          tags: ["● LoRaWAN & LTE-M", "● Cadastral Digital Twin", "● Fleet CAN-bus"],
-          color: "#0284C7",
-          icon: "🚜"
+          name: "FarmOS",
+          tag: "Operating System",
+          icon: "🚜",
+          desc: "Autonomous Farm ERP • IoT Soil Probes • Drone Telemetry & Field Work Orders",
+          r: 128,
+          baseAngle: -0.35
         },
         kisanvision: {
-          title: "KisanVision",
-          badge: "Edge Computer Vision • Phase 2",
-          desc: "On-Device Pathology • Edge Pest Diagnostics • Drone Spectral NDVI",
-          tags: ["● Offline NPU Inference", "● Sucking Pest Vectors", "● Sub-mm Resolution"],
-          color: "#8B5CF6",
-          icon: "👁️"
+          name: "KisanVision",
+          tag: "Computer Vision",
+          icon: "👁️",
+          desc: "Edge Pathology • Sucking Pest Diagnostics • Drone Spectral NDVI Analysis",
+          r: 128,
+          baseAngle: 0.85
         },
         mandipulse: {
-          title: "MandiPulse",
-          badge: "Predictive Markets • Phase 2",
+          name: "MandiPulse",
+          tag: "Predictive Markets",
+          icon: "📊",
           desc: "Predictive APMC Arbitrage • Arrival Inflow Analytics • Logistics Match",
-          tags: ["● 2,400+ Mandi Feeds", "● Multi-Week Forecast", "● Real-Time Arbitrage"],
-          color: "#F59E0B",
-          icon: "📊"
+          r: 128,
+          baseAngle: 2.29
         },
         agricredit: {
-          title: "AgriCredit AI",
-          badge: "Rural FinTech • Phase 2",
+          name: "AgriCredit AI",
+          tag: "Rural FinTech",
+          icon: "💳",
           desc: "Satellite-Underwritten Credit • Crop Insurance Verification • Automated Disbursal",
-          tags: ["● Parametric Payouts", "● SAR Moisture Proof", "● Zero Paperwork"],
-          color: "#EC4899",
-          icon: "💳"
+          r: 128,
+          baseAngle: 3.49
         }
       };
 
-      let activeProductId = 'farmergpt';
+      let activeId = 'farmergpt';
       let hoveredNode = null;
       let width = 0;
       let height = 0;
@@ -8333,7 +8305,7 @@
       resize();
       window.addEventListener('resize', resize, { passive: true });
 
-      // Pause when out of viewport for optimal battery & performance
+      // Pause when scrolled out of view for optimal battery & performance
       if ('IntersectionObserver' in window) {
         const obs = new IntersectionObserver((entries) => {
           isVisible = entries[0].isIntersecting;
@@ -8345,32 +8317,26 @@
       }
 
       function selectProduct(pid) {
-        activeProductId = pid;
-        const data = productsData[pid] || productsData.farmergpt;
+        activeId = pid;
+        const p = products[pid] || products.farmergpt;
 
-        if (inspectorTitle) inspectorTitle.textContent = data.title;
-        if (inspectorBadge) {
-          inspectorBadge.textContent = data.badge;
-          inspectorBadge.style.color = data.color;
-          inspectorBadge.style.background = data.color + '22';
-        }
-        if (inspectorDesc) inspectorDesc.textContent = data.desc;
-        if (inspectorMeta) {
-          inspectorMeta.innerHTML = data.tags.map(t => `<span class="insp-tag">${t}</span>`).join('');
-        }
+        if (focusIcon) focusIcon.textContent = p.icon;
+        if (focusName) focusName.textContent = p.name;
+        if (focusTag) focusTag.textContent = p.tag;
+        if (focusDesc) focusDesc.textContent = p.desc;
 
-        nodeBtns.forEach(btn => {
-          const match = btn.getAttribute('data-product') === pid;
-          btn.classList.toggle('active', match);
-          btn.setAttribute('aria-selected', match ? 'true' : 'false');
+        pillBtns.forEach(btn => {
+          const isMatch = btn.getAttribute('data-product') === pid;
+          btn.classList.toggle('active', isMatch);
+          btn.setAttribute('aria-selected', isMatch ? 'true' : 'false');
         });
 
         if (pid !== 'farmergpt') {
-          showToast(`⚡ <strong>${data.title}</strong> is part of the parent enterprise roadmap (Phase 2).`, 'info');
+          showToast(`⚡ <strong>${p.name}</strong> is in development for the enterprise ecosystem.`, 'info');
         }
       }
 
-      nodeBtns.forEach(btn => {
+      pillBtns.forEach(btn => {
         btn.addEventListener('click', () => {
           const pid = btn.getAttribute('data-product');
           if (pid) selectProduct(pid);
@@ -8401,278 +8367,176 @@
         }
       });
 
-      // Particle system for ambient neural telemetry
-      const particles = [];
-      for (let i = 0; i < 24; i++) {
-        particles.push({
-          orbitIndex: Math.floor(Math.random() * 3),
-          angle: Math.random() * Math.PI * 2,
-          speed: 0.006 + Math.random() * 0.012,
-          size: 1.5 + Math.random() * 1.8,
-          alpha: 0.3 + Math.random() * 0.5
-        });
-      }
-
+      // Pure, aesthetic animation loop (Ultra-calm, peaceful, 60fps)
       function loop() {
         if (!isVisible) {
           animFrameId = null;
           return;
         }
 
-        time += 0.016;
+        // Very slow, meditative speed
+        time += 0.005;
         ctx.clearRect(0, 0, width, height);
 
         const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
         const cx = width / 2;
-        const cy = height * 0.42;
+        const cy = height * 0.45;
 
-        // 1. Draw 3D Perspective Ground Grid (Indian Black Soil Ground Truth)
-        const gridHorizon = height * 0.70;
-        ctx.save();
-        ctx.strokeStyle = isDark ? 'rgba(46, 204, 113, 0.07)' : 'rgba(26, 127, 90, 0.06)';
-        ctx.lineWidth = 1;
+        // 1. Slow, meditative breathing cycle (8-second expansion/contraction)
+        const breath = Math.sin(time * 0.8) * 0.06;
 
-        // Horizontal perspective lines
-        for (let y = gridHorizon; y <= height; y += (y - gridHorizon) * 0.35 + 8) {
+        // 2. Whisper-thin concentric breathing rings (Emerald & Gold)
+        const ringRadii = [48 * (1 + breath), 88 * (1 + breath * 0.7), 130 * (1 + breath * 0.5)];
+        ringRadii.forEach((r, idx) => {
           ctx.beginPath();
-          ctx.moveTo(0, y);
-          ctx.lineTo(width, y);
+          ctx.arc(cx, cy, r, 0, Math.PI * 2);
+          ctx.strokeStyle = idx === 1
+            ? (isDark ? 'rgba(212, 175, 55, 0.16)' : 'rgba(212, 175, 55, 0.18)')
+            : (isDark ? 'rgba(46, 204, 113, 0.1)' : 'rgba(26, 127, 90, 0.09)');
+          ctx.lineWidth = 1;
           ctx.stroke();
-        }
-
-        // Radiating field lines from horizon vanishing point
-        for (let x = -width * 0.2; x <= width * 1.2; x += width * 0.12) {
-          ctx.beginPath();
-          ctx.moveTo(cx, gridHorizon - 10);
-          ctx.lineTo(x, height);
-          ctx.stroke();
-        }
-        ctx.restore();
-
-        // 2. Orbits Configuration with Isometric Tilt
-        const orbitConfigs = [
-          { rx: width * 0.22, ry: width * 0.10, angleSpeed: 0.008, tilt: -0.15 },
-          { rx: width * 0.35, ry: width * 0.16, angleSpeed: -0.005, tilt: 0.12 },
-          { rx: width * 0.45, ry: width * 0.21, angleSpeed: 0.003, tilt: -0.08 }
-        ];
-
-        // Draw orbital tracks
-        orbitConfigs.forEach((orb, idx) => {
-          ctx.save();
-          ctx.translate(cx, cy);
-          ctx.rotate(orb.tilt);
-          ctx.beginPath();
-          ctx.ellipse(0, 0, orb.rx, orb.ry, 0, 0, Math.PI * 2);
-          ctx.strokeStyle = isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(15, 23, 42, 0.07)';
-          ctx.setLineDash([4, 6]);
-          ctx.lineWidth = 1.2;
-          ctx.stroke();
-          ctx.restore();
         });
 
-        // 3. Central Luminous Core: Farmers Cafe Parent Enterprise
-        const corePulse = 1 + Math.sin(time * 2.2) * 0.06;
-        const coreRadius = 24 * corePulse;
+        // 3. Central Living Seed of Intelligence (Farmers Cafe Parent Heart)
+        const seedPulse = 1 + breath * 0.5;
+        const seedHaloRadius = 30 * seedPulse;
 
-        // Ambient radial halo
-        const haloGrad = ctx.createRadialGradient(cx, cy, 0, cx, cy, coreRadius * 3);
-        haloGrad.addColorStop(0, isDark ? 'rgba(46, 204, 113, 0.35)' : 'rgba(26, 127, 90, 0.25)');
-        haloGrad.addColorStop(0.5, isDark ? 'rgba(212, 175, 55, 0.12)' : 'rgba(212, 175, 55, 0.08)');
-        haloGrad.addColorStop(1, 'transparent');
+        // Ambient golden-emerald aura
+        const aura = ctx.createRadialGradient(cx, cy, 0, cx, cy, seedHaloRadius);
+        aura.addColorStop(0, isDark ? 'rgba(46, 204, 113, 0.3)' : 'rgba(26, 127, 90, 0.18)');
+        aura.addColorStop(0.6, isDark ? 'rgba(212, 175, 55, 0.12)' : 'rgba(212, 175, 55, 0.08)');
+        aura.addColorStop(1, 'transparent');
 
-        ctx.fillStyle = haloGrad;
+        ctx.fillStyle = aura;
         ctx.beginPath();
-        ctx.arc(cx, cy, coreRadius * 3, 0, Math.PI * 2);
+        ctx.arc(cx, cy, seedHaloRadius, 0, Math.PI * 2);
         ctx.fill();
 
-        // Core Solid Body
-        const coreGrad = ctx.createRadialGradient(cx - 4, cy - 4, 2, cx, cy, coreRadius);
-        coreGrad.addColorStop(0, '#2ECC71');
-        coreGrad.addColorStop(0.7, '#1A7F5A');
-        coreGrad.addColorStop(1, '#0C3D2B');
-
-        ctx.fillStyle = coreGrad;
+        // Seed Core Jewel
+        const coreR = 15;
         ctx.beginPath();
-        ctx.arc(cx, cy, coreRadius, 0, Math.PI * 2);
+        ctx.arc(cx, cy, coreR, 0, Math.PI * 2);
+        ctx.fillStyle = isDark ? '#14281E' : '#FFFFFF';
         ctx.fill();
-
-        ctx.strokeStyle = '#D4AF37';
-        ctx.lineWidth = 1.8;
+        ctx.strokeStyle = isDark ? '#2ECC71' : '#1A7F5A';
+        ctx.lineWidth = 1.6;
         ctx.stroke();
 
-        // Core Text Label
-        ctx.fillStyle = '#FFFFFF';
-        ctx.font = '700 8.5px "Plus Jakarta Sans", sans-serif';
+        // Glowing Core Glyph: Living Sprout / Leaf
+        ctx.font = '11px sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        ctx.fillText('FARMERS CAFE', cx, cy - 2);
+        ctx.fillText('🌱', cx, cy);
 
-        ctx.fillStyle = '#D4AF37';
-        ctx.font = '700 6.5px "Plus Jakarta Sans", sans-serif';
-        ctx.fillText('PARENT CORE', cx, cy + 7);
+        // Core Brand Label
+        ctx.font = '700 8px "Plus Jakarta Sans", sans-serif';
+        ctx.fillStyle = isDark ? '#F1F5F2' : '#0F172A';
+        ctx.fillText('FARMERS CAFE', cx, cy + coreR + 10);
 
-        // 4. Satellite Nodes Coordinates Definition
-        const nodes = [
-          {
-            id: 'farmergpt',
-            orbitIdx: 0,
-            angle: time * orbitConfigs[0].angleSpeed * 18 + 0.8,
-            color: '#10B981',
-            icon: '🌿',
-            name: 'FarmerGPT',
-            live: true
-          },
-          {
-            id: 'farmos',
-            orbitIdx: 1,
-            angle: time * orbitConfigs[1].angleSpeed * 14 + 0.2,
-            color: '#0284C7',
-            icon: '🚜',
-            name: 'FarmOS',
-            live: false
-          },
-          {
-            id: 'kisanvision',
-            orbitIdx: 1,
-            angle: time * orbitConfigs[1].angleSpeed * 14 + Math.PI + 0.2,
-            color: '#8B5CF6',
-            icon: '👁️',
-            name: 'KisanVision',
-            live: false
-          },
-          {
-            id: 'mandipulse',
-            orbitIdx: 2,
-            angle: time * orbitConfigs[2].angleSpeed * 12 + 1.2,
-            color: '#F59E0B',
-            icon: '📊',
-            name: 'MandiPulse',
-            live: false
-          },
-          {
-            id: 'agricredit',
-            orbitIdx: 2,
-            angle: time * orbitConfigs[2].angleSpeed * 12 + Math.PI + 1.2,
-            color: '#EC4899',
-            icon: '💳',
-            name: 'AgriCredit',
-            live: false
-          }
-        ];
+        // 4. Compute Constellation Nodes with Gentle Floating Drift
+        const nodeList = Object.keys(products).map((pid, idx) => {
+          const p = products[pid];
+          // Gentle floating micro-oscillation
+          const floatX = Math.cos(time * 0.7 + idx * 1.3) * 2.5;
+          const floatY = Math.sin(time * 0.5 + idx * 1.3) * 2.5;
 
-        let foundHover = null;
+          const nx = cx + Math.cos(p.baseAngle) * p.r + floatX;
+          const ny = cy + Math.sin(p.baseAngle) * p.r + floatY;
 
-        // Compute 2D Canvas positions with tilted orbit transform
-        nodes.forEach(node => {
-          const cfg = orbitConfigs[node.orbitIdx];
-          const unrotatedX = Math.cos(node.angle) * cfg.rx;
-          const unrotatedY = Math.sin(node.angle) * cfg.ry;
-
-          // Apply rotation
-          const rotCos = Math.cos(cfg.tilt);
-          const rotSin = Math.sin(cfg.tilt);
-          node.x = cx + (unrotatedX * rotCos - unrotatedY * rotSin);
-          node.y = cy + (unrotatedX * rotSin + unrotatedY * rotCos);
-
-          // Check mouse hover
-          const distToMouse = Math.hypot(node.x - mouse.x, node.y - mouse.y);
-          if (distToMouse < 22) {
-            foundHover = node;
-          }
+          return {
+            id: pid,
+            ...p,
+            x: nx,
+            y: ny
+          };
         });
 
-        hoveredNode = foundHover;
+        // Check hover
+        let detectedHover = null;
+        nodeList.forEach(n => {
+          const dist = Math.hypot(n.x - mouse.x, n.y - mouse.y);
+          if (dist < 20) {
+            detectedHover = n;
+          }
+        });
+        hoveredNode = detectedHover;
 
-        // 5. Draw Animated Beams between Core and Selected/Hovered Node
-        const targetHighlightNode = hoveredNode || nodes.find(n => n.id === activeProductId);
-        if (targetHighlightNode) {
-          ctx.save();
-          const beamGrad = ctx.createLinearGradient(cx, cy, targetHighlightNode.x, targetHighlightNode.y);
-          beamGrad.addColorStop(0, 'rgba(212, 175, 55, 0.8)');
-          beamGrad.addColorStop(1, targetHighlightNode.color);
+        // 5. Draw Fine Golden Filaments Connecting Core to Nodes
+        nodeList.forEach(n => {
+          const isActive = n.id === activeId;
+          const isHover = hoveredNode && hoveredNode.id === n.id;
 
-          ctx.strokeStyle = beamGrad;
-          ctx.lineWidth = 1.6;
-          ctx.setLineDash([3, 3]);
-          ctx.lineDashOffset = -time * 20;
           ctx.beginPath();
           ctx.moveTo(cx, cy);
-          ctx.lineTo(targetHighlightNode.x, targetHighlightNode.y);
+
+          // Subtle graceful curve
+          const midX = (cx + n.x) / 2;
+          const midY = (cy + n.y) / 2 - 4;
+          ctx.quadraticCurveTo(midX, midY, n.x, n.y);
+
+          if (isActive || isHover) {
+            ctx.strokeStyle = isDark ? 'rgba(245, 208, 97, 0.75)' : 'rgba(212, 175, 55, 0.8)';
+            ctx.lineWidth = 1.4;
+          } else {
+            ctx.strokeStyle = isDark ? 'rgba(255, 255, 255, 0.12)' : 'rgba(15, 23, 42, 0.1)';
+            ctx.lineWidth = 1;
+          }
           ctx.stroke();
 
-          // Laser connection to ground soil twin
-          ctx.strokeStyle = isDark ? 'rgba(46, 204, 113, 0.4)' : 'rgba(26, 127, 90, 0.3)';
-          ctx.setLineDash([2, 4]);
-          ctx.beginPath();
-          ctx.moveTo(targetHighlightNode.x, targetHighlightNode.y);
-          ctx.lineTo(targetHighlightNode.x, gridHorizon + 25);
-          ctx.stroke();
-          ctx.restore();
-        }
+          // Subtle traveling light spark along the active filament
+          if (isActive || isHover) {
+            const sparkT = (time * 0.4) % 1;
+            const sx = (1 - sparkT) * (1 - sparkT) * cx + 2 * (1 - sparkT) * sparkT * midX + sparkT * sparkT * n.x;
+            const sy = (1 - sparkT) * (1 - sparkT) * cy + 2 * (1 - sparkT) * sparkT * midY + sparkT * sparkT * n.y;
 
-        // 6. Draw Orbiting Data Particles
-        particles.forEach(p => {
-          const cfg = orbitConfigs[p.orbitIndex];
-          p.angle += p.speed;
-          const ux = Math.cos(p.angle) * cfg.rx;
-          const uy = Math.sin(p.angle) * cfg.ry;
-          const rotCos = Math.cos(cfg.tilt);
-          const rotSin = Math.sin(cfg.tilt);
-          const px = cx + (ux * rotCos - uy * rotSin);
-          const py = cy + (ux * rotSin + uy * rotCos);
-
-          ctx.fillStyle = isDark ? `rgba(46, 204, 113, ${p.alpha})` : `rgba(26, 127, 90, ${p.alpha})`;
-          ctx.beginPath();
-          ctx.arc(px, py, p.size, 0, Math.PI * 2);
-          ctx.fill();
+            ctx.fillStyle = '#D4AF37';
+            ctx.beginPath();
+            ctx.arc(sx, sy, 2, 0, Math.PI * 2);
+            ctx.fill();
+          }
         });
 
-        // 7. Draw Satellite Nodes
-        nodes.forEach(node => {
-          const isSelected = node.id === activeProductId;
-          const isHover = hoveredNode && hoveredNode.id === node.id;
-          const nodeR = isSelected ? 15 : (isHover ? 14 : 12);
+        // 6. Draw Constellation Star Nodes
+        nodeList.forEach(n => {
+          const isActive = n.id === activeId;
+          const isHover = hoveredNode && hoveredNode.id === n.id;
+          const nr = isActive ? 14 : (isHover ? 13 : 11);
 
-          // Glowing Aura
-          const aura = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, nodeR * 2.2);
-          aura.addColorStop(0, node.color + '55');
-          aura.addColorStop(1, 'transparent');
-          ctx.fillStyle = aura;
-          ctx.beginPath();
-          ctx.arc(node.x, node.y, nodeR * 2.2, 0, Math.PI * 2);
-          ctx.fill();
-
-          // Live Sonar Ping on Flagship (FarmerGPT)
-          if (node.live) {
-            const pingRadius = nodeR + ((time * 18) % 14);
-            const pingAlpha = Math.max(0, 1 - (pingRadius - nodeR) / 14);
-            ctx.strokeStyle = `rgba(16, 185, 129, ${pingAlpha * 0.75})`;
-            ctx.lineWidth = 1.2;
+          // Soft Aura
+          if (isActive || isHover) {
+            const nodeAura = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, nr * 2);
+            nodeAura.addColorStop(0, n.id === 'farmergpt' ? 'rgba(16, 185, 129, 0.35)' : 'rgba(212, 175, 55, 0.3)');
+            nodeAura.addColorStop(1, 'transparent');
+            ctx.fillStyle = nodeAura;
             ctx.beginPath();
-            ctx.arc(node.x, node.y, pingRadius, 0, Math.PI * 2);
-            ctx.stroke();
+            ctx.arc(n.x, n.y, nr * 2, 0, Math.PI * 2);
+            ctx.fill();
           }
 
           // Node Body
-          ctx.fillStyle = isDark ? '#102118' : '#FFFFFF';
           ctx.beginPath();
-          ctx.arc(node.x, node.y, nodeR, 0, Math.PI * 2);
+          ctx.arc(n.x, n.y, nr, 0, Math.PI * 2);
+          ctx.fillStyle = isDark ? '#102118' : '#FFFFFF';
           ctx.fill();
 
-          ctx.strokeStyle = isSelected ? '#D4AF37' : node.color;
-          ctx.lineWidth = isSelected ? 2.4 : 1.6;
+          ctx.strokeStyle = isActive
+            ? (n.id === 'farmergpt' ? '#10B981' : '#D4AF37')
+            : (isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(15, 23, 42, 0.15)');
+          ctx.lineWidth = isActive ? 2 : 1.2;
           ctx.stroke();
 
-          // Icon
-          ctx.font = `${nodeR * 1.05}px sans-serif`;
+          // Node Icon
+          ctx.font = `${nr * 1.05}px sans-serif`;
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
-          ctx.fillText(node.icon, node.x, node.y + 1);
+          ctx.fillText(n.icon, n.x, n.y + 1);
 
-          // Node Label Tag
-          ctx.font = '700 8.5px "Plus Jakarta Sans", sans-serif';
-          ctx.fillStyle = isDark ? '#F1F5F2' : '#0F172A';
-          ctx.fillText(node.name, node.x, node.y + nodeR + 10);
+          // Node Typography
+          ctx.font = isActive ? '700 8.5px "Plus Jakarta Sans", sans-serif' : '600 8px "Plus Jakarta Sans", sans-serif';
+          ctx.fillStyle = isActive
+            ? (isDark ? '#2ECC71' : '#1A7F5A')
+            : (isDark ? '#BAC7BC' : '#4B5563');
+          ctx.fillText(n.name, n.x, n.y + nr + 9);
         });
 
         animFrameId = requestAnimationFrame(loop);
@@ -8680,8 +8544,7 @@
 
       loop();
     }
-
-    function initHeroCanvas() {
+function initHeroCanvas() {
       const canvas = document.getElementById('farm-canvas');
       if (!canvas) return;
       const ctx = canvas.getContext('2d');
@@ -8974,7 +8837,7 @@
 
     // Initialize interactive modules
     initHeroCanvas();
-    initBiosphereCanvas();
+    initConstellationCanvas();
     initHeroSimulator();
     initProductTabs();
     initEquipmentCalculator();
