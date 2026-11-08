@@ -5047,6 +5047,118 @@
       box-shadow: 0 12px 28px -4px rgba(46, 204, 113, 0.35);
     }
 
+  
+    /* Poetic Hero Presentation for Farmers Cafe Parent Company */
+    .hero-poetic-lead {
+      margin: 22px 0 0 !important;
+      font-size: clamp(1.08rem, 2vw, 1.28rem) !important;
+      font-weight: 500;
+      color: var(--text) !important;
+      letter-spacing: -0.015em;
+      line-height: 1.65 !important;
+      max-width: 62ch;
+    }
+
+    .hero-poetic-lead strong {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .hero-poetic-verse {
+      margin: 18px 0 0 !important;
+      padding: 14px 20px;
+      border-left: 3px solid var(--accent);
+      background: linear-gradient(90deg, rgba(212, 175, 55, 0.08) 0%, rgba(26, 127, 90, 0.04) 100%);
+      border-radius: 0 16px 16px 0;
+      font-family: var(--font-heading);
+      font-size: clamp(0.96rem, 1.65vw, 1.1rem) !important;
+      font-style: italic;
+      line-height: 1.75 !important;
+      color: var(--muted) !important;
+      max-width: 58ch;
+      backdrop-filter: blur(8px);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    }
+
+    [data-theme="dark"] .hero-poetic-verse {
+      border-left-color: #F5D061;
+      background: linear-gradient(90deg, rgba(245, 208, 97, 0.08) 0%, rgba(46, 204, 113, 0.05) 100%);
+      color: #D1DED5 !important;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    }
+
+    /* FarmerGPT Studio Subhead and Metadata Highlights */
+    .farmergpt-studio-subhead {
+      margin: 14px 0 6px !important;
+      font-size: 1.05rem !important;
+      font-weight: 600;
+      color: var(--text) !important;
+      line-height: 1.45;
+    }
+
+    .farmergpt-studio-subhead strong {
+      color: var(--primary);
+    }
+
+    .farmergpt-studio-meta {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 10px;
+    }
+
+    .studio-meta-stat {
+      padding: 10px 14px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+    }
+
+    .studio-meta-stat strong {
+      color: var(--primary);
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .studio-meta-stat span {
+      color: var(--muted);
+      font-size: 0.74rem;
+      line-height: 1.35;
+    }
+
+    .farmergpt-studio-actions {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    [data-theme="dark"] .studio-meta-stat {
+      background: rgba(18, 36, 27, 0.85);
+      border-color: rgba(46, 204, 113, 0.2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    [data-theme="dark"] .studio-meta-stat strong {
+      color: #2ECC71;
+    }
+
+    [data-theme="dark"] .studio-meta-stat span {
+      color: #94A3B8;
+    }
+
+    [data-theme="dark"] .farmergpt-studio-subhead {
+      color: #F1F5F2 !important;
+    }
+
+    [data-theme="dark"] .farmergpt-studio-subhead strong {
+      color: #2ECC71;
+    }
+
   </style>
 </head>
 
@@ -5262,27 +5374,31 @@
             </div>
             <span class="eyebrow">Farmers Cafe</span>
             <h1>The Future of Farming <span class="headline-accent">is Intelligent.</span></h1>
-            <p class="hero-subhead"><strong>Meet FarmerGPT.</strong> The intelligence platform built for your farm.</p>
-            <p class="hero-desc">An AI-powered agricultural intelligence platform that understands your farm, remembers
-              what matters, and helps you make better decisions across crops, weather, machinery, markets, and farm
-              operations.</p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="#contact">Get Early Access</a>
-              <a class="button button-secondary" href="#ecosystem" data-jump-product="farmergpt">Experience FarmerGPT</a>
-              <a class="button button-secondary" href="#ecosystem">Products Ecosystem</a>
+            <p class="hero-poetic-lead">
+              Where the warmth of morning chai meets the fragrance of wet black soil. 
+              <strong>Farmers Cafe</strong> is the parent enterprise and hearth of agricultural deep-tech—uniting generational wisdom of the tiller with the sovereign power of frontier artificial intelligence.
+            </p>
+            <div class="hero-poetic-verse">
+              &ldquo;In every furrow plowed under golden dawn, and in every prayer sent to the monsoon cloud, lives the heartbeat of a nation. We build not to replace the farmer’s sacred intuition, but to honor it with intelligence as deep as their roots.&rdquo;
             </div>
-            <div class="hero-meta" aria-label="Platform highlights">
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="#ecosystem" data-jump-product="farmergpt">Experience FarmerGPT &rarr;</a>
+              <a class="button button-secondary" href="#ecosystem">Products Ecosystem</a>
+              <a class="button button-secondary" href="#roots">Our Roots &amp; Story</a>
+            </div>
+            <div class="hero-meta" aria-label="Parent enterprise pillars">
               <div class="hero-stat">
-                <strong>Farm Memory</strong>
-                <span>Remembers your land &amp; crops</span>
+                <strong>Soil Truth</strong>
+                <span>Rooted in real Indian fields</span>
               </div>
               <div class="hero-stat">
-                <strong>Equipment</strong>
-                <span>Machinery advice for your acres</span>
+                <strong>Frontier AI</strong>
+                <span>Deep-tech built for agriculture</span>
               </div>
               <div class="hero-stat">
-                <strong>Multilingual</strong>
-                <span>Speak naturally in your language</span>
+                <strong>Sovereignty</strong>
+                <span>Empowering 140M+ food growers</span>
               </div>
             </div>
           </div>
@@ -5478,7 +5594,30 @@
                       <h3>FarmerGPT</h3>
                       <p class="farmergpt-studio-tagline">Autonomous Agricultural Intelligence &amp; Field Companion OS</p>
                     </div>
-                    <p class="farmergpt-studio-desc">FarmerGPT is the pioneer flagship product of Farmers Cafe. Built specifically for farmers in India, it pairs persistent farm digital twins with real-time Doppler radar telemetry, tractor implement engineering algorithms, and vernacular Kisan voice intelligence in Hindi, Marathi, Punjabi, and English.</p>
+                    <p class="farmergpt-studio-subhead"><strong>Meet FarmerGPT.</strong> The intelligence platform built for your farm.</p>
+                    <p class="farmergpt-studio-desc">An AI-powered agricultural intelligence platform that understands your farm, remembers what matters, and helps you make better decisions across crops, weather, machinery, markets, and farm operations.</p>
+                    
+                    <!-- FarmerGPT Core Highlights (Integrated directly from flagship overview) -->
+                    <div class="farmergpt-studio-meta" aria-label="FarmerGPT platform highlights">
+                      <div class="studio-meta-stat">
+                        <strong>Farm Memory</strong>
+                        <span>Remembers your land &amp; crops</span>
+                      </div>
+                      <div class="studio-meta-stat">
+                        <strong>Equipment</strong>
+                        <span>Machinery advice for your acres</span>
+                      </div>
+                      <div class="studio-meta-stat">
+                        <strong>Multilingual</strong>
+                        <span>Speak naturally in your language</span>
+                      </div>
+                    </div>
+
+                    <div class="farmergpt-studio-actions">
+                      <a class="button button-primary" href="#contact">Get Early Access</a>
+                      <a class="button button-secondary" href="#equipment">Equipment &amp; Sizing &rarr;</a>
+                      <a class="button button-secondary" href="#capabilities">Core Capabilities &rarr;</a>
+                    </div>
                   </div>
 
                   <!-- Farm Memory Spotlight (Elevated from standalone section) -->
