@@ -3176,13 +3176,14 @@
 
     .founder-pull-quote {
       margin: 20px 0 0;
-      font-family: "Fraunces", serif;
-      font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+      font-family: var(--font-heading);
+      font-size: clamp(1.45rem, 3.2vw, 2.3rem);
       font-weight: 500;
-      line-height: 1.25;
-      letter-spacing: -0.04em;
+      font-style: italic;
+      line-height: 1.32;
+      letter-spacing: -0.03em;
       color: var(--text);
-      max-width: 20ch;
+      max-width: 26ch;
     }
 
     .founder-sub {
@@ -5159,6 +5160,254 @@
       color: #2ECC71;
     }
 
+  
+    /* ==========================================
+       AUTONOMOUS LIVING BIOSPHERE CANVAS STAGE
+       ========================================== */
+    .biosphere-stage {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      min-height: 380px;
+      border-radius: 20px;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 48%, rgba(26, 127, 90, 0.08) 0%, rgba(246, 251, 247, 0.95) 70%, #FFFFFF 100%);
+      border: 1px solid rgba(26, 127, 90, 0.16);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 12px 30px -10px rgba(19, 45, 35, 0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .biosphere-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      cursor: crosshair;
+      z-index: 1;
+    }
+
+    .biosphere-hud-top {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 12px 14px;
+      pointer-events: none;
+    }
+
+    .bio-hud-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--muted);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      backdrop-filter: blur(8px);
+    }
+
+    .hud-ping-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #10B981;
+      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3);
+      animation: livePulse 2s infinite ease-in-out;
+    }
+
+    .hud-ping-dot.amber {
+      background: #D4AF37;
+      box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.3);
+    }
+
+    .biosphere-inspector {
+      position: relative;
+      z-index: 2;
+      margin: auto 12px 8px;
+      padding: 10px 14px;
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(26, 127, 90, 0.22);
+      border-radius: 14px;
+      box-shadow: 0 8px 24px -6px rgba(19, 45, 35, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: auto;
+    }
+
+    .inspector-lead {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .inspector-badge {
+      font-size: 0.65rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.14);
+      color: var(--primary);
+    }
+
+    .inspector-title {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .inspector-desc {
+      margin: 4px 0 6px;
+      font-size: 0.74rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .inspector-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .insp-tag {
+      font-size: 0.67rem;
+      font-weight: 600;
+      color: var(--soft);
+      padding: 2px 6px;
+      border-radius: 6px;
+      background: rgba(15, 23, 42, 0.04);
+    }
+
+    .biosphere-nav-row {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      gap: 6px;
+      padding: 6px 12px 10px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .biosphere-nav-row::-webkit-scrollbar {
+      display: none;
+    }
+
+    .bio-node-btn {
+      flex: 1 0 auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 9px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(15, 23, 42, 0.1);
+      font-size: 0.71rem;
+      font-weight: 700;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.18s ease;
+      touch-action: manipulation;
+      white-space: nowrap;
+    }
+
+    .bio-node-btn:hover {
+      background: #FFFFFF;
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .bio-node-btn.active {
+      background: rgba(16, 185, 129, 0.12);
+      border-color: #10B981;
+      color: var(--primary);
+      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.15);
+    }
+
+    .bio-btn-badge {
+      font-size: 0.58rem;
+      font-weight: 800;
+      padding: 1px 5px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.06);
+      color: var(--soft);
+    }
+
+    .bio-btn-badge.badge-live {
+      background: #10B981;
+      color: #FFFFFF;
+    }
+
+    /* Dark Mode Biosphere */
+    [data-theme="dark"] .biosphere-stage {
+      background: radial-gradient(circle at 50% 48%, rgba(46, 204, 113, 0.12) 0%, rgba(10, 22, 16, 0.95) 75%);
+      border-color: rgba(46, 204, 113, 0.22);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 14px 36px -10px rgba(0, 0, 0, 0.6);
+    }
+
+    [data-theme="dark"] .bio-hud-pill {
+      background: rgba(14, 27, 21, 0.88);
+      border-color: rgba(255, 255, 255, 0.1);
+      color: #BAC7BC;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    [data-theme="dark"] .biosphere-inspector {
+      background: rgba(14, 27, 21, 0.92);
+      border-color: rgba(46, 204, 113, 0.3);
+      box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    [data-theme="dark"] .inspector-title {
+      color: #F1F5F2;
+    }
+
+    [data-theme="dark"] .inspector-desc {
+      color: #94A3B8;
+    }
+
+    [data-theme="dark"] .insp-tag {
+      background: rgba(255, 255, 255, 0.06);
+      color: #BAC7BC;
+    }
+
+    [data-theme="dark"] .bio-node-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.1);
+      color: #BAC7BC;
+    }
+
+    [data-theme="dark"] .bio-node-btn:hover {
+      background: rgba(46, 204, 113, 0.15);
+      border-color: #2ECC71;
+      color: #2ECC71;
+    }
+
+    [data-theme="dark"] .bio-node-btn.active {
+      background: rgba(46, 204, 113, 0.2);
+      border-color: #2ECC71;
+      color: #2ECC71;
+    }
+
+    [data-theme="dark"] .bio-btn-badge {
+      background: rgba(255, 255, 255, 0.1);
+      color: #BAC7BC;
+    }
+
+    [data-theme="dark"] .bio-btn-badge.badge-live {
+      background: #2ECC71;
+      color: #050B08;
+    }
+
   </style>
 </head>
 
@@ -5413,52 +5662,63 @@
                 <span class="enterprise-version">v2.6 Live</span>
               </div>
 
-              <div class="enterprise-matrix-hub">
-                <div class="matrix-satellites-grid">
-                  <a href="#ecosystem" class="matrix-satellite-chip active-chip" data-jump-product="farmergpt" title="Experience FarmerGPT Flagship">
-                    <div class="satellite-icon-col">🌿</div>
-                    <div class="satellite-info-col">
-                      <div class="satellite-name">FarmerGPT</div>
-                      <div class="satellite-tag">Live Flagship &bull; Autonomous AI Agronomist &amp; Telemetry</div>
-                    </div>
-                    <span class="satellite-arrow">&rarr;</span>
-                  </a>
-
-                  <div class="matrix-satellite-chip chip-coming-soon" title="FarmOS — Coming Soon">
-                    <div class="satellite-icon-col">🚜</div>
-                    <div class="satellite-info-col">
-                      <div class="satellite-name">FarmOS</div>
-                      <div class="satellite-tag">Autonomous Farm ERP &bull; Coming Soon</div>
-                    </div>
-                    <span class="satellite-badge-soon">Coming Soon</span>
+              <!-- Living Autonomous Core Biosphere Animation Stage -->
+              <div class="biosphere-stage" id="biosphere-stage" role="region" aria-label="Interactive Farmers Cafe Orbital Biosphere">
+                <canvas id="biosphere-canvas" class="biosphere-canvas" aria-label="Orbital Digital Twin of Farmers Cafe Enterprise"></canvas>
+                
+                <!-- Floating Real-Time HUD Overlay -->
+                <div class="biosphere-hud-top">
+                  <div class="bio-hud-pill">
+                    <span class="hud-ping-dot"></span>
+                    <span>10Hz Doppler Stream</span>
                   </div>
-
-                  <div class="matrix-satellite-chip chip-coming-soon" title="KisanVision — Coming Soon">
-                    <div class="satellite-icon-col">👁️</div>
-                    <div class="satellite-info-col">
-                      <div class="satellite-name">KisanVision</div>
-                      <div class="satellite-tag">Edge Computer Vision Pathology &bull; Coming Soon</div>
-                    </div>
-                    <span class="satellite-badge-soon">Coming Soon</span>
+                  <div class="bio-hud-pill">
+                    <span class="hud-ping-dot amber"></span>
+                    <span>Soil Twin: Vertisol VWC 48%</span>
                   </div>
+                </div>
 
-                  <div class="matrix-satellite-chip chip-coming-soon" title="MandiPulse — Coming Soon">
-                    <div class="satellite-icon-col">📊</div>
-                    <div class="satellite-info-col">
-                      <div class="satellite-name">MandiPulse</div>
-                      <div class="satellite-tag">Predictive APMC Arbitrage &bull; Coming Soon</div>
-                    </div>
-                    <span class="satellite-badge-soon">Coming Soon</span>
+                <!-- Interactive Node Details Inspector Overlay -->
+                <div class="biosphere-inspector" id="biosphere-inspector">
+                  <div class="inspector-lead">
+                    <span class="inspector-badge" id="inspector-badge">Live Flagship 01</span>
+                    <strong class="inspector-title" id="inspector-title">FarmerGPT</strong>
                   </div>
+                  <p class="inspector-desc" id="inspector-desc">Autonomous Field Decision Engine &bull; Stateful Farm Memory &bull; Vernacular Kisan Voice</p>
+                  <div class="inspector-meta" id="inspector-meta">
+                    <span class="insp-tag">● 10Hz Radar Link</span>
+                    <span class="insp-tag">● Sub-200ms Inference</span>
+                    <span class="insp-tag">● Mechanical Match</span>
+                  </div>
+                </div>
 
-                  <div class="matrix-satellite-chip chip-coming-soon" title="AgriCredit AI — Coming Soon">
-                    <div class="satellite-icon-col">💳</div>
-                    <div class="satellite-info-col">
-                      <div class="satellite-name">AgriCredit AI</div>
-                      <div class="satellite-tag">Rural FinTech Underwriting &bull; Coming Soon</div>
-                    </div>
-                    <span class="satellite-badge-soon">Coming Soon</span>
-                  </div>
+                <!-- Interactive Satellite Selector Bar -->
+                <div class="biosphere-nav-row" role="tablist" aria-label="Ecosystem products navigation">
+                  <button class="bio-node-btn active" data-product="farmergpt" type="button" role="tab" aria-selected="true" title="FarmerGPT — Live Flagship">
+                    <span class="bio-btn-icon">🌿</span>
+                    <span class="bio-btn-name">FarmerGPT</span>
+                    <span class="bio-btn-badge badge-live">Live</span>
+                  </button>
+                  <button class="bio-node-btn" data-product="farmos" type="button" role="tab" aria-selected="false" title="FarmOS — Autonomous Farm ERP">
+                    <span class="bio-btn-icon">🚜</span>
+                    <span class="bio-btn-name">FarmOS</span>
+                    <span class="bio-btn-badge">Phase 2</span>
+                  </button>
+                  <button class="bio-node-btn" data-product="kisanvision" type="button" role="tab" aria-selected="false" title="KisanVision — Edge Computer Vision">
+                    <span class="bio-btn-icon">👁️</span>
+                    <span class="bio-btn-name">KisanVision</span>
+                    <span class="bio-btn-badge">Phase 2</span>
+                  </button>
+                  <button class="bio-node-btn" data-product="mandipulse" type="button" role="tab" aria-selected="false" title="MandiPulse — APMC Arbitrage">
+                    <span class="bio-btn-icon">📊</span>
+                    <span class="bio-btn-name">MandiPulse</span>
+                    <span class="bio-btn-badge">Phase 2</span>
+                  </button>
+                  <button class="bio-node-btn" data-product="agricredit" type="button" role="tab" aria-selected="false" title="AgriCredit AI — Rural FinTech">
+                    <span class="bio-btn-icon">💳</span>
+                    <span class="bio-btn-name">AgriCredit</span>
+                    <span class="bio-btn-badge">Phase 2</span>
+                  </button>
                 </div>
               </div>
 
@@ -6625,15 +6885,11 @@
         <div class="container founder-grid">
           <div class="vision-copy reveal">
             <span class="eyebrow">Roots</span>
-            <p class="founder-pull-quote">Born into the soil. Building for those who feed the world.</p>
-            <p class="founder-sub">Atul Choudhary grew up in a traditional Indian farming family. For him, agriculture
-              isn't a market opportunity&mdash;it is his heritage. He saw firsthand the stress of sudden hail storms,
-              the burden of machinery repair costs, and the frustration of selling crops below fair value.</p>
-            <p class="founder-sub">Farmers Cafe was born from that lived experience: to build technology that genuinely
-              respects the farmer, speaks their language, and solves real problems in the field.</p>
+            <p class="founder-pull-quote">&ldquo;Before code, there was clay. Before algorithms, there was the monsoon.&rdquo;</p>
+            <p class="founder-sub">Born into an Indian farming family, <strong>Atul Choudhary</strong> did not learn agriculture from textbooks, but from the rhythm of the seasons and the quiet prayers of the field. For him, Farmers Cafe is not a venture&mdash;it is a son&rsquo;s sacred promise: to honor the hands that feed humanity with intelligence as deep as their roots.</p>
             <div class="founder-sig">
-              <span class="founder-sig-name">atul choudhary</span>
-              <span class="founder-sig-role">Founder, Farmers Cafe &mdash; Born in a farmer family, India</span>
+              <span class="founder-sig-name">Atul Choudhary</span>
+              <span class="founder-sig-role">Son of a Farmer &bull; Founder, Farmers Cafe</span>
             </div>
           </div>
           <div class="vision-visual reveal" aria-hidden="true">
@@ -7995,6 +8251,436 @@
     // ----------------------------------------------------
     // Spacetime-inspired Agricultural Hero Canvas & Particles
     // ----------------------------------------------------
+    
+    // ==========================================
+    // AUTONOMOUS CORE BIOSPHERE ORBITAL ENGINE
+    // ==========================================
+    function initBiosphereCanvas() {
+      const canvas = document.getElementById('biosphere-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      const inspectorTitle = document.getElementById('inspector-title');
+      const inspectorBadge = document.getElementById('inspector-badge');
+      const inspectorDesc = document.getElementById('inspector-desc');
+      const inspectorMeta = document.getElementById('inspector-meta');
+      const nodeBtns = document.querySelectorAll('.bio-node-btn');
+
+      const productsData = {
+        farmergpt: {
+          title: "FarmerGPT",
+          badge: "Live Flagship 01",
+          desc: "Autonomous Field Decision Engine • Stateful Farm Memory • Vernacular Kisan Voice",
+          tags: ["● 10Hz Radar Link", "● Sub-200ms Inference", "● Mechanical Match"],
+          color: "#10B981",
+          icon: "🌿"
+        },
+        farmos: {
+          title: "FarmOS",
+          badge: "Operating System • Phase 2",
+          desc: "Autonomous Farm ERP • IoT Soil Probes • Drone Telemetry & Work Orders",
+          tags: ["● LoRaWAN & LTE-M", "● Cadastral Digital Twin", "● Fleet CAN-bus"],
+          color: "#0284C7",
+          icon: "🚜"
+        },
+        kisanvision: {
+          title: "KisanVision",
+          badge: "Edge Computer Vision • Phase 2",
+          desc: "On-Device Pathology • Edge Pest Diagnostics • Drone Spectral NDVI",
+          tags: ["● Offline NPU Inference", "● Sucking Pest Vectors", "● Sub-mm Resolution"],
+          color: "#8B5CF6",
+          icon: "👁️"
+        },
+        mandipulse: {
+          title: "MandiPulse",
+          badge: "Predictive Markets • Phase 2",
+          desc: "Predictive APMC Arbitrage • Arrival Inflow Analytics • Logistics Match",
+          tags: ["● 2,400+ Mandi Feeds", "● Multi-Week Forecast", "● Real-Time Arbitrage"],
+          color: "#F59E0B",
+          icon: "📊"
+        },
+        agricredit: {
+          title: "AgriCredit AI",
+          badge: "Rural FinTech • Phase 2",
+          desc: "Satellite-Underwritten Credit • Crop Insurance Verification • Automated Disbursal",
+          tags: ["● Parametric Payouts", "● SAR Moisture Proof", "● Zero Paperwork"],
+          color: "#EC4899",
+          icon: "💳"
+        }
+      };
+
+      let activeProductId = 'farmergpt';
+      let hoveredNode = null;
+      let width = 0;
+      let height = 0;
+      let dpr = 1;
+      let animFrameId = null;
+      let isVisible = true;
+      let time = 0;
+
+      function resize() {
+        const rect = canvas.getBoundingClientRect();
+        width = rect.width;
+        height = rect.height;
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = Math.floor(width * dpr);
+        canvas.height = Math.floor(height * dpr);
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.scale(dpr, dpr);
+      }
+
+      resize();
+      window.addEventListener('resize', resize, { passive: true });
+
+      // Pause when out of viewport for optimal battery & performance
+      if ('IntersectionObserver' in window) {
+        const obs = new IntersectionObserver((entries) => {
+          isVisible = entries[0].isIntersecting;
+          if (isVisible && !animFrameId) {
+            loop();
+          }
+        }, { threshold: 0.1 });
+        obs.observe(canvas);
+      }
+
+      function selectProduct(pid) {
+        activeProductId = pid;
+        const data = productsData[pid] || productsData.farmergpt;
+
+        if (inspectorTitle) inspectorTitle.textContent = data.title;
+        if (inspectorBadge) {
+          inspectorBadge.textContent = data.badge;
+          inspectorBadge.style.color = data.color;
+          inspectorBadge.style.background = data.color + '22';
+        }
+        if (inspectorDesc) inspectorDesc.textContent = data.desc;
+        if (inspectorMeta) {
+          inspectorMeta.innerHTML = data.tags.map(t => `<span class="insp-tag">${t}</span>`).join('');
+        }
+
+        nodeBtns.forEach(btn => {
+          const match = btn.getAttribute('data-product') === pid;
+          btn.classList.toggle('active', match);
+          btn.setAttribute('aria-selected', match ? 'true' : 'false');
+        });
+
+        if (pid !== 'farmergpt') {
+          showToast(`⚡ <strong>${data.title}</strong> is part of the parent enterprise roadmap (Phase 2).`, 'info');
+        }
+      }
+
+      nodeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const pid = btn.getAttribute('data-product');
+          if (pid) selectProduct(pid);
+        });
+      });
+
+      // Pointer tracking
+      const mouse = { x: -999, y: -999 };
+      canvas.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+      });
+
+      canvas.addEventListener('mouseleave', () => {
+        mouse.x = -999;
+        mouse.y = -999;
+        hoveredNode = null;
+      });
+
+      canvas.addEventListener('click', () => {
+        if (hoveredNode) {
+          selectProduct(hoveredNode.id);
+          if (hoveredNode.id === 'farmergpt') {
+            const fgptLink = document.querySelector('a[data-jump-product="farmergpt"]');
+            if (fgptLink) fgptLink.click();
+          }
+        }
+      });
+
+      // Particle system for ambient neural telemetry
+      const particles = [];
+      for (let i = 0; i < 24; i++) {
+        particles.push({
+          orbitIndex: Math.floor(Math.random() * 3),
+          angle: Math.random() * Math.PI * 2,
+          speed: 0.006 + Math.random() * 0.012,
+          size: 1.5 + Math.random() * 1.8,
+          alpha: 0.3 + Math.random() * 0.5
+        });
+      }
+
+      function loop() {
+        if (!isVisible) {
+          animFrameId = null;
+          return;
+        }
+
+        time += 0.016;
+        ctx.clearRect(0, 0, width, height);
+
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        const cx = width / 2;
+        const cy = height * 0.42;
+
+        // 1. Draw 3D Perspective Ground Grid (Indian Black Soil Ground Truth)
+        const gridHorizon = height * 0.70;
+        ctx.save();
+        ctx.strokeStyle = isDark ? 'rgba(46, 204, 113, 0.07)' : 'rgba(26, 127, 90, 0.06)';
+        ctx.lineWidth = 1;
+
+        // Horizontal perspective lines
+        for (let y = gridHorizon; y <= height; y += (y - gridHorizon) * 0.35 + 8) {
+          ctx.beginPath();
+          ctx.moveTo(0, y);
+          ctx.lineTo(width, y);
+          ctx.stroke();
+        }
+
+        // Radiating field lines from horizon vanishing point
+        for (let x = -width * 0.2; x <= width * 1.2; x += width * 0.12) {
+          ctx.beginPath();
+          ctx.moveTo(cx, gridHorizon - 10);
+          ctx.lineTo(x, height);
+          ctx.stroke();
+        }
+        ctx.restore();
+
+        // 2. Orbits Configuration with Isometric Tilt
+        const orbitConfigs = [
+          { rx: width * 0.22, ry: width * 0.10, angleSpeed: 0.008, tilt: -0.15 },
+          { rx: width * 0.35, ry: width * 0.16, angleSpeed: -0.005, tilt: 0.12 },
+          { rx: width * 0.45, ry: width * 0.21, angleSpeed: 0.003, tilt: -0.08 }
+        ];
+
+        // Draw orbital tracks
+        orbitConfigs.forEach((orb, idx) => {
+          ctx.save();
+          ctx.translate(cx, cy);
+          ctx.rotate(orb.tilt);
+          ctx.beginPath();
+          ctx.ellipse(0, 0, orb.rx, orb.ry, 0, 0, Math.PI * 2);
+          ctx.strokeStyle = isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(15, 23, 42, 0.07)';
+          ctx.setLineDash([4, 6]);
+          ctx.lineWidth = 1.2;
+          ctx.stroke();
+          ctx.restore();
+        });
+
+        // 3. Central Luminous Core: Farmers Cafe Parent Enterprise
+        const corePulse = 1 + Math.sin(time * 2.2) * 0.06;
+        const coreRadius = 24 * corePulse;
+
+        // Ambient radial halo
+        const haloGrad = ctx.createRadialGradient(cx, cy, 0, cx, cy, coreRadius * 3);
+        haloGrad.addColorStop(0, isDark ? 'rgba(46, 204, 113, 0.35)' : 'rgba(26, 127, 90, 0.25)');
+        haloGrad.addColorStop(0.5, isDark ? 'rgba(212, 175, 55, 0.12)' : 'rgba(212, 175, 55, 0.08)');
+        haloGrad.addColorStop(1, 'transparent');
+
+        ctx.fillStyle = haloGrad;
+        ctx.beginPath();
+        ctx.arc(cx, cy, coreRadius * 3, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Core Solid Body
+        const coreGrad = ctx.createRadialGradient(cx - 4, cy - 4, 2, cx, cy, coreRadius);
+        coreGrad.addColorStop(0, '#2ECC71');
+        coreGrad.addColorStop(0.7, '#1A7F5A');
+        coreGrad.addColorStop(1, '#0C3D2B');
+
+        ctx.fillStyle = coreGrad;
+        ctx.beginPath();
+        ctx.arc(cx, cy, coreRadius, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.strokeStyle = '#D4AF37';
+        ctx.lineWidth = 1.8;
+        ctx.stroke();
+
+        // Core Text Label
+        ctx.fillStyle = '#FFFFFF';
+        ctx.font = '700 8.5px "Plus Jakarta Sans", sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('FARMERS CAFE', cx, cy - 2);
+
+        ctx.fillStyle = '#D4AF37';
+        ctx.font = '700 6.5px "Plus Jakarta Sans", sans-serif';
+        ctx.fillText('PARENT CORE', cx, cy + 7);
+
+        // 4. Satellite Nodes Coordinates Definition
+        const nodes = [
+          {
+            id: 'farmergpt',
+            orbitIdx: 0,
+            angle: time * orbitConfigs[0].angleSpeed * 18 + 0.8,
+            color: '#10B981',
+            icon: '🌿',
+            name: 'FarmerGPT',
+            live: true
+          },
+          {
+            id: 'farmos',
+            orbitIdx: 1,
+            angle: time * orbitConfigs[1].angleSpeed * 14 + 0.2,
+            color: '#0284C7',
+            icon: '🚜',
+            name: 'FarmOS',
+            live: false
+          },
+          {
+            id: 'kisanvision',
+            orbitIdx: 1,
+            angle: time * orbitConfigs[1].angleSpeed * 14 + Math.PI + 0.2,
+            color: '#8B5CF6',
+            icon: '👁️',
+            name: 'KisanVision',
+            live: false
+          },
+          {
+            id: 'mandipulse',
+            orbitIdx: 2,
+            angle: time * orbitConfigs[2].angleSpeed * 12 + 1.2,
+            color: '#F59E0B',
+            icon: '📊',
+            name: 'MandiPulse',
+            live: false
+          },
+          {
+            id: 'agricredit',
+            orbitIdx: 2,
+            angle: time * orbitConfigs[2].angleSpeed * 12 + Math.PI + 1.2,
+            color: '#EC4899',
+            icon: '💳',
+            name: 'AgriCredit',
+            live: false
+          }
+        ];
+
+        let foundHover = null;
+
+        // Compute 2D Canvas positions with tilted orbit transform
+        nodes.forEach(node => {
+          const cfg = orbitConfigs[node.orbitIdx];
+          const unrotatedX = Math.cos(node.angle) * cfg.rx;
+          const unrotatedY = Math.sin(node.angle) * cfg.ry;
+
+          // Apply rotation
+          const rotCos = Math.cos(cfg.tilt);
+          const rotSin = Math.sin(cfg.tilt);
+          node.x = cx + (unrotatedX * rotCos - unrotatedY * rotSin);
+          node.y = cy + (unrotatedX * rotSin + unrotatedY * rotCos);
+
+          // Check mouse hover
+          const distToMouse = Math.hypot(node.x - mouse.x, node.y - mouse.y);
+          if (distToMouse < 22) {
+            foundHover = node;
+          }
+        });
+
+        hoveredNode = foundHover;
+
+        // 5. Draw Animated Beams between Core and Selected/Hovered Node
+        const targetHighlightNode = hoveredNode || nodes.find(n => n.id === activeProductId);
+        if (targetHighlightNode) {
+          ctx.save();
+          const beamGrad = ctx.createLinearGradient(cx, cy, targetHighlightNode.x, targetHighlightNode.y);
+          beamGrad.addColorStop(0, 'rgba(212, 175, 55, 0.8)');
+          beamGrad.addColorStop(1, targetHighlightNode.color);
+
+          ctx.strokeStyle = beamGrad;
+          ctx.lineWidth = 1.6;
+          ctx.setLineDash([3, 3]);
+          ctx.lineDashOffset = -time * 20;
+          ctx.beginPath();
+          ctx.moveTo(cx, cy);
+          ctx.lineTo(targetHighlightNode.x, targetHighlightNode.y);
+          ctx.stroke();
+
+          // Laser connection to ground soil twin
+          ctx.strokeStyle = isDark ? 'rgba(46, 204, 113, 0.4)' : 'rgba(26, 127, 90, 0.3)';
+          ctx.setLineDash([2, 4]);
+          ctx.beginPath();
+          ctx.moveTo(targetHighlightNode.x, targetHighlightNode.y);
+          ctx.lineTo(targetHighlightNode.x, gridHorizon + 25);
+          ctx.stroke();
+          ctx.restore();
+        }
+
+        // 6. Draw Orbiting Data Particles
+        particles.forEach(p => {
+          const cfg = orbitConfigs[p.orbitIndex];
+          p.angle += p.speed;
+          const ux = Math.cos(p.angle) * cfg.rx;
+          const uy = Math.sin(p.angle) * cfg.ry;
+          const rotCos = Math.cos(cfg.tilt);
+          const rotSin = Math.sin(cfg.tilt);
+          const px = cx + (ux * rotCos - uy * rotSin);
+          const py = cy + (ux * rotSin + uy * rotCos);
+
+          ctx.fillStyle = isDark ? `rgba(46, 204, 113, ${p.alpha})` : `rgba(26, 127, 90, ${p.alpha})`;
+          ctx.beginPath();
+          ctx.arc(px, py, p.size, 0, Math.PI * 2);
+          ctx.fill();
+        });
+
+        // 7. Draw Satellite Nodes
+        nodes.forEach(node => {
+          const isSelected = node.id === activeProductId;
+          const isHover = hoveredNode && hoveredNode.id === node.id;
+          const nodeR = isSelected ? 15 : (isHover ? 14 : 12);
+
+          // Glowing Aura
+          const aura = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, nodeR * 2.2);
+          aura.addColorStop(0, node.color + '55');
+          aura.addColorStop(1, 'transparent');
+          ctx.fillStyle = aura;
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, nodeR * 2.2, 0, Math.PI * 2);
+          ctx.fill();
+
+          // Live Sonar Ping on Flagship (FarmerGPT)
+          if (node.live) {
+            const pingRadius = nodeR + ((time * 18) % 14);
+            const pingAlpha = Math.max(0, 1 - (pingRadius - nodeR) / 14);
+            ctx.strokeStyle = `rgba(16, 185, 129, ${pingAlpha * 0.75})`;
+            ctx.lineWidth = 1.2;
+            ctx.beginPath();
+            ctx.arc(node.x, node.y, pingRadius, 0, Math.PI * 2);
+            ctx.stroke();
+          }
+
+          // Node Body
+          ctx.fillStyle = isDark ? '#102118' : '#FFFFFF';
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, nodeR, 0, Math.PI * 2);
+          ctx.fill();
+
+          ctx.strokeStyle = isSelected ? '#D4AF37' : node.color;
+          ctx.lineWidth = isSelected ? 2.4 : 1.6;
+          ctx.stroke();
+
+          // Icon
+          ctx.font = `${nodeR * 1.05}px sans-serif`;
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(node.icon, node.x, node.y + 1);
+
+          // Node Label Tag
+          ctx.font = '700 8.5px "Plus Jakarta Sans", sans-serif';
+          ctx.fillStyle = isDark ? '#F1F5F2' : '#0F172A';
+          ctx.fillText(node.name, node.x, node.y + nodeR + 10);
+        });
+
+        animFrameId = requestAnimationFrame(loop);
+      }
+
+      loop();
+    }
+
     function initHeroCanvas() {
       const canvas = document.getElementById('farm-canvas');
       if (!canvas) return;
@@ -8288,6 +8974,7 @@
 
     // Initialize interactive modules
     initHeroCanvas();
+    initBiosphereCanvas();
     initHeroSimulator();
     initProductTabs();
     initEquipmentCalculator();
