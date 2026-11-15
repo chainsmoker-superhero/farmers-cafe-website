@@ -1,0 +1,19 @@
+name: Push alert
+on:
+  push:
+    branches: ['**']
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send ntfy alert
+        env:
+          TOPIC: ${{ secrets.NTFY_TOPIC }}
+          ACTOR: ${{ github.actor }}
+          REPO: ${{ github.repository }}
+          BRANCH: ${{ github.ref_name }}
+          MSG: ${{ github.event.head_commit.message }}
+        run: |
+          curl -s -H "Title: Push to $REPO" \
+            -d "$ACTOR pushed to $BRANCH: $(echo "$MSG" | head -n1)" \
+            "https://ntfy.sh/$TOPIC"
