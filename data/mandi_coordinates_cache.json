@@ -1,0 +1,1126 @@
+{
+  "Madhya Pradesh|Agar Malwa|Agar(F&V) APMC": [
+    23.9351,
+    76.145
+  ],
+  "Madhya Pradesh|Agar Malwa|Nalkheda APMC": [
+    23.8351,
+    76.234
+  ],
+  "Madhya Pradesh|Agar Malwa|Soyatkalan APMC": [
+    23.9351,
+    76.145
+  ],
+  "Madhya Pradesh|Agar Malwa|Susner APMC": [
+    24.0944,
+    76.1737
+  ],
+  "Madhya Pradesh|Alirajpur|Alirajpur APMC": [
+    22.286,
+    74.3546
+  ],
+  "Madhya Pradesh|Alirajpur|Jobat APMC": [
+    22.4357,
+    74.5797
+  ],
+  "Madhya Pradesh|Anupur|Kotma APMC": [
+    23.2042,
+    81.979
+  ],
+  "Madhya Pradesh|Ashoknagar|Ashoknagar APMC": [
+    24.6186,
+    77.8787
+  ],
+  "Madhya Pradesh|Ashoknagar|Chanderi APMC": [
+    24.7119,
+    78.1373
+  ],
+  "Madhya Pradesh|Ashoknagar|Isagarh APMC": [
+    24.7325,
+    77.8087
+  ],
+  "Madhya Pradesh|Ashoknagar|Mungawali APMC": [
+    24.6186,
+    77.8787
+  ],
+  "Madhya Pradesh|Ashoknagar|Piprai APMC": [
+    24.4988,
+    77.8979
+  ],
+  "Madhya Pradesh|Ashoknagar|Shadora APMC": [
+    24.615,
+    77.6381
+  ],
+  "Madhya Pradesh|Badwani|Anjad APMC": [
+    22.0416,
+    75.0559
+  ],
+  "Madhya Pradesh|Badwani|Badwani APMC": [
+    21.7514,
+    74.8916
+  ],
+  "Madhya Pradesh|Badwani|Khetia APMC": [
+    21.6705,
+    74.5859
+  ],
+  "Madhya Pradesh|Badwani|Sendhwa APMC": [
+    21.6871,
+    75.092
+  ],
+  "Madhya Pradesh|Badwani|Sendhwa(F&V) APMC": [
+    21.6871,
+    75.092
+  ],
+  "Madhya Pradesh|Balaghat|Balaghat APMC": [
+    21.8612,
+    80.3237
+  ],
+  "Madhya Pradesh|Balaghat|Varaseoni APMC": [
+    21.8612,
+    80.3237
+  ],
+  "Madhya Pradesh|Betul|Betul APMC": [
+    21.8797,
+    77.8754
+  ],
+  "Madhya Pradesh|Betul|Betul(F&V) APMC": [
+    21.8797,
+    77.8754
+  ],
+  "Madhya Pradesh|Betul|Bhensdehi APMC": [
+    21.8797,
+    77.8754
+  ],
+  "Madhya Pradesh|Betul|Multai APMC": [
+    21.7828,
+    78.2635
+  ],
+  "Madhya Pradesh|Bhind|Alampur APMC": [
+    26.0286,
+    78.7934
+  ],
+  "Madhya Pradesh|Bhind|Bhind APMC": [
+    26.3519,
+    78.6863
+  ],
+  "Madhya Pradesh|Bhind|Gohad APMC": [
+    26.4253,
+    78.4465
+  ],
+  "Madhya Pradesh|Bhind|Lahar APMC": [
+    26.5539,
+    78.804
+  ],
+  "Madhya Pradesh|Bhind|Mehgaon APMC": [
+    26.4065,
+    78.6957
+  ],
+  "Madhya Pradesh|Bhind|Mow APMC": [
+    26.3519,
+    78.6863
+  ],
+  "Madhya Pradesh|Bhopal|Berasia APMC": [
+    23.2775,
+    77.4032
+  ],
+  "Madhya Pradesh|Bhopal|Bhopal APMC": [
+    23.2585,
+    77.402
+  ],
+  "Madhya Pradesh|Burhanpur|Burhanpur APMC": [
+    21.3119,
+    76.2292
+  ],
+  "Madhya Pradesh|Burhanpur|Burhanpur(F&V) APMC": [
+    21.3119,
+    76.2292
+  ],
+  "Madhya Pradesh|Chhatarpur|Badamalhera APMC": [
+    24.7606,
+    79.6782
+  ],
+  "Madhya Pradesh|Chhatarpur|Bakswaha APMC": [
+    24.6602,
+    79.3993
+  ],
+  "Madhya Pradesh|Chhatarpur|Bijawar APMC": [
+    24.5685,
+    79.6616
+  ],
+  "Madhya Pradesh|Chhatarpur|Chhatarpur APMC": [
+    24.7606,
+    79.6782
+  ],
+  "Madhya Pradesh|Chhatarpur|Harpalpur APMC": [
+    25.2868,
+    79.3339
+  ],
+  "Madhya Pradesh|Chhatarpur|LavKush Nagar(Laundi) APMC": [
+    24.9205,
+    79.584
+  ],
+  "Madhya Pradesh|Chhatarpur|Naugaon APMC": [
+    24.7606,
+    79.6782
+  ],
+  "Madhya Pradesh|Chhatarpur|Rajnagar APMC": [
+    24.8342,
+    80.0241
+  ],
+  "Madhya Pradesh|Chhindwara|Amarwda APMC": [
+    22.2072,
+    78.7988
+  ],
+  "Madhya Pradesh|Chhindwara|Chaurai APMC": [
+    22.0535,
+    79.2496
+  ],
+  "Madhya Pradesh|Chhindwara|Chhindwara APMC": [
+    22.2072,
+    78.7988
+  ],
+  "Madhya Pradesh|Damoh|Damoh APMC": [
+    23.7981,
+    79.5419
+  ],
+  "Madhya Pradesh|Damoh|Hata APMC": [
+    23.7981,
+    79.5419
+  ],
+  "Madhya Pradesh|Damoh|Javera APMC": [
+    23.7981,
+    79.5419
+  ],
+  "Madhya Pradesh|Damoh|Patharia APMC": [
+    23.9057,
+    79.1924
+  ],
+  "Madhya Pradesh|Datia|Bhander APMC": [
+    25.7157,
+    78.7009
+  ],
+  "Madhya Pradesh|Datia|Datia APMC": [
+    25.9183,
+    78.6645
+  ],
+  "Madhya Pradesh|Datia|Sevda APMC": [
+    25.9183,
+    78.6645
+  ],
+  "Madhya Pradesh|Dewas|Bagli APMC": [
+    22.5396,
+    76.2046
+  ],
+  "Madhya Pradesh|Dewas|Dewas APMC": [
+    22.9636,
+    76.0549
+  ],
+  "Madhya Pradesh|Dewas|Dewas(F&V) APMC": [
+    22.9636,
+    76.0549
+  ],
+  "Madhya Pradesh|Dewas|Haatpipliya (F&V) APMC": [
+    22.8057,
+    76.294
+  ],
+  "Madhya Pradesh|Dewas|Haatpipliya APMC": [
+    22.8057,
+    76.294
+  ],
+  "Madhya Pradesh|Dewas|Kannod APMC": [
+    22.6663,
+    76.7437
+  ],
+  "Madhya Pradesh|Dewas|Khategaon APMC": [
+    22.5975,
+    76.9166
+  ],
+  "Madhya Pradesh|Dewas|Loharda APMC": [
+    22.5862,
+    76.5952
+  ],
+  "Madhya Pradesh|Dewas|Sonkatch APMC": [
+    23.0349,
+    76.3633
+  ],
+  "Madhya Pradesh|Dhar|Badnawar APMC": [
+    23.0231,
+    75.2065
+  ],
+  "Madhya Pradesh|Dhar|Dhamnod APMC": [
+    22.2013,
+    75.4769
+  ],
+  "Madhya Pradesh|Dhar|Dhar APMC": [
+    22.5787,
+    75.2259
+  ],
+  "Madhya Pradesh|Dhar|Dhar(F&V) APMC": [
+    22.5787,
+    75.2259
+  ],
+  "Madhya Pradesh|Dhar|Gandhwani APMC": [
+    22.339,
+    75.0042
+  ],
+  "Madhya Pradesh|Dhar|Kukshi APMC": [
+    22.3184,
+    74.7729
+  ],
+  "Madhya Pradesh|Dhar|Kukshi(F&V) APMC": [
+    22.3184,
+    74.7729
+  ],
+  "Madhya Pradesh|Dhar|Manawar APMC": [
+    22.2693,
+    75.4885
+  ],
+  "Madhya Pradesh|Dhar|Manawar(F&V) APMC": [
+    22.2693,
+    75.4885
+  ],
+  "Madhya Pradesh|Dhar|Rajgarh APMC": [
+    22.6648,
+    74.952
+  ],
+  "Madhya Pradesh|Dindori|Gorakhpur APMC": [
+    22.7353,
+    80.9719
+  ],
+  "Madhya Pradesh|Dindori|Shahpura Niwas APMC": [
+    23.1954,
+    80.6761
+  ],
+  "Madhya Pradesh|Guna|Aron APMC": [
+    24.3968,
+    77.4005
+  ],
+  "Madhya Pradesh|Guna|Binaganj APMC": [
+    24.1879,
+    77.0332
+  ],
+  "Madhya Pradesh|Guna|Guna APMC": [
+    24.5002,
+    77.2601
+  ],
+  "Madhya Pradesh|Guna|Guna(F&V) APMC": [
+    24.5002,
+    77.2601
+  ],
+  "Madhya Pradesh|Guna|Kumbhraj APMC": [
+    24.3716,
+    77.0529
+  ],
+  "Madhya Pradesh|Guna|Maksudangarh APMC": [
+    24.0668,
+    77.2432
+  ],
+  "Madhya Pradesh|Guna|Raghogarh APMC": [
+    24.4407,
+    77.195
+  ],
+  "Madhya Pradesh|Gwalior|Bhitarwar APMC": [
+    25.8253,
+    78.0515
+  ],
+  "Madhya Pradesh|Gwalior|Dabra APMC": [
+    25.8819,
+    78.3305
+  ],
+  "Madhya Pradesh|Gwalior|Lashkar APMC": [
+    26.2037,
+    78.1574
+  ],
+  "Madhya Pradesh|Harda|Harda APMC": [
+    22.2428,
+    77.1179
+  ],
+  "Madhya Pradesh|Harda|Harda(F&V) APMC": [
+    22.2428,
+    77.1179
+  ],
+  "Madhya Pradesh|Harda|Khirkiya APMC": [
+    22.1659,
+    76.859
+  ],
+  "Madhya Pradesh|Harda|Sirali APMC": [
+    22.0977,
+    77.0643
+  ],
+  "Madhya Pradesh|Harda|Timarni APMC": [
+    22.3763,
+    77.2302
+  ],
+  "Madhya Pradesh|Indore|Gautampura APMC": [
+    23.0268,
+    75.5288
+  ],
+  "Madhya Pradesh|Indore|Indore APMC": [
+    22.7204,
+    75.8682
+  ],
+  "Madhya Pradesh|Indore|Mhow (Ambedkar Nagar) APMC": [
+    22.5269,
+    75.9262
+  ],
+  "Madhya Pradesh|Indore|Sanwer APMC": [
+    22.915,
+    75.8698
+  ],
+  "Madhya Pradesh|Indore|Sanwer(F&V) APMC": [
+    22.915,
+    75.8698
+  ],
+  "Madhya Pradesh|Jabalpur|Jabalpur APMC": [
+    23.165,
+    79.9513
+  ],
+  "Madhya Pradesh|Jabalpur|Paatan (F&V) APMC": [
+    23.1702,
+    79.9325
+  ],
+  "Madhya Pradesh|Jabalpur|Paatan APMC": [
+    23.1702,
+    79.9325
+  ],
+  "Madhya Pradesh|Jabalpur|Sehora APMC": [
+    23.1702,
+    79.9325
+  ],
+  "Madhya Pradesh|Jabalpur|Shahpura Bhitoni (F&V) APMC": [
+    23.1433,
+    79.6807
+  ],
+  "Madhya Pradesh|Jhabua|Jhabua APMC": [
+    22.887,
+    74.7243
+  ],
+  "Madhya Pradesh|Jhabua|Petlawad APMC": [
+    22.9677,
+    74.8561
+  ],
+  "Madhya Pradesh|Jhabua|Petlawad(F&V) APMC": [
+    22.9677,
+    74.8561
+  ],
+  "Madhya Pradesh|Jhabua|Thandla APMC": [
+    22.9631,
+    74.5893
+  ],
+  "Madhya Pradesh|Katni|Katni APMC": [
+    23.834,
+    80.3925
+  ],
+  "Madhya Pradesh|Katni|Katni(F&V) APMC": [
+    23.834,
+    80.3925
+  ],
+  "Madhya Pradesh|Khandwa|Harsood APMC": [
+    21.977,
+    76.5675
+  ],
+  "Madhya Pradesh|Khandwa|Khandwa APMC": [
+    21.8204,
+    76.3555
+  ],
+  "Madhya Pradesh|Khandwa|Khandwa(F&V) APMC": [
+    21.8204,
+    76.3555
+  ],
+  "Madhya Pradesh|Khandwa|Mundi APMC": [
+    22.0632,
+    76.5121
+  ],
+  "Madhya Pradesh|Khandwa|Pandhana APMC": [
+    22.1535,
+    76.436
+  ],
+  "Madhya Pradesh|Khargone|Badwaha APMC": [
+    21.9545,
+    75.7521
+  ],
+  "Madhya Pradesh|Khargone|Bhikangaon APMC": [
+    21.8558,
+    75.9291
+  ],
+  "Madhya Pradesh|Khargone|Karhi APMC": [
+    21.6249,
+    75.6201
+  ],
+  "Madhya Pradesh|Khargone|Kasrawad APMC": [
+    22.0368,
+    75.6437
+  ],
+  "Madhya Pradesh|Khargone|Khargone APMC": [
+    21.9545,
+    75.7521
+  ],
+  "Madhya Pradesh|Khargone|Sanawad APMC": [
+    22.1717,
+    76.0725
+  ],
+  "Madhya Pradesh|Khargone|Sanawad(F&V) APMC": [
+    22.1717,
+    76.0725
+  ],
+  "Madhya Pradesh|Khargone|Segaon APMC": [
+    21.8176,
+    75.5151
+  ],
+  "Madhya Pradesh|Maihar|Amarpatan APMC": [
+    24.3301,
+    80.9204
+  ],
+  "Madhya Pradesh|Maihar|Maihar APMC": [
+    24.2438,
+    81.0447
+  ],
+  "Madhya Pradesh|Maihar|Maihar(F&V) APMC": [
+    24.2438,
+    81.0447
+  ],
+  "Madhya Pradesh|Maihar|Ramnagar APMC": [
+    24.1739,
+    81.1632
+  ],
+  "Madhya Pradesh|Mandla|Krishi Upaj Mandi Samiti Bichhiya": [
+    22.4451,
+    80.7096
+  ],
+  "Madhya Pradesh|Mandla|Mandla APMC": [
+    22.6871,
+    80.5816
+  ],
+  "Madhya Pradesh|Mandla|Nainpur APMC": [
+    22.4258,
+    80.1095
+  ],
+  "Madhya Pradesh|Mandsaur|Bhanpura APMC": [
+    24.5194,
+    75.7478
+  ],
+  "Madhya Pradesh|Mandsaur|Daloda APMC": [
+    23.956,
+    75.1041
+  ],
+  "Madhya Pradesh|Mandsaur|Garoth APMC": [
+    24.3315,
+    75.5816
+  ],
+  "Madhya Pradesh|Mandsaur|Garoth(F&V) APMC": [
+    24.3315,
+    75.5816
+  ],
+  "Madhya Pradesh|Mandsaur|Mandsaur APMC": [
+    24.0683,
+    75.0742
+  ],
+  "Madhya Pradesh|Mandsaur|Piplya APMC": [
+    23.9761,
+    75.7084
+  ],
+  "Madhya Pradesh|Mandsaur|Shamgarh APMC": [
+    24.192,
+    75.643
+  ],
+  "Madhya Pradesh|Mandsaur|Sitamau APMC": [
+    24.0281,
+    75.4095
+  ],
+  "Madhya Pradesh|Mandsaur|Suvasra APMC": [
+    24.2628,
+    75.3857
+  ],
+  "Madhya Pradesh|Mauganj|Hanumana APMC": [
+    24.7019,
+    82.0707
+  ],
+  "Madhya Pradesh|Morena|Ambaha APMC": [
+    26.385,
+    77.8613
+  ],
+  "Madhya Pradesh|Morena|Banmorkalan APMC": [
+    26.385,
+    77.8613
+  ],
+  "Madhya Pradesh|Morena|Kailaras APMC": [
+    26.2199,
+    77.6914
+  ],
+  "Madhya Pradesh|Morena|Morena APMC": [
+    26.491,
+    77.9814
+  ],
+  "Madhya Pradesh|Morena|Porsa APMC": [
+    26.7294,
+    78.4059
+  ],
+  "Madhya Pradesh|Morena|Sabalgarh APMC": [
+    26.2484,
+    77.41
+  ],
+  "Madhya Pradesh|Narmadapuram|Babai (Makhan Nagar) APMC": [
+    22.7049,
+    77.933
+  ],
+  "Madhya Pradesh|Narmadapuram|Banapura APMC": [
+    22.4705,
+    77.4817
+  ],
+  "Madhya Pradesh|Narmadapuram|Bankhedi APMC": [
+    22.7747,
+    78.5334
+  ],
+  "Madhya Pradesh|Narmadapuram|Itarsi APMC": [
+    22.6086,
+    77.7671
+  ],
+  "Madhya Pradesh|Narmadapuram|Narmadapuram (F&V) APMC": [
+    22.7546,
+    77.7198
+  ],
+  "Madhya Pradesh|Narmadapuram|Narmadapuram APMC": [
+    22.7546,
+    77.7198
+  ],
+  "Madhya Pradesh|Narmadapuram|Pipariya APMC": [
+    22.7543,
+    78.3559
+  ],
+  "Madhya Pradesh|Narmadapuram|Pipariya(F&V) APMC": [
+    22.7543,
+    78.3559
+  ],
+  "Madhya Pradesh|Narmadapuram|Semriharchand APMC": [
+    22.6003,
+    77.927
+  ],
+  "Madhya Pradesh|Narsinghpur|Gadarwada (F&V) APMC": [
+    22.9346,
+    79.0868
+  ],
+  "Madhya Pradesh|Narsinghpur|Gadarwada APMC": [
+    22.9346,
+    79.0868
+  ],
+  "Madhya Pradesh|Narsinghpur|Gotegaon APMC": [
+    22.9624,
+    79.4646
+  ],
+  "Madhya Pradesh|Narsinghpur|Kareli APMC": [
+    22.9323,
+    79.0667
+  ],
+  "Madhya Pradesh|Narsinghpur|Narsinghpur APMC": [
+    22.9432,
+    79.2143
+  ],
+  "Madhya Pradesh|Narsinghpur|Tendukheda APMC": [
+    23.1434,
+    78.9086
+  ],
+  "Madhya Pradesh|Neemuch|Javad APMC": [
+    24.6306,
+    75.1829
+  ],
+  "Madhya Pradesh|Neemuch|Manasa APMC": [
+    24.4638,
+    74.9095
+  ],
+  "Madhya Pradesh|Neemuch|Neemuch APMC": [
+    24.465,
+    74.869
+  ],
+  "Madhya Pradesh|Neemuch|Neemuch(F&V) APMC": [
+    24.465,
+    74.869
+  ],
+  "Madhya Pradesh|Niwadi|Niwadi APMC": [
+    23.6228,
+    78.3966
+  ],
+  "Madhya Pradesh|Niwadi|Prithvipur APMC": [
+    25.2257,
+    78.7216
+  ],
+  "Madhya Pradesh|Pandhurna|Pandhurna APMC": [
+    21.5898,
+    78.5258
+  ],
+  "Madhya Pradesh|Pandhurna|Saunsar APMC": [
+    21.6666,
+    78.8154
+  ],
+  "Madhya Pradesh|Panna|Ajaygarh APMC": [
+    24.9029,
+    80.2579
+  ],
+  "Madhya Pradesh|Panna|Devandranagar APMC": [
+    24.4499,
+    80.1463
+  ],
+  "Madhya Pradesh|Panna|Panna APMC": [
+    24.4499,
+    80.1463
+  ],
+  "Madhya Pradesh|Panna|Pawai APMC": [
+    24.2492,
+    80.2032
+  ],
+  "Madhya Pradesh|Panna|Simariya APMC": [
+    24.2715,
+    79.8994
+  ],
+  "Madhya Pradesh|Raisen|Bareli APMC": [
+    23.42,
+    78.4626
+  ],
+  "Madhya Pradesh|Raisen|Begamganj APMC": [
+    23.5525,
+    78.368
+  ],
+  "Madhya Pradesh|Raisen|Gairatganj APMC": [
+    23.4101,
+    78.2213
+  ],
+  "Madhya Pradesh|Raisen|Obedullaganj APMC": [
+    23.2676,
+    78.1727
+  ],
+  "Madhya Pradesh|Raisen|Raisen APMC": [
+    23.2676,
+    78.1727
+  ],
+  "Madhya Pradesh|Raisen|Silvani APMC": [
+    23.3096,
+    78.4424
+  ],
+  "Madhya Pradesh|Raisen|Udaipura APMC": [
+    23.0784,
+    78.4767
+  ],
+  "Madhya Pradesh|Rajgarh|Biaora APMC": [
+    23.9368,
+    76.9083
+  ],
+  "Madhya Pradesh|Rajgarh|Jeerapur (F&V) APMC": [
+    24.0814,
+    76.7048
+  ],
+  "Madhya Pradesh|Rajgarh|Jeerapur APMC": [
+    24.0814,
+    76.7048
+  ],
+  "Madhya Pradesh|Rajgarh|Khilchipur APMC": [
+    24.0387,
+    76.5779
+  ],
+  "Madhya Pradesh|Rajgarh|Khujner APMC": [
+    23.7974,
+    76.611
+  ],
+  "Madhya Pradesh|Rajgarh|Kurawar APMC": [
+    23.512,
+    77.0252
+  ],
+  "Madhya Pradesh|Rajgarh|Machalpur APMC": [
+    24.0998,
+    76.7473
+  ],
+  "Madhya Pradesh|Rajgarh|Narsinghgarh APMC": [
+    23.7091,
+    77.0887
+  ],
+  "Madhya Pradesh|Rajgarh|Pachaur APMC": [
+    23.8717,
+    76.7745
+  ],
+  "Madhya Pradesh|Rajgarh|Sarangpur APMC": [
+    23.5703,
+    76.4722
+  ],
+  "Madhya Pradesh|Rajgarh|Sarangpur(F&V) APMC": [
+    23.5703,
+    76.4722
+  ],
+  "Madhya Pradesh|Ratlam|A lot APMC": [
+    23.3353,
+    75.0344
+  ],
+  "Madhya Pradesh|Ratlam|Jaora APMC": [
+    23.6379,
+    75.1282
+  ],
+  "Madhya Pradesh|Ratlam|Ratlam APMC": [
+    23.3311,
+    75.0361
+  ],
+  "Madhya Pradesh|Ratlam|Sailana APMC": [
+    23.3974,
+    74.8338
+  ],
+  "Madhya Pradesh|Ratlam|Sailana(F&V) APMC": [
+    23.3974,
+    74.8338
+  ],
+  "Madhya Pradesh|Ratlam|Taal APMC": [
+    23.5022,
+    74.9552
+  ],
+  "Madhya Pradesh|Rewa|Baikunthpur APMC": [
+    24.732,
+    81.4071
+  ],
+  "Madhya Pradesh|Rewa|Chaakghat APMC": [
+    24.7561,
+    81.3811
+  ],
+  "Madhya Pradesh|Rewa|Rewa APMC": [
+    24.7561,
+    81.3811
+  ],
+  "Madhya Pradesh|Rewa|Rewa(F&V) APMC": [
+    24.7561,
+    81.3811
+  ],
+  "Madhya Pradesh|Sagar|Bamora APMC": [
+    24.0535,
+    78.0823
+  ],
+  "Madhya Pradesh|Sagar|Banda APMC": [
+    24.0456,
+    78.9646
+  ],
+  "Madhya Pradesh|Sagar|Bina APMC": [
+    24.1712,
+    78.1852
+  ],
+  "Madhya Pradesh|Sagar|Deori APMC": [
+    23.3909,
+    79.0181
+  ],
+  "Madhya Pradesh|Sagar|Gadakota APMC": [
+    23.8083,
+    78.7583
+  ],
+  "Madhya Pradesh|Sagar|Jaisinagar APMC": [
+    23.6691,
+    78.6321
+  ],
+  "Madhya Pradesh|Sagar|Kesli APMC": [
+    23.3955,
+    78.7895
+  ],
+  "Madhya Pradesh|Sagar|Khurai APMC": [
+    24.0522,
+    78.331
+  ],
+  "Madhya Pradesh|Sagar|Khurai(F&V) APMC": [
+    24.0522,
+    78.331
+  ],
+  "Madhya Pradesh|Sagar|Malthone APMC": [
+    24.3088,
+    78.537
+  ],
+  "Madhya Pradesh|Sagar|Rahatgarh APMC": [
+    23.7927,
+    78.3987
+  ],
+  "Madhya Pradesh|Sagar|Rehli APMC": [
+    23.6345,
+    79.0682
+  ],
+  "Madhya Pradesh|Sagar|Rehli(F&V) APMC": [
+    23.6345,
+    79.0682
+  ],
+  "Madhya Pradesh|Sagar|Sagar APMC": [
+    23.8418,
+    78.7467
+  ],
+  "Madhya Pradesh|Sagar|Sagar(F&V) APMC": [
+    23.8418,
+    78.7467
+  ],
+  "Madhya Pradesh|Sagar|Shahagarh APMC": [
+    22.7665,
+    75.9007
+  ],
+  "Madhya Pradesh|Satna|Nagod APMC": [
+    24.5705,
+    80.5868
+  ],
+  "Madhya Pradesh|Satna|Satna APMC": [
+    24.6954,
+    80.777
+  ],
+  "Madhya Pradesh|Sehore|Ashta APMC": [
+    23.0177,
+    76.7235
+  ],
+  "Madhya Pradesh|Sehore|Baktara APMC": [
+    23.115,
+    77.0665
+  ],
+  "Madhya Pradesh|Sehore|Bherunda (Nasrullaganj) APMC": [
+    23.115,
+    77.0665
+  ],
+  "Madhya Pradesh|Sehore|Ichhawar APMC": [
+    23.0273,
+    77.0197
+  ],
+  "Madhya Pradesh|Sehore|Jawar APMC": [
+    22.9448,
+    76.5464
+  ],
+  "Madhya Pradesh|Sehore|Rehati APMC": [
+    23.115,
+    77.0665
+  ],
+  "Madhya Pradesh|Sehore|Sehore APMC": [
+    23.115,
+    77.0665
+  ],
+  "Madhya Pradesh|Sehore|Sehore(F&V) APMC": [
+    23.115,
+    77.0665
+  ],
+  "Madhya Pradesh|Sehore|Shyampur APMC": [
+    22.7342,
+    77.1429
+  ],
+  "Madhya Pradesh|Seoni|Chhpara APMC": [
+    22.2748,
+    79.7203
+  ],
+  "Madhya Pradesh|Seoni|Ghansour APMC": [
+    22.2748,
+    79.7203
+  ],
+  "Madhya Pradesh|Seoni|Keolari APMC": [
+    22.3689,
+    79.9061
+  ],
+  "Madhya Pradesh|Seoni|Lakhnadon APMC": [
+    22.6026,
+    79.6084
+  ],
+  "Madhya Pradesh|Seoni|Palari APMC": [
+    22.0409,
+    79.521
+  ],
+  "Madhya Pradesh|Seoni|Seoni APMC": [
+    22.2748,
+    79.7203
+  ],
+  "Madhya Pradesh|Shajapur|Agar APMC": [
+    23.4171,
+    76.6075
+  ],
+  "Madhya Pradesh|Shajapur|Akodiya APMC": [
+    23.6068,
+    76.3978
+  ],
+  "Madhya Pradesh|Shajapur|Akodiya(F&V) APMC": [
+    23.6068,
+    76.3978
+  ],
+  "Madhya Pradesh|Shajapur|Badod APMC": [
+    23.6049,
+    76.336
+  ],
+  "Madhya Pradesh|Shajapur|Berachha APMC": [
+    23.4171,
+    76.6075
+  ],
+  "Madhya Pradesh|Shajapur|Kalapipal APMC": [
+    23.3331,
+    76.835
+  ],
+  "Madhya Pradesh|Shajapur|Maksi APMC": [
+    23.2521,
+    76.1585
+  ],
+  "Madhya Pradesh|Shajapur|Momanbadodiya APMC": [
+    23.6038,
+    76.3342
+  ],
+  "Madhya Pradesh|Shajapur|Shajapur APMC": [
+    23.4171,
+    76.6075
+  ],
+  "Madhya Pradesh|Shajapur|Shajapur(F&V) APMC": [
+    23.4171,
+    76.6075
+  ],
+  "Madhya Pradesh|Shajapur|Shujalpur APMC": [
+    23.3806,
+    76.7232
+  ],
+  "Madhya Pradesh|Shehdol|Beohari APMC": [
+    24.0005,
+    81.38
+  ],
+  "Madhya Pradesh|Shehdol|Budhar APMC": [
+    23.1827,
+    81.57
+  ],
+  "Madhya Pradesh|Shehdol|Shahdol APMC": [
+    23.3002,
+    81.3648
+  ],
+  "Madhya Pradesh|Sheopur|Sheopurbadod APMC": [
+    25.7499,
+    76.9213
+  ],
+  "Madhya Pradesh|Sheopur|Sheopurkalan APMC": [
+    25.7499,
+    76.9213
+  ],
+  "Madhya Pradesh|Sheopur|Vijaypur APMC": [
+    25.8989,
+    77.3884
+  ],
+  "Madhya Pradesh|Shivpuri|Badarwas APMC": [
+    25.2486,
+    78.1613
+  ],
+  "Madhya Pradesh|Shivpuri|Barad APMC": [
+    25.3741,
+    77.8279
+  ],
+  "Madhya Pradesh|Shivpuri|Karera APMC": [
+    25.507,
+    78.0541
+  ],
+  "Madhya Pradesh|Shivpuri|Khaniadhana APMC": [
+    25.0318,
+    78.1253
+  ],
+  "Madhya Pradesh|Shivpuri|Khatora APMC": [
+    24.9694,
+    77.7042
+  ],
+  "Madhya Pradesh|Shivpuri|Kolaras APMC": [
+    25.2232,
+    77.6182
+  ],
+  "Madhya Pradesh|Shivpuri|Magroni APMC": [
+    25.7001,
+    77.9336
+  ],
+  "Madhya Pradesh|Shivpuri|Magroni(F&V) APMC": [
+    25.7001,
+    77.9336
+  ],
+  "Madhya Pradesh|Shivpuri|Pichhour APMC": [
+    25.3741,
+    77.8279
+  ],
+  "Madhya Pradesh|Shivpuri|Pohari APMC": [
+    25.5402,
+    77.3641
+  ],
+  "Madhya Pradesh|Shivpuri|Rannod APMC": [
+    25.0743,
+    77.8748
+  ],
+  "Madhya Pradesh|Shivpuri|Shivpuri APMC": [
+    25.4235,
+    77.6551
+  ],
+  "Madhya Pradesh|Shivpuri|Shivpuri(F&V) APMC": [
+    25.4235,
+    77.6551
+  ],
+  "Madhya Pradesh|Sidhi|Sidhi APMC": [
+    24.25,
+    82.0
+  ],
+  "Madhya Pradesh|Tikamgarh|Jatara APMC": [
+    25.0111,
+    79.0616
+  ],
+  "Madhya Pradesh|Tikamgarh|Khargapur APMC": [
+    24.8461,
+    79.1845
+  ],
+  "Madhya Pradesh|Tikamgarh|Palera APMC": [
+    25.0205,
+    79.2279
+  ],
+  "Madhya Pradesh|Tikamgarh|Tikamgarh APMC": [
+    24.7666,
+    78.8404
+  ],
+  "Madhya Pradesh|Ujjain|Badnagar APMC": [
+    23.064,
+    75.4494
+  ],
+  "Madhya Pradesh|Ujjain|Khachrod APMC": [
+    23.4425,
+    75.2864
+  ],
+  "Madhya Pradesh|Ujjain|Mahidpur APMC": [
+    23.5152,
+    75.6364
+  ],
+  "Madhya Pradesh|Ujjain|Nagda APMC": [
+    23.4579,
+    75.4191
+  ],
+  "Madhya Pradesh|Ujjain|Tarana APMC": [
+    23.3346,
+    76.0447
+  ],
+  "Madhya Pradesh|Ujjain|Ujjain APMC": [
+    23.1885,
+    75.7717
+  ],
+  "Madhya Pradesh|Ujjain|Ujjain(F&V) APMC": [
+    23.1885,
+    75.7717
+  ],
+  "Madhya Pradesh|Ujjain|Unhel APMC": [
+    23.3376,
+    75.5601
+  ],
+  "Madhya Pradesh|Umariya|Umariya APMC": [
+    21.8447,
+    78.967
+  ],
+  "Madhya Pradesh|Vidisha|Ganjbasoda APMC": [
+    23.8463,
+    77.837
+  ],
+  "Madhya Pradesh|Vidisha|Gulabganj APMC": [
+    24.1267,
+    77.8038
+  ],
+  "Madhya Pradesh|Vidisha|Kurwai APMC": [
+    24.1185,
+    78.0408
+  ],
+  "Madhya Pradesh|Vidisha|Lateri APMC": [
+    24.0619,
+    77.4058
+  ],
+  "Madhya Pradesh|Vidisha|Shamshabad APMC": [
+    23.8156,
+    77.4962
+  ],
+  "Madhya Pradesh|Vidisha|Sironj APMC": [
+    24.1107,
+    77.703
+  ],
+  "Madhya Pradesh|Vidisha|Vidisha APMC": [
+    23.5208,
+    77.8063
+  ],
+  "Madhya Pradesh|Singroli|Singroli APMC": [
+    24.1992,
+    82.6645
+  ]
+}

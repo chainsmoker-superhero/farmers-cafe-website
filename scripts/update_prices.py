@@ -136,6 +136,98 @@ for r in raw:
 
 print(f"Clean rows: {len(rows)}, skipped bad rows: {skipped}")
 
+# 2.5 Enrich with Latitude & Longitude from persistent cache & geocoder
+GEO_CACHE_FILE = f"{OUT_DIR}/mandi_coordinates_cache.json"
+geo_cache = {}
+if os.path.exists(GEO_CACHE_FILE):
+    try:
+        with open(GEO_CACHE_FILE, "r", encoding="utf-8") as f:
+            geo_cache = json.load(f)
+    except Exception as e:
+        print(f"Warning: could not read {GEO_CACHE_FILE}: {e}")
+
+def clean_town(market_name):
+    s = re.sub(r"(?i)\bkrishi\s+upaj\s+mandi\s+samiti\b", "", market_name)
+    s = re.sub(r"(?i)\bkrishi\s+upaj\s+mandi\b", "", s)
+    s = re.sub(r"(?i)\bapmc\b", "", s)
+    s = re.sub(r"\(.*?\)", "", s)
+    s = re.sub(r"[^a-zA-Z\s]", " ", s)
+    return s.strip()
+
+def geocode_new_market(state, district, market):
+    town = clean_town(market)
+    queries = [
+        f"{town} {district} {state} India",
+        f"{town} {district} India",
+        f"{town} {state} India",
+        f"{district} {state} India",
+    ]
+    # Try Photon first (fast)
+    for q in queries:
+        try:
+            url = "https://photon.komoot.io/api/?q=" + requests.utils.quote(q) + "&limit=1"
+            req_headers = {"User-Agent": "FarmerGPT/1.0"}
+            r = requests.get(url, headers=req_headers, timeout=4)
+            if r.status_code == 200:
+                features = r.json().get("features", [])
+                if features:
+                    c = features[0]["geometry"]["coordinates"]
+                    return [round(c[1], 4), round(c[0], 4)]
+        except Exception:
+            pass
+        time.sleep(0.1)
+
+    # Fallback to Nominatim
+    for q in queries:
+        try:
+            url = "https://nominatim.openstreetmap.org/search?q=" + requests.utils.quote(q) + "&format=json&limit=1"
+            req_headers = {"User-Agent": "FarmerGPT-Crawler/1.0 (contact@farmerscafe.co.in)"}
+            r = requests.get(url, headers=req_headers, timeout=5)
+            if r.status_code == 200:
+                data = r.json()
+                if data and len(data) > 0:
+                    return [round(float(data[0]["lat"]), 4), round(float(data[0]["lon"]), 4)]
+        except Exception:
+            pass
+        time.sleep(1.0)
+    return None
+
+# Find any unmapped markets in current run
+unmapped = set()
+for c in rows:
+    key = f"{c['state']}|{c['district']}|{c['market']}"
+    if key not in geo_cache:
+        unmapped.add((c['state'], c['district'], c['market']))
+
+if unmapped:
+    print(f"Resolving coordinates for {len(unmapped)} new market(s)...")
+    cache_updated = False
+    for state, district, market in sorted(list(unmapped))[:30]:  # limit to 30 per run so CI finishes fast
+        coords = geocode_new_market(state, district, market)
+        if coords:
+            geo_cache[f"{state}|{district}|{market}"] = coords
+            cache_updated = True
+            print(f"  -> Geocoded {market} ({district}, {state}): {coords}")
+        time.sleep(0.3)
+
+    if cache_updated:
+        tmp_cache = GEO_CACHE_FILE + ".tmp"
+        with open(tmp_cache, "w", encoding="utf-8") as f:
+            json.dump(geo_cache, f, indent=2)
+        os.replace(tmp_cache, GEO_CACHE_FILE)
+
+# Attach lat/lon to each row
+enriched_count = 0
+for c in rows:
+    key = f"{c['state']}|{c['district']}|{c['market']}"
+    coords = geo_cache.get(key)
+    if coords:
+        c["lat"] = coords[0]
+        c["lon"] = coords[1]
+        enriched_count += 1
+
+print(f"Enriched {enriched_count}/{len(rows)} records with lat/long.")
+
 # 3. Group by state
 by_state = defaultdict(list)
 for c in rows:
