@@ -273,3 +273,13 @@ for state in sorted(by_state):
 
 write_json(f"{OUT_DIR}/index.json", index)
 print(f"Done: {len(by_state)} states, {len(rows)} records written to {OUT_DIR}/")
+
+# 5. Build rolling 14-day price history per commodity (non-fatal)
+print("Building rolling 14-day price history...")
+try:
+    from build_history import update_state_history
+    for state in sorted(by_state):
+        update_state_history(state, by_state[state], updated_at=now)
+    print(f"Price history updated for {len(by_state)} states in {OUT_DIR}/history/")
+except Exception as e:
+    print(f"Warning: Price history build failed: {e}. Skipping history build so daily state files remain intact.")
