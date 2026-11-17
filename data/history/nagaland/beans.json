@@ -1,0 +1,1 @@
+{"commodity":"Beans","commodity_slug":"beans","state":"Nagaland","unit":"INR/quintal","updated_at":"2026-11-17T09:14:20Z","series":{"mandi_dimapur_dimapur__local":{"market_key":"mandi_dimapur_dimapur","market":"Dimapur APMC","district":"Dimapur","variety":"Local","points":[{"d":"2026-11-17","modal":6500.0,"min":6000.0,"max":7000.0}],"last_date":"2026-11-17","n_points":1}}}
