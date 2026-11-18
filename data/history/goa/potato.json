@@ -1,0 +1,1 @@
+{"commodity":"Potato","commodity_slug":"potato","state":"Goa","unit":"INR/quintal","updated_at":"2026-11-18T16:12:05Z","series":{"mandi_north_goa_mapusa__potato":{"market_key":"mandi_north_goa_mapusa","market":"Mapusa APMC","district":"North Goa","variety":"Potato","points":[{"d":"2026-11-18","modal":1800.0,"min":1500.0,"max":2000.0}],"last_date":"2026-11-18","n_points":1}}}
