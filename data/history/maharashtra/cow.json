@@ -1,0 +1,1 @@
+{"commodity":"Cow","commodity_slug":"cow","state":"Maharashtra","unit":"INR/quintal","updated_at":"2026-11-23T15:00:46Z","series":{"mandi_thane_kalyan__other":{"market_key":"mandi_thane_kalyan","market":"APMC Kalyan","district":"Thane","variety":"Other","points":[{"d":"2026-11-23","modal":60000.0,"min":50000.0,"max":70000.0}],"last_date":"2026-11-23","n_points":1}}}
