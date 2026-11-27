@@ -2078,5 +2078,125 @@
   "Bihar|Sheikhpura|Shekhpura APMC": [
     25.1251,
     85.8161
+  ],
+  "Andhra Pradesh|SPSR Nellore|Udayagiri APMC": [
+    14.1398,
+    79.8396
+  ],
+  "Andhra Pradesh|Vijayanagaram|Rajam APMC": [
+    18.1141,
+    83.4114
+  ],
+  "Andhra Pradesh|West Godavari|Attili APMC": [
+    16.6716,
+    81.6013
+  ],
+  "Andhra Pradesh|West Godavari|Narsapuram APMC": [
+    16.912,
+    81.4378
+  ],
+  "Andhra Pradesh|West Godavari|Tanuku APMC": [
+    16.7529,
+    81.676
+  ],
+  "Assam|Darrang|Balugaon APMC": [
+    26.4373,
+    92.0047
+  ],
+  "Assam|Darrang|Besimari APMC": [
+    26.4373,
+    92.0047
+  ],
+  "Assam|Nagaon|Dhing APMC": [
+    26.445,
+    92.5268
+  ],
+  "Assam|Nagaon|Doomdumia APMC": [
+    26.3314,
+    92.7525
+  ],
+  "Bihar|Aurangabad|Daunagar APMC": [
+    24.8033,
+    84.411
+  ],
+  "Bihar|Begusarai|Teghra APMC": [
+    25.4727,
+    85.9368
+  ],
+  "Bihar|Buxar|Dumarao APMC": [
+    25.5045,
+    84.1098
+  ],
+  "Bihar|Darbhanga|Darbhanga APMC": [
+    26.157,
+    85.8995
+  ],
+  "Bihar|Gaya|Gaya APMC": [
+    24.7964,
+    85.008
+  ],
+  "Bihar|Gaya|Tekari APMC": [
+    24.7974,
+    84.9941
+  ],
+  "Bihar|Jamui|Jamui APMC": [
+    24.7563,
+    86.3011
+  ],
+  "Bihar|Kaimur/Bhabhua|Kaimur APMC": [
+    24.9755,
+    83.5768
+  ],
+  "Bihar|Kaimur/Bhabhua|Mohana APMC": [
+    25.212,
+    83.5201
+  ],
+  "Bihar|Luckeesarai|Lakhisarai APMC": [
+    25.1719,
+    86.0944
+  ],
+  "Bihar|Luckeesarai|Surjyagarha APMC": [
+    25.1719,
+    86.0944
+  ],
+  "Bihar|Munghair|Munghair APMC": [
+    21.5562,
+    80.5918
+  ],
+  "Bihar|Muzaffarpur|Bhagwanpur Mandi APMC": [
+    26.0706,
+    85.0984
+  ],
+  "Bihar|Samastipur|Samastipur APMC": [
+    25.8597,
+    85.7839
+  ],
+  "Bihar|Sheohar|Sheohar APMC": [
+    26.4934,
+    85.2718
+  ],
+  "Bihar|Sitamarhi|Sitamarhi APMC": [
+    26.5943,
+    85.5004
+  ],
+  "Bihar|Supaul|Supaul APMC": [
+    26.2768,
+    86.796
+  ],
+  "Bihar|Vaishali|Hajipur APMC": [
+    25.6906,
+    85.209
+  ],
+  "Bihar|West Chambaran|Narkatiaganj APMC": [
+    27.0969,
+    84.4585
+  ],
+  "Chandigarh|Chandigarh|Chandigarh (Grain/F&V) APMC": [
+    30.7334,
+    76.7797
+  ],
+  "Chattisgarh|Balodabazar|Balodabazar APMC": [
+    21.6612,
+    82.1412
   ]
 }
