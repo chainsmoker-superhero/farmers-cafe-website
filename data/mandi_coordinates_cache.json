@@ -2198,5 +2198,125 @@
   "Chattisgarh|Balodabazar|Balodabazar APMC": [
     21.6612,
     82.1412
+  ],
+  "Andhra Pradesh|Tirupathi|Railway Koduru APMC": [
+    13.7813,
+    79.4219
+  ],
+  "Andhra Pradesh|West Godavari|Achanta APMC": [
+    16.6042,
+    81.8069
+  ],
+  "Andhra Pradesh|West Godavari|Bhimavaram APMC": [
+    16.5444,
+    81.5376
+  ],
+  "Andhra Pradesh|West Godavari|Palakole APMC": [
+    16.694,
+    81.4628
+  ],
+  "Andhra Pradesh|West Godavari|Tadepalligudem APMC": [
+    16.8332,
+    81.53
+  ],
+  "Bihar|Begusarai|Balliah APMC": [
+    25.5125,
+    86.0883
+  ],
+  "Bihar|Darbhanga|Biraul APMC": [
+    25.9565,
+    86.1801
+  ],
+  "Bihar|Madhubani|Benipatti APMC": [
+    26.4435,
+    85.9105
+  ],
+  "Bihar|Nalanda|Harnaut APMC": [
+    25.3716,
+    85.5334
+  ],
+  "Bihar|Samastipur|Tajpur APMC": [
+    25.8505,
+    85.7865
+  ],
+  "Bihar|Supaul|Birpur APMC": [
+    26.5152,
+    87.0085
+  ],
+  "Bihar|West Chambaran|Ramnagar APMC": [
+    27.2909,
+    84.2936
+  ],
+  "Chattisgarh|Balod|Balod APMC": [
+    20.7277,
+    81.1447
+  ],
+  "Chattisgarh|Balod|Dondi APMC": [
+    20.8033,
+    81.0521
+  ],
+  "Chattisgarh|Balod|Dondilohara APMC": [
+    20.7277,
+    81.1447
+  ],
+  "Chattisgarh|Balod|Gurur APMC": [
+    20.7023,
+    81.4181
+  ],
+  "Chattisgarh|Balrampur|Ramanujganj APMC": [
+    23.8837,
+    83.4801
+  ],
+  "Chattisgarh|Bijapur|Bharamgarh APMC": [
+    18.7936,
+    80.8159
+  ],
+  "Chattisgarh|Bijapur|Bhopalpattnam APMC": [
+    19.0,
+    80.4039
+  ],
+  "Chattisgarh|Bijapur|Bijapur APMC": [
+    18.7936,
+    80.8159
+  ],
+  "Chattisgarh|Durg|Durg APMC": [
+    21.1896,
+    81.2851
+  ],
+  "Chattisgarh|Gariyaband|Gariyaband APMC": [
+    20.5268,
+    82.1917
+  ],
+  "Chattisgarh|Gourela Pendra Marwahi|Pendraroad APMC": [
+    22.7487,
+    81.9099
+  ],
+  "Chattisgarh|Kabirdham|Kawardha APMC": [
+    22.0018,
+    81.2432
+  ],
+  "Chattisgarh|Kanker|Charama APMC": [
+    20.4419,
+    81.3814
+  ],
+  "Chattisgarh|Kanker|Lakhanpuri APMC": [
+    20.3961,
+    81.4294
+  ],
+  "Chattisgarh|Kanker|Narharpur APMC": [
+    20.3242,
+    81.6592
+  ],
+  "Chattisgarh|Khairagarh Chhuikhadan Gandai|Gandai APMC": [
+    21.5288,
+    80.9484
+  ],
+  "Chattisgarh|Khairagarh Chhuikhadan Gandai|Kheragarh APMC": [
+    21.5288,
+    80.9484
+  ],
+  "Chattisgarh|Korba|Katghora APMC": [
+    22.3942,
+    82.5892
   ]
 }
